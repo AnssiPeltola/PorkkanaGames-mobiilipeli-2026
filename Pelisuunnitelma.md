@@ -53,4 +53,72 @@ Reseptikirjassa näkyy eri resepteistä seuraavat asiat:
 
 Peli alkaa kun resepti on valittu.
 
-# 8. 
+# 8.  Näkymä, tuntuma ja äänet
+
+Pelin tulisi tuntu aintuitiiviselta ja grafiikan näyttää "Cozy" ja selkeä.
+!!! Grafiikka suunitelma myöhemmin !!!
+Peliin tulee ääniefektejä jotka ovat kivoja.
+Pelin taustamusiikki harkinnassa.
+Käytetään pelimekanniikoissa yhteneviä ääni efektejä, jotka havainnollistavat pelaajille ja katsojille pelin etenemistä.
+
+Pidetään huoli ettei pelin saavutettavuus ei kärsi äänimaailmasta, vaan päin vastoin.
+Äänet ja musiikki pitää olla saatava mutelle.
+PS. Äänet ei ole täysillä kun peli avataan.
+# 9. Pelattavuus
+
+Peli alkaa reseptin valinnalla joka myös vaikuttaa tulevien tasojen haasteisiin ja askeleisiin.
+
+Askel 1.
+Pelaajat suorittavat kokkauksen esivalmisteluvaiheita.
+Valitaan oikeat ainekset.
+
+Askel 2. 
+Pelaajat suorittavat ruoan valmistusvaiheet.
+Viipalointi, paistaminen, keittäminen yms.
+
+Askel 3. 
+Mahdollinen tiskaus / siisitimisvaihe
+
+Askel 4. 
+Tarjoiluvaihe (Maustaminen, esillelaitto).
+
+# 10. Käyttöliittymä
+
+Pelin käyttö on suunniteltu ja rajattu tabletti ympäristöön.
+Suunniteltu perspektiivi on "top down".
+
+!! Ulkonäöstä lisää concept art vaiheessa !!
+Selkeät ja ISOT menu painikkeet.
+
+Pelaaja kontrolloi peliauleella ohjattavissa olevia objekteja. (Raaka-aineet, Kokkausvälineet).
+
+# 11. Tavoitteet
+
+Pelaajien tavoite on valmistaa valitun reseptin ruoka yhdessä ja toteuttaa siihen vaaditut pelin elementit oikein.
+
+Tavoite on saavutettu kun kaikki peloin tasot ovat suoritettu onnistuneesti.
+
+# 12. Säännöt
+
+Pelin elementit voidaan suorittaa joko oikein tai väärin, mutta virheistä ei rankaista vaan pelin elementti on voimassa kunnes se on tehty oikein.
+Pidetään huolta että elementin tavoite on helposti ymmärrettävä ja saavutettava.
+
+# 13. Ominaisuuslista
+
+Pelin eri reseptit määrittelevät suoritettavat tasot ja niiden kulun.
+Asetukset, jossa voidaan vaihtaa äänen tasoa ja musiikka jos sellainen tulee.
+
+# 14. Markkinointi
+
+Peli esitellään keväällä 2026 pelimessuilla.
+Peli esitellään myös pelin omilla verkkosivuillta
+Peli demo ja trailer youtube.
+
+# 15. Tekniset vaatimukset
+
+Alustana toimii YETI tabletti jossa android 7.
+Pelimootori on Godot.
+
+# 16. Suunniteltu resurssijako tuotannolle
+
+Projektin toteutus vaatii kevään kurssisuunnitelmassa opetettavia aiheita.

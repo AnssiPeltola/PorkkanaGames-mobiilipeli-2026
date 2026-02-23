@@ -47,8 +47,8 @@ public partial class Ingredient : CharacterBody2D
     }
 
 	// Function that changes this scenes Sprite2D texture to new
-	// public void ChangeSprite(Texture2D newTexture)
-	// {
-	// 	_sprite.Texture = newTexture;
-	// }
+	public void ChangeSprite(Texture2D newTexture)
+	{
+		_sprite.Texture = newTexture;
+	}
 }

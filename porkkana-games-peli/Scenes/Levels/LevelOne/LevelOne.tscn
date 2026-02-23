@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://i2gmb583eda2"]
+[gd_scene load_steps=7 format=3 uid="uid://i2gmb583eda2"]
 
 [ext_resource type="PackedScene" uid="uid://daduerx6bos7g" path="res://Scenes/Ingredients/Ingredient/Ingredient.tscn" id="1_2ocb1"]
+[ext_resource type="PackedScene" uid="uid://j4hb472lofbn" path="res://Scenes/DropZones/IngredientDropZone/IngredientDropZone.tscn" id="2_orjfg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow6v1"]
 size = Vector2(20, 1093)
@@ -34,6 +35,15 @@ shape = SubResource("RectangleShape2D_orjfg")
 position = Vector2(956, 1086)
 shape = SubResource("RectangleShape2D_85dct")
 
-[node name="Ingredient" parent="." instance=ExtResource("1_2ocb1")]
+[node name="Ingredient" parent="." groups=["Good"] instance=ExtResource("1_2ocb1")]
 position = Vector2(237, 230)
+collision_mask = 1
 _clickRadius = 50
+
+[node name="Ingredient2" parent="." groups=["Bad"] instance=ExtResource("1_2ocb1")]
+position = Vector2(549, 236)
+collision_mask = 1
+_clickRadius = 50
+
+[node name="IngredientDropZone" parent="." instance=ExtResource("2_orjfg")]
+position = Vector2(295, 476)

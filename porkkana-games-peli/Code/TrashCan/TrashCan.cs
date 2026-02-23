@@ -19,7 +19,8 @@ public partial class TrashCan : Area2D
                 GD.Print("Bad Ingredient entered & Deleted");
 				// QueueFree() function will delete the Node and all its child nodes
 				body.QueueFree();
-                // GameManager.Instance.BadItemEntered();
+                // Set +1 point on LevelOneScore
+                GameManager.Instance.BadItemEntered();
             }
         }
     }

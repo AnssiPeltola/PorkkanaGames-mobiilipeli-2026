@@ -5,7 +5,6 @@ public partial class Ingredient : CharacterBody2D
 {
 	private bool _dragging = false;
 	[Export] private int _clickRadius = 32;
-	// public bool IsInDropZone { get; set; } = false;
 	private Sprite2D _sprite;
 
     public override void _Ready()
@@ -29,7 +28,6 @@ public partial class Ingredient : CharacterBody2D
     }
 
 	// if dragging false does nothing
-	//
 	public override void _PhysicsProcess(double delta)
     {
         if (!_dragging)

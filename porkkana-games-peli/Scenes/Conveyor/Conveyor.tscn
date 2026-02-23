@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://drkpp7gv2i1bq"]
+
+[ext_resource type="Script" uid="uid://37bgtnmqcsja" path="res://Code/Conveyor/Conveyor.cs" id="1_8wonc"]
+[ext_resource type="Texture2D" uid="uid://dqux1cl68qdba" path="res://Art/Examples/conveyor.png" id="1_wrkf0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wonc"]
+size = Vector2(762, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viy2w"]
+size = Vector2(762, 121)
+
+[node name="Conveyor" type="StaticBody2D"]
+z_index = -1
+script = ExtResource("1_8wonc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(128.75, 29.5)
+scale = Vector2(1.509901, 1.951613)
+texture = ExtResource("1_wrkf0")
+
+[node name="DetectionZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
+position = Vector2(128, 29.5)
+shape = SubResource("RectangleShape2D_8wonc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(128, 29.5)
+shape = SubResource("RectangleShape2D_viy2w")
+disabled = true

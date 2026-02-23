@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://i2gmb583eda2"]
+[gd_scene load_steps=10 format=3 uid="uid://i2gmb583eda2"]
 
 [ext_resource type="PackedScene" uid="uid://daduerx6bos7g" path="res://Scenes/Ingredients/Ingredient/Ingredient.tscn" id="1_2ocb1"]
 [ext_resource type="PackedScene" uid="uid://j4hb472lofbn" path="res://Scenes/DropZones/IngredientDropZone/IngredientDropZone.tscn" id="2_orjfg"]
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Conveyor/Conveyor.tscn" id="3_85dct"]
+[ext_resource type="PackedScene" uid="uid://8yyr5bus4jmp" path="res://Scenes/TrashCan/TrashCan.tscn" id="4_r58k2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow6v1"]
 size = Vector2(20, 1093)
@@ -15,6 +16,9 @@ size = Vector2(12, 1112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85dct"]
 size = Vector2(1952, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r58k2"]
+size = Vector2(48, 784.5)
 
 [node name="LevelOne" type="Node2D"]
 
@@ -36,13 +40,24 @@ shape = SubResource("RectangleShape2D_orjfg")
 position = Vector2(956, 1086)
 shape = SubResource("RectangleShape2D_85dct")
 
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(971, 533.75)
+shape = SubResource("RectangleShape2D_r58k2")
+
+[node name="Sprite2D" type="ColorRect" parent="Walls"]
+offset_left = 946.0
+offset_top = 142.0
+offset_right = 996.0
+offset_bottom = 924.0
+color = Color(0, 0, 0, 1)
+
 [node name="Ingredient" parent="." groups=["Good"] instance=ExtResource("1_2ocb1")]
-position = Vector2(237, 230)
+position = Vector2(1495, 584)
 collision_mask = 1
 _clickRadius = 50
 
 [node name="Ingredient2" parent="." groups=["Bad"] instance=ExtResource("1_2ocb1")]
-position = Vector2(549, 236)
+position = Vector2(1568, 367)
 collision_mask = 1
 _clickRadius = 50
 
@@ -50,9 +65,12 @@ _clickRadius = 50
 position = Vector2(295, 476)
 
 [node name="Conveyor" parent="." instance=ExtResource("3_85dct")]
-position = Vector2(889, 41)
+position = Vector2(860, 40)
 
 [node name="Conveyor2" parent="." instance=ExtResource("3_85dct")]
-position = Vector2(1148, 1016)
+position = Vector2(1114, 1032)
 rotation = -3.1415927
 leftToRight = false
+
+[node name="TrashCan" parent="." instance=ExtResource("4_r58k2")]
+position = Vector2(1806, 35)

@@ -28,16 +28,14 @@ public partial class IngredientDropZone : Area2D
             {
                 GD.Print("Good Ingredient entered!");
                 box.ChangeSprite(_greenTexture);
-                // box.IsInDropZone = true;
-                // GameManager.Instance.GoodItemEntered();
+                // Set +1 point on LevelOneScore
+                GameManager.Instance.GoodItemEntered();
             }
 
 			if (box.IsInGroup("Bad"))
             {
                 GD.Print("Bad Ingredient entered!");
                 box.ChangeSprite(_redTexture);
-                // box.IsInDropZone = true;
-                // GameManager.Instance.GoodItemEntered();
             }
         }
     }
@@ -51,16 +49,14 @@ public partial class IngredientDropZone : Area2D
             {
                 GD.Print("Good Ingredient Exited!");
                 box.ChangeSprite(_returnTexture);
-                // box.IsInDropZone = false;
-                // GameManager.Instance.GoodItemExited();
+                // Take point off from LevelOneScore
+                GameManager.Instance.GoodItemExited();
             }
 
 			if (box.IsInGroup("Bad"))
             {
                 GD.Print("Bad Ingredient Exited!");
                 box.ChangeSprite(_returnTexture);
-                // box.IsInDropZone = false;
-                // GameManager.Instance.GoodItemExited();
             }
 		}
     }

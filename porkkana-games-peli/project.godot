@@ -11,12 +11,29 @@ config_version=5
 [application]
 
 config/name="PorkkanaGamesPeli"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.5", "C#", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [dotnet]
 
 project/assembly_name="PorkkanaGamesPeli"
+
+[file_customization]
+
+folder_colors={
+"res://Art/": "red",
+"res://Code/": "orange",
+"res://Scenes/": "purple"
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 

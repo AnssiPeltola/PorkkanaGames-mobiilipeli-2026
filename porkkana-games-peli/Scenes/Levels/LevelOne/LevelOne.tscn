@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://i2gmb583eda2"]
+
+[ext_resource type="PackedScene" uid="uid://daduerx6bos7g" path="res://Scenes/Ingredients/Ingredient/Ingredient.tscn" id="1_2ocb1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow6v1"]
+size = Vector2(20, 1093)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ocb1"]
+size = Vector2(1942, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orjfg"]
+size = Vector2(12, 1112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85dct"]
+size = Vector2(1952, 12)
+
+[node name="LevelOne" type="Node2D"]
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-10, 542)
+shape = SubResource("RectangleShape2D_ow6v1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(951, -10)
+shape = SubResource("RectangleShape2D_2ocb1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1926, 536)
+shape = SubResource("RectangleShape2D_orjfg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(956, 1086)
+shape = SubResource("RectangleShape2D_85dct")
+
+[node name="Ingredient" parent="." instance=ExtResource("1_2ocb1")]
+position = Vector2(237, 230)
+_clickRadius = 50

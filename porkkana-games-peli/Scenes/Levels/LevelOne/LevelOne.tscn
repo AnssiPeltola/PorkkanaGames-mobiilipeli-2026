@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://i2gmb583eda2"]
+[gd_scene load_steps=8 format=3 uid="uid://i2gmb583eda2"]
 
 [ext_resource type="PackedScene" uid="uid://daduerx6bos7g" path="res://Scenes/Ingredients/Ingredient/Ingredient.tscn" id="1_2ocb1"]
 [ext_resource type="PackedScene" uid="uid://j4hb472lofbn" path="res://Scenes/DropZones/IngredientDropZone/IngredientDropZone.tscn" id="2_orjfg"]
+[ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Conveyor/Conveyor.tscn" id="3_85dct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow6v1"]
 size = Vector2(20, 1093)
@@ -47,3 +48,11 @@ _clickRadius = 50
 
 [node name="IngredientDropZone" parent="." instance=ExtResource("2_orjfg")]
 position = Vector2(295, 476)
+
+[node name="Conveyor" parent="." instance=ExtResource("3_85dct")]
+position = Vector2(889, 41)
+
+[node name="Conveyor2" parent="." instance=ExtResource("3_85dct")]
+position = Vector2(1148, 1016)
+rotation = -3.1415927
+leftToRight = false

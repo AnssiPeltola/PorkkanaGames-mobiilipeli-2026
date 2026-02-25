@@ -1,4 +1,6 @@
 using Godot;
+using System;
+using System.Threading.Tasks;
 
 // https://www.youtube.com/watch?v=RS1uqBIVruQ - GODOT - Removing Objects on Collisions
 public partial class TrashCan : Area2D
@@ -9,7 +11,7 @@ public partial class TrashCan : Area2D
         BodyEntered += OnBodyEntered;
     }
 
-    private void OnBodyEntered(Node2D body)
+    private async void OnBodyEntered(Node2D body)
     {
         if (body is Ingredient box)
         {
@@ -17,11 +19,20 @@ public partial class TrashCan : Area2D
             if (box.IsInGroup("Bad"))
             {
                 GD.Print("Bad Ingredient entered & Deleted");
-				// QueueFree() function will delete the Node and all its child nodes
-				body.QueueFree();
+                // Delayed QueueFree();
+                DelayMethod(box);
                 // Set +1 point on LevelOneScore
                 GameManager.Instance.BadItemEntered();
             }
         }
+    }
+
+    // https://forum.godotengine.org/t/create-a-delay-between-code-execution-using-c/12714/5
+    // Delays function by 0.5sec
+    private async void DelayMethod(Ingredient body)
+    {
+        await Task.Delay(TimeSpan.FromMilliseconds(500));
+        // QueueFree() function will delete the Node and all its child nodes
+        body.QueueFree();
     }
 }

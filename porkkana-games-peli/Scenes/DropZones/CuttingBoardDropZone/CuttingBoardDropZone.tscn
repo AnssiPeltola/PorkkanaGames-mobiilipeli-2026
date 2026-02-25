@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://5gldpnqbvait"]
+
+[ext_resource type="Script" uid="uid://05qb1w4a5ad4" path="res://Code/CuttingBoardDropZone/CuttingBoardDropZone.cs" id="1_clu5m"]
+[ext_resource type="Texture2D" uid="uid://b7pukfcugcn6e" path="res://icon-green.svg" id="1_vws3a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clu5m"]
+size = Vector2(281, 280)
+
+[node name="CuttingBoardDropZone" type="Area2D"]
+script = ExtResource("1_clu5m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(79.5, 79.5)
+scale = Vector2(2.2421875, 2.2421875)
+texture = ExtResource("1_vws3a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(79.5, 79)
+shape = SubResource("RectangleShape2D_clu5m")

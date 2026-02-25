@@ -39,6 +39,7 @@ public partial class MiniGameIngredient : CharacterBody2D
 			{
 				OpenMiniGame = true;
 				GD.Print("Open minigame!");
+				_sprite.Hide();
 			}
 		}
     }

@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://lcxdo8gtekt5"]
+
+[ext_resource type="Texture2D" uid="uid://s13ur68visku" path="res://Art/Examples/plate.png" id="1_7upe8"]
+[ext_resource type="Texture2D" uid="uid://cwkt8m6djui35" path="res://Art/Examples/pasta2.png" id="2_pfd2j"]
+[ext_resource type="Texture2D" uid="uid://dx3gnqv5y7tai" path="res://Art/Examples/tomatosauce2.png" id="3_jairv"]
+[ext_resource type="PackedScene" uid="uid://b4gdag3guih2c" path="res://Scenes/Ingredients/CookedIngredient/CookedIngredient.tscn" id="4_pfd2j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy0cf"]
+size = Vector2(20, 1134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqxtk"]
+size = Vector2(1974, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6chg6"]
+size = Vector2(1974, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7upe8"]
+size = Vector2(34, 1120)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tv8hi"]
+radius = 67.97516
+height = 658.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bc7tv"]
+radius = 83.29816
+height = 452.2649
+
+[node name="LevelThree" type="Node2D"]
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-10, 533)
+shape = SubResource("RectangleShape2D_yy0cf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(967, -17)
+shape = SubResource("RectangleShape2D_dqxtk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(967, 1090)
+shape = SubResource("RectangleShape2D_6chg6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1937, 540)
+shape = SubResource("RectangleShape2D_7upe8")
+
+[node name="PlateSprite2D" type="Sprite2D" parent="."]
+position = Vector2(970, 830)
+texture = ExtResource("1_7upe8")
+
+[node name="Pasta" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pasta"]
+modulate = Color(1, 1, 1, 0.4)
+z_index = 1
+position = Vector2(958, 894)
+scale = Vector2(0.8832599, 0.8832599)
+texture = ExtResource("2_pfd2j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pasta"]
+visible = false
+position = Vector2(959.99994, 890.99994)
+rotation = 1.5252686
+shape = SubResource("CapsuleShape2D_tv8hi")
+
+[node name="Sauce" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sauce"]
+modulate = Color(1, 1, 1, 0.4)
+position = Vector2(949, 790)
+scale = Vector2(1.4270834, 1.4270834)
+texture = ExtResource("3_jairv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sauce"]
+position = Vector2(948.99994, 796)
+rotation = 1.4286264
+shape = SubResource("CapsuleShape2D_bc7tv")
+
+[node name="CookedIngredient" parent="." groups=["Pasta"] instance=ExtResource("4_pfd2j")]
+position = Vector2(500.00003, 444)
+_clickRadius = 100
+
+[node name="CookedIngredient2" parent="." groups=["Sauce"] instance=ExtResource("4_pfd2j")]
+position = Vector2(1505, 403)
+_clickRadius = 60

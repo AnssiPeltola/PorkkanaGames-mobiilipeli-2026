@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dai1s2qc0wlyp"]
+
+[ext_resource type="Texture2D" uid="uid://dei20uglmgdvr" path="res://Art/Examples/tomato.png" id="1_a8kbg"]
+[ext_resource type="Script" uid="uid://cpyh7boy57hbo" path="res://Code/FryingIngredient/FryingIngredient.cs" id="1_xos1t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xos1t"]
+radius = 106.49874
+height = 280.78635
+
+[node name="FryingIngredient" type="CharacterBody2D"]
+script = ExtResource("1_xos1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.68733513, 0.6873351)
+texture = ExtResource("1_a8kbg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.9999924, 14.000008)
+rotation = -1.2307255
+shape = SubResource("CapsuleShape2D_xos1t")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -74.0
+offset_top = -169.0
+offset_right = 166.0
+offset_bottom = -142.0
+show_percentage = false

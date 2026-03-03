@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg6qwo337622k"]
+
+[ext_resource type="PackedScene" uid="uid://i4pfuso3kmkb" path="res://Scenes/Fryingpan/Fryingpan.tscn" id="1_l3fkt"]
+[ext_resource type="PackedScene" uid="uid://dai1s2qc0wlyp" path="res://Scenes/Ingredients/FryingIngredient/FryingIngredient.tscn" id="2_x4sxm"]
+
+[node name="FryingTest" type="Node2D"]
+
+[node name="Fryingpan" parent="." instance=ExtResource("1_l3fkt")]
+position = Vector2(1281, 538)
+collision_layer = 3
+collision_mask = 3
+
+[node name="FryingIngredient" parent="." groups=["Chopped"] instance=ExtResource("2_x4sxm")]
+position = Vector2(721, 722)
+
+[node name="FryingIngredient2" parent="." groups=["Chopped"] instance=ExtResource("2_x4sxm")]
+position = Vector2(333, 375)

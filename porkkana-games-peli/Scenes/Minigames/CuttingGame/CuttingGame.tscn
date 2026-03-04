@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1dqboptdej34"]
+
+[ext_resource type="Texture2D" uid="uid://dei20uglmgdvr" path="res://Art/Examples/tomato.png" id="1_53ojq"]
+
+[node name="CuttingGame" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 483.0
+offset_bottom = 351.0
+color = Color(0, 0, 0, 1)
+
+[node name="IngridientSprite" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+position = Vector2(243, 171.00002)
+scale = Vector2(0.579646, 0.57651716)
+texture = ExtResource("1_53ojq")
+
+[node name="CutLinesContainer" type="Node2D" parent="CanvasLayer/ColorRect"]
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 7.0
+offset_right = 371.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 29
+text = "Cuts 0/3"
+horizontal_alignment = 1

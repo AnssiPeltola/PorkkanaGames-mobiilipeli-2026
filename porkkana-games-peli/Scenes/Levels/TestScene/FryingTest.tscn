@@ -9,9 +9,16 @@
 position = Vector2(1281, 538)
 collision_layer = 3
 collision_mask = 3
+CookTime = 2.0
 
-[node name="FryingIngredient" parent="." groups=["Chopped"] instance=ExtResource("2_x4sxm")]
-position = Vector2(721, 722)
+[node name="FryingIngredient" parent="." groups=["Carrot", "Chopped"] instance=ExtResource("2_x4sxm")]
+position = Vector2(774, 687)
+_clickRadius = 50
 
-[node name="FryingIngredient2" parent="." groups=["Chopped"] instance=ExtResource("2_x4sxm")]
-position = Vector2(333, 375)
+[node name="FryingIngredient2" parent="." groups=["Chopped", "Onion"] instance=ExtResource("2_x4sxm")]
+position = Vector2(381, 295)
+_clickRadius = 50
+
+[node name="FryingIngredient3" parent="." groups=["Chopped", "Tomato"] instance=ExtResource("2_x4sxm")]
+position = Vector2(307, 774)
+_clickRadius = 50

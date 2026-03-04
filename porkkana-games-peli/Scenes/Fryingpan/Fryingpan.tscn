@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://i4pfuso3kmkb"]
+[gd_scene load_steps=5 format=3 uid="uid://i4pfuso3kmkb"]
 
 [ext_resource type="Script" uid="uid://bpum0rp1g32wn" path="res://Code/Fryingpan/Fryingpan.cs" id="1_arr23"]
 [ext_resource type="Texture2D" uid="uid://diqbnjtn6mnmy" path="res://Art/Examples/fryingpan.png" id="1_bawww"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_arr23"]
 radius = 153.0294
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arr23"]
+bg_color = Color(2.2140146e-06, 0.72455424, 0.22892708, 1)
 
 [node name="Fryingpan" type="Area2D"]
 script = ExtResource("1_arr23")
@@ -15,3 +18,13 @@ texture = ExtResource("1_bawww")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -105)
 shape = SubResource("CircleShape2D_arr23")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -146.0
+offset_top = -326.0
+offset_right = 146.0
+offset_bottom = -275.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_arr23")
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]

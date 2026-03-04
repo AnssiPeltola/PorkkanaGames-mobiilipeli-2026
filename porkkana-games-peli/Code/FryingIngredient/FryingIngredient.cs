@@ -13,38 +13,55 @@ public partial class FryingIngredient : CharacterBody2D
 
 	private bool _dragging = false;
 	[Export] private int _clickRadius = 32;
-	[Export] private float CookTime = 5f;
+	private Texture2D _tomatoTexture;
+	private Texture2D _onionTexture;
+	private Texture2D _carrotTexture;
+	private CollisionShape2D _tomatoCollision;
+	private CollisionShape2D _onionCollision;
+	private CollisionShape2D _carrotCollision;
 
 	// Init IngredientState. For testing its now Chopped
-	public IngredientState State = IngredientState.Chopped;
-	private Timer _cookTimer;
-	private ProgressBar _progressBar;
+	public IngredientState State { get; set; } = IngredientState.Chopped;
 
 	// When public we can set this as true or false in other code where this object is used
 	public bool IsInDropZone { get; set; } = false;
 	public bool IsInFryingPan { get; set; } = false;
 	public bool OpenMiniGame { get; set; } = false;
 	private Sprite2D _sprite;
-	private Texture2D _sauceTexture;
 
     public override void _Ready()
     {
 		// Load Nodes and textures
         _sprite = GetNode<Sprite2D>("Sprite2D");
-		_cookTimer = GetNode<Timer>("Timer");
-        _progressBar = GetNode<ProgressBar>("ProgressBar");
-		_sauceTexture = GD.Load<Texture2D>("res://Art/Examples/tomatosauce.png");
 
-		// Init _progressBar
-        _progressBar.Visible = false;
-        _progressBar.Value = 0;
-        _progressBar.MaxValue = CookTime;
+		// Load Textures for ingredients
+		_tomatoTexture = GD.Load<Texture2D>("res://Art/Examples/tomato.png");
+		_onionTexture = GD.Load<Texture2D>("res://Art/Examples/onion.png");
+		_carrotTexture = GD.Load<Texture2D>("res://Art/Examples/carrot.png");
 
-		// Init _cookTimer
-        _cookTimer.WaitTime = CookTime;
-        _cookTimer.OneShot = true;
-		// When Ingredient is cooked trigger function OnCookFinished(). Timer's Timeout has signal into our function
-        _cookTimer.Timeout += OnCookFinished;
+		// Load Collisions for ingredients
+		_tomatoCollision = GetNode<CollisionShape2D>("TomatoCollision");
+		_onionCollision = GetNode<CollisionShape2D>("OnionCollision");
+		_carrotCollision = GetNode<CollisionShape2D>("CarrotCollision");
+
+		// Change Sprite2D Texture and Enable CollisionShape2D by group. Collisions in editor is set "Disabled".
+		if (this.IsInGroup("Tomato"))
+		{
+			ChangeSprite(_tomatoTexture);
+			_tomatoCollision.Disabled = false;
+		}
+
+		if (this.IsInGroup("Onion"))
+		{
+			ChangeSprite(_onionTexture);
+			_onionCollision.Disabled = false;
+		}
+
+		if (this.IsInGroup("Carrot"))
+		{
+			ChangeSprite(_carrotTexture);
+			_carrotCollision.Disabled = false;
+		}
     }
 
 	// This function is called for every input event (mouse, keyboard, touch, etc.)
@@ -89,62 +106,6 @@ public partial class FryingIngredient : CharacterBody2D
         MoveAndSlide();
     }
 
-	// Refresh on every frame cooking progressBar when timer is not stopped
-	public override void _Process(double delta)
-    {
-        if (!_cookTimer.IsStopped())
-        {
-            float elapsed = CookTime - (float)_cookTimer.TimeLeft;
-            _progressBar.Value = elapsed;
-        }
-    }
-
-	// Start cooking Ingredient that is in State Chopped, if not return.
-	public void StartCooking()
-    {
-        if (State != IngredientState.Chopped)
-		{
-            return;
-		}
-
-		GD.Print("Start Cooking!");
-        _progressBar.Visible = true;
-        _progressBar.Value = 0;
-        _cookTimer.Start();
-    }
-
-	// Stop cooking and hide progressBar from shown.
-	public void StopCooking()
-	{
-
-		if (State != IngredientState.Chopped)
-		{
-			return;
-		}
-
-		if (!IsInFryingPan)
-		{
-			GD.Print("Stop Cooking!");
-			_progressBar.Visible = false;
-			_progressBar.Value = 0;
-
-			_cookTimer.Stop();
-		}
-	}
-
-	// When cooking is done set State to Cooked
-	private void OnCookFinished()
-    {
-        State = IngredientState.Cooked;
-		RemoveFromGroup("Chopped");
-		AddToGroup("Cooked");
-        _progressBar.Visible = false;
-
-        GD.Print($"{Name} cooked!");
-		ChangeSprite(_sauceTexture);
-		// ChangeCollisionShape2D here too?
-    }
-
 	// Use after minigame is completed?
     public void Chop()
     {
@@ -153,6 +114,13 @@ public partial class FryingIngredient : CharacterBody2D
         RemoveFromGroup("Raw");
         AddToGroup("Chopped");
     }
+
+	public void changeStateCooked()
+	{
+		State = IngredientState.Cooked;
+		RemoveFromGroup("Chopped");
+		AddToGroup("Cooked");
+	}
 
 	// Function that changes this scenes Sprite2D texture to new
 	public void ChangeSprite(Texture2D newTexture)

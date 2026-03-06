@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg6qwo337622k"]
+[gd_scene load_steps=5 format=3 uid="uid://cg6qwo337622k"]
 
 [ext_resource type="PackedScene" uid="uid://i4pfuso3kmkb" path="res://Scenes/Fryingpan/Fryingpan.tscn" id="1_l3fkt"]
 [ext_resource type="PackedScene" uid="uid://dai1s2qc0wlyp" path="res://Scenes/Ingredients/FryingIngredient/FryingIngredient.tscn" id="2_x4sxm"]
+[ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Guidebook/Guidebook.tscn" id="3_agrub"]
+[ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="4_ualp8"]
 
 [node name="FryingTest" type="Node2D"]
 
@@ -22,3 +24,15 @@ _clickRadius = 50
 [node name="FryingIngredient3" parent="." groups=["Chopped", "Tomato"] instance=ExtResource("2_x4sxm")]
 position = Vector2(307, 774)
 _clickRadius = 50
+
+[node name="Guidebook" parent="." instance=ExtResource("3_agrub")]
+offset_left = 1006.0
+offset_top = 355.0
+offset_right = 1006.0
+offset_bottom = 355.0
+
+[node name="ShowGuidebookButton" parent="." instance=ExtResource("4_ualp8")]
+offset_left = 1742.0
+offset_top = 956.0
+offset_right = 1794.0
+offset_bottom = 1003.0

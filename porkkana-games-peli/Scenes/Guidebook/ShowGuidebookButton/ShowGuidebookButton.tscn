@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl0on7ceiu6rk"]
+
+[ext_resource type="Texture2D" uid="uid://cckevvvi0b6s6" path="res://Art/Examples/openguidebutton.png" id="1_50vwi"]
+[ext_resource type="Script" uid="uid://qvk6bwx4xrny" path="res://Code/Guidebook/OpenGuideBookButton/ShowGuidebookButton.cs" id="2_abtm2"]
+
+[node name="ShowGuidebookButton" type="Button"]
+icon = ExtResource("1_50vwi")
+flat = true
+script = ExtResource("2_abtm2")

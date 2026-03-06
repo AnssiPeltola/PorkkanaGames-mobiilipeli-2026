@@ -1,0 +1,51 @@
+using Godot;
+using System;
+
+public partial class CuttingMiniGame : Node2D
+{
+	[Signal] public delegate void CuttingCompleteEventHandler();
+
+	[Export] public int RequiredCuts = 3;
+
+	private int _cutsDone = 0;
+
+	// Swipe tracking
+	private bool _isSwiping = false;
+	private Vector2 _swipeStart = Vector2.Zero;
+	private Vector2 _swipeEnd = Vector2.Zero;
+
+
+	public override void _Input(InputEvent e)
+	{
+		if (e is InputEventScreenTouch touch && touch.Pressed)
+		{
+			RegisterCut();
+		}
+	}
+
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	public override void _Process(double delta)
+	{
+	}
+
+	private void RegisterCut()
+	{
+		_cutsDone++;
+
+		if (_cutsDone >= RequiredCuts)
+			// Run the FinishMinigame() to signal MiniGameIngridient
+			// the CuttingMiniGame should be closed.
+			FinishMinigame();
+	}
+	
+	private void FinishMinigame()
+	{
+		EmitSignal(SignalName.CuttingComplete);
+	}
+
+}

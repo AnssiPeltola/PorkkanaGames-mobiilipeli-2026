@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhr0q3ngpwnha"]
+[gd_scene load_steps=5 format=3 uid="uid://bhr0q3ngpwnha"]
 
 [ext_resource type="PackedScene" uid="uid://5gldpnqbvait" path="res://Scenes/DropZones/CuttingBoardDropZone/CuttingBoardDropZone.tscn" id="1_m4kgg"]
 [ext_resource type="PackedScene" uid="uid://cmvra3f77wulv" path="res://Scenes/Ingredients/MiniGameIngredient/MiniGameIngredient.tscn" id="2_dnr1v"]
+[ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/Minigames/CuttingGame/CuttingMiniGame.tscn" id="3_dnr1v"]
+[ext_resource type="Texture2D" uid="uid://d08knf32j6ipu" path="res://Art/Examples/tomatosauce.png" id="3_mihhe"]
 
 [node name="MiniGameTest" type="Node2D"]
 
@@ -9,4 +11,6 @@
 position = Vector2(296, 310)
 
 [node name="MiniGameIngredient" parent="." instance=ExtResource("2_dnr1v")]
-position = Vector2(876, 402)
+position = Vector2(994, 383)
+ChoppedSprite = ExtResource("3_mihhe")
+_cuttingMiniGameScene = ExtResource("3_dnr1v")

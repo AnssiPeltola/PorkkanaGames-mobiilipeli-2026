@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1dqboptdej34"]
+[gd_scene load_steps=3 format=3 uid="uid://b1dqboptdej34"]
 
+[ext_resource type="Script" uid="uid://cvev4w4acutd7" path="res://Code/CuttingMiniGame/CuttingMiniGame.cs" id="1_7vvnq"]
 [ext_resource type="Texture2D" uid="uid://dei20uglmgdvr" path="res://Art/Examples/tomato.png" id="1_53ojq"]
 
-[node name="CuttingGame" type="Node2D"]
+[node name="CuttingMiniGame" type="Node2D"]
+script = ExtResource("1_7vvnq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

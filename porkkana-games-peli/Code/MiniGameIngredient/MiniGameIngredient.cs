@@ -12,7 +12,7 @@ public partial class MiniGameIngredient : CharacterBody2D
 	
 	// PackedScene = .tscn type
 	// We can now assign .tscn scenes to _CuttingMiniGameScene
-	// Reason: i think we might ahve to do multiple cuttingGames per ingridient
+	// Consider: we might have to do individual cuttingGames per ingridient
 	[Export] private PackedScene _cuttingMiniGameScene;
 
 
@@ -110,7 +110,11 @@ public partial class MiniGameIngredient : CharacterBody2D
 		// Reset _activeMiniGame back to null
 		_activeMiniGame = null;
 
-		// Change the current spite to another IE (CHopped tomatoes) 
+		// TODO: 
+		// Currently: Change the sprite for something else
+		// Consider: Swap the entire MiniGame Node for another.
+		// NEW: ChoppedTomatoes node
+		// Also prevents minigame from opening again
 		_sprite.Texture = ChoppedSprite;
 		_sprite.Show();
 

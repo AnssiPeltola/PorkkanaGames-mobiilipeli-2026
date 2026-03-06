@@ -3,6 +3,9 @@ using System;
 
 public partial class CuttingMiniGame : Node2D
 {
+	// Signals:
+	// https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html 
+	// -> Custom signals
 	[Signal] public delegate void CuttingCompleteEventHandler();
 
 	[Export] public int RequiredCuts = 3;
@@ -15,6 +18,8 @@ public partial class CuttingMiniGame : Node2D
 	private Vector2 _swipeEnd = Vector2.Zero;
 
 
+	// TEMP:
+	// Placeholder for testing untill the Cut logic is in
 	public override void _Input(InputEvent e)
 	{
 		if (e is InputEventScreenTouch touch && touch.Pressed)

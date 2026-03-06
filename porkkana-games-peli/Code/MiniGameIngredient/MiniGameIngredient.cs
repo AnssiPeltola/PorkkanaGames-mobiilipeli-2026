@@ -20,7 +20,6 @@ public partial class MiniGameIngredient : CharacterBody2D
 	public bool IsInDropZone { get; set; } = false;
 	public bool OpenMiniGame { get; set; } = false;
 
-	// Reference to the active minigame instance
 	private CuttingMiniGame _activeMiniGame = null;
 
 	private Sprite2D _sprite;
@@ -82,6 +81,7 @@ public partial class MiniGameIngredient : CharacterBody2D
 			return;
 		}
 		
+		// 
 		_activeMiniGame = _cuttingMiniGameScene.Instantiate<CuttingMiniGame>();
 		
 		// Breakdown:
@@ -92,7 +92,6 @@ public partial class MiniGameIngredient : CharacterBody2D
 			.AddChild(_activeMiniGame)			→ attach minigame to it
 		*/
 		GetTree().Root.GetChild(GetTree().Root.GetChildCount() - 1).AddChild(_activeMiniGame);
-		
 		
 		// Start listening for a signal from _activeMinigame called CuttingCompplete.
 		// When signal is received run OnCuttingComplete();

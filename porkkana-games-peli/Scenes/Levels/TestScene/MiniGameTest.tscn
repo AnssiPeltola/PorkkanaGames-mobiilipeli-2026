@@ -8,9 +8,9 @@
 [node name="MiniGameTest" type="Node2D"]
 
 [node name="CuttingBoardDropZone" parent="." instance=ExtResource("1_m4kgg")]
-position = Vector2(296, 310)
+position = Vector2(275, 439)
 
 [node name="MiniGameIngredient" parent="." instance=ExtResource("2_dnr1v")]
-position = Vector2(994, 383)
+position = Vector2(917, 505)
 ChoppedSprite = ExtResource("3_mihhe")
 _cuttingMiniGameScene = ExtResource("3_dnr1v")

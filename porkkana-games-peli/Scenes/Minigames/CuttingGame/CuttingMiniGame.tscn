@@ -4,14 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://dei20uglmgdvr" path="res://Art/Examples/tomato.png" id="1_53ojq"]
 
 [node name="CuttingMiniGame" type="Node2D"]
+position = Vector2(203, 318)
 script = ExtResource("1_7vvnq")
+metadata/_edit_group_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_right = 483.0
-offset_bottom = 351.0
+offset_left = 203.0
+offset_top = 318.0
+offset_right = 686.0
+offset_bottom = 669.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
 
 [node name="IngridientSprite" type="Sprite2D" parent="CanvasLayer/ColorRect"]
 position = Vector2(243, 171.00002)
@@ -29,3 +35,4 @@ offset_bottom = 62.0
 theme_override_font_sizes/font_size = 29
 text = "Cuts 0/3"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

@@ -20,6 +20,12 @@ public partial class CuttingMiniGame : Node2D
 
 	// TEMP:
 	// Placeholder for testing untill the Cut logic is in
+	/*
+		TODO:
+		Cut logic for vectors. 
+		Get positions from Start cut / End cut
+		Record the vector and check validations does it count
+	*/
 	public override void _Input(InputEvent e)
 	{
 		if (e is InputEventScreenTouch touch && touch.Pressed)
@@ -28,8 +34,6 @@ public partial class CuttingMiniGame : Node2D
 		}
 	}
 
-
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 	}

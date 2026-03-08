@@ -16,8 +16,8 @@ public partial class CookedIngredient : CharacterBody2D
         _sprite = GetNode<Sprite2D>("Sprite2D");
 
 		// Pasta and sauce Sprite2D Load
-		_pastaTexture = GD.Load<Texture2D>("res://Art/Examples/pasta.png");
-		_sauceTexture = GD.Load<Texture2D>("res://Art/Examples/tomatosauce.png");
+		_pastaTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/pasta.png");
+		_sauceTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomatosauce.png");
 
 		_pastaCollision = GetNode<CollisionShape2D>("PastaCollision");
 		_sauceCollision = GetNode<CollisionShape2D>("SauceCollision");

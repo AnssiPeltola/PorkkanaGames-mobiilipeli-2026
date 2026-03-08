@@ -14,9 +14,9 @@ public partial class IngredientDropZone : Area2D
         BodyExited += OnBodyExited;
 
         // Loads the path of new texture into variables
-        _greenTexture = GD.Load<Texture2D>("res://icon-green.svg");
-		_redTexture = GD.Load<Texture2D>("res://icon-red.svg");
-        _returnTexture = GD.Load<Texture2D>("res://icon.svg");
+        _greenTexture = GD.Load<Texture2D>("res://Art/icon-green.svg");
+		_redTexture = GD.Load<Texture2D>("res://Art/icon-red.svg");
+        _returnTexture = GD.Load<Texture2D>("res://Art/icon.svg");
     }
 
 	// When Object Ingredient enters this DropZone it will either turn Ingredients Sprite2D into green (when good) or red (when bad) and print info into console.

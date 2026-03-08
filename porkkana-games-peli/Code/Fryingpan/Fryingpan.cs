@@ -19,9 +19,9 @@ public partial class Fryingpan : Area2D
         _sprite = GetNode<Sprite2D>("Sprite2D");
 
         // Load textures for different state of frying pan
-        _onionFryingpan = GD.Load<Texture2D>("res://Art/Examples/fryingpan2.png");
-        _carrotFryingpan = GD.Load<Texture2D>("res://Art/Examples/fryingpan3.png");
-        _tomatoFryingpan = GD.Load<Texture2D>("res://Art/Examples/fryingpan4.png");
+        _onionFryingpan = GD.Load<Texture2D>("res://Art/Assets/Equipment/Frying Pan/fryingpan2.png");
+        _carrotFryingpan = GD.Load<Texture2D>("res://Art/Assets/Equipment/Frying Pan/fryingpan3.png");
+        _tomatoFryingpan = GD.Load<Texture2D>("res://Art/Assets/Equipment/Frying Pan/fryingpan4.png");
 
         // Timer and progressBar
         _cookTimer = GetNode<Timer>("Timer");

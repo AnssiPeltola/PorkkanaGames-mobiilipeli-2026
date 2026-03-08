@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://lcxdo8gtekt5"]
 
-[ext_resource type="Texture2D" uid="uid://s13ur68visku" path="res://Art/Examples/plate.png" id="1_7upe8"]
-[ext_resource type="Texture2D" uid="uid://cwkt8m6djui35" path="res://Art/Examples/pasta2.png" id="2_pfd2j"]
-[ext_resource type="Texture2D" uid="uid://dx3gnqv5y7tai" path="res://Art/Examples/tomatosauce2.png" id="3_jairv"]
-[ext_resource type="PackedScene" uid="uid://b4gdag3guih2c" path="res://Scenes/Ingredients/CookedIngredient/CookedIngredient.tscn" id="4_pfd2j"]
+[ext_resource type="Texture2D" uid="uid://s13ur68visku" path="res://Art/Assets/Equipment/Plates/plate.png" id="1_7upe8"]
+[ext_resource type="Texture2D" uid="uid://cwkt8m6djui35" path="res://Art/Assets/Ingridients/Pasta/pasta2.png" id="2_pfd2j"]
+[ext_resource type="Texture2D" uid="uid://dx3gnqv5y7tai" path="res://Art/Assets/Ingridients/Tomato/tomatosauce2.png" id="3_jairv"]
+[ext_resource type="PackedScene" uid="uid://b4gdag3guih2c" path="res://Scenes/Assets/Ingredients/CookedIngredient/CookedIngredient.tscn" id="4_pfd2j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy0cf"]
 size = Vector2(20, 1134)

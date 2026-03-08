@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://btmd543utu0qk"]
+
+[ext_resource type="Script" uid="uid://cm0v0n7kbnvtm" path="res://Code/MiniGameIngredient/MiniGameIngredient.cs" id="1_drid6"]
+[ext_resource type="Texture2D" uid="uid://d08knf32j6ipu" path="res://Art/Assets/Ingridients/Tomato/tomatosauce.png" id="2_keerq"]
+[ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/Minigames/CuttingGame/CuttingMiniGame.tscn" id="3_dtl3h"]
+[ext_resource type="Texture2D" uid="uid://dei20uglmgdvr" path="res://Art/Assets/Ingridients/Tomato/tomato.png" id="3_wx06o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dtl3h"]
+radius = 97.0
+height = 291.92264
+
+[node name="MiniGameIngredient" type="CharacterBody2D"]
+script = ExtResource("1_drid6")
+ChoppedSprite = ExtResource("2_keerq")
+_cuttingMiniGameScene = ExtResource("3_dtl3h")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_wx06o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.0000153, 20)
+rotation = -1.3089969
+shape = SubResource("CapsuleShape2D_dtl3h")

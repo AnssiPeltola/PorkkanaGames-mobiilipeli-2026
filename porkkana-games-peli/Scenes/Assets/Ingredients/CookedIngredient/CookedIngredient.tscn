@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4gdag3guih2c"]
+
+[ext_resource type="Script" uid="uid://4rqluk1fa327" path="res://Code/CookedIngredient/CookedIngredient.cs" id="1_o3xcu"]
+[ext_resource type="Texture2D" uid="uid://cotrqf3p02xqc" path="res://Art/Assets/Ingridients/Pasta/pasta.png" id="2_fngc5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljula"]
+radius = 60.074898
+height = 590.3512
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o3xcu"]
+radius = 53.080956
+height = 276.43835
+
+[node name="CookedIngredient" type="CharacterBody2D"]
+rotation = 0.0008367311
+script = ExtResource("1_o3xcu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.86534226, 0.86534226)
+texture = ExtResource("2_fngc5")
+
+[node name="PastaCollision" type="CollisionShape2D" parent="."]
+position = Vector2(10.004181, 4.9916315)
+rotation = 1.518563
+shape = SubResource("CapsuleShape2D_ljula")
+disabled = true
+
+[node name="SauceCollision" type="CollisionShape2D" parent="."]
+position = Vector2(3.0083313, 9.997467)
+rotation = 1.5255076
+shape = SubResource("CapsuleShape2D_o3xcu")
+disabled = true

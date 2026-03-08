@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dai1s2qc0wlyp"]
+
+[ext_resource type="Script" uid="uid://cpyh7boy57hbo" path="res://Code/FryingIngredient/FryingIngredient.cs" id="1_xos1t"]
+[ext_resource type="Texture2D" uid="uid://d3do5n0be5ryc" path="res://Art/Assets/Ingridients/Onion/onion.png" id="2_xos1t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xos1t"]
+radius = 106.49874
+height = 280.78635
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6yfte"]
+radius = 123.782715
+height = 373.6061
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6e6v"]
+radius = 53.0
+height = 360.51178
+
+[node name="FryingIngredient" type="CharacterBody2D"]
+script = ExtResource("1_xos1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.1017904, 1.1017904)
+texture = ExtResource("2_xos1t")
+
+[node name="TomatoCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.9999924, 14.000008)
+rotation = -1.2307255
+shape = SubResource("CapsuleShape2D_xos1t")
+disabled = true
+
+[node name="OnionCollision" type="CollisionShape2D" parent="."]
+position = Vector2(1.9999998, 38)
+rotation = 1.4438598
+shape = SubResource("CapsuleShape2D_6yfte")
+disabled = true
+
+[node name="CarrotCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-34, 21)
+rotation = 0.89377093
+shape = SubResource("CapsuleShape2D_f6e6v")
+disabled = true

@@ -3,18 +3,28 @@ using System;
 
 public partial class CuttingMiniGame : Node2D
 {
+	// Ingridient texture can be received and stored to memory
+	public Texture2D IngridientTexture { get; set; }
+	
+	// Declaration for the picture frame
+	private Sprite2D _ingridientSprite;
+
+	
 	// Signals:
 	// https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html 
 	// -> Custom signals
 	[Signal] public delegate void CuttingCompleteEventHandler();
 
 	[Export] public int RequiredCuts = 3;
-
+	
 	private int _cutsDone = 0;
 
 	// Swipe tracking
 	private bool _isSwiping = false;
+	// Stored first touch position
+	// Vector2.Zero = (0,0) vector
 	private Vector2 _swipeStart = Vector2.Zero;
+	// Stored last touch position
 	private Vector2 _swipeEnd = Vector2.Zero;
 
 
@@ -25,6 +35,10 @@ public partial class CuttingMiniGame : Node2D
 		Cut logic for vectors. 
 		Get positions from Start cut / End cut
 		Record the vector and check validations does it count
+		
+		TODO: NOTE
+		Cut game will now display different sprite2d's
+		Consider, they might be different sizes.
 	*/
 	public override void _Input(InputEvent e)
 	{
@@ -32,10 +46,23 @@ public partial class CuttingMiniGame : Node2D
 		{
 			RegisterCut();
 		}
+		
+		/*
+		TODO:
+		Actual swipe vectors
+		
+		Something along the lines of:
+		_swipeStart = GetTouchPosition();
+		attemptedCut = _swipeEnd - _swipeStart
+		*/
 	}
 
 	public override void _Ready()
 	{
+		// Set the texture for the ingrident on display for IngridientSprite
+		_ingridientSprite = GetNode<Sprite2D>("CanvasLayer/ColorRect/IngridientSprite");
+		if (IngridientTexture != null)
+			_ingridientSprite.Texture = IngridientTexture;
 	}
 
 	public override void _Process(double delta)

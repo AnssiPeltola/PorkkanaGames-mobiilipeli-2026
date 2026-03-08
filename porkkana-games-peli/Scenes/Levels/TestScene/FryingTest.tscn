@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cg6qwo337622k"]
 
-[ext_resource type="PackedScene" uid="uid://i4pfuso3kmkb" path="res://Scenes/Fryingpan/Fryingpan.tscn" id="1_l3fkt"]
-[ext_resource type="PackedScene" uid="uid://dai1s2qc0wlyp" path="res://Scenes/Ingredients/FryingIngredient/FryingIngredient.tscn" id="2_x4sxm"]
-[ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Guidebook/Guidebook.tscn" id="3_agrub"]
-[ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="4_ualp8"]
+[ext_resource type="PackedScene" uid="uid://i4pfuso3kmkb" path="res://Scenes/Assets/Equipment/Fryingpan/Fryingpan.tscn" id="1_l3fkt"]
+[ext_resource type="PackedScene" uid="uid://dai1s2qc0wlyp" path="res://Scenes/Assets/Ingredients/FryingIngredient/FryingIngredient.tscn" id="2_x4sxm"]
+[ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="3_agrub"]
+[ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="4_ualp8"]
 
 [node name="FryingTest" type="Node2D"]
 

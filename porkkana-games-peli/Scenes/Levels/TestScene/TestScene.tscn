@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b67cbnymevk2a"]
 
-[ext_resource type="Texture2D" uid="uid://2squjyekb58b" path="res://Art/Examples/roska.png" id="1_l4cgf"]
+[ext_resource type="Texture2D" uid="uid://2squjyekb58b" path="res://Art/Assets/Equipment/GarbageCan/roska.png" id="1_l4cgf"]
 
 [node name="TestScene" type="Node2D"]
 

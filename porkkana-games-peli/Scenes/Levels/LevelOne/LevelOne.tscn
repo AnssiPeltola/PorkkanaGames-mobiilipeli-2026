@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://i2gmb583eda2"]
 
-[ext_resource type="PackedScene" uid="uid://daduerx6bos7g" path="res://Scenes/Ingredients/Ingredient/Ingredient.tscn" id="1_2ocb1"]
-[ext_resource type="PackedScene" uid="uid://j4hb472lofbn" path="res://Scenes/DropZones/IngredientDropZone/IngredientDropZone.tscn" id="2_orjfg"]
-[ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Conveyor/Conveyor.tscn" id="3_85dct"]
-[ext_resource type="PackedScene" uid="uid://8yyr5bus4jmp" path="res://Scenes/TrashCan/TrashCan.tscn" id="4_r58k2"]
+[ext_resource type="PackedScene" uid="uid://daduerx6bos7g" path="res://Scenes/Assets/Ingredients/Ingredient.tscn" id="1_2ocb1"]
+[ext_resource type="PackedScene" uid="uid://j4hb472lofbn" path="res://Scenes/Assets/Equipment/DropZones/IngredientDropZone/IngredientDropZone.tscn" id="2_orjfg"]
+[ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="3_85dct"]
+[ext_resource type="PackedScene" uid="uid://8yyr5bus4jmp" path="res://Scenes/Assets/Equipment/TrashCan/TrashCan.tscn" id="4_r58k2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow6v1"]
 size = Vector2(20, 1093)

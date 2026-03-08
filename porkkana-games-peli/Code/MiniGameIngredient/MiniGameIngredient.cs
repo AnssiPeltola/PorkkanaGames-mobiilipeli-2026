@@ -10,6 +10,7 @@ public partial class MiniGameIngredient : CharacterBody2D
 
 	[Export] public Texture2D ChoppedSprite;
 	
+	
 	// PackedScene = .tscn type
 	// We can now assign .tscn scenes to _CuttingMiniGameScene
 	// Consider: we might have to do individual cuttingGames per ingridient
@@ -84,7 +85,10 @@ public partial class MiniGameIngredient : CharacterBody2D
 		// 
 		_activeMiniGame = _cuttingMiniGameScene.Instantiate<CuttingMiniGame>();
 		
-		// Breakdown:
+		// Read the current texture and send it to _activeMiniGame
+		_activeMiniGame.IngridientTexture = _sprite.Texture;
+		
+		// Breakdown:		Help from AI.
 		/*
 			.GetTree().Root						→ get the Root node
 			.GetChildCount() - 1				→ count how many children it has, subtract 1
@@ -109,17 +113,18 @@ public partial class MiniGameIngredient : CharacterBody2D
 		// Reset _activeMiniGame back to null
 		_activeMiniGame = null;
 
-		// TODO: 
-		// Currently: Change the sprite for something else
-		// Consider: Swap the entire MiniGame Node for another.
-		// NEW: ChoppedTomatoes node
-		// Also prevents minigame from opening again
+		/* TODO: 
+			Currently: Change the sprite for something else
+			Consider: Swap the entire MiniGameIngridient node for another
+			Ingridient node "example: IngridientToCook"
+			Also prevents multiple cutting games per ingridient
+		*/
 		_sprite.Texture = ChoppedSprite;
 		_sprite.Show();
 
 
-		// TODO
-		// Inform GameManager the ingridient is ready etc
-		// Change the sprite OR NODE to cookedIngrieint or change the sprite
+		/*TODO:
+			Inform "GameManager" that ingridient has been cut etc.
+		*/
 	}
 }

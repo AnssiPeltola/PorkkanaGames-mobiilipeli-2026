@@ -35,9 +35,9 @@ public partial class FryingIngredient : CharacterBody2D
         _sprite = GetNode<Sprite2D>("Sprite2D");
 
 		// Load Textures for ingredients
-		_tomatoTexture = GD.Load<Texture2D>("res://Art/Examples/tomato.png");
-		_onionTexture = GD.Load<Texture2D>("res://Art/Examples/onion.png");
-		_carrotTexture = GD.Load<Texture2D>("res://Art/Examples/carrot.png");
+		_tomatoTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomato.png");
+		_onionTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Onion/onion.png");
+		_carrotTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Carrot/carrot.png");
 
 		// Load Collisions for ingredients
 		_tomatoCollision = GetNode<CollisionShape2D>("TomatoCollision");

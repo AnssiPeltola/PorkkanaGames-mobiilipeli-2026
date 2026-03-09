@@ -13,4 +13,4 @@ position = Vector2(275, 439)
 position = Vector2(957, 738)
 
 [node name="MiniGameIngredient3" parent="." instance=ExtResource("3_dnr1v")]
-position = Vector2(956, 300)
+position = Vector2(713, 408)

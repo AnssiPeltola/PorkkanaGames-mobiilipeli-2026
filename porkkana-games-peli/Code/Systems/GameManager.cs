@@ -58,7 +58,7 @@ public partial class GameManager : Node
 		GD.Print("Current health: ", Health);
 		if (Health == 0)
 		{
-            GD.Print("You are dead!");
+			GD.Print("You are dead!");
 			Die();
 		}
 	}

@@ -100,7 +100,6 @@ public partial class MiniGameIngredient : CharacterBody2D
 		// Start listening for a signal from _activeMinigame called CuttingCompplete.
 		// When signal is received run OnCuttingComplete();
 		// TODO:
-		// Check if you need to unsubscribe form the signal
 		_activeMiniGame.CuttingComplete += OnCuttingComplete;
 
 		GD.Print("CuttingMiniGame started.");
@@ -110,13 +109,11 @@ public partial class MiniGameIngredient : CharacterBody2D
 	{
 		GD.Print("Ingredient chopped!");
 		// Close and destroy the running minigame
+		// Also unsubscribes the signals!
 		_activeMiniGame.QueueFree();
 
 		// Reset _activeMiniGame back to null
 		_activeMiniGame = null;
-
-        // unsubscribe from Signal
-		_activeMiniGame.CuttingComplete -= OnCuttingComplete;
 
 
 		/* TODO: 

@@ -37,6 +37,8 @@ public partial class GameManager : Node
 	[Export] public int RequiredGoodItems = 2;
 	[Export] public int RequiredBadItems = 1;
 
+    public int Health = 100;
+
 	public int LevelOneScore
 	{
 		get { return _levelOneScore; }
@@ -49,6 +51,12 @@ public partial class GameManager : Node
 	}
 
 	#endregion
+
+    public void LoseHealth()
+    {
+        Health--;
+        GD.Print("Current health: ", Health);
+    }
 
 	// Set +1 point on LevelOneScore
 	public void GoodItemEntered()

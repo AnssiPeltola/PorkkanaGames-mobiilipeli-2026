@@ -32,7 +32,7 @@ public partial class CuttingMiniGame : Node2D
 	// Placeholder for testing untill the Cut logic is in
 	/*
 		TODO:
-		Cut logic for vectors. 
+		Cut logic using vectors. 
 		Get positions from Start cut / End cut
 		Record the vector and check validations does it count
 		
@@ -53,13 +53,13 @@ public partial class CuttingMiniGame : Node2D
 		
 		Something along the lines of:
 		_swipeStart = GetTouchPosition();
-		attemptedCut = _swipeEnd - _swipeStart
+		RegisterCut(_swipeStart, _swipeEnd);
 		*/
 	}
 
 	public override void _Ready()
 	{
-		// Set the texture for the ingrident on display for IngridientSprite
+		// Set the texture for the ingrident on display to IngridientSprite
 		_ingridientSprite = GetNode<Sprite2D>("CanvasLayer/ColorRect/IngridientSprite");
 		if (IngridientTexture != null)
 			_ingridientSprite.Texture = IngridientTexture;

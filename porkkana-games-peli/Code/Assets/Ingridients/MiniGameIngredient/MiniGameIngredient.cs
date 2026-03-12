@@ -97,9 +97,8 @@ public partial class MiniGameIngredient : CharacterBody2D
 		*/
 		GetTree().Root.GetChild(GetTree().Root.GetChildCount() - 1).AddChild(_activeMiniGame);
 		
-		// Start listening for a signal from _activeMinigame called CuttingCompplete.
+		// Subscribe for a signal from _activeMinigame called CuttingCompplete.
 		// When signal is received run OnCuttingComplete();
-		// TODO:
 		_activeMiniGame.CuttingComplete += OnCuttingComplete;
 
 		GD.Print("CuttingMiniGame started.");
@@ -108,7 +107,7 @@ public partial class MiniGameIngredient : CharacterBody2D
 	private void OnCuttingComplete()
 	{
 		GD.Print("Ingredient chopped!");
-		// Close and destroy the running minigame
+		// Close the running minigame
 		// Also unsubscribes the signals!
 		_activeMiniGame.QueueFree();
 

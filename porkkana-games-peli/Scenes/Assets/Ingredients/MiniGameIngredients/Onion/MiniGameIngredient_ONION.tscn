@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://pvjug3j3e8lj"]
 
-[ext_resource type="Script" uid="uid://cm0v0n7kbnvtm" path="res://Code/MiniGameIngredient/MiniGameIngredient.cs" id="1_558ih"]
+[ext_resource type="Script" uid="uid://cm0v0n7kbnvtm" path="res://Code/Assets/Ingridients/MiniGameIngredient/MiniGameIngredient.cs" id="1_558ih"]
 [ext_resource type="Texture2D" uid="uid://d08knf32j6ipu" path="res://Art/Assets/Ingridients/Tomato/tomatosauce.png" id="2_gp2tr"]
 [ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/Minigames/CuttingGame/CuttingMiniGame.tscn" id="3_j2u48"]
 [ext_resource type="Texture2D" uid="uid://d3do5n0be5ryc" path="res://Art/Assets/Ingridients/Onion/onion.png" id="4_onim2"]

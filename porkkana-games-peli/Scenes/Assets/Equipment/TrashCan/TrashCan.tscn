@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://8yyr5bus4jmp"]
 
-[ext_resource type="Script" uid="uid://s255ox6r2ldl" path="res://Code/TrashCan/TrashCan.cs" id="1_b3rhl"]
+[ext_resource type="Script" uid="uid://s255ox6r2ldl" path="res://Code/Assets/Equipment/TrashCan/TrashCan.cs" id="1_b3rhl"]
 [ext_resource type="Texture2D" uid="uid://2squjyekb58b" path="res://Art/Assets/Equipment/GarbageCan/roska.png" id="2_8lub5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnk72"]

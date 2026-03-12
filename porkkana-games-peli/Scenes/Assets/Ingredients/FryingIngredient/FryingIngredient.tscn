@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dai1s2qc0wlyp"]
 
-[ext_resource type="Script" uid="uid://cpyh7boy57hbo" path="res://Code/FryingIngredient/FryingIngredient.cs" id="1_xos1t"]
+[ext_resource type="Script" uid="uid://cpyh7boy57hbo" path="res://Code/Assets/Ingridients/FryingIngredient/FryingIngredient.cs" id="1_xos1t"]
 [ext_resource type="Texture2D" uid="uid://d3do5n0be5ryc" path="res://Art/Assets/Ingridients/Onion/onion.png" id="2_xos1t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xos1t"]

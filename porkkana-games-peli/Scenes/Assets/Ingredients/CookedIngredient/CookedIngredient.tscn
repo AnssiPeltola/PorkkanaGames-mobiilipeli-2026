@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b4gdag3guih2c"]
 
-[ext_resource type="Script" uid="uid://4rqluk1fa327" path="res://Code/CookedIngredient/CookedIngredient.cs" id="1_o3xcu"]
+[ext_resource type="Script" uid="uid://4rqluk1fa327" path="res://Code/Assets/Ingridients/CookedIngredient/CookedIngredient.cs" id="1_o3xcu"]
 [ext_resource type="Texture2D" uid="uid://cotrqf3p02xqc" path="res://Art/Assets/Ingridients/Pasta/pasta.png" id="2_fngc5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljula"]

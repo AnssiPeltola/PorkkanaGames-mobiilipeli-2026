@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bciqqwjfrju31"]
 
 [ext_resource type="Texture2D" uid="uid://be1ihgvfmiuy7" path="res://Art/Assets/RecipeBook/recipebook.png" id="1_vb3te"]
-[ext_resource type="Script" uid="uid://da1qarw0l2orp" path="res://Code/Guidebook/Guidebook/Guidebook.cs" id="1_wdjud"]
+[ext_resource type="Script" uid="uid://da1qarw0l2orp" path="res://Code/Assets/Equipment/Guidebook/Guidebook/Guidebook.cs" id="1_wdjud"]
 [ext_resource type="Texture2D" uid="uid://c1rpkormdiagb" path="res://Art/Assets/RecipeBook/closebutton.png" id="2_pki2r"]
-[ext_resource type="Script" uid="uid://rotv6n8fda5a" path="res://Code/Guidebook/ExitButton/ExitButton.cs" id="3_6mld7"]
+[ext_resource type="Script" uid="uid://rotv6n8fda5a" path="res://Code/Assets/Equipment/Guidebook/ExitButton/ExitButton.cs" id="3_6mld7"]
 
 [node name="Guidebook" type="Control"]
 layout_mode = 3

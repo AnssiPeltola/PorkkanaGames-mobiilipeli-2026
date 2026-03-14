@@ -19,7 +19,7 @@ using System;
 
 public partial class SceneControl : Node
 {
-    
+	
 
 }
 

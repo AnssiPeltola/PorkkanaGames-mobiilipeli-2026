@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvdm1i8bfxa7r"]
+
+[ext_resource type="Script" uid="uid://ckei4lh0woghq" path="res://Code/Assets/Ingridients/Ingredient/Ingredient.cs" id="1_qyvbc"]
+[ext_resource type="Texture2D" uid="uid://1wcqhbc1wflh" path="res://Art/icon-red.svg" id="2_qyvbc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kk24"]
+size = Vector2(61, 51)
+
+[node name="Ingredient" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_qyvbc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.340002, 9.775)
+scale = Vector2(0.49468753, 0.4097656)
+texture = ExtResource("2_qyvbc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, 10.5)
+shape = SubResource("RectangleShape2D_3kk24")

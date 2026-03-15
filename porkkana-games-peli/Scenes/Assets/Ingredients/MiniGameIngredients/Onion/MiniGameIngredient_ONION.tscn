@@ -1,24 +1,27 @@
 [gd_scene load_steps=6 format=3 uid="uid://pvjug3j3e8lj"]
 
 [ext_resource type="Script" uid="uid://cm0v0n7kbnvtm" path="res://Code/Assets/Ingridients/MiniGameIngredient/MiniGameIngredient.cs" id="1_558ih"]
-[ext_resource type="Texture2D" uid="uid://d08knf32j6ipu" path="res://Art/Assets/Ingridients/Tomato/tomatosauce.png" id="2_gp2tr"]
+[ext_resource type="Texture2D" uid="uid://dp586f2yajbtt" path="res://Art/Assets/Ingridients/Onion/onion-chopped-v1.png" id="2_onim2"]
 [ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/Minigames/CuttingGame/CuttingMiniGame.tscn" id="3_j2u48"]
-[ext_resource type="Texture2D" uid="uid://d3do5n0be5ryc" path="res://Art/Assets/Ingridients/Onion/onion.png" id="4_onim2"]
+[ext_resource type="Texture2D" uid="uid://drhd74as2yxdt" path="res://Art/Assets/Ingridients/Onion/onion-v1.png" id="4_onim2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_577pn"]
-radius = 130.09567
-height = 364.67816
+radius = 67.35388
+height = 172.92189
 
 [node name="MiniGameIngredient" type="CharacterBody2D"]
+position = Vector2(93, 74)
 script = ExtResource("1_558ih")
-ChoppedSprite = ExtResource("2_gp2tr")
+ChoppedSprite = ExtResource("2_onim2")
 _cuttingMiniGameScene = ExtResource("3_j2u48")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -16)
+scale = Vector2(0.23124999, 0.23218268)
 texture = ExtResource("4_onim2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 33)
+position = Vector2(-2, -3)
 rotation = -1.6118362
 shape = SubResource("CapsuleShape2D_577pn")

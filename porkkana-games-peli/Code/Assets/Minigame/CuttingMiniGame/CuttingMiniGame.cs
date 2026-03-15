@@ -57,10 +57,9 @@ public partial class CuttingMiniGame : Node2D
 
 	public override void _Ready()
 	{
-		// Set the texture for the ingrident on display to IngridientSprite
+		// Set the texture for the ingridient to be cutted to IngridientSprite
 		_ingridientSprite = GetNode<Sprite2D>("CanvasLayer/ColorRect/IngridientSprite");
-		if (IngridientTexture != null)
-			_ingridientSprite.Texture = IngridientTexture;
+		//_ingridientSprite.Texture = IngridientTexture;
 	}
 
 	public override void _Process(double delta)

@@ -1,38 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1dqboptdej34"]
+[gd_scene load_steps=4 format=3 uid="uid://b1dqboptdej34"]
 
 [ext_resource type="Script" uid="uid://cvev4w4acutd7" path="res://Code/Assets/Minigame/CuttingMiniGame/CuttingMiniGame.cs" id="1_7vvnq"]
+[ext_resource type="Texture2D" uid="uid://3aik0wwa6ibk" path="res://Art/Backrounds/tausta_v2_valmis.png" id="2_3xf00"]
 [ext_resource type="Texture2D" uid="uid://1wcqhbc1wflh" path="res://Art/icon-red.svg" id="2_rwbtn"]
 
 [node name="CuttingMiniGame" type="Node2D"]
-position = Vector2(71, 55)
+position = Vector2(0, -2)
 script = ExtResource("1_7vvnq")
-metadata/_edit_group_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 71.0
-offset_top = 55.0
-offset_right = 554.0
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 75.0
+offset_top = 66.0
+offset_right = 620.0
 offset_bottom = 406.0
-color = Color(0.97713655, 0.0003790778, 0.8921843, 1)
+texture = ExtResource("2_3xf00")
+expand_mode = 2
+stretch_mode = 1
 metadata/_edit_use_anchors_ = true
-metadata/_edit_group_ = true
 
-[node name="IngridientSprite" type="Sprite2D" parent="CanvasLayer/ColorRect"]
-position = Vector2(243, 171.00002)
+[node name="IngridientSprite" type="Sprite2D" parent="CanvasLayer/TextureRect"]
+position = Vector2(252, 187.00002)
 scale = Vector2(0.579646, 0.57651716)
 texture = ExtResource("2_rwbtn")
 
-[node name="CutArea" type="Node2D" parent="CanvasLayer/ColorRect"]
-
-[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
 layout_mode = 0
-offset_left = 110.0
-offset_top = 7.0
-offset_right = 371.0
-offset_bottom = 62.0
-theme_override_font_sizes/font_size = 29
-text = "Cuts 0/3"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+offset_left = 209.0
+offset_top = 34.0
+offset_right = 278.0
+offset_bottom = 57.0
+text = "CUTS 0/3"

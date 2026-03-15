@@ -1,10 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://i2gmb583eda2"]
+[gd_scene load_steps=14 format=3 uid="uid://i2gmb583eda2"]
 
-[ext_resource type="PackedScene" uid="uid://daduerx6bos7g" path="res://Scenes/Assets/Ingredients/Ingredient.tscn" id="1_2ocb1"]
+[ext_resource type="PackedScene" uid="uid://daduerx6bos7g" path="res://Scenes/Assets/Ingredients/MiniGameIngredients/Onion/LevelOneIngredientOnion.tscn" id="1_2ocb1"]
 [ext_resource type="Script" uid="uid://dqyjk8rtce7av" path="res://Code/Levels/LevelOne.cs" id="1_tpciy"]
 [ext_resource type="PackedScene" uid="uid://j4hb472lofbn" path="res://Scenes/Assets/Equipment/DropZones/IngredientDropZone/IngredientDropZone.tscn" id="2_orjfg"]
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="3_85dct"]
 [ext_resource type="PackedScene" uid="uid://8yyr5bus4jmp" path="res://Scenes/Assets/Equipment/TrashCan/TrashCan.tscn" id="4_r58k2"]
+[ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="6_jhgcd"]
+[ext_resource type="PackedScene" uid="uid://crn6jcitx1lud" path="res://Scenes/Assets/Ingredients/MiniGameIngredients/Tomato/LevelOneIngredientTomato.tscn" id="7_0p8gg"]
+[ext_resource type="PackedScene" uid="uid://cvdm1i8bfxa7r" path="res://Scenes/Assets/Ingredients/MiniGameIngredients/Tomato/LevelOneBadIngridient.tscn" id="8_junti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow6v1"]
 size = Vector2(20, 1093)
@@ -19,46 +22,21 @@ size = Vector2(12, 1112)
 size = Vector2(1952, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r58k2"]
-size = Vector2(48, 1253)
+size = Vector2(48, 1116)
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_tpciy")
-
-[node name="Walls" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-10, 542)
-shape = SubResource("RectangleShape2D_ow6v1")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
-position = Vector2(951, -10)
-shape = SubResource("RectangleShape2D_2ocb1")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
-position = Vector2(1926, 536)
-shape = SubResource("RectangleShape2D_orjfg")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
-position = Vector2(956, 1086)
-shape = SubResource("RectangleShape2D_85dct")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
-position = Vector2(971, 550.5)
-shape = SubResource("RectangleShape2D_r58k2")
-
-[node name="Sprite2D" type="ColorRect" parent="Walls"]
-offset_left = 946.0
-offset_top = 142.0
-offset_right = 996.0
-offset_bottom = 924.0
-color = Color(0, 0, 0, 1)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Ingredient" parent="." groups=["Good"] instance=ExtResource("1_2ocb1")]
+z_index = 1600
 position = Vector2(1495, 584)
 collision_mask = 1
 _clickRadius = 50
 
-[node name="Ingredient2" parent="." groups=["Bad"] instance=ExtResource("1_2ocb1")]
+[node name="Ingredient2" parent="." groups=["Good"] instance=ExtResource("1_2ocb1")]
+z_index = 1600
 position = Vector2(1568, 367)
 collision_mask = 1
 _clickRadius = 50
@@ -66,17 +44,64 @@ _clickRadius = 50
 [node name="IngredientDropZone" parent="." instance=ExtResource("2_orjfg")]
 position = Vector2(295, 476)
 
-[node name="Conveyor" parent="." instance=ExtResource("3_85dct")]
-position = Vector2(860, 40)
-
-[node name="Conveyor2" parent="." instance=ExtResource("3_85dct")]
-position = Vector2(1114, 1032)
-rotation = -3.1415927
-leftToRight = false
-
 [node name="TrashCan" parent="." instance=ExtResource("4_r58k2")]
 position = Vector2(1806, 35)
 
-[node name="Ingredient3" parent="." groups=["Good"] instance=ExtResource("1_2ocb1")]
-position = Vector2(1236, 378)
-collision_mask = 1
+[node name="Ingredient5" parent="." groups=["Good"] instance=ExtResource("7_0p8gg")]
+position = Vector2(1246, 735)
+
+[node name="Ingredient3" parent="." groups=["Good"] instance=ExtResource("7_0p8gg")]
+position = Vector2(1618, 756)
+
+[node name="Ingredient4" parent="." groups=["Bad"] instance=ExtResource("8_junti")]
+position = Vector2(1281, 385)
+
+[node name="Ingredient6" parent="." groups=["Bad"] instance=ExtResource("8_junti")]
+position = Vector2(1410, 685)
+
+[node name="Enviroment" type="CanvasLayer" parent="."]
+layer = -15149
+
+[node name="Walls" type="StaticBody2D" parent="Enviroment"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Walls"]
+position = Vector2(-10, 542)
+shape = SubResource("RectangleShape2D_ow6v1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enviroment/Walls"]
+position = Vector2(951, -10)
+shape = SubResource("RectangleShape2D_2ocb1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Enviroment/Walls"]
+position = Vector2(1926, 536)
+shape = SubResource("RectangleShape2D_orjfg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Enviroment/Walls"]
+position = Vector2(956, 1086)
+shape = SubResource("RectangleShape2D_85dct")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Enviroment/Walls"]
+position = Vector2(971, 534)
+shape = SubResource("RectangleShape2D_r58k2")
+
+[node name="Sprite2D" type="ColorRect" parent="Enviroment/Walls"]
+offset_left = 946.0
+offset_top = 142.0
+offset_right = 996.0
+offset_bottom = 924.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Conveyor" parent="Enviroment/Walls" instance=ExtResource("3_85dct")]
+position = Vector2(860, 40)
+
+[node name="Conveyor2" parent="Enviroment/Walls" instance=ExtResource("3_85dct")]
+position = Vector2(1114, 1032)
+rotation = 3.1415925
+leftToRight = false
+
+[node name="TaustaV1Valmis" type="Sprite2D" parent="Enviroment/Walls"]
+show_behind_parent = true
+z_index = -4096
+position = Vector2(948, 534)
+texture = ExtResource("6_jhgcd")

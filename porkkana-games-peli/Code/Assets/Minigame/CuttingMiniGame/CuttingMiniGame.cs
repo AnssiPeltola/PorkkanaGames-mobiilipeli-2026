@@ -3,20 +3,18 @@ using System;
 
 public partial class CuttingMiniGame : Node2D
 {
-	// Ingridient texture can be received and stored to memory
 	public Texture2D IngridientTexture { get; set; }
 	
 	// Declaration for the picture frame
 	private Sprite2D _ingridientSprite;
 
-	
 	// Signals:
 	// https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html 
 	// -> Custom signals
+	// <CustomSignalName>EventHandler();
 	[Signal] public delegate void CuttingCompleteEventHandler();
 
 	[Export] public int RequiredCuts = 3;
-	
 	private int _cutsDone = 0;
 
 	// Swipe tracking
@@ -49,7 +47,7 @@ public partial class CuttingMiniGame : Node2D
 		
 		/*
 		TODO:
-		Actual swipe vectors
+		Actual swipe vectors	
 		
 		Something along the lines of:
 		_swipeStart = GetTouchPosition();

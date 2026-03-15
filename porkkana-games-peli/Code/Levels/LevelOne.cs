@@ -15,13 +15,13 @@ public partial class LevelOne : BaseLevel
 		// So to test press spacebar to run scene changing sequence
 		if (Input.IsActionJustPressed("ui_select"))
 		{
-            // Test Print from Baselevel
+			// Test Print from Baselevel
 			CurrentComplete();
 
-            // Start the changeScene sequence
-		    // @Baselevel 
-		    //
-		    // SignalComplete() => SceneControl.Current.OnComplete(CurrentLevel)
+			// Start the changeScene sequence
+			// @Baselevel 
+			//
+			// SignalComplete() => SceneControl.Current.OnComplete(CurrentLevel)
 			SignalComplete();
 		}
 	}

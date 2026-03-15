@@ -21,7 +21,7 @@ public partial class BaseLevel : Node
 		SceneControl.Current.OnComplete(CurrentLevel);
 	}
 
-    // Just a test print method to inherit
+	// Just a test print method to inherit
 	public virtual void CurrentComplete()
 	{
 		GD.Print("From level ", CurrentLevel, " We are Complete!");

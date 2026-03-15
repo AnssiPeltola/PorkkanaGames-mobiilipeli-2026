@@ -89,6 +89,7 @@ public partial class GameManager : Node
 		CheckLevelOneComplete();
 	}
 
+    /* I will comment this out because chainging scenes is handled @ SceneControl:
 	// Check if Level One is Completed and switch Scene
 	private void CheckLevelOneComplete()
 	{
@@ -99,4 +100,5 @@ public partial class GameManager : Node
 			GetTree().ChangeSceneToFile("res://Scenes/Levels/TestScene/TestScene.tscn");
 		}
 	}
+    */
 }

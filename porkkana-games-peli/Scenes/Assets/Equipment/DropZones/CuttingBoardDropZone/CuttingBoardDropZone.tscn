@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://b7pukfcugcn6e" path="res://Art/icon-green.svg" id="1_vws3a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clu5m"]
-size = Vector2(281, 280)
+size = Vector2(406, 376)
 
 [node name="CuttingBoardDropZone" type="Area2D"]
 script = ExtResource("1_clu5m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(79.5, 79.5)
-scale = Vector2(2.2421875, 2.2421875)
+position = Vector2(140, 123.499985)
+scale = Vector2(3.1874998, 2.9296873)
 texture = ExtResource("1_vws3a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(79.5, 79)
+position = Vector2(142, 127)
 shape = SubResource("RectangleShape2D_clu5m")

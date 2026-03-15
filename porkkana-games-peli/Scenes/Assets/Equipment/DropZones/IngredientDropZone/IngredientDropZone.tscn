@@ -4,19 +4,20 @@
 [ext_resource type="Script" uid="uid://cd61rxx6nrhit" path="res://Code/Scenes/IngredientDropZone/IngredientDropZone.cs" id="1_ye6jd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ye6jd"]
-size = Vector2(259, 259)
+size = Vector2(413, 426)
 
 [node name="IngredientDropZone" type="Area2D"]
 z_index = -1
 collision_layer = 2
 script = ExtResource("1_ye6jd")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.19607843)
-position = Vector2(67.5, 67.5)
-scale = Vector2(2.0546875, 2.0546875)
+position = Vector2(143.5, 149)
+scale = Vector2(3.2421875, 3.328125)
 texture = ExtResource("1_21k2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(67.5, 67.5)
+position = Vector2(144.5, 151)
 shape = SubResource("RectangleShape2D_ye6jd")

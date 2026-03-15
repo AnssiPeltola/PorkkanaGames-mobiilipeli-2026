@@ -4,17 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://1wcqhbc1wflh" path="res://Art/icon-red.svg" id="2_rwbtn"]
 
 [node name="CuttingMiniGame" type="Node2D"]
-position = Vector2(203, 318)
+position = Vector2(71, 55)
 script = ExtResource("1_7vvnq")
 metadata/_edit_group_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 203.0
-offset_top = 318.0
-offset_right = 686.0
-offset_bottom = 669.0
+offset_left = 71.0
+offset_top = 55.0
+offset_right = 554.0
+offset_bottom = 406.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 metadata/_edit_group_ = true

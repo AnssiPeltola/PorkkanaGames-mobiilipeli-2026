@@ -35,16 +35,16 @@ public partial class SceneControl : Node
 	   Current = this;
    }
 
-   // Run the Scene changing sequence
+   // The Scene changing sequence
    public void OnComplete(int CurrentLevelNumber)
    {
-	   // Get Next level (int) from LevelOrder.cs
+	   // Get Next level based on current level from LevelOrder.cs
 	   int nextLevel = LevelOrder.GetNextLevel(CurrentLevelNumber);
 
-	   // Get Next level PATH from LevelOrder.cs
+	   // Get nextLevel PATH from LevelOrder.cs
 	   string nextPath = LevelOrder.GetLevelPath(nextLevel);
 
-	   // Change scene
+	   // Change to that scene
 	   GetTree().ChangeSceneToFile(nextPath);
    }
 }

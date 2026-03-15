@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://i2gmb583eda2"]
+[gd_scene load_steps=11 format=3 uid="uid://i2gmb583eda2"]
 
 [ext_resource type="PackedScene" uid="uid://daduerx6bos7g" path="res://Scenes/Assets/Ingredients/Ingredient.tscn" id="1_2ocb1"]
+[ext_resource type="Script" uid="uid://dqyjk8rtce7av" path="res://Code/Levels/LevelOne.cs" id="1_tpciy"]
 [ext_resource type="PackedScene" uid="uid://j4hb472lofbn" path="res://Scenes/Assets/Equipment/DropZones/IngredientDropZone/IngredientDropZone.tscn" id="2_orjfg"]
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="3_85dct"]
 [ext_resource type="PackedScene" uid="uid://8yyr5bus4jmp" path="res://Scenes/Assets/Equipment/TrashCan/TrashCan.tscn" id="4_r58k2"]
@@ -21,6 +22,7 @@ size = Vector2(1952, 12)
 size = Vector2(48, 1253)
 
 [node name="LevelOne" type="Node2D"]
+script = ExtResource("1_tpciy")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 

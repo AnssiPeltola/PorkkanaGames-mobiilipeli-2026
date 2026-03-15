@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://5gldpnqbvait"]
 
-[ext_resource type="Script" uid="uid://05qb1w4a5ad4" path="res://Code/Systems/CuttingBoardDropZone/CuttingBoardDropZone.cs" id="1_clu5m"]
+[ext_resource type="Script" uid="uid://05qb1w4a5ad4" path="res://Code/Scenes/CuttingBoardDropZone/CuttingBoardDropZone.cs" id="1_clu5m"]
 [ext_resource type="Texture2D" uid="uid://b7pukfcugcn6e" path="res://Art/icon-green.svg" id="1_vws3a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clu5m"]

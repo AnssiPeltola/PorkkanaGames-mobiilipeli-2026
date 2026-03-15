@@ -9,12 +9,11 @@ using System;
 
 public partial class BaseLevel : Node
 {
-	public int LevelNumber { get; set; }
+	public int CurrentLevel { get; set; }
 
 	public override void _Ready()
 	{
-		// from python f strings
-		GD.Print($"Level {LevelNumber} Loaded");
+		// CurrentComplete();
 	}
 
 	// Virtual means it can be overriden
@@ -28,8 +27,13 @@ public partial class BaseLevel : Node
 	{
 		// Contact SceneControl's
 		// Instance "current"
-		// Give it the current LevelNumber
-		SceneControl.Current.OnComplete(LevelNumber);
+		// Give it the current CurrentLevel
+		SceneControl.Current.OnComplete(CurrentLevel);
+	}
+
+	public virtual void CurrentComplete()
+	{
+		GD.Print("Level ", CurrentLevel, " Complete!");
 	}
 
 }

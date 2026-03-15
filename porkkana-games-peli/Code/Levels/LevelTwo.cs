@@ -1,13 +1,11 @@
 using Godot;
 using System;
 
-// All levels inherit from BaseLevel and BaseLevel inherits Node
-public partial class LevelOne : BaseLevel
+public partial class LevelTwo : BaseLevel
 {
 	public override void _Ready()
 	{
-		CurrentLevel = 1;
-
+		CurrentLevel = 2;
 	}
 
 	public override void _Process(double delta)
@@ -15,7 +13,7 @@ public partial class LevelOne : BaseLevel
 		if (Input.IsActionJustPressed("ui_select"))
 		{
 			CurrentComplete();
-			// Baselevel Method
+			// BaseLevel method
 			SignalCompletion();
 		}
 	}

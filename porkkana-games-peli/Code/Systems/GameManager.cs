@@ -89,16 +89,15 @@ public partial class GameManager : Node
 		CheckLevelOneComplete();
 	}
 
-    /* I will comment this out because chainging scenes is handled @ SceneControl:
+
+	// EDITED: Removed Changing the scene.
+	// Scenes are changed by SceneControl now
 	// Check if Level One is Completed and switch Scene
 	private void CheckLevelOneComplete()
 	{
 		if (LevelOneScore >= (RequiredGoodItems + RequiredBadItems))
 		{
-			GD.Print("All items in right positions! Level completed! Switching Scene!");
-			// Switch scene - https://docs.godotengine.org/en/latest/tutorials/scripting/change_scenes_manually.html
-			GetTree().ChangeSceneToFile("res://Scenes/Levels/TestScene/TestScene.tscn");
+			GD.Print("All items in right positions! Level completed!");
 		}
 	}
-    */
 }

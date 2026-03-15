@@ -12,6 +12,7 @@ height = 172.92189
 [node name="MiniGameIngredient" type="CharacterBody2D"]
 position = Vector2(93, 74)
 script = ExtResource("1_558ih")
+_clickRadius = 57
 ChoppedSprite = ExtResource("2_onim2")
 _cuttingMiniGameScene = ExtResource("3_j2u48")
 metadata/_edit_group_ = true

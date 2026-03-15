@@ -1,11 +1,14 @@
 using Godot;
 using System;
 
+
 public partial class CuttingMiniGame : Node2D
 {
+	// Texture is what we display
+	// Sprite is the node displaying it
 	public Texture2D IngridientTexture { get; set; }
 	
-	// Declaration for the picture frame
+	// Given texture @_Ready()
 	private Sprite2D _ingridientSprite;
 
 	// Signals:
@@ -57,9 +60,10 @@ public partial class CuttingMiniGame : Node2D
 
 	public override void _Ready()
 	{
-		// Set the texture for the ingridient to be cutted to IngridientSprite
-		_ingridientSprite = GetNode<Sprite2D>("CanvasLayer/ColorRect/IngridientSprite");
-		//_ingridientSprite.Texture = IngridientTexture;
+		// Find the IngridientSprite node from the tree at the address
+		_ingridientSprite = GetNode<Sprite2D>("CanvasLayer/TextureRect/IngridientSprite");
+		// Set our chosen IngridientTexture to our _ingridientSprite
+		_ingridientSprite.Texture = IngridientTexture;
 	}
 
 	public override void _Process(double delta)

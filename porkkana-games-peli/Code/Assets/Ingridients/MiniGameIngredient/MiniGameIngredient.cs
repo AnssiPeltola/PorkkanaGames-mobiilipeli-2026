@@ -85,16 +85,12 @@ public partial class MiniGameIngredient : CharacterBody2D
 		// Read the current texture and hand it to the new instance ("_activeMinGame")
 		_activeMiniGame.IngridientTexture = _sprite.Texture;
 		
-		// Breakdown:
-		/*
-			.GetTree().Root						→ get the Root node
-			.GetChildCount() - 1				→ count how many children it has, subtract 1
-			.GetChild( that number )			→ get the child at that index (= current scene)
-			.AddChild(_activeMiniGame)			→ attach minigame to it
-		*/
-		GetTree().Root.GetChild(GetTree().Root.GetChildCount() - 1).AddChild(_activeMiniGame);
+		// Initiate the actual opening of the minigame
+		// https://docs.godotengine.org/en/stable/tutorials/scripting/change_scenes_manually.html
+		GetTree().CurrentScene.AddChild(_activeMiniGame);
 		
-		// Subscribe for a signal from _activeMinigame called CuttingCompplete.
+		// Subscribe to signal CuttingCompleteEventHandler()
+		//      From CuttingMiniGame.cs (Class)
 		// When signal is received run OnCuttingComplete();
 		_activeMiniGame.CuttingComplete += OnCuttingComplete;
 
@@ -113,11 +109,10 @@ public partial class MiniGameIngredient : CharacterBody2D
 
 
 		/* TODO: 
-			Currently: Change the sprite for something else
-			Consider: Swap the entire MiniGameIngridient node for another
-			Ingridient node "example: IngridientToCook"
-			Also prevents multiple cutting games per ingridient
+			Currently: Only changing the sprite
+			Consider: Swap the entire MiniGameIngridient node -> CuttedIngridient<name> 
 		*/
+
 		_sprite.Texture = ChoppedSprite;
 		_sprite.Show();
 

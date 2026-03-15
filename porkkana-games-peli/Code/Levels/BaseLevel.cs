@@ -7,44 +7,29 @@ using System;
  */
 
 
-public class BaseLevel : Node
+public partial class BaseLevel : Node
 {
-
-	// Reading allowed, Writing allower
 	public int LevelNumber { get; set; }
 
 	public override void _Ready()
 	{
-		Startup();
+		// from python f strings
+		GD.Print($"Level {LevelNumber} Loaded");
 	}
 
 	// Virtual means it can be overriden
-	// Or called with base.Startup() to run the original
-	// And added functinalyt
-	public virtual void Startup()
-	{
-		GD.Print("Level", LevelNumber," Loaded");
-	}
-
 	public virtual void OnLevelComplete() 
 	{
 		// Test default
 		GD.Print("Level completed!"); 
+	}
 
-		// Every level sends Im done message and give current
-		// level number
-		// to SceneControl.cs
-		public virtual void SignalCompletion()
-		{
-			// Test print
-			GD.Print("Level Completed");
-			// Tell SceneController current LevelNumber
-			// and that we are done.
-
-			//TODO:
-			// Tell SceneControl we are done and see SceneControl
-			// how to handle changing scenes.
-		}
+	public virtual void SignalCompletion()
+	{
+		// Contact SceneControl's
+		// Instance "current"
+		// Give it the current LevelNumber
+		SceneControl.Current.OnComplete(LevelNumber);
 	}
 
 }

@@ -5,6 +5,7 @@ using System;
  *  One place to decide what level plays next
  *
  * Features:
+ *  TODO:
  *  - Method() to get path to a level.
  *          GetPath(int LevelNumber)
  *  - Method() to return next level number to sceneControl
@@ -16,13 +17,12 @@ using System;
 
 public static class LevelOrder
 {
-
 	// Paths to all levels in the game.
 	private static readonly string LevelOne = "res://Scenes/Levels/LevelOne/LevelOne.tscn";
 	private static readonly string LevelTwo = "res://Scenes/Levels/LevelTwo/LevelTwo.tscn";
-	private static readonly string LevelThree = "res://Scenes/Levels/LevelTwo/LevelTwo.tscn";
+	private static readonly string LevelThree = "res://Scenes/Levels/LevelThree/LevelThree.tscn";
 
-	// Method that returns the current level path
+	// Method that returns the path of given LevelNumber
 	public static string GetLevelPath(int LevelNumber)
 	{
 		switch (LevelNumber)
@@ -34,13 +34,14 @@ public static class LevelOrder
 			case 3:
 				return LevelThree;
 			default:
-				return 1;
+				return LevelOne;
 		}
 	}
 
-	// Load next level 
-	// simple logic if level 1 then return (n + 1);
+	// Return Next level's number 
+	// Give CurrentLevel n, then return (n + 1);
 	public static int GetNextLevel(int currentLevel)
+	{
 		switch (currentLevel)
 		{
 			case 1:
@@ -55,3 +56,4 @@ public static class LevelOrder
 		}
 	}
 		
+}

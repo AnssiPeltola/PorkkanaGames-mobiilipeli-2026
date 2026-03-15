@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="PorkkanaGamesPeli"
+run/main_scene="uid://i2gmb583eda2"
 config/features=PackedStringArray("4.5", "C#", "Mobile")
 config/icon="res://Art/icon.svg"
 
 [autoload]
 
 GameManager="*res://Code/Systems/GameManager.cs"
+SceneControl="*res://Code/Systems/SceneControl.cs
 
 [display]
 

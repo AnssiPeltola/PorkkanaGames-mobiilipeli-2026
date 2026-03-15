@@ -11,9 +11,9 @@ public partial class MiniGameIngredient : CharacterBody2D
 	[Export] public Texture2D ChoppedSprite;
 	
 	
-	// PackedScene = .tscn type
+	// PackedScene = Godots own .tscn type
+	// https://docs.godotengine.org/en/stable/classes/class_packedscene.html
 	// We can now assign .tscn scenes to _CuttingMiniGameScene
-	// Consider: we might have to do individual cuttingGames per ingridient
 	[Export] private PackedScene _cuttingMiniGameScene;
 
 
@@ -76,19 +76,16 @@ public partial class MiniGameIngredient : CharacterBody2D
 
 	private void StartCuttingMiniGame()
 	{
-		if (_cuttingMiniGameScene == null)
-		{
-			GD.PrintErr("CuttingMiniGame scene not assigned on MiniGameIngredient!");
-			return;
-		}
-		
-		// 
+		// https://docs.godotengine.org/en/stable/tutorials/scripting/nodes_and_scene_instances.html
+		// Make new instance of the cutting minigame (object of CuttingMiniGame class)
+		// call that instance _cuttingMiniGameScene
+		// NOTE: _activeMiniGame = godots datatype "PackedScene" = takes (.tscn)
 		_activeMiniGame = _cuttingMiniGameScene.Instantiate<CuttingMiniGame>();
 		
-		// Read the current texture and send it to _activeMiniGame
+		// Read the current texture and hand it to the new instance ("_activeMinGame")
 		_activeMiniGame.IngridientTexture = _sprite.Texture;
 		
-		// Breakdown:		Help from AI.
+		// Breakdown:
 		/*
 			.GetTree().Root						→ get the Root node
 			.GetChildCount() - 1				→ count how many children it has, subtract 1

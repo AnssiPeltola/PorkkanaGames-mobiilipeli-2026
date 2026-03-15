@@ -26,25 +26,25 @@ public partial class SceneControl : Node
 
    public override void _Ready()
    {
-       // When Godot autoloader creates this object, "this" is that object
-       // Store a reference to it in "Current"
-       // Now talk to "this" instance by talking to "Current"
-       // NOTE:
-       // Do not use "new" here or we will pump out infinite instances.
-       // This is why we just refer "this" to Current
-       Current = this;
+	   // When Godot autoloader creates this object, "this" is that object
+	   // Store a reference to it in "Current"
+	   // Now talk to "this" instance by talking to "Current"
+	   // NOTE:
+	   // Do not use "new" here or we will pump out infinite instances.
+	   // This is why we just refer "this" to Current
+	   Current = this;
    }
 
    // Run the Scene changing sequence
    public void OnComplete(int CurrentLevelNumber)
    {
-       // Get Next level (int) from LevelOrder.cs
-       int nextLevel = LevelOrder.GetNextLevel(CurrentLevelNumber);
+	   // Get Next level (int) from LevelOrder.cs
+	   int nextLevel = LevelOrder.GetNextLevel(CurrentLevelNumber);
 
-       // Get Next level PATH from LevelOrder.cs
-       string nextPath = LevelOrder.GetLevelPath(nextLevel);
+	   // Get Next level PATH from LevelOrder.cs
+	   string nextPath = LevelOrder.GetLevelPath(nextLevel);
 
-       // Change scene
-       GetTree().ChangeSceneToFile(nextPath);
+	   // Change scene
+	   GetTree().ChangeSceneToFile(nextPath);
    }
 }

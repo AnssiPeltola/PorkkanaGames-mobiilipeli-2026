@@ -4,6 +4,7 @@ using System;
 
 /* Base class for all levels to inherit from.
  *
+ * Could change this into Abstract class to force intialisation to include CurrentLevel number
  */
 
 
@@ -11,19 +12,7 @@ public partial class BaseLevel : Node
 {
 	public int CurrentLevel { get; set; }
 
-	public override void _Ready()
-	{
-		// CurrentComplete();
-	}
-
-	// Virtual means it can be overriden
-	public virtual void OnLevelComplete() 
-	{
-		// Test default
-		GD.Print("Level completed!"); 
-	}
-
-	public virtual void SignalCompletion()
+	public virtual void SignalComplete()
 	{
 		// Contact SceneControl's
 		// Instance "current"
@@ -33,7 +22,7 @@ public partial class BaseLevel : Node
 
 	public virtual void CurrentComplete()
 	{
-		GD.Print("Level ", CurrentLevel, " Complete!");
+		GD.Print("From level ", CurrentLevel, " We are Complete!");
 	}
 
 }

@@ -14,7 +14,7 @@ public partial class LevelTwo : BaseLevel
 		{
 			CurrentComplete();
 			// BaseLevel method
-			SignalCompletion();
+			SignalComplete();
 		}
 	}
 }

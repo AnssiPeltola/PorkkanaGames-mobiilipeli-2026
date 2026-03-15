@@ -1,17 +1,19 @@
 using Godot;
 using System;
 
-/* Purpose:
- *  One place to decide what level plays next
+/* 
+ * Purpose:
+ *      One place to decide what level plays next
  *
  * Features:
- *  TODO:
- *  - Method() to get path to a level.
- *          GetPath(int LevelNumber)
- *  - Method() to return next level number to sceneControl
- *          GetNextLevel(int currentLevel)
- *              NextLevel = n + 1
- *           
+ * 		Assign paths to variables Level<Nr> etc etc.
+ * 		Fetch the next level if current level = n, next level = (n + 1)
+ *
+ * How to use:
+ *      First add new variable and path to it
+ *      Scale thegetLevelPath & GetNextLevel Switch boards by 1
+ *
+ * Consider should we use arrays here instead?
  */
 
 

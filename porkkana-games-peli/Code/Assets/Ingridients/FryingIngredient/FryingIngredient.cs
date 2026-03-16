@@ -1,5 +1,6 @@
 using Godot;
 using System;
+// using System.Numerics;
 
 public partial class FryingIngredient : CharacterBody2D
 {
@@ -35,9 +36,9 @@ public partial class FryingIngredient : CharacterBody2D
         _sprite = GetNode<Sprite2D>("Sprite2D");
 
 		// Load Textures for ingredients
-		_tomatoTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomato.png");
 		_onionTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Onion/onion.png");
 		_carrotTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Carrot/carrot.png");
+		_tomatoTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomato.png");
 
 		// Load Collisions for ingredients
 		_tomatoCollision = GetNode<CollisionShape2D>("TomatoCollision");
@@ -48,7 +49,11 @@ public partial class FryingIngredient : CharacterBody2D
 		if (this.IsInGroup("Tomato"))
 		{
 			ChangeSprite(_tomatoTexture);
+			GD.Print(_tomatoTexture.GetSize());
+			Vector2 textreSize = _sprite.Texture.GetSize();
+            Vector2 newSize = new Vector2(50, 50);
 			_tomatoCollision.Disabled = false;
+			_sprite.Scale = newSize / textreSize;
 		}
 
 		if (this.IsInGroup("Onion"))

@@ -37,7 +37,8 @@ public partial class GameManager : Node
 	[Export] public int RequiredGoodItems = 2;
 	[Export] public int RequiredBadItems = 1;
 
-	public int Health = 3;
+    // Mobiiledev exercise
+	// public int Health = 3;
 
 	public int LevelOneScore
 	{
@@ -51,23 +52,6 @@ public partial class GameManager : Node
 	}
 
 	#endregion
-
-	public void LoseHealth()
-	{
-		Health--;
-		GD.Print("Current health: ", Health);
-		if (Health == 0)
-		{
-			GD.Print("You are dead!");
-			Die();
-		}
-	}
-
-	public void Die()
-	{
-		GetTree().Quit();
-	}
-
 
 	// Set +1 point on LevelOneScore
 	public void GoodItemEntered()
@@ -90,9 +74,6 @@ public partial class GameManager : Node
 	}
 
 
-	// EDITED: Removed Changing the scene.
-	// Scenes are changed by SceneControl now
-	// Check if Level One is Completed and switch Scene
 	private void CheckLevelOneComplete()
 	{
 		if (LevelOneScore >= (RequiredGoodItems + RequiredBadItems))

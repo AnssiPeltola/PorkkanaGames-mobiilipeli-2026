@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://i4pfuso3kmkb"]
 
 [ext_resource type="Script" uid="uid://bpum0rp1g32wn" path="res://Code/Assets/Equipment/Fryingpan/Fryingpan.cs" id="1_arr23"]
-[ext_resource type="Texture2D" uid="uid://diqbnjtn6mnmy" path="res://Art/Assets/Equipment/Frying Pan/fryingpan.png" id="1_bawww"]
+[ext_resource type="Texture2D" uid="uid://dr2xk22xhfk7p" path="res://Art/Assets/Equipment/Frying Pan/pan-empty-v1.png" id="2_36nc1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_arr23"]
 radius = 153.0294
@@ -13,7 +13,9 @@ bg_color = Color(2.2140146e-06, 0.72455424, 0.22892708, 1)
 script = ExtResource("1_arr23")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_bawww")
+position = Vector2(3.0000007, -16)
+scale = Vector2(0.52500004, 0.52500004)
+texture = ExtResource("2_36nc1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -105)

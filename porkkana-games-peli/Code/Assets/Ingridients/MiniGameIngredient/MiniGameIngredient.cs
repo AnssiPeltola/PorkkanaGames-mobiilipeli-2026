@@ -9,8 +9,8 @@ public partial class MiniGameIngredient : CharacterBody2D
 	[Export] private int _clickRadius = 32;
 
 	[Export] public Texture2D ChoppedSprite;
-	
-	
+
+
 	// PackedScene = Godots own .tscn type
 	// https://docs.godotengine.org/en/stable/classes/class_packedscene.html
 	// We can now assign .tscn scenes to _CuttingMiniGameScene
@@ -81,14 +81,14 @@ public partial class MiniGameIngredient : CharacterBody2D
 		// call that instance _cuttingMiniGameScene
 		// NOTE: _activeMiniGame = godots datatype "PackedScene" = takes (.tscn)
 		_activeMiniGame = _cuttingMiniGameScene.Instantiate<CuttingMiniGame>();
-		
+
 		// Read the current texture and hand it to the new instance ("_activeMinGame")
 		_activeMiniGame.IngridientTexture = _sprite.Texture;
-		
+
 		// Initiate the actual opening of the minigame
 		// https://docs.godotengine.org/en/stable/tutorials/scripting/change_scenes_manually.html
 		GetTree().CurrentScene.AddChild(_activeMiniGame);
-		
+
 		// Subscribe to signal CuttingCompleteEventHandler()
 		//      From CuttingMiniGame.cs (Class)
 		// When signal is received run OnCuttingComplete();
@@ -108,9 +108,9 @@ public partial class MiniGameIngredient : CharacterBody2D
 		_activeMiniGame = null;
 
 
-		/* TODO: 
+		/* TODO:
 			Currently: Only changing the sprite
-			Consider: Swap the entire MiniGameIngridient node -> CuttedIngridient<name> 
+			Consider: Swap the entire MiniGameIngridient node -> CuttedIngridient<name>
 		*/
 
 		_sprite.Texture = ChoppedSprite;

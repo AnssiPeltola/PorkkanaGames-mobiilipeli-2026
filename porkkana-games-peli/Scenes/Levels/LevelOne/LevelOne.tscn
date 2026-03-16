@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://i2gmb583eda2"]
+[gd_scene load_steps=16 format=3 uid="uid://i2gmb583eda2"]
 
 [ext_resource type="PackedScene" uid="uid://daduerx6bos7g" path="res://Scenes/Assets/Ingredients/MiniGameIngredients/Onion/LevelOneIngredientOnion.tscn" id="1_2ocb1"]
 [ext_resource type="Script" uid="uid://dqyjk8rtce7av" path="res://Code/Levels/LevelOne.cs" id="1_tpciy"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="6_jhgcd"]
 [ext_resource type="PackedScene" uid="uid://crn6jcitx1lud" path="res://Scenes/Assets/Ingredients/MiniGameIngredients/Tomato/LevelOneIngredientTomato.tscn" id="7_0p8gg"]
 [ext_resource type="PackedScene" uid="uid://cvdm1i8bfxa7r" path="res://Scenes/Assets/Ingredients/MiniGameIngredients/Tomato/LevelOneBadIngridient.tscn" id="8_junti"]
+[ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="9_6x6kw"]
+[ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="10_w3gx0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow6v1"]
 size = Vector2(20, 1093)
@@ -105,3 +107,18 @@ show_behind_parent = true
 z_index = -4096
 position = Vector2(948, 534)
 texture = ExtResource("6_jhgcd")
+
+[node name="Guidebook" parent="." instance=ExtResource("9_6x6kw")]
+z_index = 4096
+offset_left = 731.0
+offset_top = 104.0
+offset_right = 731.0
+offset_bottom = 104.0
+rotation = 1.5276381
+
+[node name="ShowGuidebookButton" parent="." instance=ExtResource("10_w3gx0")]
+offset_left = 167.0
+offset_top = 866.0
+offset_right = 219.0
+offset_bottom = 913.0
+rotation = 1.5792124

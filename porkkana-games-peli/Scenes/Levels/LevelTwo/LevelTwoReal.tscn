@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="6_2jm63"]
 [ext_resource type="PackedScene" uid="uid://8yyr5bus4jmp" path="res://Scenes/Assets/Equipment/TrashCan/TrashCan.tscn" id="7_7uvfu"]
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="8_yyvae"]
-[ext_resource type="Texture2D" uid="uid://dqy6dac6miayk" path="res://Art/Assets/Equipment/Frying Pan/fryingpan2.png" id="9_7uvfu"]
+[ext_resource type="PackedScene" uid="uid://i4pfuso3kmkb" path="res://Scenes/Assets/Equipment/Fryingpan/Fryingpan.tscn" id="10_srf4j"]
 [ext_resource type="Texture2D" uid="uid://dgomryca6is04" path="res://Art/Assets/Equipment/Pot/pot-uncooked-v1.png" id="10_yyvae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srf4j"]
@@ -94,17 +94,14 @@ position = Vector2(1806, 35)
 
 [node name="Tools" type="CanvasLayer" parent="."]
 
-[node name="Fryingpan2" type="Sprite2D" parent="Tools"]
-z_index = 4096
-position = Vector2(1652.9999, 731)
-rotation = -1.5707964
-scale = Vector2(0.9930362, 0.95238096)
-texture = ExtResource("9_7uvfu")
-
 [node name="PotUncookedV1" type="Sprite2D" parent="Tools"]
 position = Vector2(1580, 342)
 scale = Vector2(0.323, 0.34125)
 texture = ExtResource("10_yyvae")
+
+[node name="Fryingpan" parent="Tools" instance=ExtResource("10_srf4j")]
+position = Vector2(1624.9999, 712.99994)
+rotation = -1.5864966
 
 [node name="CuttingBoardDropZone" parent="." instance=ExtResource("1_q66cy")]
 z_index = -4096

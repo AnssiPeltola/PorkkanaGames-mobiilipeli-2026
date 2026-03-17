@@ -33,52 +33,17 @@ public partial class GameManager : Node
 	#endregion
 
 	#region Game Data
-	private int _levelOneScore = 0;
-	[Export] public int RequiredGoodItems = 2;
-	[Export] public int RequiredBadItems = 1;
-
-    // Mobiiledev exercise
-	// public int Health = 3;
-
-	public int LevelOneScore
-	{
-		get { return _levelOneScore; }
-		set
-		{
-			// Mathf.Clamp restricts a number to stay within a minimum and maximum range
-			_levelOneScore = Mathf.Clamp(value, 0, Int32.MaxValue);
-			GD.Print($"Points now: {LevelOneScore} Needed points: {RequiredGoodItems + RequiredBadItems}");
-		}
-	}
+	// LEVEL ONE
+	// LEVEL ONE
+	private int _levelOneScore { get; set; }
+	private int _totalScore { get; set; }
 
 	#endregion
-
-	// Set +1 point on LevelOneScore
-	public void GoodItemEntered()
+	public void SetScore(int Score)
 	{
-		LevelOneScore += 1;
-		CheckLevelOneComplete();
+		_levelOneScore = Score;
+		GD.Print($"Level score saved!");
 	}
+	
 
-	// Take -1 point from LevelOneScore
-	public void GoodItemExited()
-	{
-		LevelOneScore -= 1;
-	}
-
-	// Set +1 point on LevelOneScore
-	public void BadItemEntered()
-	{
-		LevelOneScore += 1;
-		CheckLevelOneComplete();
-	}
-
-
-	private void CheckLevelOneComplete()
-	{
-		if (LevelOneScore >= (RequiredGoodItems + RequiredBadItems))
-		{
-			GD.Print("All items in right positions! Level completed!");
-		}
-	}
 }

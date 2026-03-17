@@ -12,10 +12,10 @@ public partial class LevelTwo : BaseLevel
 	{
 		if (Input.IsActionJustPressed("ui_select"))
 		{
-            // Test print
-			CurrentComplete();
+			// Test print
+			PrintLevelComplete();
 			// BaseLevel method
-			SignalComplete();
+			RunLevelComplete();
 		}
 	}
 }

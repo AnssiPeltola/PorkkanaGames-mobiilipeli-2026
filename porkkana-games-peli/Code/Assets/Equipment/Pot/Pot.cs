@@ -8,6 +8,7 @@ public partial class Pot : Area2D
     private Sprite2D _sprite;
     private Texture2D _pastaPot;
 	private Texture2D _pastaCookedPot;
+    private CollisionShape2D _pastaCollision;
     private LevelTwoIngredient _currentIngredient;
     [Export] private float CookTime = 5f;
 
@@ -35,7 +36,6 @@ public partial class Pot : Area2D
         _cookTimer.Timeout += OnCookFinished;
 
         BodyEntered += OnBodyEntered;
-        // BodyExited += OnBodyExited;
     }
 
     public override void _Process(double delta)
@@ -47,11 +47,9 @@ public partial class Pot : Area2D
         }
     }
 
-    // When FryingIngredient's body enters in fryingpan it will check the state and which group ingredient is.
-    // By this we will make an order what to cook first, second and third.
+    // When LevelTwoIngredient's body enters in pot it will hide its sprite and disable collision shape and starts cooking pasta
     private void OnBodyEntered(Node2D body)
     {
-        // Check if ingredient is Onion and state is 0
         if (body is LevelTwoIngredient ingredient &&
             ingredient.State == LevelTwoIngredient.IngredientState.Raw && ingredient.IsInGroup("Pasta"))
         {
@@ -59,6 +57,9 @@ public partial class Pot : Area2D
             _currentIngredient = ingredient;
 			ChangeSprite(_pastaPot);
 			_currentIngredient.Hide();
+            _pastaCollision = _currentIngredient.GetNodeOrNull<CollisionShape2D>("PastaCollision");
+            // disable collision shape, but do it safely after the current physics step finishes
+            _pastaCollision.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
             StartCooking();
         }
     }
@@ -76,8 +77,6 @@ public partial class Pot : Area2D
     // Changes ingredients IngredientState as Cooked
     // ProgressBar set invisible
     // Removes ingredient and its childs from Scene with QueueFree()
-    // Checks what state we are on and changes new Sprite2D for fryingpan
-    // Plus +1 into state
     private void OnCookFinished()
     {
         if (_currentIngredient == null)

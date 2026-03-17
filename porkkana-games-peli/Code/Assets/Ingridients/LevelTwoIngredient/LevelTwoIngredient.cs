@@ -56,7 +56,6 @@ public partial class LevelTwoIngredient : CharacterBody2D
 			_tomatoCollision = GetNode<CollisionShape2D>("TomatoCollision");
 			_choppedTomatoTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomato-chopped-v1.png");
 			ChangeSprite(_tomatoTexture);
-			GD.Print(_tomatoTexture.GetSize());
 			_tomatoCollision.Disabled = false;
 		}
 

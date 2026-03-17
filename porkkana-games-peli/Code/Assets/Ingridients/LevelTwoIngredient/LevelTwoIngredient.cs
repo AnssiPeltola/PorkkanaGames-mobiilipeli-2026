@@ -28,13 +28,14 @@ public partial class LevelTwoIngredient : CharacterBody2D
 	private Texture2D _onionTexture;
 	private Texture2D _carrotTexture;
 	private Texture2D _choppedOnionTexture;
+	private Texture2D _pastaTexture;
 
-	// Commented till textures done
-	// private Texture2D _choppedCarrotTexture;
-	// private Texture2D _choppedTomatoTexture;
+	private Texture2D _choppedCarrotTexture;
+	private Texture2D _choppedTomatoTexture;
 	private CollisionShape2D _tomatoCollision;
 	private CollisionShape2D _onionCollision;
 	private CollisionShape2D _carrotCollision;
+	private CollisionShape2D _pastaCollision;
 	// Do we need to make more collisions for chopped ingredients?
 
 	// Init IngredientState. For testing its now Chopped
@@ -53,13 +54,10 @@ public partial class LevelTwoIngredient : CharacterBody2D
 		{
 			_tomatoTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomato-v1.png");
 			_tomatoCollision = GetNode<CollisionShape2D>("TomatoCollision");
-			// _choppedTomatoTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Onion/onion-chopped-v1.png"); // Switch right Chopped Tomato Path
+			_choppedTomatoTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomato-chopped-v1.png");
 			ChangeSprite(_tomatoTexture);
 			GD.Print(_tomatoTexture.GetSize());
-			Vector2 textreSize = _sprite.Texture.GetSize();
-            Vector2 newSize = new Vector2(50, 50);
 			_tomatoCollision.Disabled = false;
-			_sprite.Scale = newSize / textreSize;
 		}
 
 		if (this.IsInGroup("Onion"))
@@ -75,9 +73,17 @@ public partial class LevelTwoIngredient : CharacterBody2D
 		{
 			_carrotTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Carrot/carrot-v1.png");
 			_carrotCollision = GetNode<CollisionShape2D>("CarrotCollision");
-			// _choppedCarrotTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Onion/onion-chopped-v1.png"); // Switch right Chopped Carrot Path
+			_choppedCarrotTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Carrot/carrot-chopped-v1.png");
 			ChangeSprite(_carrotTexture);
 			_carrotCollision.Disabled = false;
+		}
+
+		if (this.IsInGroup("Pasta"))
+		{
+			_pastaTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/spaghetti-v1.png");
+			_pastaCollision = GetNode<CollisionShape2D>("PastaCollision");
+			ChangeSprite(_pastaTexture);
+			_pastaCollision.Disabled = false;
 		}
     }
 
@@ -173,7 +179,6 @@ public partial class LevelTwoIngredient : CharacterBody2D
 		*/
 	}
 
-	// Use after minigame is completed?
     public void Chop()
     {
         State = IngredientState.Chopped;
@@ -185,16 +190,15 @@ public partial class LevelTwoIngredient : CharacterBody2D
 			ChangeSprite(_choppedOnionTexture);
 		}
 
-		// Commented out till got textures
-		// if (IsInGroup("Carrot"))
-		// {
-		// 	ChangeSprite(_choppedCarrotTexture);
-		// }
+		if (IsInGroup("Carrot"))
+		{
+			ChangeSprite(_choppedCarrotTexture);
+		}
 
-		// if (IsInGroup("Tomato"))
-		// {
-		// 	ChangeSprite(_choppedTomatoTexture);
-		// }
+		if (IsInGroup("Tomato"))
+		{
+			ChangeSprite(_choppedTomatoTexture);
+		}
     }
 
 	public void changeStateCooked()

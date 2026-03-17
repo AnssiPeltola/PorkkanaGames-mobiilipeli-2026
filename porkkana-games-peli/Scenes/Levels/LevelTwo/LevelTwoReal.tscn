@@ -1,9 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://dq85u5qotvgr2"]
+[gd_scene load_steps=16 format=3 uid="uid://dq85u5qotvgr2"]
 
 [ext_resource type="Script" uid="uid://dlt0ydesqq3pm" path="res://Code/Levels/LevelTwo.cs" id="1_fv2xp"]
 [ext_resource type="PackedScene" uid="uid://5gldpnqbvait" path="res://Scenes/Assets/Equipment/DropZones/CuttingBoardDropZone/CuttingBoardDropZone.tscn" id="1_q66cy"]
-[ext_resource type="PackedScene" uid="uid://pvjug3j3e8lj" path="res://Scenes/Assets/Ingredients/MiniGameIngredients/Onion/MiniGameIngredient_ONION.tscn" id="2_fv2xp"]
-[ext_resource type="PackedScene" uid="uid://btmd543utu0qk" path="res://Scenes/Assets/Ingredients/MiniGameIngredients/Tomato/MiniGameIngredient_TOMATO.tscn" id="3_5u87b"]
 [ext_resource type="PackedScene" uid="uid://j4hb472lofbn" path="res://Scenes/Assets/Equipment/DropZones/IngredientDropZone/IngredientDropZone.tscn" id="5_ef45m"]
 [ext_resource type="PackedScene" uid="uid://du1dcsdgx4hu0" path="res://Scenes/Assets/Ingredients/LevelTwoIngredient/LevelTwoIngredient.tscn" id="5_yyvae"]
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="6_2jm63"]
@@ -11,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://8yyr5bus4jmp" path="res://Scenes/Assets/Equipment/TrashCan/TrashCan.tscn" id="7_7uvfu"]
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="8_yyvae"]
 [ext_resource type="PackedScene" uid="uid://i4pfuso3kmkb" path="res://Scenes/Assets/Equipment/Fryingpan/Fryingpan.tscn" id="10_srf4j"]
-[ext_resource type="Texture2D" uid="uid://dgomryca6is04" path="res://Art/Assets/Equipment/Pot/pot-uncooked-v1.png" id="10_yyvae"]
+[ext_resource type="PackedScene" uid="uid://snwb0vhf4dn6" path="res://Scenes/Assets/Equipment/Pot/Pot.tscn" id="10_xi4fc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srf4j"]
 size = Vector2(214, 1093)
@@ -35,12 +33,6 @@ script = ExtResource("1_fv2xp")
 position = Vector2(202, 595)
 metadata/_edit_lock_ = true
 
-[node name="MiniGameIngredient" parent="." instance=ExtResource("2_fv2xp")]
-position = Vector2(229, 653)
-
-[node name="MiniGameIngredient2" parent="." instance=ExtResource("3_5u87b")]
-position = Vector2(443, 794)
-
 [node name="LevelTwoIngredient" parent="." groups=["Onion", "Raw"] instance=ExtResource("5_yyvae")]
 z_index = 2
 position = Vector2(704, 578)
@@ -49,6 +41,13 @@ _cuttingMiniGameScene = ExtResource("6_srf4j")
 [node name="LevelTwoIngredient2" parent="." groups=["Carrot", "Raw"] instance=ExtResource("5_yyvae")]
 position = Vector2(702, 335)
 _cuttingMiniGameScene = ExtResource("6_srf4j")
+
+[node name="LevelTwoIngredient3" parent="." groups=["Raw", "Tomato"] instance=ExtResource("5_yyvae")]
+position = Vector2(768, 789)
+_cuttingMiniGameScene = ExtResource("6_srf4j")
+
+[node name="LevelTwoIngredient4" parent="." groups=["Pasta", "Raw"] instance=ExtResource("5_yyvae")]
+position = Vector2(345, 794)
 
 [node name="Enviroment" type="CanvasLayer" parent="."]
 layer = -7844
@@ -106,20 +105,15 @@ position = Vector2(1790, 36)
 
 [node name="Tools" type="CanvasLayer" parent="."]
 
-[node name="PotUncookedV1" type="Sprite2D" parent="Tools"]
-position = Vector2(1580, 342)
-scale = Vector2(0.323, 0.34125)
-texture = ExtResource("10_yyvae")
+[node name="Pot" parent="Tools" instance=ExtResource("10_xi4fc")]
+position = Vector2(1459, 355)
+rotation = -1.573897
 
 [node name="Fryingpan" parent="Tools" instance=ExtResource("10_srf4j")]
 z_index = -1
-position = Vector2(1624.9999, 712.99994)
+position = Vector2(1559.9999, 738.00006)
 rotation = -1.5864966
 
 [node name="CuttingBoardDropZone" parent="." instance=ExtResource("1_q66cy")]
 z_index = -4096
 position = Vector2(183, 102)
-
-[node name="LevelTwoIngredient3" parent="." groups=["Raw", "Tomato"] instance=ExtResource("5_yyvae")]
-position = Vector2(768, 789)
-_cuttingMiniGameScene = ExtResource("6_srf4j")

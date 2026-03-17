@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://snwb0vhf4dn6"]
+
+[ext_resource type="Script" uid="uid://dmfyr1gjdnxov" path="res://Code/Assets/Equipment/Pot/Pot.cs" id="1_2drao"]
+[ext_resource type="Texture2D" uid="uid://byjympjauphkt" path="res://Art/Assets/Equipment/Pot/pot-empty-v1.png" id="1_6j6a5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2drao"]
+radius = 108.00463
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2drao"]
+bg_color = Color(2.2140146e-06, 0.72455424, 0.22892708, 1)
+
+[node name="Pot" type="Area2D"]
+script = ExtResource("1_2drao")
+CookTime = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_6j6a5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 1)
+shape = SubResource("CircleShape2D_2drao")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -147.0
+offset_top = -193.0
+offset_right = 145.0
+offset_bottom = -142.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_2drao")
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]

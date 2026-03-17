@@ -16,7 +16,7 @@ public partial class Conveyor : StaticBody2D
 
 	private Area2D detectionZone;
 	// New List for Ingredient Object
-	private readonly List<Ingredient> bodiesOnBelt = new();
+	private readonly List<Node2D> bodiesOnBelt = new();
 
 	public override void _Ready()
 	{
@@ -47,14 +47,14 @@ public partial class Conveyor : StaticBody2D
 	// When conveyor detects Ingredient it will add the Ingredient into bodiesOnBelt list and items on the list are moved on the conveyor
 	private void OnBodyEntered(Node2D body)
 	{
-		if (body is Ingredient item)
+		if (body is Node2D item)
 			bodiesOnBelt.Add(item);
 	}
 
 	// When Ingredient exits Conveyor the Ingredient is removed from the bodiesOnBelt list
 	private void OnBodyExited(Node2D body)
 	{
-		if (body is Ingredient item)
+		if (body is Node2D item)
 			bodiesOnBelt.Remove(item);
 	}
 }

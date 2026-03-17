@@ -24,10 +24,10 @@ public partial class TrashCan : Area2D
                 // Set +1 point on LevelOneScore
                 GameManager.Instance.BadItemEntered();
             }
-            // If 
+            // If
             if (box.IsInGroup("Good"))
             {
-                GameManager.Instance.LoseHealth();
+                // GameManager.Instance.LoseHealth();
             }
         }
     }

@@ -1,4 +1,5 @@
 using Godot;
+using System;
 
 public partial class MainMenu : Control
 {
@@ -11,13 +12,13 @@ public partial class MainMenu : Control
 
 	private void OnStartPressed()
 	{
-		// Load Recipe Selection menu directly
-		GetTree().ChangeSceneToFile("res://Scenes/Menus/RecipeSelection.tscn");
+		// Go to recipe selection
+		GetTree().ChangeSceneToFile("res://Scenes/Menus/RecipeSelections.tscn");
 	}
 
 	private void OnSettingsPressed()
 	{
-		// Load Settings menu directly
+		// Go to settings menu
 		GetTree().ChangeSceneToFile("res://Scenes/Menus/Settings.tscn");
 	}
 

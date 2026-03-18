@@ -9,8 +9,7 @@ public partial class LevelOne : BaseLevel
 	public override void _Ready()
 	{
 		CurrentLevel = 1;
-		RequiredScore = 2;
-		ResetScore();
+		RequiredScore = 4;
 	}
 
 	public override void _Process(double delta)

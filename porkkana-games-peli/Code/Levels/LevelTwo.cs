@@ -7,7 +7,6 @@ public partial class LevelTwo : BaseLevel
 	{
 		CurrentLevel = 2;
 		RequiredScore = 2;
-		ResetScore();
 	}
 
 	public override void _Process(double delta)

@@ -70,7 +70,6 @@ public partial class GameManager : Node
 	// Reqires:
 	//      using System.Linq;
 	//      for the .Sum()
-
 	public void GetFinalScore(int x)
 	{
 		FinalScore = SavedScore.Sum();

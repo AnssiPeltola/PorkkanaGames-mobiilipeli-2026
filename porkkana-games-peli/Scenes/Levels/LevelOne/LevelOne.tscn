@@ -109,6 +109,7 @@ position = Vector2(948, 534)
 texture = ExtResource("6_jhgcd")
 
 [node name="Guidebook" parent="." instance=ExtResource("9_6x6kw")]
+visible = false
 z_index = 4096
 offset_left = 731.0
 offset_top = 104.0

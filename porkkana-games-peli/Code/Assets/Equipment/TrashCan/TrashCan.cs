@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 
 //TODO:
-//Make TrashCan talk to LeveLone.cs
+//Make TrashCan talk to LevelOne.cs,
 //for score
 //not GameManager
 
@@ -27,14 +27,14 @@ public partial class TrashCan : Area2D
 			{
 				GD.Print("Bad Ingredient entered & Deleted");
 				DelayMethod(box);
-				// Set +1 point on LevelOneScore
-				//LevelOne.GetScore();
+				// Gain +1 Score
+				BaseLevel.CurrentActiveLevel.GainScore();
 			}
 			// If
 			if (box.IsInGroup("Good"))
 			{
-				//// GameManager.Instance.LoseHealth();
-			
+				// Lose +1 Score
+				BaseLevel.CurrentActiveLevel.LoseScore();			
 			}
 		}
 	}

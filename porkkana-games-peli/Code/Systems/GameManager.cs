@@ -1,5 +1,22 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+/* Purpose:
+ *      Holds all data and "things",
+ *      That span accross levels
+ *      Like: 
+ *          Total score
+ *          Health
+ *
+ * Contains methods
+ * - SetScore()
+ * - GetFinalScore()
+ *
+ *
+ */
 
 public partial class GameManager : Node
 {
@@ -33,17 +50,30 @@ public partial class GameManager : Node
 	#endregion
 
 	#region Game Data
-	// LEVEL ONE
-	// LEVEL ONE
-	private int _levelOneScore { get; set; }
-	private int _totalScore { get; set; }
+	// Use List to store completed levelScores and to calculate
+	// https://www.geeksforgeeks.org/c-sharp/list-class-in-c-sharp/
+	// Requires:
+	//      using System.Collections.Generic;
+	List<int> SavedScore = new List<int>();
+	int FinalScore = 0;
+
 
 	#endregion
 	public void SetScore(int Score)
 	{
-		_levelOneScore = Score;
-		GD.Print($"Level score saved!");
+		//List feature <Name>.Add(n);
+		SavedScore.Add(Score);
+		GD.Print($"Level score {Score} saved!");
 	}
-	
+
+	// Get the total score of all levels summed together
+	// Reqires:
+	//      using System.Linq;
+	//      for the .Sum()
+
+	public void GetFinalScore(int x)
+	{
+		FinalScore = SavedScore.Sum();
+	}
 
 }

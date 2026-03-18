@@ -5,7 +5,7 @@ using System;
 /* Base class for all levels to inherit from.
  *
  * Consider:
- *  Change this into Abstract class to force intialisation to include CurrentLevel number
+ *  Change this into Abstract class? 
  *
  *  Contains methods
  *  - GainScore()
@@ -14,15 +14,35 @@ using System;
  *  - ResetScore()
  *  - PrintLevelComplete()
  *  - RunLevelComplete()
+ *
+ *  NOTE:
+ *      Again, we need to make to reference the instances,
+ *      run by this non-static class
+ *      This happens in _Ready() where we store the current,
+ *      instance to CurrentActiveLevel
+ *
  */
 
 
 public partial class BaseLevel : Node
 {
+	// Create a reference for currentl instance of a level
+	// Each level stores its "this" (=current instance),
+	// To the CurrentActiveLevel reference.
+	public static BaseLevel CurrentActiveLevel { get; set; }
+
 	// Protected = only member of the BaseLevel can access;
 	protected int CurrentLevel { get; set; }
 	protected int Score { get; set; }
 	protected int RequiredScore { get; set; }
+
+	public override void _Ready()
+	{
+		// Each level on _Ready() will run:
+		// Save "this" (= current instance that is running)
+		// to reference "CurrentActiveLevel"
+		CurrentActiveLevel = this;
+	}
  
 	// Just a test print method to inherit
 	public virtual void PrintLevelComplete()
@@ -30,13 +50,13 @@ public partial class BaseLevel : Node
 		GD.Print($"From Level { CurrentLevel } We are complete!");
 	}
 
-	protected virtual void GainScore()
+	public virtual void GainScore()
 	{
 		Score += 1;
 		CheckScore();
 	}
 
-	protected virtual void LoseScore()
+	public virtual void LoseScore()
 	{
 		Score -= 1;
 		CheckScore();
@@ -58,6 +78,7 @@ public partial class BaseLevel : Node
 	protected virtual void ResetScore()
 	{
 		Score = 0;
+		RequiredScore = 0;
 	}
 	protected virtual void RunLevelComplete()
 	{
@@ -68,11 +89,7 @@ public partial class BaseLevel : Node
 
 		// Give GameManager CurrentLevelScore
 		GameManager.Instance.SetScore(Score);
-
-
 		ResetScore();
-		RequiredScore = 0;
 	}
-
 
 }

@@ -20,34 +20,23 @@ using System.Linq;
 
 public partial class GameManager : Node
 {
+	// ---------------------------------------------------------
+	// Singleton
+	// ---------------------------------------------------------
+	public static GameManager Instance { get; private set; }
 
-	#region Singleton
-	// Staattinen autoproperty.
-	// Get on public, jotta GameManageriin päästään käsiksi mistä vain.
-	// Set private, jotta sitä ei voisi helposti ylikirjoittaa.
-	// https://docs.godotengine.org/en/stable/tutorials/scripting/singletons_autoload.html
-	public static GameManager Instance
+	public override void _Ready()
 	{
-		get;
-		private set;
-	}
-
-	public GameManager()
-	{
-		// Singleton takaa, että luokasta voidaan tehdä vain yksi olio kerrallaan.
 		if (Instance == null)
 		{
-			// Ainoata oliota ei ole vielä määritetty. Olkoon tämä olio se.
 			Instance = this;
 		}
 		else if (Instance != this)
 		{
-			// Singleton-olio on jo olemassa! Tuhotaan juuri luotu olio.
 			QueueFree();
 			return;
 		}
 	}
-	#endregion
 
 	#region Game Data
 	// Use List to store completed levelScores and to calculate
@@ -74,5 +63,10 @@ public partial class GameManager : Node
 	{
 		FinalScore = SavedScore.Sum();
 	}
+
+	// ---------------------------------------------------------
+	// Recipe Selection
+	// ---------------------------------------------------------
+	public RecipeData SelectedRecipe { get; set; }
 
 }

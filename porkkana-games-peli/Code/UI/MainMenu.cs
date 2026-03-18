@@ -2,7 +2,6 @@ using Godot;
 
 public partial class MainMenu : Control
 {
-
 	public override void _Ready()
 	{
 		GetNode<Button>("CanvasLayer/ButtonContainer/StartButton").Pressed += OnStartPressed;
@@ -12,12 +11,14 @@ public partial class MainMenu : Control
 
 	private void OnStartPressed()
 	{
-		SceneManager.Instance.LoadScene("res://Scenes/Menus/RecipeSelection.tscn");
+		// Load Recipe Selection menu directly
+		GetTree().ChangeSceneToFile("res://Scenes/Menus/RecipeSelection.tscn");
 	}
 
 	private void OnSettingsPressed()
 	{
-		SceneManager.Instance.LoadScene("res://Scenes/Menus/Settings.tscn");
+		// Load Settings menu directly
+		GetTree().ChangeSceneToFile("res://Scenes/Menus/Settings.tscn");
 	}
 
 	private void OnExitPressed()

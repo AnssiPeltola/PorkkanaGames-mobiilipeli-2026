@@ -3,14 +3,13 @@ using System;
 
 public partial class GameManager : Node
 {
-	// -------------------------
+	// ---------------------------------------------------------
 	// Singleton
-	// -------------------------
+	// ---------------------------------------------------------
 	public static GameManager Instance { get; private set; }
 
 	public override void _Ready()
 	{
-		// Set singleton instance
 		if (Instance == null)
 		{
 			Instance = this;
@@ -22,9 +21,9 @@ public partial class GameManager : Node
 		}
 	}
 
-	// -------------------------
-	// Game Data
-	// -------------------------
+	// ---------------------------------------------------------
+	// Level Score System
+	// ---------------------------------------------------------
 	private int _levelOneScore = 0;
 
 	[Export] public int RequiredGoodItems { get; set; } = 2;
@@ -40,14 +39,6 @@ public partial class GameManager : Node
 		}
 	}
 
-	// -------------------------
-	// Recipe Selection
-	// -------------------------
-	public RecipeData SelectedRecipe { get; set; }
-
-	// -------------------------
-	// Score Logic
-	// -------------------------
 	public void GoodItemEntered()
 	{
 		LevelOneScore += 1;
@@ -70,6 +61,12 @@ public partial class GameManager : Node
 		if (LevelOneScore >= (RequiredGoodItems + RequiredBadItems))
 		{
 			GD.Print("All items in right positions! Level completed!");
+			SceneControl.Current?.OnComplete(1);
 		}
 	}
+
+	// ---------------------------------------------------------
+	// Recipe Selection
+	// ---------------------------------------------------------
+	public RecipeData SelectedRecipe { get; set; }
 }

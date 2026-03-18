@@ -17,6 +17,8 @@ public partial class RecipeButton : Button
 	private void OnPressed()
 	{
 		GameManager.Instance.SelectedRecipe = _recipe;
-		SceneManager.Instance.LoadScene("res://Scenes/Levels/LevelOne.tscn");
+
+		// Load Level One directly
+		GetTree().ChangeSceneToFile("res://Scenes/Levels/LevelOne.tscn");
 	}
 }

@@ -1,20 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://8yyr5bus4jmp"]
 
 [ext_resource type="Script" uid="uid://s255ox6r2ldl" path="res://Code/Assets/Equipment/TrashCan/TrashCan.cs" id="1_b3rhl"]
-[ext_resource type="Texture2D" uid="uid://2squjyekb58b" path="res://Art/Assets/Equipment/GarbageCan/roska.png" id="2_8lub5"]
+[ext_resource type="Texture2D" uid="uid://c4wsk00mnaxku" path="res://Art/Assets/Equipment/GarbageCan/roskis_auki_v1.png" id="2_2fk63"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnk72"]
-size = Vector2(137, 130)
+size = Vector2(199, 130)
 
 [node name="TrashCan" type="Area2D"]
 z_index = -1
 script = ExtResource("1_b3rhl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(38.913795, 37)
-scale = Vector2(2.2758622, 2.275862)
-texture = ExtResource("2_8lub5")
+scale = Vector2(0.2731035, 0.27310345)
+texture = ExtResource("2_2fk63")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(38.5, 37)
+position = Vector2(-3.5, 0)
 shape = SubResource("RectangleShape2D_hnk72")

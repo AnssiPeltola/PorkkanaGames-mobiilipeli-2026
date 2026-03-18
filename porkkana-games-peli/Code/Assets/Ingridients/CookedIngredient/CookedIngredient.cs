@@ -2,8 +2,15 @@ using Godot;
 
 public partial class CookedIngredient : CharacterBody2D
 {
+	public enum CookedIngredientKind
+	{
+		None,
+		Pasta,
+		Sauce
+	}
 	private bool _dragging = false;
 	[Export] private int _clickRadius = 32;
+	public CookedIngredientKind IngredientKind { get; set; } = CookedIngredientKind.None;
 	private Sprite2D _sprite;
 	private Texture2D _pastaTexture;
 	private Texture2D _sauceTexture;
@@ -15,26 +22,20 @@ public partial class CookedIngredient : CharacterBody2D
 		// We get this scenes Sprite2D node in variable _sprite
         _sprite = GetNode<Sprite2D>("Sprite2D");
 
-		// Pasta and sauce Sprite2D Load
-		_pastaTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/pasta.png");
-		_sauceTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomatosauce.png");
-
-		_pastaCollision = GetNode<CollisionShape2D>("PastaCollision");
-		_sauceCollision = GetNode<CollisionShape2D>("SauceCollision");
-
-		// Change Sprite2D Texture and Enable CollisionShape2D by group
-		if (this.IsInGroup("Pasta"))
+		if (IngredientKind == CookedIngredientKind.Pasta)
 		{
+			_pastaTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/pasta.png");
+			_pastaCollision = GetNode<CollisionShape2D>("PastaCollision");
 			ChangeSprite(_pastaTexture);
 			_pastaCollision.Disabled = false;
-
 		}
 
-		if (this.IsInGroup("Sauce"))
+		if (IngredientKind == CookedIngredientKind.Sauce)
 		{
+			_sauceTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomatosauce.png");
+			_sauceCollision = GetNode<CollisionShape2D>("SauceCollision");
 			ChangeSprite(_sauceTexture);
 			_sauceCollision.Disabled = false;
-
 		}
     }
 

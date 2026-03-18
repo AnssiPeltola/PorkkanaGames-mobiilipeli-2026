@@ -10,7 +10,7 @@ public partial class Fryingpan : Area2D
     private Texture2D _onionFryingpan;
     private Texture2D _carrotFryingpan;
     private Texture2D _tomatoFryingpan;
-    private FryingIngredient _currentIngredient;
+    private LevelTwoIngredient _currentIngredient;
     [Export] private float CookTime = 3f;
     private int state = 0;
 
@@ -19,9 +19,9 @@ public partial class Fryingpan : Area2D
         _sprite = GetNode<Sprite2D>("Sprite2D");
 
         // Load textures for different state of frying pan
-        _onionFryingpan = GD.Load<Texture2D>("res://Art/Assets/Equipment/Frying Pan/fryingpan2.png");
-        _carrotFryingpan = GD.Load<Texture2D>("res://Art/Assets/Equipment/Frying Pan/fryingpan3.png");
-        _tomatoFryingpan = GD.Load<Texture2D>("res://Art/Assets/Equipment/Frying Pan/fryingpan4.png");
+        _onionFryingpan = GD.Load<Texture2D>("res://Art/Assets/Equipment/Frying Pan/pan-onion-v1.png");
+        _carrotFryingpan = GD.Load<Texture2D>("res://Art/Assets/Equipment/Frying Pan/pan-onion-carrot-v1.png");
+        _tomatoFryingpan = GD.Load<Texture2D>("res://Art/Assets/Equipment/Frying Pan/pan-sauce-v1.png");
 
         // Timer and progressBar
         _cookTimer = GetNode<Timer>("Timer");
@@ -56,8 +56,8 @@ public partial class Fryingpan : Area2D
     private void OnBodyEntered(Node2D body)
     {
         // Check if ingredient is Onion and state is 0
-        if (body is FryingIngredient ingredient &&
-            ingredient.State == FryingIngredient.IngredientState.Chopped && ingredient.IsInGroup("Onion") && state == 0)
+        if (body is LevelTwoIngredient ingredient &&
+            ingredient.State == LevelTwoIngredient.IngredientState.Chopped && ingredient.IsInGroup("Onion") && state == 0)
         {
             GD.Print("Chopped Onion entered pan");
             _currentIngredient = ingredient;
@@ -65,8 +65,8 @@ public partial class Fryingpan : Area2D
         }
 
         // Check if ingredient is Carrot and state is 1
-        if (body is FryingIngredient ingredient2 &&
-            ingredient2.State == FryingIngredient.IngredientState.Chopped && ingredient2.IsInGroup("Carrot") && state == 1)
+        if (body is LevelTwoIngredient ingredient2 &&
+            ingredient2.State == LevelTwoIngredient.IngredientState.Chopped && ingredient2.IsInGroup("Carrot") && state == 1)
         {
             GD.Print("Chopped Carrot entered pan");
             _currentIngredient = ingredient2;
@@ -74,8 +74,8 @@ public partial class Fryingpan : Area2D
         }
 
         // Checks if ingredient is Tomato and state is 2
-        if (body is FryingIngredient ingredient3 &&
-            ingredient3.State == FryingIngredient.IngredientState.Chopped && ingredient3.IsInGroup("Tomato") && state == 2)
+        if (body is LevelTwoIngredient ingredient3 &&
+            ingredient3.State == LevelTwoIngredient.IngredientState.Chopped && ingredient3.IsInGroup("Tomato") && state == 2)
         {
             GD.Print("Chopped Tomato entered pan");
             _currentIngredient = ingredient3;

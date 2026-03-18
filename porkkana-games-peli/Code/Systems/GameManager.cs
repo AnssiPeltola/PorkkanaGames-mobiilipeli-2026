@@ -1,5 +1,22 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+/* Purpose:
+ *      Holds all data and "things",
+ *      That span accross levels
+ *      Like: 
+ *          Total score
+ *          Health
+ *
+ * Contains methods
+ * - SetScore()
+ * - GetFinalScore()
+ *
+ *
+ */
 
 public partial class GameManager : Node
 {
@@ -21,52 +38,35 @@ public partial class GameManager : Node
 		}
 	}
 
-	// ---------------------------------------------------------
-	// Level Score System
-	// ---------------------------------------------------------
-	private int _levelOneScore = 0;
+	#region Game Data
+	// Use List to store completed levelScores and to calculate
+	// https://www.geeksforgeeks.org/c-sharp/list-class-in-c-sharp/
+	// Requires:
+	//      using System.Collections.Generic;
+	List<int> SavedScore = new List<int>();
+	int FinalScore = 0;
 
-	[Export] public int RequiredGoodItems { get; set; } = 2;
-	[Export] public int RequiredBadItems { get; set; } = 1;
 
-	public int LevelOneScore
+	#endregion
+	public void SetScore(int Score)
 	{
-		get => _levelOneScore;
-		set
-		{
-			_levelOneScore = Mathf.Clamp(value, 0, Int32.MaxValue);
-			GD.Print($"Points now: {LevelOneScore} Needed points: {RequiredGoodItems + RequiredBadItems}");
-		}
+		//List feature <Name>.Add(n);
+		SavedScore.Add(Score);
+		GD.Print($"Level score {Score} saved!");
 	}
 
-	public void GoodItemEntered()
+	// Get the total score of all levels summed together
+	// Reqires:
+	//      using System.Linq;
+	//      for the .Sum()
+	public void GetFinalScore(int x)
 	{
-		LevelOneScore += 1;
-		CheckLevelOneComplete();
-	}
-
-	public void GoodItemExited()
-	{
-		LevelOneScore -= 1;
-	}
-
-	public void BadItemEntered()
-	{
-		LevelOneScore += 1;
-		CheckLevelOneComplete();
-	}
-
-	private void CheckLevelOneComplete()
-	{
-		if (LevelOneScore >= (RequiredGoodItems + RequiredBadItems))
-		{
-			GD.Print("All items in right positions! Level completed!");
-			SceneControl.Current?.OnComplete(1);
-		}
+		FinalScore = SavedScore.Sum();
 	}
 
 	// ---------------------------------------------------------
 	// Recipe Selection
 	// ---------------------------------------------------------
 	public RecipeData SelectedRecipe { get; set; }
+
 }

@@ -1,30 +1,54 @@
-[gd_scene load_steps=5 format=3 uid="uid://drkpp7gv2i1bq"]
+[gd_scene load_steps=8 format=3 uid="uid://drkpp7gv2i1bq"]
 
 [ext_resource type="Script" uid="uid://37bgtnmqcsja" path="res://Code/Assets/Equipment/Conveyor/Conveyor.cs" id="1_8wonc"]
-[ext_resource type="Texture2D" uid="uid://dqux1cl68qdba" path="res://Art/Assets/Equipment/Liukuhihnat/conveyor.png" id="1_wrkf0"]
+[ext_resource type="Texture2D" uid="uid://ch0ia20s37es2" path="res://Art/Assets/Equipment/Liukuhihnat/liukuhihna_v4_valmis.png" id="2_kpcbt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpcbt"]
+atlas = ExtResource("2_kpcbt")
+region = Rect2(0, 0, 1920, 263)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icvj2"]
+atlas = ExtResource("2_kpcbt")
+region = Rect2(0, 263, 1920, 263)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o1f2d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpcbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icvj2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wonc"]
-size = Vector2(762, 121)
+size = Vector2(805, 118.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viy2w"]
-size = Vector2(762, 121)
+size = Vector2(799, 120)
 
 [node name="Conveyor" type="StaticBody2D"]
 z_index = -1
 script = ExtResource("1_8wonc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(128.75, 29.5)
-scale = Vector2(1.509901, 1.951613)
-texture = ExtResource("1_wrkf0")
+scale = Vector2(0.6, 0.776)
+sprite_frames = SubResource("SpriteFrames_o1f2d")
+autoplay = "default"
+frame_progress = 0.8826569
 
 [node name="DetectionZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
-position = Vector2(128, 29.5)
+position = Vector2(127, 29.75)
 shape = SubResource("RectangleShape2D_8wonc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(128, 29.5)
+position = Vector2(129.5, 30)
 shape = SubResource("RectangleShape2D_viy2w")
 disabled = true

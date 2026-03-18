@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://cth6sjntmbtsh"]
+
+[ext_resource type="Script" uid="uid://d33axuefy1mpp" path="res://Code/Assets/Equipment/IngredientSpawner/IngredientSpawner.cs" id="1_5b6oi"]
+[ext_resource type="Texture2D" uid="uid://3y6qqa5titgp" path="res://Art/Assets/Equipment/Pot/pot-cooked-v1.png" id="2_f58rj"]
+[ext_resource type="PackedScene" uid="uid://b4gdag3guih2c" path="res://Scenes/Assets/Ingredients/CookedIngredient/CookedIngredient.tscn" id="2_opkj2"]
+[ext_resource type="Texture2D" uid="uid://q413s8s4ty2h" path="res://Art/Assets/Equipment/Frying Pan/pan-sauce-v1.png" id="3_opkj2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opkj2"]
+radius = 131.30879
+
+[node name="IngredientSpawner" type="Area2D"]
+script = ExtResource("1_5b6oi")
+CookedIngredientScene = ExtResource("2_opkj2")
+SpawnerTexture = ExtResource("3_opkj2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4575, 0.4575)
+texture = ExtResource("2_f58rj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 3)
+shape = SubResource("CircleShape2D_opkj2")

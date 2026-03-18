@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dodunm0iqwkit"]
+
+[ext_resource type="Script" uid="uid://ceyy7qt8cdfe7" path="res://Code/Assets/Ingridients/LevelOneIngredient/LevelOneIngredient.cs" id="1_tve77"]
+[ext_resource type="Texture2D" uid="uid://drhd74as2yxdt" path="res://Art/Assets/Ingridients/Onion/onion-v1.png" id="2_tcvb0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tcvb0"]
+radius = 69.46222
+
+[node name="LevelOneIngredient" type="CharacterBody2D"]
+script = ExtResource("1_tve77")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_tcvb0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 8)
+shape = SubResource("CircleShape2D_tcvb0")

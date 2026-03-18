@@ -12,15 +12,19 @@ using System.Threading.Tasks;
 // https://www.youtube.com/watch?v=RS1uqBIVruQ - GODOT - Removing Objects on Collisions
 public partial class TrashCan : Area2D
 {
+	private static readonly Color WrongColor   = new Color(1.0f, 0.4f, 0.4f, 1.0f);
+	private static readonly Color NormalColor  = Colors.White;
+
 	// Makes the connection signal for method OnBodyEntered
 	public override void _Ready()
 	{
 		BodyEntered += OnBodyEntered;
+		BodyExited += OnBodyExited;
 	}
 
 	private async void OnBodyEntered(Node2D body)
 	{
-		if (body is Ingredient box)
+		if (body is LevelOneIngredient box)
 		{
 			// If box that collides TrashCan is in group "bad" it will delete this object from game
 			if (box.IsInGroup("Bad"))
@@ -33,15 +37,30 @@ public partial class TrashCan : Area2D
 			// If
 			if (box.IsInGroup("Good"))
 			{
+				box.Modulate = WrongColor;
+
 				// Lose +1 Score
-				BaseLevel.CurrentActiveLevel.LoseScore();			
+				BaseLevel.CurrentActiveLevel.LoseScore(); // This breaks code here!!
+				// void TrashCan+<OnBodyEntered>d__3.MoveNext(): System.NullReferenceException: Object
+			}
+		}
+	}
+
+	private async void OnBodyExited(Node2D body)
+	{
+		if (body is LevelOneIngredient box)
+		{
+
+			if (box.IsInGroup("Good"))
+			{
+				box.Modulate = NormalColor;
 			}
 		}
 	}
 
 	// https://forum.godotengine.org/t/create-a-delay-between-code-execution-using-c/12714/5
 	// Delays function by 0.5sec
-	private async void DelayMethod(Ingredient body)
+	private async void DelayMethod(LevelOneIngredient body)
 	{
 		await Task.Delay(TimeSpan.FromMilliseconds(500));
 		// QueueFree() function will delete the Node and all its child nodes

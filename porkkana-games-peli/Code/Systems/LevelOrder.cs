@@ -21,8 +21,8 @@ public static class LevelOrder
 {
 	// Paths to all levels in the game.
 	private static readonly string LevelOne = "res://Scenes/Levels/LevelOne/LevelOne.tscn";
-	private static readonly string LevelTwo = "res://Scenes/Levels/LevelTwo/LevelTwoReal.tscn";
-	// private static readonly string LevelTwo = "res://Scenes/Levels/LevelTwo/LevelTwo.tscn";
+	// private static readonly string LevelTwo = "res://Scenes/Levels/LevelTwo/LevelTwoReal.tscn";
+	private static readonly string LevelTwo = "res://Scenes/Levels/LevelTwo/LevelTwo.tscn";
 	private static readonly string LevelThree = "res://Scenes/Levels/LevelThree/LevelThree.tscn";
 
 	// Method that returns the path of given LevelNumber

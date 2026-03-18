@@ -1,5 +1,22 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+/* Purpose:
+ *      Holds all data and "things",
+ *      That span accross levels
+ *      Like: 
+ *          Total score
+ *          Health
+ *
+ * Contains methods
+ * - SetScore()
+ * - GetFinalScore()
+ *
+ *
+ */
 
 public partial class GameManager : Node
 {
@@ -33,52 +50,29 @@ public partial class GameManager : Node
 	#endregion
 
 	#region Game Data
-	private int _levelOneScore = 0;
-	[Export] public int RequiredGoodItems = 2;
-	[Export] public int RequiredBadItems = 1;
+	// Use List to store completed levelScores and to calculate
+	// https://www.geeksforgeeks.org/c-sharp/list-class-in-c-sharp/
+	// Requires:
+	//      using System.Collections.Generic;
+	List<int> SavedScore = new List<int>();
+	int FinalScore = 0;
 
-    // Mobiiledev exercise
-	// public int Health = 3;
-
-	public int LevelOneScore
-	{
-		get { return _levelOneScore; }
-		set
-		{
-			// Mathf.Clamp restricts a number to stay within a minimum and maximum range
-			_levelOneScore = Mathf.Clamp(value, 0, Int32.MaxValue);
-			GD.Print($"Points now: {LevelOneScore} Needed points: {RequiredGoodItems + RequiredBadItems}");
-		}
-	}
 
 	#endregion
-
-	// Set +1 point on LevelOneScore
-	public void GoodItemEntered()
+	public void SetScore(int Score)
 	{
-		LevelOneScore += 1;
-		CheckLevelOneComplete();
+		//List feature <Name>.Add(n);
+		SavedScore.Add(Score);
+		GD.Print($"Level score {Score} saved!");
 	}
 
-	// Take -1 point from LevelOneScore
-	public void GoodItemExited()
+	// Get the total score of all levels summed together
+	// Reqires:
+	//      using System.Linq;
+	//      for the .Sum()
+	public void GetFinalScore(int x)
 	{
-		LevelOneScore -= 1;
+		FinalScore = SavedScore.Sum();
 	}
 
-	// Set +1 point on LevelOneScore
-	public void BadItemEntered()
-	{
-		LevelOneScore += 1;
-		CheckLevelOneComplete();
-	}
-
-
-	private void CheckLevelOneComplete()
-	{
-		if (LevelOneScore >= (RequiredGoodItems + RequiredBadItems))
-		{
-			GD.Print("All items in right positions! Level completed!");
-		}
-	}
 }

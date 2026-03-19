@@ -38,7 +38,6 @@ public partial class GameManager : Node
 		}
 	}
 
-	#region Game Data
 	// Use List to store completed levelScores and to calculate
 	// https://www.geeksforgeeks.org/c-sharp/list-class-in-c-sharp/
 	// Requires:
@@ -46,8 +45,6 @@ public partial class GameManager : Node
 	List<int> SavedScore = new List<int>();
 	int FinalScore = 0;
 
-
-	#endregion
 	public void SetScore(int Score)
 	{
 		//List feature <Name>.Add(n);

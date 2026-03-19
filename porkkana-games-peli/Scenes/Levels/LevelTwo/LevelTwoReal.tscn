@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://du1dcsdgx4hu0" path="res://Scenes/Assets/Ingredients/LevelTwoIngredient/LevelTwoIngredient.tscn" id="5_yyvae"]
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="6_2jm63"]
 [ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/Minigames/CuttingGame/CuttingMiniGame.tscn" id="6_srf4j"]
-[ext_resource type="PackedScene" uid="uid://8yyr5bus4jmp" path="res://Scenes/Assets/Equipment/TrashCan/TrashCan.tscn" id="7_7uvfu"]
 [ext_resource type="Texture2D" uid="uid://f6j1dsc13ldo" path="res://Art/Assets/Equipment/Stove/hella_v1.png" id="7_2jm63"]
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="8_yyvae"]
 [ext_resource type="PackedScene" uid="uid://i4pfuso3kmkb" path="res://Scenes/Assets/Equipment/Fryingpan/Fryingpan.tscn" id="10_srf4j"]

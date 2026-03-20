@@ -23,6 +23,9 @@ public partial class IngredientDropZone : Area2D
 			{
 				GD.Print("Good Ingredient entered!");
 				box.Modulate = CorrectColor;
+
+				// Add +1 Score here when "Good" Ingredient hits IngredientDropZone
+				// Add +1 Score
 				// Set +1 point on LevelOneScore
 				//GameManager.Instance.GoodItemEntered();
 			}
@@ -44,7 +47,8 @@ public partial class IngredientDropZone : Area2D
 			{
 				GD.Print("Good Ingredient Exited!");
 				box.Modulate = NormalColor;
-				// Take point off from LevelOneScore
+				// Take point off from Score when "Good" Ingredient leaves IngredientDropZone
+				// Minus -1 Score
 				//GameManager.Instance.GoodItemExited();
 			}
 

@@ -31,16 +31,18 @@ public partial class TrashCan : Area2D
 			{
 				GD.Print("Bad Ingredient entered & Deleted");
 				DelayMethod(box);
-				// Gain +1 Score
+
+				// Gain +1 Score - Here +1 Score when "Bad" ingredient goes into trashCan
+				// Add +1 Score
 				BaseLevel.CurrentActiveLevel.GainScore();
 			}
-			// If
+
 			if (box.IsInGroup("Good"))
 			{
 				box.Modulate = WrongColor;
 
-				// Lose +1 Score
-				BaseLevel.CurrentActiveLevel.LoseScore(); // This breaks code here!!
+				// Commented out this because we dont want to lose score if good item enters into trashcan. It would mixup the score requirements
+				// BaseLevel.CurrentActiveLevel.LoseScore(); // This breaks code here!!
 				// void TrashCan+<OnBodyEntered>d__3.MoveNext(): System.NullReferenceException: Object
 			}
 		}

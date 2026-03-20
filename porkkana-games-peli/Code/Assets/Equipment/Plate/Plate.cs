@@ -36,6 +36,7 @@ public partial class Plate : Area2D
 				_placeholderPasta.Visible = false;
 				_lockedPasta.Visible = true;
 				pastaPlaced = true;
+				// Add +1 Score
 			}
 		}
 	}
@@ -50,6 +51,7 @@ public partial class Plate : Area2D
 				GD.Print("Sauce here");
 				_placeholderSauce.Visible = false;
 				_lockedSauce.Visible = true;
+				// Add +1 Score
 			}
 		}
 	}

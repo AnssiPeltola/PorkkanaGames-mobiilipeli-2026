@@ -90,6 +90,7 @@ public partial class Pot : Area2D
         GD.Print("Ingredient cooked!");
         _currentIngredient.QueueFree();
 		// Do we need to unsubscribe from signal - BodyEntered -= OnBodyEntered; ???
+        // Add +1 Score
     }
 
     // Function that changes this scenes Sprite2D texture to new

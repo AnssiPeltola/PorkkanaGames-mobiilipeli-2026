@@ -36,7 +36,8 @@ public partial class Plate : Area2D
 				_placeholderPasta.Visible = false;
 				_lockedPasta.Visible = true;
 				pastaPlaced = true;
-				// Add +1 Score
+				// Add +1 Score'
+				GameManager.Instance.CookedIngredientInDropzone();
 			}
 		}
 	}
@@ -52,6 +53,7 @@ public partial class Plate : Area2D
 				_placeholderSauce.Visible = false;
 				_lockedSauce.Visible = true;
 				// Add +1 Score
+				GameManager.Instance.CookedIngredientInDropzone();
 			}
 		}
 	}

@@ -28,6 +28,7 @@ public partial class IngredientDropZone : Area2D
 				// Add +1 Score
 				// Set +1 point on LevelOneScore
 				//GameManager.Instance.GoodItemEntered();
+				GameManager.Instance.GoodItemEntered();
 			}
 
 			if (box.IsInGroup("Bad"))
@@ -50,6 +51,7 @@ public partial class IngredientDropZone : Area2D
 				// Take point off from Score when "Good" Ingredient leaves IngredientDropZone
 				// Minus -1 Score
 				//GameManager.Instance.GoodItemExited();
+				GameManager.Instance.GoodItemExited();
 			}
 
 			if (box.IsInGroup("Bad"))

@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://lcxdo8gtekt5"]
+[gd_scene load_steps=15 format=3 uid="uid://lcxdo8gtekt5"]
 
 [ext_resource type="Texture2D" uid="uid://3aik0wwa6ibk" path="res://Art/Backrounds/tausta_v2_valmis.png" id="1_bsqap"]
 [ext_resource type="PackedScene" uid="uid://cth6sjntmbtsh" path="res://Scenes/Assets/Equipment/IngredientSpawner/IngredientSpawner.tscn" id="4_jairv"]
 [ext_resource type="Texture2D" uid="uid://3y6qqa5titgp" path="res://Art/Assets/Equipment/Pot/pot-cooked-v1.png" id="5_tv8hi"]
 [ext_resource type="Texture2D" uid="uid://d08knf32j6ipu" path="res://Art/Assets/Ingridients/Tomato/tomatosauce.png" id="6_bsqap"]
+[ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="7_326m4"]
 [ext_resource type="Texture2D" uid="uid://cotrqf3p02xqc" path="res://Art/Assets/Ingridients/Pasta/pasta.png" id="7_bc7tv"]
+[ext_resource type="Texture2D" uid="uid://1wcqhbc1wflh" path="res://Art/icon-red.svg" id="8_326m4"]
+[ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="9_y3p4b"]
 [ext_resource type="PackedScene" uid="uid://by6lsaf5ftnak" path="res://Scenes/Assets/Equipment/Plate/Plate.tscn" id="10_326m4"]
+[ext_resource type="Texture2D" uid="uid://b24tsu6dgafy0" path="res://Art/Assets/RecipeBook/open_helpguide_button.png" id="10_k6173"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy0cf"]
 size = Vector2(257, 1599)
@@ -57,3 +61,20 @@ position = Vector2(1595, 364)
 SpawnerTexture = ExtResource("5_tv8hi")
 SpawnedIngredientTexture = ExtResource("7_bc7tv")
 SpawnedIngredientKind = 1
+
+[node name="Guidebook" parent="." instance=ExtResource("7_326m4")]
+z_index = 4096
+offset_left = 817.14185
+offset_top = 483.0
+offset_right = 817.14185
+offset_bottom = 483.0
+rotation = -0.00906527
+GuideBookPageTexture = ExtResource("8_326m4")
+
+[node name="ShowGuidebookButton" parent="." instance=ExtResource("9_y3p4b")]
+offset_left = 1766.0
+offset_top = 955.0
+offset_right = 1834.0
+offset_bottom = 1023.0
+rotation = 0.0020855665
+icon = ExtResource("10_k6173")

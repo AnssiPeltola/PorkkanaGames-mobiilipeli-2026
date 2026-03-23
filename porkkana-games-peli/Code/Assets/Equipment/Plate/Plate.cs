@@ -5,26 +5,45 @@ public partial class Plate : Area2D
 {
 	private Area2D _pastaDetectionZone;
 	private Area2D _sauceDetectionZone;
-	private Sprite2D _lockedPasta;
-	private Sprite2D _lockedSauce;
-	private Sprite2D _placeholderPasta;
-	private Sprite2D _placeholderSauce;
+	private Area2D _basilDetectionZone;
+	private Area2D _saltDetectionZone;
+	private Area2D _pepperDetectionZone;
+	private Sprite2D _plateSprite;
+	private Texture2D _platePasta;
+	private Texture2D _platePastaSauce;
+	private Texture2D _platePastaSauceSalt;
+	private Texture2D _platePastaSauceSaltPepper;
+	private Texture2D _platePastaSauceSaltPepperBasil;
 	private bool pastaPlaced = false;
-	// Called when the node enters the scene tree for the first time.
+	private bool saucePlaced = false;
+	private bool saltPlaced = false;
+	private bool pepperPlaced = false;
+
 	public override void _Ready()
 	{
+		// Load all different collisions and textures
 		_pastaDetectionZone = GetNode<Area2D>("PastaZone");
 		_sauceDetectionZone = GetNode<Area2D>("SauceZone");
+		_basilDetectionZone = GetNode<Area2D>("BasilZone");
+		_saltDetectionZone = GetNode<Area2D>("SaltZone");
+		_pepperDetectionZone = GetNode<Area2D>("PepperZone");
+		_plateSprite = GetNode<Sprite2D>("PlateSprite2D");
 
-		_lockedPasta = GetNode<Sprite2D>("PastaZone/ReadyPastaSprite2D");
-		_lockedSauce = GetNode<Sprite2D>("SauceZone/ReadySauceSprite2D");
-		_placeholderPasta = GetNode<Sprite2D>("PastaZone/PastaSprite2D");
-		_placeholderSauce = GetNode<Sprite2D>("SauceZone/SauceSprite2D");
+		_platePasta = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/spaghetti-plate-v1.png");
+		_platePastaSauce = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/spaghetti-sauce-v1.png");
+		_platePastaSauceSalt = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/spaghetti-sauce-s-v1.png");
+		_platePastaSauceSaltPepper = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/spaghetti-sauce-sp-v1.png");
+		_platePastaSauceSaltPepperBasil = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/complete-dish-v1.png");
 
+		// Open signals
 		_pastaDetectionZone.BodyEntered += OnBodyEnteredPastaZone;
 		_sauceDetectionZone.BodyEntered += OnBodyEnteredSauceZone;
+		_saltDetectionZone.BodyEntered += OnBodyEnteredSaltZone;
+		_pepperDetectionZone.BodyEntered += OnBodyEnteredPepperZone;
+		_basilDetectionZone.BodyEntered += OnBodyEnteredBasilZone;
 	}
 
+	// Add Pasta into plate
 	private void OnBodyEnteredPastaZone(Node2D body)
 	{
 		if (body is CookedIngredient ingredient)
@@ -33,14 +52,14 @@ public partial class Plate : Area2D
 			{
 				ingredient.QueueFree();
 				GD.Print("Pasta here!");
-				_placeholderPasta.Visible = false;
-				_lockedPasta.Visible = true;
+				ChangePlateSprite(_platePasta);
 				pastaPlaced = true;
 				// Add +1 Score
 			}
 		}
 	}
 
+	// Add Sauce ontop of pasta
 	private void OnBodyEnteredSauceZone(Node2D body)
 	{
 		if (body is CookedIngredient ingredient)
@@ -49,10 +68,61 @@ public partial class Plate : Area2D
 			{
 				ingredient.QueueFree();
 				GD.Print("Sauce here");
-				_placeholderSauce.Visible = false;
-				_lockedSauce.Visible = true;
+				ChangePlateSprite(_platePastaSauce);
+				saucePlaced = true;
 				// Add +1 Score
 			}
 		}
+	}
+
+	// Add salt
+	private void OnBodyEnteredSaltZone(Node2D body)
+	{
+		if (body is SeasoningIngredientScene ingredient)
+		{
+			if (ingredient.SeasonKind == SeasoningIngredientScene.SeasoningKind.Salt && saucePlaced && !saltPlaced)
+			{
+				GD.Print("Salt here");
+				ChangePlateSprite(_platePastaSauceSalt);
+				saltPlaced = true;
+				// Add +1 Score
+			}
+		}
+	}
+
+	// Add Pepper
+	private void OnBodyEnteredPepperZone(Node2D body)
+	{
+		if (body is SeasoningIngredientScene ingredient)
+		{
+			if (ingredient.SeasonKind == SeasoningIngredientScene.SeasoningKind.Pepper && saltPlaced && !pepperPlaced)
+			{
+				GD.Print("Pepper here");
+				ChangePlateSprite(_platePastaSauceSaltPepper);
+				pepperPlaced = true;
+				// Add +1 Score
+			}
+		}
+	}
+
+	// Finish with basil on top of the dish
+	private void OnBodyEnteredBasilZone(Node2D body)
+	{
+		if (body is SeasoningIngredientScene ingredient)
+		{
+			if (ingredient.SeasonKind == SeasoningIngredientScene.SeasoningKind.Basil && pepperPlaced)
+			{
+				ingredient.QueueFree();
+				GD.Print("Basil here! All done!");
+				ChangePlateSprite(_platePastaSauceSaltPepperBasil);
+				// Add +1 Score - Or just only +1 Points here, since this can be done last.
+			}
+		}
+	}
+
+	// Change plates Sprite2D texture. Used when new stuff is added into Collision zones
+	public void ChangePlateSprite(Texture2D newTexture)
+	{
+		_plateSprite.Texture = newTexture;
 	}
 }

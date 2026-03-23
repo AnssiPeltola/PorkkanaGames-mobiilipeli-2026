@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://skgrasccf34i"]
+
+[ext_resource type="Script" uid="uid://284j0762l4xi" path="res://Code/Assets/Ingridients/SeasoningIngredientScene/SeasoningIngredientScene.cs" id="1_aqwxl"]
+[ext_resource type="Texture2D" uid="uid://d2wvkqpifpt6h" path="res://Art/Assets/Ingridients/Basil/basil-leaf-v2.png" id="2_uuagq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uuagq"]
+radius = 76.0
+height = 392.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gf6m5"]
+radius = 28.27752
+height = 139.71106
+
+[node name="SeasoningIngredientScene" type="CharacterBody2D"]
+script = ExtResource("1_aqwxl")
+_clickRadius = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_uuagq")
+
+[node name="ShakerCollision" type="CollisionShape2D" parent="."]
+position = Vector2(9, 2)
+shape = SubResource("CapsuleShape2D_uuagq")
+disabled = true
+
+[node name="BasilCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-2.000001, 7.0000076)
+rotation = -1.4860842
+shape = SubResource("CapsuleShape2D_gf6m5")
+disabled = true

@@ -1,74 +1,65 @@
-[gd_scene load_steps=10 format=3 uid="uid://by6lsaf5ftnak"]
+[gd_scene load_steps=5 format=3 uid="uid://by6lsaf5ftnak"]
 
 [ext_resource type="Script" uid="uid://bapcy7day5vso" path="res://Code/Assets/Equipment/Plate/Plate.cs" id="1_jgv4o"]
-[ext_resource type="Texture2D" uid="uid://s13ur68visku" path="res://Art/Assets/Equipment/Plates/plate.png" id="2_4u0fa"]
-[ext_resource type="Texture2D" uid="uid://dx3gnqv5y7tai" path="res://Art/Assets/Ingridients/Tomato/tomatosauce2.png" id="3_etk8i"]
-[ext_resource type="Texture2D" uid="uid://d08knf32j6ipu" path="res://Art/Assets/Ingridients/Tomato/tomatosauce.png" id="4_fjyp8"]
-[ext_resource type="Texture2D" uid="uid://cwkt8m6djui35" path="res://Art/Assets/Ingridients/Pasta/pasta2.png" id="5_bdru8"]
-[ext_resource type="Texture2D" uid="uid://cotrqf3p02xqc" path="res://Art/Assets/Ingridients/Pasta/pasta.png" id="6_hgp4o"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mw8iv"]
-radius = 83.29816
-height = 452.2649
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7lbxq"]
-radius = 67.97516
-height = 658.0
+[ext_resource type="Texture2D" uid="uid://bwqv02wxioq2" path="res://Art/Assets/Equipment/Plates/plate-v1.png" id="2_jgv4o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_llhp2"]
 radius = 57.035076
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_geksl"]
+radius = 228.04224
+height = 714.8218
+
 [node name="Plate" type="Area2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_jgv4o")
 
 [node name="PlateSprite2D" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(970, 830)
-texture = ExtResource("2_4u0fa")
-
-[node name="SauceZone" type="Area2D" parent="."]
-
-[node name="SauceSprite2D" type="Sprite2D" parent="SauceZone"]
-modulate = Color(1, 1, 1, 0.4)
-position = Vector2(949, 790)
-scale = Vector2(1.4270834, 1.4270834)
-texture = ExtResource("3_etk8i")
-
-[node name="ReadySauceSprite2D" type="Sprite2D" parent="SauceZone"]
-visible = false
-z_index = 2
-position = Vector2(949, 790)
-scale = Vector2(1.4270834, 1.4270834)
-texture = ExtResource("4_fjyp8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SauceZone"]
-position = Vector2(948.99994, 796)
-rotation = 1.4286264
-shape = SubResource("CapsuleShape2D_mw8iv")
-
-[node name="PastaZone" type="Area2D" parent="."]
-
-[node name="PastaSprite2D" type="Sprite2D" parent="PastaZone"]
-modulate = Color(1, 1, 1, 0.4)
-z_index = 1
-position = Vector2(958, 894)
-scale = Vector2(0.8832599, 0.8832599)
-texture = ExtResource("5_bdru8")
-
-[node name="ReadyPastaSprite2D" type="Sprite2D" parent="PastaZone"]
-visible = false
-z_index = 1
-position = Vector2(958, 894)
-scale = Vector2(0.8832599, 0.8832599)
-texture = ExtResource("6_hgp4o")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PastaZone"]
-position = Vector2(959.99994, 890.99994)
-rotation = 1.5252686
-shape = SubResource("CapsuleShape2D_7lbxq")
+texture = ExtResource("2_jgv4o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(306, 989)
 shape = SubResource("CircleShape2D_llhp2")
 disabled = true
+
+[node name="SauceZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SauceZone"]
+position = Vector2(5, 128.99998)
+rotation = 1.5728407
+scale = Vector2(1.056954, 1.0265757)
+shape = SubResource("CapsuleShape2D_geksl")
+
+[node name="PastaZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PastaZone"]
+position = Vector2(5, 128.99998)
+rotation = 1.5728407
+scale = Vector2(1.056954, 1.0265757)
+shape = SubResource("CapsuleShape2D_geksl")
+
+[node name="BasilZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BasilZone"]
+position = Vector2(7.5000005, 22.5)
+rotation = 1.5728407
+scale = Vector2(1.056954, 1.0265757)
+shape = SubResource("CapsuleShape2D_geksl")
+
+[node name="SaltZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaltZone"]
+position = Vector2(5, 128.99998)
+rotation = 1.5728407
+scale = Vector2(1.056954, 1.0265757)
+shape = SubResource("CapsuleShape2D_geksl")
+
+[node name="PepperZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PepperZone"]
+position = Vector2(5, 128.99998)
+rotation = 1.5728407
+scale = Vector2(1.056954, 1.0265757)
+shape = SubResource("CapsuleShape2D_geksl")

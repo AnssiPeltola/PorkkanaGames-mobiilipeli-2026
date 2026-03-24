@@ -91,5 +91,4 @@ public partial class BaseLevel : Node
 		GameManager.Instance.SetScore(Score);
 		ResetScore();
 	}
-
 }

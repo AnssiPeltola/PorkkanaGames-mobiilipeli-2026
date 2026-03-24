@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PorkkanaGamesPeli"
-run/main_scene="uid://i2gmb583eda2"
+run/main_scene="uid://3cs2renrm0gx"
 config/features=PackedStringArray("4.5", "C#", "Mobile")
 config/icon="res://Art/icon.svg"
 

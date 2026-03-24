@@ -21,14 +21,14 @@ stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="IngridientSprite" type="Sprite2D" parent="CanvasLayer/TextureRect"]
-position = Vector2(252, 187.00002)
+position = Vector2(265.00003, 178)
 scale = Vector2(0.579646, 0.57651716)
 texture = ExtResource("2_rwbtn")
 
 [node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
 layout_mode = 0
-offset_left = 209.0
-offset_top = 34.0
-offset_right = 278.0
-offset_bottom = 57.0
+offset_left = 223.0
+offset_top = 45.0
+offset_right = 292.0
+offset_bottom = 68.0
 text = "CUTS 0/3"

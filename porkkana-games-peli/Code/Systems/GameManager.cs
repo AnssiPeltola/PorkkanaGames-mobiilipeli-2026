@@ -20,76 +20,64 @@ using System.Linq;
 
 public partial class GameManager : Node
 {
-	// ---------------------------------------------------------
-	// Singleton
-	// ---------------------------------------------------------
-	public static GameManager Instance { get; private set; }
-
-	private int _overallScore = 0;
-	public readonly int levelOneRequired = 7;
-	public readonly int levelTwoRequired = 4;
-	public readonly int levelThreeRequired = 5;
-	private bool levelOneWon = false;
-	private bool levelTwoWon = false;
-	public override void _Ready()
+	// Staattinen autoproperty.
+	// Get on public, jotta GameManageriin päästään käsiksi mistä vain.
+	// Set private, jotta sitä ei voisi helposti ylikirjoittaa.
+	// https://docs.godotengine.org/en/stable/tutorials/scripting/singletons_autoload.html
+	public static GameManager Instance
 	{
+		get;
+		private set;
+	}
+
+	public GameManager()
+	{
+		// Singleton takaa, että luokasta voidaan tehdä vain yksi olio kerrallaan.
 		if (Instance == null)
 		{
+			// Ainoata oliota ei ole vielä määritetty. Olkoon tämä olio se.
 			Instance = this;
 		}
 		else if (Instance != this)
 		{
+			// Singleton-olio on jo olemassa! Tuhotaan juuri luotu olio.
 			QueueFree();
 			return;
 		}
 	}
 
-	public int overAllScore
+	private int _score = 0;
+	public readonly int levelOneRequired = 7;
+	public readonly int levelTwoRequired = 4;
+	public readonly int levelThreeRequired = 5;
+	private bool levelOneWon = false;
+	private bool levelTwoWon = false;
+
+	public int Score
 	{
-		get { return _overallScore; }
+		get { return _score; }
 		set
 		{
 			// Mathf.Clamp restricts a number to stay within a minimum and maximum range
-			_overallScore = Mathf.Clamp(value, 0, Int32.MaxValue);
-			GD.Print($"Points now: {_overallScore} Needed points: {levelOneRequired + levelTwoRequired + levelThreeRequired} to win game!");
+			_score = Mathf.Clamp(value, 0, Int32.MaxValue);
+			GD.Print($"Points now: {_score}");
 		}
 	}
 
-		// Set +1 point on LevelOneScore
-	public void GoodItemEntered()
+	public void AddScore()
 	{
-		_overallScore += 1;
+		Score += 1;
 		CheckLevelComplete();
 	}
 
-	// Take -1 point from LevelOneScore
-	public void GoodItemExited()
+	public void MinusScore()
 	{
-		_overallScore -= 1;
-	}
-
-	// Set +1 point on LevelOneScore
-	public void BadItemEntered()
-	{
-		_overallScore += 1;
-		CheckLevelComplete();
-	}
-
-	public void IngredientCooked()
-	{
-		_overallScore += 1;
-		CheckLevelComplete();
-	}
-
-	public void CookedIngredientInDropzone()
-	{
-		_overallScore += 1;
-		CheckLevelComplete();
+		Score -= 1;
 	}
 
 	public void ResetScore()
 	{
-		_overallScore = 0;
+		Score = 0;
 	}
 
 	public void ResetLevelProgress()
@@ -100,8 +88,9 @@ public partial class GameManager : Node
 
 	private void CheckLevelComplete()
 	{
-		GD.Print(_overallScore);
-		if (_overallScore >= levelOneRequired && !levelOneWon)
+		GD.Print(Score);
+		// Level one completed, switch scene into level two and reset score
+		if (Score >= levelOneRequired && !levelOneWon)
 		{
 			GD.Print("All items in right positions! Level 1 completed! Switching Scene!");
 			// Switch scene - https://docs.godotengine.org/en/latest/tutorials/scripting/change_scenes_manually.html
@@ -110,19 +99,21 @@ public partial class GameManager : Node
 			ResetScore();
 		}
 
-		if (_overallScore >=  levelTwoRequired && levelOneWon && !levelTwoWon) {
+		// Level two completed, switch scene into level three and reset score
+		if (Score >=  levelTwoRequired && levelOneWon && !levelTwoWon) {
 			GD.Print("All Ingredients are chopped and cooked! Level 2 completed! Switching Scene!");
 			GetTree().ChangeSceneToFile("res://Scenes/Levels/LevelThree/LevelThree.tscn");
 			levelTwoWon = true;
 			ResetScore();
 		}
 
-		if (_overallScore >= levelThreeRequired && levelOneWon && levelTwoWon)
+		// Level three completed, switch scene into main menu and reset score+progress
+		if (Score >= levelThreeRequired && levelOneWon && levelTwoWon)
 		{
 			GD.Print("All cooked ingredients in right spot! Level 3 completed! Switching Scene!");
 			GetTree().ChangeSceneToFile("res://Scenes/Menus/MainMenu.tscn");
 
-			// Reset score!
+			// Reset score and progress
 			ResetScore();
 			ResetLevelProgress();
 		}

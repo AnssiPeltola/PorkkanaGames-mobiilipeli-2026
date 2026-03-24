@@ -12,8 +12,8 @@ using System.Threading.Tasks;
 // https://www.youtube.com/watch?v=RS1uqBIVruQ - GODOT - Removing Objects on Collisions
 public partial class TrashCan : Area2D
 {
-	private static readonly Color WrongColor   = new Color(1.0f, 0.4f, 0.4f, 1.0f);
-	private static readonly Color NormalColor  = Colors.White;
+	private static readonly Color WrongColor = new Color(1.0f, 0.4f, 0.4f, 1.0f);
+	private static readonly Color NormalColor = Colors.White;
 
 	// Makes the connection signal for method OnBodyEntered
 	public override void _Ready()
@@ -31,20 +31,13 @@ public partial class TrashCan : Area2D
 			{
 				GD.Print("Bad Ingredient entered & Deleted");
 				DelayMethod(box);
-
-				// Gain +1 Score - Here +1 Score when "Bad" ingredient goes into trashCan
 				// Add +1 Score
-				// BaseLevel.CurrentActiveLevel.GainScore();
-				GameManager.Instance.BadItemEntered();
+				GameManager.Instance.AddScore();
 			}
 
 			if (box.IsInGroup("Good"))
 			{
 				box.Modulate = WrongColor;
-
-				// Commented out this because we dont want to lose score if good item enters into trashcan. It would mixup the score requirements
-				// BaseLevel.CurrentActiveLevel.LoseScore(); // This breaks code here!!
-				// void TrashCan+<OnBodyEntered>d__3.MoveNext(): System.NullReferenceException: Object
 			}
 		}
 	}
@@ -53,7 +46,6 @@ public partial class TrashCan : Area2D
 	{
 		if (body is LevelOneIngredient box)
 		{
-
 			if (box.IsInGroup("Good"))
 			{
 				box.Modulate = NormalColor;
@@ -62,7 +54,7 @@ public partial class TrashCan : Area2D
 	}
 
 	// https://forum.godotengine.org/t/create-a-delay-between-code-execution-using-c/12714/5
-	// Delays function by 0.5sec
+	// Delays function by 0.5sec and delete LevelOneIngredient
 	private async void DelayMethod(LevelOneIngredient body)
 	{
 		await Task.Delay(TimeSpan.FromMilliseconds(500));

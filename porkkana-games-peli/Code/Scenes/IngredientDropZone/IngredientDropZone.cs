@@ -4,8 +4,8 @@ using System;
 public partial class IngredientDropZone : Area2D
 {
 	private static readonly Color CorrectColor = new Color(0.4f, 1.0f, 0.4f, 1.0f);
-	private static readonly Color WrongColor   = new Color(1.0f, 0.4f, 0.4f, 1.0f);
-	private static readonly Color NormalColor  = Colors.White;
+	private static readonly Color WrongColor = new Color(1.0f, 0.4f, 0.4f, 1.0f);
+	private static readonly Color NormalColor = Colors.White;
 
 	// Makes the connection signal for methods OnBodyEntered and OnBodyExited
 	public override void _Ready()
@@ -25,10 +25,7 @@ public partial class IngredientDropZone : Area2D
 				box.Modulate = CorrectColor;
 
 				// Add +1 Score here when "Good" Ingredient hits IngredientDropZone
-				// Add +1 Score
-				// Set +1 point on LevelOneScore
-				//GameManager.Instance.GoodItemEntered();
-				GameManager.Instance.GoodItemEntered();
+				GameManager.Instance.AddScore();
 			}
 
 			if (box.IsInGroup("Bad"))
@@ -49,9 +46,7 @@ public partial class IngredientDropZone : Area2D
 				GD.Print("Good Ingredient Exited!");
 				box.Modulate = NormalColor;
 				// Take point off from Score when "Good" Ingredient leaves IngredientDropZone
-				// Minus -1 Score
-				//GameManager.Instance.GoodItemExited();
-				GameManager.Instance.GoodItemExited();
+				GameManager.Instance.MinusScore();
 			}
 
 			if (box.IsInGroup("Bad"))

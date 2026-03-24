@@ -65,10 +65,10 @@ SpawnedIngredientKind = 1
 
 [node name="Guidebook" parent="." instance=ExtResource("7_326m4")]
 z_index = 4096
-offset_left = 817.14185
-offset_top = 483.0
-offset_right = 817.14185
-offset_bottom = 483.0
+offset_left = 812.0
+offset_top = 455.0
+offset_right = 812.0
+offset_bottom = 455.0
 rotation = -0.00906527
 GuideBookPageTexture = ExtResource("8_326m4")
 
@@ -82,10 +82,12 @@ icon = ExtResource("10_k6173")
 
 [node name="SeasoningIngredientScene" parent="." instance=ExtResource("11_djxk4")]
 position = Vector2(204, 778)
+scale = Vector2(0.7, 0.7)
 SeasonKind = 1
 
 [node name="SeasoningIngredientScene2" parent="." instance=ExtResource("11_djxk4")]
 position = Vector2(1701, 812)
+scale = Vector2(0.7, 0.7)
 SeasonKind = 2
 
 [node name="SeasoningIngredientScene3" parent="." instance=ExtResource("11_djxk4")]

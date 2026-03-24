@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bciqqwjfrju31"]
+[gd_scene load_steps=6 format=3 uid="uid://bciqqwjfrju31"]
 
-[ext_resource type="Texture2D" uid="uid://be1ihgvfmiuy7" path="res://Art/Assets/RecipeBook/recipebook.png" id="1_vb3te"]
 [ext_resource type="Script" uid="uid://da1qarw0l2orp" path="res://Code/Assets/Equipment/Guidebook/Guidebook/Guidebook.cs" id="1_wdjud"]
-[ext_resource type="Texture2D" uid="uid://c1rpkormdiagb" path="res://Art/Assets/RecipeBook/closebutton.png" id="2_pki2r"]
+[ext_resource type="Texture2D" uid="uid://hat84ovx4px3" path="res://Art/Assets/RecipeBook/reseptikirja_tyhja.png" id="2_ah70a"]
 [ext_resource type="Script" uid="uid://rotv6n8fda5a" path="res://Code/Assets/Equipment/Guidebook/ExitButton/ExitButton.cs" id="3_6mld7"]
+[ext_resource type="Texture2D" uid="uid://cpfmqxa6x736t" path="res://Art/Assets/RecipeBook/close_button.png" id="3_ah70a"]
+[ext_resource type="Texture2D" uid="uid://c2ufjy4cmo0ci" path="res://Art/Assets/LevelHelpGuide/ohjeet_1level.png" id="5_enos7"]
 
 [node name="Guidebook" type="Control"]
 layout_mode = 3
@@ -12,16 +13,22 @@ script = ExtResource("1_wdjud")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_vb3te")
+offset_right = 1182.2222
+offset_bottom = 665.0
+texture = ExtResource("2_ah70a")
+expand_mode = 1
 
 [node name="ExitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 738.0
-offset_top = 602.0
-offset_right = 790.0
-offset_bottom = 649.0
-icon = ExtResource("2_pki2r")
+offset_left = 944.0
+offset_top = 489.0
+offset_right = 1012.0
+offset_bottom = 542.0
+icon = ExtResource("3_ah70a")
 flat = true
 script = ExtResource("3_6mld7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(404, 313)
+scale = Vector2(0.5024213, 0.5024214)
+texture = ExtResource("5_enos7")

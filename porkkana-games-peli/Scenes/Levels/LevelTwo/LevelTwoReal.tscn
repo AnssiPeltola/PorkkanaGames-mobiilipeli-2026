@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dq85u5qotvgr2"]
+[gd_scene load_steps=19 format=3 uid="uid://dq85u5qotvgr2"]
 
 [ext_resource type="Script" uid="uid://dlt0ydesqq3pm" path="res://Code/Levels/LevelTwo.cs" id="1_fv2xp"]
 [ext_resource type="PackedScene" uid="uid://5gldpnqbvait" path="res://Scenes/Assets/Equipment/DropZones/CuttingBoardDropZone/CuttingBoardDropZone.tscn" id="1_q66cy"]
@@ -7,8 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/MiniGames/CuttingGame/CuttingMiniGame.tscn" id="6_srf4j"]
 [ext_resource type="Texture2D" uid="uid://f6j1dsc13ldo" path="res://Art/Assets/Equipment/Stove/hella_v1.png" id="7_2jm63"]
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="8_yyvae"]
+[ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="10_2og4m"]
 [ext_resource type="PackedScene" uid="uid://i4pfuso3kmkb" path="res://Scenes/Assets/Equipment/Fryingpan/Fryingpan.tscn" id="10_srf4j"]
 [ext_resource type="PackedScene" uid="uid://snwb0vhf4dn6" path="res://Scenes/Assets/Equipment/Pot/Pot.tscn" id="10_xi4fc"]
+[ext_resource type="Texture2D" uid="uid://cqxf4s81jdwnn" path="res://Art/Assets/LevelHelpGuide/ohjeet_2level.png" id="11_xi4fc"]
+[ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="12_xwols"]
+[ext_resource type="Texture2D" uid="uid://b24tsu6dgafy0" path="res://Art/Assets/RecipeBook/open_helpguide_button.png" id="13_rfuqb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srf4j"]
 size = Vector2(214, 1093)
@@ -109,3 +113,20 @@ z_index = -1
 position = Vector2(1475, 760.00006)
 rotation = -1.573897
 scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Guidebook" parent="." instance=ExtResource("10_2og4m")]
+z_index = 4096
+offset_left = 631.5699
+offset_top = -52.00006
+offset_right = 631.5699
+offset_bottom = -52.00006
+rotation = 1.5680616
+GuideBookPageTexture = ExtResource("11_xi4fc")
+
+[node name="ShowGuidebookButton" parent="." instance=ExtResource("12_xwols")]
+offset_left = 151.56989
+offset_top = 896.0
+offset_right = 219.56989
+offset_bottom = 964.0
+rotation = 1.5792124
+icon = ExtResource("13_rfuqb")

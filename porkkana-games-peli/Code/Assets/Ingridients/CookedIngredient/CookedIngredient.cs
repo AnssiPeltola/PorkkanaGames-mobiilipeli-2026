@@ -9,7 +9,7 @@ public partial class CookedIngredient : CharacterBody2D
 		Sauce
 	}
 	private bool _dragging = false;
-	[Export] private int _clickRadius = 32;
+	[Export] private int _clickRadius = 50;
 	public CookedIngredientKind IngredientKind { get; set; } = CookedIngredientKind.None;
 	private Sprite2D _sprite;
 	private Texture2D _pastaTexture;

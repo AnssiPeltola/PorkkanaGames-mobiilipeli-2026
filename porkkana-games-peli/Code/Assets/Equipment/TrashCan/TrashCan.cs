@@ -34,7 +34,8 @@ public partial class TrashCan : Area2D
 
 				// Gain +1 Score - Here +1 Score when "Bad" ingredient goes into trashCan
 				// Add +1 Score
-				BaseLevel.CurrentActiveLevel.GainScore();
+				// BaseLevel.CurrentActiveLevel.GainScore();
+				GameManager.Instance.BadItemEntered();
 			}
 
 			if (box.IsInGroup("Good"))

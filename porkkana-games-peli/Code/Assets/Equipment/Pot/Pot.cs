@@ -91,6 +91,7 @@ public partial class Pot : Area2D
         _currentIngredient.QueueFree();
 		// Do we need to unsubscribe from signal - BodyEntered -= OnBodyEntered; ???
         // Add +1 Score
+        GameManager.Instance.IngredientCooked();
     }
 
     // Function that changes this scenes Sprite2D texture to new

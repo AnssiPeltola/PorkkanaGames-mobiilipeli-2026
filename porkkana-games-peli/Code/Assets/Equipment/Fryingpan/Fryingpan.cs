@@ -148,6 +148,7 @@ public partial class Fryingpan : Area2D
         state++;
         // Add +1 point here! Adds point when Ingredient is completely cooked
         // Add +1 Score
+        GameManager.Instance.IngredientCooked();
     }
 
     // Function that changes this scenes Sprite2D texture to new

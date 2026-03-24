@@ -6,6 +6,7 @@ public partial class RecipeSelections : Control
 	public override void _Ready()
 	{
 		Button backButton = GetNode<Button>("CanvasLayer/BackButton");
+		Button startPastaButton = GetNode<Button>("CanvasLayer/StartPastaButton");
 
 		if (backButton == null)
 		{
@@ -14,6 +15,7 @@ public partial class RecipeSelections : Control
 		}
 
 		backButton.Pressed += OnBackPressed;
+		startPastaButton.Pressed += StartPastaLevel;
 	}
 
 	private void OnBackPressed()
@@ -21,5 +23,11 @@ public partial class RecipeSelections : Control
 		GD.Print("Back button pressed"); // debug
 
 		GetTree().ChangeSceneToFile("res://Scenes/Menus/MainMenu.tscn");
+	}
+
+	private void StartPastaLevel()
+	{
+		GD.Print("Starting pasta level!");
+		GetTree().ChangeSceneToFile("res://Scenes/Levels/LevelOne/LevelOne.tscn");
 	}
 }

@@ -88,6 +88,7 @@ public partial class Plate : Area2D
 				ChangePlateSprite(_platePastaSauceSalt);
 				saltPlaced = true;
 				// Add +1 Score
+				GameManager.Instance.CookedIngredientInDropzone();
 			}
 		}
 	}
@@ -103,6 +104,7 @@ public partial class Plate : Area2D
 				ChangePlateSprite(_platePastaSauceSaltPepper);
 				pepperPlaced = true;
 				// Add +1 Score
+				GameManager.Instance.CookedIngredientInDropzone();
 			}
 		}
 	}
@@ -118,6 +120,7 @@ public partial class Plate : Area2D
 				GD.Print("Basil here! All done!");
 				ChangePlateSprite(_platePastaSauceSaltPepperBasil);
 				// Add +1 Score - Or just only +1 Points here, since this can be done last.
+				GameManager.Instance.CookedIngredientInDropzone();
 			}
 		}
 	}

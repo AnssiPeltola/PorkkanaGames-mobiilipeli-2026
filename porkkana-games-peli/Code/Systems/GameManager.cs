@@ -28,7 +28,7 @@ public partial class GameManager : Node
 	private int _overallScore = 0;
 	public readonly int levelOneRequired = 7;
 	public readonly int levelTwoRequired = 4;
-	public readonly int levelThreeRequired = 2;
+	public readonly int levelThreeRequired = 5;
 	private bool levelOneWon = false;
 	private bool levelTwoWon = false;
 	public override void _Ready()

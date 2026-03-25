@@ -1,6 +1,10 @@
 using Godot;
 
-public partial class CookedIngredient : CharacterBody2D
+
+// TODO:
+// Anssi katso turhia pois
+
+public partial class CookedIngredient : BaseIngridient
 {
 	public enum CookedIngredientKind
 	{
@@ -8,19 +12,16 @@ public partial class CookedIngredient : CharacterBody2D
 		Pasta,
 		Sauce
 	}
-	private bool _dragging = false;
-	[Export] private int _clickRadius = 50;
 	public CookedIngredientKind IngredientKind { get; set; } = CookedIngredientKind.None;
-	private Sprite2D _sprite;
 	private Texture2D _pastaTexture;
 	private Texture2D _sauceTexture;
 	private CollisionShape2D _pastaCollision;
 	private CollisionShape2D _sauceCollision;
 
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		// We get this scenes Sprite2D node in variable _sprite
-        _sprite = GetNode<Sprite2D>("Sprite2D");
+		_sprite = GetNode<Sprite2D>("Sprite2D");
 
 		if (IngredientKind == CookedIngredientKind.Pasta)
 		{
@@ -37,42 +38,5 @@ public partial class CookedIngredient : CharacterBody2D
 			ChangeSprite(_sauceTexture);
 			_sauceCollision.Disabled = false;
 		}
-    }
-
-	// This function is called for every input event (mouse, keyboard, touch, etc.)
-   public override void _Input(InputEvent e)
-    {
-		// Only react to screen touch events (mobile / mouse click)
-        if (e is InputEventScreenTouch touch)
-        {
-			// Check if the touch is close enough to this object to start dragging and set _dragging true
-			if ((touch.Position - GlobalPosition).Length() < _clickRadius)
-			{
-            	_dragging = touch.Pressed;
-			}
-        }
-    }
-
-	// if dragging false does nothing
-	public override void _PhysicsProcess(double delta)
-    {
-        if (!_dragging)
-		{
-			return;
-		}
-
-		// Get the current position of finger/mouse
-        Vector2 target = GetGlobalMousePosition();
-        Vector2 direction = target - GlobalPosition;
-
-        Velocity = direction / (float)delta;
-		// Makes the move using Godot physics
-        MoveAndSlide();
-    }
-
-	// Function that changes this scenes Sprite2D texture to new
-	public void ChangeSprite(Texture2D newTexture)
-	{
-		_sprite.Texture = newTexture;
 	}
 }

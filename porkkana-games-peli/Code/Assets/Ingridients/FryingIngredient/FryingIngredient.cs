@@ -2,7 +2,7 @@ using Godot;
 using System;
 // using System.Numerics;
 
-public partial class FryingIngredient : CharacterBody2D
+public partial class FryingIngredient : BaseIngridient
 {
 	// https://www.w3schools.com/cs/cs_enums.php - An enum is a special "class" that represents a group of constants.
 	public enum IngredientState
@@ -11,9 +11,6 @@ public partial class FryingIngredient : CharacterBody2D
 		Chopped,
 		Cooked
 	}
-
-	private bool _dragging = false;
-	[Export] private int _clickRadius = 32;
 	private Texture2D _tomatoTexture;
 	private Texture2D _onionTexture;
 	private Texture2D _carrotTexture;
@@ -28,12 +25,11 @@ public partial class FryingIngredient : CharacterBody2D
 	public bool IsInDropZone { get; set; } = false;
 	public bool IsInFryingPan { get; set; } = false;
 	public bool OpenMiniGame { get; set; } = false;
-	private Sprite2D _sprite;
 
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		// Load Nodes and textures
-        _sprite = GetNode<Sprite2D>("Sprite2D");
+		_sprite = GetNode<Sprite2D>("Sprite2D");
 
 		// Load Textures for ingredients
 		_onionTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Onion/onion.png");
@@ -51,7 +47,7 @@ public partial class FryingIngredient : CharacterBody2D
 			ChangeSprite(_tomatoTexture);
 			GD.Print(_tomatoTexture.GetSize());
 			Vector2 textreSize = _sprite.Texture.GetSize();
-            Vector2 newSize = new Vector2(50, 50);
+			Vector2 newSize = new Vector2(50, 50);
 			_tomatoCollision.Disabled = false;
 			_sprite.Scale = newSize / textreSize;
 		}
@@ -67,69 +63,37 @@ public partial class FryingIngredient : CharacterBody2D
 			ChangeSprite(_carrotTexture);
 			_carrotCollision.Disabled = false;
 		}
-    }
+	}
 
-	// This function is called for every input event (mouse, keyboard, touch, etc.)
-   public override void _Input(InputEvent e)
-    {
-		// Only react to screen touch events (mobile / mouse click)
-        if (e is InputEventScreenTouch touch)
-        {
-			// Check if the touch is close enough to this object to start dragging and set _dragging true
-			if ((touch.Position - GlobalPosition).Length() < _clickRadius)
-			{
-            	_dragging = touch.Pressed;
-			}
-        }
+	public override void _Input(InputEvent e)
+	{
+		base._Input(e);
 
 		// touchtap.Pressed prevents releasing touch to register as click.
 		if (e is InputEventScreenTouch touchtap && touchtap.Pressed)
 		{
-			if ((touchtap.Position - GlobalPosition).Length() < _clickRadius && IsInDropZone)
+			if ((touchtap.Position - GlobalPosition).Length() < base._clickRadius && IsInDropZone)
 			{
 				OpenMiniGame = true;
 				GD.Print("Open minigame!");
 				_sprite.Hide();
 			}
 		}
-    }
-
-	// if dragging false does nothing
-	public override void _PhysicsProcess(double delta)
-    {
-        if (!_dragging)
-		{
-			return;
-		}
-
-		// Get the current position of finger/mouse
-        Vector2 target = GetGlobalMousePosition();
-        Vector2 direction = target - GlobalPosition;
-
-        Velocity = direction / (float)delta;
-		// Makes the move using Godot physics
-        MoveAndSlide();
-    }
+	}
 
 	// Use after minigame is completed?
-    public void Chop()
-    {
-        State = IngredientState.Chopped;
+	public void Chop()
+	{
+		State = IngredientState.Chopped;
 
-        RemoveFromGroup("Raw");
-        AddToGroup("Chopped");
-    }
+		RemoveFromGroup("Raw");
+		AddToGroup("Chopped");
+	}
 
 	public void changeStateCooked()
 	{
 		State = IngredientState.Cooked;
 		RemoveFromGroup("Chopped");
 		AddToGroup("Cooked");
-	}
-
-	// Function that changes this scenes Sprite2D texture to new
-	public void ChangeSprite(Texture2D newTexture)
-	{
-		_sprite.Texture = newTexture;
 	}
 }

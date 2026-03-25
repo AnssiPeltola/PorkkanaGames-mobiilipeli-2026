@@ -3,11 +3,8 @@ using System;
 
 // https://www.youtube.com/watch?v=K_mZeYLYpgg - SubViewport tutorial - Make minigame scene with subViewport?
 
-public partial class MiniGameIngredient : CharacterBody2D
+public partial class MiniGameIngredient : BaseIngridient
 {
-	private bool _dragging = false;
-	[Export] private int _clickRadius = 32;
-
 	[Export] public Texture2D ChoppedSprite;
 
 
@@ -31,23 +28,14 @@ public partial class MiniGameIngredient : CharacterBody2D
 		_sprite = GetNode<Sprite2D>("Sprite2D");
 	}
 
-	// This function is called for every input event (mouse, keyboard, touch, etc.)
-   public override void _Input(InputEvent e)
+	public override void _Input(InputEvent e)
 	{
-		// Only react to screen touch events (mobile / mouse click)
-		if (e is InputEventScreenTouch touch)
-		{
-			// Check if the touch is close enough to this object to start dragging and set _dragging true
-			if ((touch.Position - GlobalPosition).Length() < _clickRadius)
-			{
-				_dragging = touch.Pressed;
-			}
-		}
+		base._Input(e);
 
 		// touchtap.Pressed prevents releasing touch to register as click.
 		if (e is InputEventScreenTouch touchtap && touchtap.Pressed)
 		{
-			if ((touchtap.Position - GlobalPosition).Length() < _clickRadius && IsInDropZone)
+			if ((touchtap.Position - GlobalPosition).Length() < base._clickRadius && IsInDropZone)
 			{
 				OpenMiniGame = true;
 				GD.Print("Open minigame!");
@@ -55,23 +43,6 @@ public partial class MiniGameIngredient : CharacterBody2D
 				StartCuttingMiniGame();
 			}
 		}
-	}
-
-	// if dragging false does nothing
-	public override void _PhysicsProcess(double delta)
-	{
-		if (!_dragging)
-		{
-			return;
-		}
-
-		// Get the current position of finger/mouse
-		Vector2 target = GetGlobalMousePosition();
-		Vector2 direction = target - GlobalPosition;
-
-		Velocity = direction / (float)delta;
-		// Makes the move using Godot physics
-		MoveAndSlide();
 	}
 
 	private void StartCuttingMiniGame()

@@ -3,13 +3,17 @@ using System;
 
 public partial class IngredientDropZone : Area2D
 {
-	private static readonly Color CorrectColor = new Color(0.4f, 1.0f, 0.4f, 1.0f);
+	// private static readonly Color CorrectColor = new Color(0.4f, 1.0f, 0.4f, 1.0f);
 	private static readonly Color WrongColor = new Color(1.0f, 0.4f, 0.4f, 1.0f);
 	private static readonly Color NormalColor = Colors.White;
+	private Checklist _checklist;
 
-	// Makes the connection signal for methods OnBodyEntered and OnBodyExited
 	public override void _Ready()
 	{
+		// Get the Checklist node from the current scene root.
+		_checklist = GetTree().CurrentScene.GetNodeOrNull<Checklist>("Checklist");
+
+		// Makes the connection signal for methods OnBodyEntered and OnBodyExited
 		BodyEntered += OnBodyEntered;
 		BodyExited += OnBodyExited;
 	}
@@ -22,7 +26,9 @@ public partial class IngredientDropZone : Area2D
 			if (box.IsInGroup("Good"))
 			{
 				GD.Print("Good Ingredient entered!");
-				box.Modulate = CorrectColor;
+				// Set Checkmark in Scene Checklist visible for right ingredient
+				SetChecklistFromIngredient(box, true);
+				// box.Modulate = CorrectColor;
 
 				// Add +1 Score here when "Good" Ingredient hits IngredientDropZone
 				GameManager.Instance.AddScore();
@@ -44,7 +50,10 @@ public partial class IngredientDropZone : Area2D
 			if (box.IsInGroup("Good"))
 			{
 				GD.Print("Good Ingredient Exited!");
-				box.Modulate = NormalColor;
+				// Set Checkmark in Scene Checklist not visible
+				SetChecklistFromIngredient(box, false);
+				// box.Modulate = NormalColor;
+
 				// Take point off from Score when "Good" Ingredient leaves IngredientDropZone
 				GameManager.Instance.MinusScore();
 			}
@@ -55,5 +64,39 @@ public partial class IngredientDropZone : Area2D
 				box.Modulate = NormalColor;
 			}
 		}
+	}
+
+	// Helps us make right parameters for function SetIngredientCheck(string, bool)
+	private void SetChecklistFromIngredient(LevelOneIngredient ingredient, bool isVisible)
+	{
+		string ingredientGroup = GetIngredientGroupName(ingredient);
+		_checklist.SetIngredientCheck(ingredientGroup, isVisible);
+	}
+
+	// Returns an string based on LevelOneIngredients group
+	// This is used for SetChecklistFromIngredient
+	private static string GetIngredientGroupName(LevelOneIngredient ingredient)
+	{
+		if (ingredient.IsInGroup("Tomato"))
+		{
+			return "Tomato";
+		}
+
+		if (ingredient.IsInGroup("Carrot"))
+		{
+			return "Carrot";
+		}
+
+		if (ingredient.IsInGroup("Onion"))
+		{
+			return "Onion";
+		}
+
+		if (ingredient.IsInGroup("Pasta"))
+		{
+			return "Pasta";
+		}
+
+		return null;
 	}
 }

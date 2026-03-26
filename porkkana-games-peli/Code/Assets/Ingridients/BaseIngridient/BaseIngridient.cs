@@ -19,9 +19,18 @@ public partial class BaseIngridient : CharacterBody2D
 	[Export] protected int _clickRadius = 50;
 	// protected for class inheritance (class inheriting CAN access this but nobody else)
 	protected Sprite2D _sprite;
+	// Touch detection area
+    private Area2D _touchArea;
 
-	// This function is called for every input event (mouse, keyboard, touch, etc.)
-	public override void _Input(InputEvent e)
+	public override void _Ready()
+    {
+        // Get TouchArea and hook input
+        _touchArea = GetNode<Area2D>("TouchArea");
+        _touchArea.InputEvent += OnTouchInput;
+    }
+
+	// Called when this ingredient's TouchArea receives an input event on one of its enabled touch shapes. shapeIdx = index of the touched collision shape inside TouchArea.
+	private void OnTouchInput(Node viewport, InputEvent e, long shapeIdx)
 	{
 		// Touch down/up events: claim or release one touch owner for this ingredient.
 		// InputEvenScreenTouch counts touch index in the case of a multi-touch event. One index = one finger.
@@ -30,8 +39,8 @@ public partial class BaseIngridient : CharacterBody2D
 			// When touch is down
 			if (touch.Pressed)
 			{
-				// Claim this touch only if we are not already claimed and the tap is close enough.
-				if (_activeTouchId == -1 && (touch.Position - GlobalPosition).Length() < _clickRadius)
+				// Claim this touch only if we are not already claimed
+				if (_activeTouchId == -1)
 				{
 					_activeTouchId = touch.Index;
 					// GD.Print(_activeTouchId); // Test

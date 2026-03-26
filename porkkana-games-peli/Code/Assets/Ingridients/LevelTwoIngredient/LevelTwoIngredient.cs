@@ -10,18 +10,18 @@ public partial class LevelTwoIngredient : BaseIngridient
 		Chopped,
 		Cooked
 	}
-		
+
 	// PackedScene = Godots own .tscn type
 	// https://docs.godotengine.org/en/stable/classes/class_packedscene.html
 	// We can now assign .tscn scenes to _CuttingMiniGameScene
 	[Export] private PackedScene _cuttingMiniGameScene;
 	private CuttingMiniGame _activeMiniGame = null;
-	
+
 	// When public we can set this as true or false in other code where this object is used
 	public bool IsInDropZone { get; set; } = false;
 	public bool IsInFryingPan { get; set; } = false;
 	public bool OpenMiniGame { get; set; } = false;
-	
+
 	private Texture2D _tomatoTexture;
 	private Texture2D _onionTexture;
 	private Texture2D _carrotTexture;
@@ -35,9 +35,13 @@ public partial class LevelTwoIngredient : BaseIngridient
 	private CollisionShape2D _carrotCollision;
 	private CollisionShape2D _pastaCollision;
 
+	private CollisionShape2D _circleTouch;
+	private CollisionShape2D _carrotTouch;
+	private CollisionShape2D _pastaTouch;
+
 	// Init IngredientState as RAW.
 	public IngredientState State { get; set; } = IngredientState.Raw;
-	
+
 	public override void _Ready()
 	{
 		// GetNode Sprite2D into variable _sprite
@@ -48,36 +52,48 @@ public partial class LevelTwoIngredient : BaseIngridient
 		{
 			_tomatoTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomato-v1.png");
 			_tomatoCollision = GetNode<CollisionShape2D>("TomatoCollision");
+			_circleTouch = GetNode<CollisionShape2D>("TouchArea/CircleTouch");
 			_choppedTomatoTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomato-chopped-v1.png");
 			ChangeSprite(_tomatoTexture);
 			_tomatoCollision.Disabled = false;
+			_circleTouch.Disabled = false;
 		}
 
 		if (this.IsInGroup("Onion"))
 		{
 			_onionTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Onion/onion-v1.png");
 			_onionCollision = GetNode<CollisionShape2D>("OnionCollision");
+			_circleTouch = GetNode<CollisionShape2D>("TouchArea/CircleTouch");
 			_choppedOnionTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Onion/onion-chopped-v1.png");
 			ChangeSprite(_onionTexture);
 			_onionCollision.Disabled = false;
+			_circleTouch.Disabled = false;
 		}
 
 		if (this.IsInGroup("Carrot"))
 		{
 			_carrotTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Carrot/carrot-v1.png");
 			_carrotCollision = GetNode<CollisionShape2D>("CarrotCollision");
+			_carrotTouch = GetNode<CollisionShape2D>("TouchArea/CarrotTouch");
+			_circleTouch = GetNode<CollisionShape2D>("TouchArea/CircleTouch");
 			_choppedCarrotTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Carrot/carrot-chopped-v1.png");
 			ChangeSprite(_carrotTexture);
 			_carrotCollision.Disabled = false;
+			_carrotTouch.Disabled = false;
 		}
 
 		if (this.IsInGroup("Pasta"))
 		{
 			_pastaTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/spaghetti-v1.png");
 			_pastaCollision = GetNode<CollisionShape2D>("PastaCollision");
+			_pastaTouch = GetNode<CollisionShape2D>("TouchArea/PastaTouch");
 			ChangeSprite(_pastaTexture);
 			_pastaCollision.Disabled = false;
+			_pastaTouch.Disabled = false;
 		}
+
+		// Do also ready from BaseIngredient (Load TouchArea)
+		base._Ready();
 	}
 
 	public override void _Input(InputEvent e)
@@ -88,7 +104,7 @@ public partial class LevelTwoIngredient : BaseIngridient
 		// touchtap.Pressed prevents releasing touch to register as click.
 		if (e is InputEventScreenTouch touchtap && touchtap.Pressed)
 		{
-			if ((touchtap.Position - GlobalPosition).Length() < base._clickRadius && IsInDropZone && State == IngredientState.Raw && !OpenMiniGame)
+			if (IsInDropZone && State == IngredientState.Raw && !OpenMiniGame)
 			{
 				OpenMiniGame = true;
 				GD.Print("Open minigame!");
@@ -161,6 +177,10 @@ public partial class LevelTwoIngredient : BaseIngridient
 		if (IsInGroup("Carrot"))
 		{
 			ChangeSprite(_choppedCarrotTexture);
+			// When carrot is chopped disable carrotTouch and enable circleTouch
+			// Diced carrot is more round
+			_carrotTouch.Disabled = true;
+			_circleTouch.Disabled = false;
 		}
 
 		if (IsInGroup("Tomato"))

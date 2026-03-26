@@ -1,10 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://dodunm0iqwkit"]
+[gd_scene load_steps=8 format=3 uid="uid://dodunm0iqwkit"]
 
 [ext_resource type="Script" uid="uid://ceyy7qt8cdfe7" path="res://Code/Assets/Ingridients/LevelOneIngredient/LevelOneIngredient.cs" id="1_tve77"]
-[ext_resource type="Texture2D" uid="uid://drhd74as2yxdt" path="res://Art/Assets/Ingridients/Onion/onion-v1.png" id="2_tcvb0"]
+[ext_resource type="Texture2D" uid="uid://c8wtj8u16v5tk" path="res://Art/Assets/Ingridients/Carrot/carrot-v1.png" id="2_tcvb0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tcvb0"]
-radius = 69.46222
+radius = 73.00685
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kboeu"]
+size = Vector2(78, 158)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eueul"]
+radius = 73.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kboeu"]
+radius = 51.739704
+height = 181.21982
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2n077"]
+radius = 34.818134
+height = 160.11229
 
 [node name="LevelOneIngredient" type="CharacterBody2D"]
 script = ExtResource("1_tve77")
@@ -13,6 +27,52 @@ script = ExtResource("1_tve77")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_tcvb0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CircleCollision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-2, 8)
 shape = SubResource("CircleShape2D_tcvb0")
+disabled = true
+
+[node name="BananaCollision" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(37, -47)
+polygon = PackedVector2Array(0, 0, -7.000002, 9, -13, 23, -27, 47, -40, 59, -66, 70, -101, 86, -113, 97, -112, 109, -97, 116, -79, 124, -57, 123, -31.999998, 115, -5.999998, 101, 14, 80, 28, 54, 33, 29.999998, 32, 12.999996, 22, -2, 13, -14, 8.999996, -29, 2.9999962, -29, -9.000002, -23, -12.000002, -19, -2, -12)
+disabled = true
+
+[node name="CarrotCollision" type="CollisionPolygon2D" parent="."]
+position = Vector2(21, -45)
+polygon = PackedVector2Array(-1, 0, -17, 1, -31, 10, -40, 25, -56, 50, -77, 83, -95, 114, -96, 121, -90, 124, -73, 118, -40, 95, -11, 75, 21, 46, 27, 30, 23, 13, 11, 3)
+disabled = true
+
+[node name="PastaCollision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_kboeu")
+disabled = true
+
+[node name="TouchArea" type="Area2D" parent="."]
+
+[node name="CircleTouch" type="CollisionShape2D" parent="TouchArea"]
+visible = false
+position = Vector2(-2, 8)
+shape = SubResource("CircleShape2D_eueul")
+disabled = true
+
+[node name="BananaTouch" type="CollisionShape2D" parent="TouchArea"]
+visible = false
+position = Vector2(5.000001, 9.000002)
+rotation = 0.8547791
+shape = SubResource("CapsuleShape2D_kboeu")
+disabled = true
+
+[node name="CarrotTouch" type="CollisionShape2D" parent="TouchArea"]
+visible = false
+position = Vector2(-16, 20.000002)
+rotation = 0.7221017
+shape = SubResource("CapsuleShape2D_2n077")
+disabled = true
+
+[node name="PastaTouch" type="CollisionShape2D" parent="TouchArea"]
+visible = false
+position = Vector2(9.536743e-07, -1.9073486e-06)
+shape = SubResource("RectangleShape2D_kboeu")
+disabled = true

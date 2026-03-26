@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://skgrasccf34i"]
+[gd_scene load_steps=7 format=3 uid="uid://skgrasccf34i"]
 
 [ext_resource type="Script" uid="uid://284j0762l4xi" path="res://Code/Assets/Ingridients/SeasoningIngredientScene/SeasoningIngredientScene.cs" id="1_aqwxl"]
-[ext_resource type="Texture2D" uid="uid://d2wvkqpifpt6h" path="res://Art/Assets/Ingridients/Basil/basil-leaf-v2.png" id="2_uuagq"]
+[ext_resource type="Texture2D" uid="uid://dvnjchqa6tdh0" path="res://Art/Assets/Ingridients/SaltPepper/salt-shaker-v1.png" id="2_uuagq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uuagq"]
 radius = 76.0
@@ -11,21 +11,43 @@ height = 392.0
 radius = 28.27752
 height = 139.71106
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a1j4v"]
+radius = 38.20975
+height = 164.77702
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf6m5"]
+size = Vector2(199, 387)
+
 [node name="SeasoningIngredientScene" type="CharacterBody2D"]
 script = ExtResource("1_aqwxl")
-_clickRadius = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_uuagq")
 
 [node name="ShakerCollision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(9, 2)
 shape = SubResource("CapsuleShape2D_uuagq")
 disabled = true
 
 [node name="BasilCollision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-2.000001, 7.0000076)
 rotation = -1.4860842
 shape = SubResource("CapsuleShape2D_gf6m5")
+disabled = true
+
+[node name="TouchArea" type="Area2D" parent="."]
+
+[node name="BasilTouch" type="CollisionShape2D" parent="TouchArea"]
+visible = false
+position = Vector2(-4, 4.7683716e-07)
+rotation = -1.5220206
+shape = SubResource("CapsuleShape2D_a1j4v")
+disabled = true
+
+[node name="ShakerTouch" type="CollisionShape2D" parent="TouchArea"]
+position = Vector2(7.5, -0.5)
+shape = SubResource("RectangleShape2D_gf6m5")
 disabled = true

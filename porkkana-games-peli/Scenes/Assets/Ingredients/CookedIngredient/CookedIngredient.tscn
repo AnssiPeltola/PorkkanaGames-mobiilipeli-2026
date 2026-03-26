@@ -1,32 +1,56 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4gdag3guih2c"]
+[gd_scene load_steps=7 format=3 uid="uid://b4gdag3guih2c"]
 
 [ext_resource type="Script" uid="uid://4rqluk1fa327" path="res://Code/Assets/Ingridients/CookedIngredient/CookedIngredient.cs" id="1_o3xcu"]
-[ext_resource type="Texture2D" uid="uid://cotrqf3p02xqc" path="res://Art/Assets/Ingridients/Pasta/pasta.png" id="2_fngc5"]
+[ext_resource type="Texture2D" uid="uid://blxuolp85kksg" path="res://Art/Assets/Ingridients/Tomato/tomato-chopped-v1.png" id="2_p8t4a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljula"]
-radius = 60.074898
+radius = 162.69836
 height = 590.3512
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o3xcu"]
-radius = 53.080956
-height = 276.43835
+radius = 216.14214
+height = 566.063
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p8t4a"]
+radius = 195.99744
+height = 642.03015
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3a6i"]
+radius = 241.01042
+height = 622.6984
 
 [node name="CookedIngredient" type="CharacterBody2D"]
 rotation = 0.0008367311
 script = ExtResource("1_o3xcu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.86534226, 0.86534226)
-texture = ExtResource("2_fngc5")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_p8t4a")
 
 [node name="PastaCollision" type="CollisionShape2D" parent="."]
-position = Vector2(10.004181, 4.9916315)
-rotation = 1.518563
+visible = false
+position = Vector2(5.030121, 35.995796)
+rotation = 1.608867
 shape = SubResource("CapsuleShape2D_ljula")
 disabled = true
 
 [node name="SauceCollision" type="CollisionShape2D" parent="."]
-position = Vector2(3.0083313, 9.997467)
+position = Vector2(15.001668, 1.9874485)
 rotation = 1.5255076
 shape = SubResource("CapsuleShape2D_o3xcu")
+disabled = true
+
+[node name="TouchArea" type="Area2D" parent="."]
+
+[node name="PastaTouch" type="CollisionShape2D" parent="TouchArea"]
+visible = false
+position = Vector2(-1.9757342, 29.001663)
+rotation = 1.5902513
+shape = SubResource("CapsuleShape2D_p8t4a")
+disabled = true
+
+[node name="SauceTouch" type="CollisionShape2D" parent="TouchArea"]
+position = Vector2(10.005855, 6.991631)
+rotation = 1.6092517
+shape = SubResource("CapsuleShape2D_j3a6i")
 disabled = true

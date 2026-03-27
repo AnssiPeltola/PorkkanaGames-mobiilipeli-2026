@@ -16,7 +16,7 @@ public partial class CuttingMiniGame : Node2D
 	// Label reference point
 	private Label _cutsLabel;
 
-    // Declare new variable of CutArea class
+    // Reference point
     private CutArea _cutArea;
 
 	// Signals:
@@ -67,6 +67,7 @@ public partial class CuttingMiniGame : Node2D
 
 		// give the label node path for _cutsLabel
 		_cutsLabel = GetNode<Label>("CanvasLayer/Label");
+        _updateLabel(0);
 
         // set the reference to CutArea
         _cutArea = GetNode<CutArea>("CutArea");
@@ -82,6 +83,7 @@ public partial class CuttingMiniGame : Node2D
 
 	private void _registerCut()
 	{
+        GD.Print("_registerCut() fired");
 		_cutsDone++;
 		_updateLabel(_cutsDone);
 

@@ -17,7 +17,7 @@ public partial class SeasoningIngredientScene : BaseIngridient
 	private CollisionShape2D _shakerCollision;
 	private CollisionShape2D _basilCollision;
 	private CollisionShape2D _shakerTouch;
-    private CollisionShape2D _basilTouch;
+	private CollisionShape2D _basilTouch;
 
 	public override void _Ready()
 	{

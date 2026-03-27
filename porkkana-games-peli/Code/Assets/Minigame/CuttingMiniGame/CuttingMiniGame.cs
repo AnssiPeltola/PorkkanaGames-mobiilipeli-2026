@@ -8,8 +8,11 @@ public partial class CuttingMiniGame : Node2D
 	// Sprite is the node displaying it
 	public Texture2D IngridientTexture { get; set; }
 	
-	// Given texture @_Ready()
+	// Receives texture @_Ready()
 	private Sprite2D _ingridientSprite;
+
+	// Label reference point
+	private Label _cutsLabel;
 
 	// Signals:
 	// https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html 
@@ -45,7 +48,7 @@ public partial class CuttingMiniGame : Node2D
 	{
 		if (e is InputEventScreenTouch touch && touch.Pressed)
 		{
-			RegisterCut();
+			_registerCut();
 		}
 		
 		/*
@@ -54,35 +57,39 @@ public partial class CuttingMiniGame : Node2D
 		
 		Something along the lines of:
 		_swipeStart = GetTouchPosition();
-		RegisterCut(_swipeStart, _swipeEnd);
+		_registerCut(_swipeStart, _swipeEnd);
 		*/
 	}
 
 	public override void _Ready()
 	{
 		// Find the IngridientSprite node from the tree at the address
-		_ingridientSprite = GetNode<Sprite2D>("CanvasLayer/TextureRect/IngridientSprite");
+		_ingridientSprite = GetNode<Sprite2D>("CanvasLayer/IngridientSprite");
 		// Set our chosen IngridientTexture to our _ingridientSprite
 		_ingridientSprite.Texture = IngridientTexture;
+
+		// give the label node path for _cutsLabel
+		_cutsLabel = GetNode<Label>("CanvasLayer/Label");
 	}
 
-	public override void _Process(double delta)
+	private void _updateLabel(int _cutsDone)
 	{
+		_cutsLabel.Text = ($"Cuts: {_cutsDone} / 3");
 	}
 
-	private void RegisterCut()
+	private void _registerCut()
 	{
 		_cutsDone++;
+		_updateLabel(_cutsDone);
 
 		if (_cutsDone >= RequiredCuts)
-			// Run the FinishMinigame() to signal MiniGameIngridient
+			// Run the _finishMinigame() to signal MiniGameIngridient
 			// the CuttingMiniGame should be closed.
-			FinishMinigame();
+			_finishMinigame();
 	}
 	
-	private void FinishMinigame()
+	private void _finishMinigame()
 	{
 		EmitSignal(SignalName.CuttingComplete);
 	}
-
 }

@@ -20,14 +20,14 @@ public partial class BaseIngridient : CharacterBody2D
 	// protected for class inheritance (class inheriting CAN access this but nobody else)
 	protected Sprite2D _sprite;
 	// Touch detection area
-    private Area2D _touchArea;
+	private Area2D _touchArea;
 
 	public override void _Ready()
-    {
-        // Get TouchArea and hook input
-        _touchArea = GetNode<Area2D>("TouchArea");
-        _touchArea.InputEvent += OnTouchInput;
-    }
+	{
+		// Get TouchArea and hook input
+		_touchArea = GetNode<Area2D>("TouchArea");
+		_touchArea.InputEvent += OnTouchInput;
+	}
 
 	// Called when this ingredient's TouchArea receives an input event on one of its enabled touch shapes. shapeIdx = index of the touched collision shape inside TouchArea.
 	private void OnTouchInput(Node viewport, InputEvent e, long shapeIdx)

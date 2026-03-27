@@ -8,11 +8,16 @@ public partial class CuttingMiniGame : Node2D
 	// Sprite is the node displaying it
 	public Texture2D IngridientTexture { get; set; }
 	
+    
+
 	// Receives texture @_Ready()
 	private Sprite2D _ingridientSprite;
 
 	// Label reference point
 	private Label _cutsLabel;
+
+    // Declare new variable of CutArea class
+    private CutArea _cutArea;
 
 	// Signals:
 	// https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html 
@@ -40,17 +45,10 @@ public partial class CuttingMiniGame : Node2D
 		Get positions from Start cut / End cut
 		Record the vector and check validations does it count
 		
-		TODO: NOTE
+		NOTE:
 		Cut game will now display different sprite2d's
 		Consider, they might be different sizes.
-	*/
-	public override void _Input(InputEvent e)
-	{
-		if (e is InputEventScreenTouch touch && touch.Pressed)
-		{
-			_registerCut();
-		}
-		
+
 		/*
 		TODO:
 		Actual swipe vectors	
@@ -59,7 +57,6 @@ public partial class CuttingMiniGame : Node2D
 		_swipeStart = GetTouchPosition();
 		_registerCut(_swipeStart, _swipeEnd);
 		*/
-	}
 
 	public override void _Ready()
 	{
@@ -70,6 +67,12 @@ public partial class CuttingMiniGame : Node2D
 
 		// give the label node path for _cutsLabel
 		_cutsLabel = GetNode<Label>("CanvasLayer/Label");
+
+        // set the reference to CutArea
+        _cutArea = GetNode<CutArea>("CutArea");
+        // And Subscribe to the signal
+        // and run _registerCut() when signal is received
+        _cutArea.CutRegistered += _registerCut;
 	}
 
 	private void _updateLabel(int _cutsDone)

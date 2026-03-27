@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1dqboptdej34"]
+[gd_scene load_steps=5 format=3 uid="uid://b1dqboptdej34"]
 
 [ext_resource type="Script" uid="uid://cvev4w4acutd7" path="res://Code/Assets/Minigame/CuttingMiniGame/CuttingMiniGame.cs" id="1_7vvnq"]
 [ext_resource type="Texture2D" uid="uid://1wcqhbc1wflh" path="res://Art/icon-red.svg" id="2_rwbtn"]
+[ext_resource type="Script" uid="uid://bxp0nkiw2c758" path="res://Scenes/Minigames/CuttingGame/CutArea.cs" id="3_3xf00"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rwbtn"]
+radius = 129.31357
 
 [node name="CuttingMiniGame" type="Node2D"]
 position = Vector2(0, -2)
@@ -21,3 +25,10 @@ text = "Cuts: 0 / 3"
 position = Vector2(340.00003, 244)
 scale = Vector2(0.579646, 0.57651716)
 texture = ExtResource("2_rwbtn")
+
+[node name="CutArea" type="Area2D" parent="."]
+script = ExtResource("3_3xf00")
+
+[node name="CutAreaShape" type="CollisionShape2D" parent="CutArea"]
+position = Vector2(340, 249)
+shape = SubResource("CircleShape2D_rwbtn")

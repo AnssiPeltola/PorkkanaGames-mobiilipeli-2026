@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1dqboptdej34"]
+[gd_scene load_steps=5 format=3 uid="uid://b1dqboptdej34"]
 
 [ext_resource type="Script" uid="uid://cvev4w4acutd7" path="res://Code/Assets/Minigame/CuttingMiniGame/CuttingMiniGame.cs" id="1_7vvnq"]
-[ext_resource type="Texture2D" uid="uid://3aik0wwa6ibk" path="res://Art/Backrounds/tausta_v2_valmis.png" id="2_3xf00"]
 [ext_resource type="Texture2D" uid="uid://1wcqhbc1wflh" path="res://Art/icon-red.svg" id="2_rwbtn"]
+[ext_resource type="Script" uid="uid://bxp0nkiw2c758" path="res://Scenes/Minigames/CuttingGame/CutArea.cs" id="3_3xf00"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rwbtn"]
+radius = 129.31357
 
 [node name="CuttingMiniGame" type="Node2D"]
 position = Vector2(0, -2)
@@ -10,25 +13,22 @@ script = ExtResource("1_7vvnq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_left = 75.0
-offset_top = 66.0
-offset_right = 620.0
-offset_bottom = 406.0
-texture = ExtResource("2_3xf00")
-expand_mode = 2
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 596.0
+offset_top = 159.0
+offset_right = 1121.0
+offset_bottom = 311.0
+theme_override_font_sizes/font_size = 111
+text = "Cuts: 0 / 3"
 
-[node name="IngridientSprite" type="Sprite2D" parent="CanvasLayer/TextureRect"]
-position = Vector2(265.00003, 178)
+[node name="IngridientSprite" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(340.00003, 244)
 scale = Vector2(0.579646, 0.57651716)
 texture = ExtResource("2_rwbtn")
 
-[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
-layout_mode = 0
-offset_left = 223.0
-offset_top = 45.0
-offset_right = 292.0
-offset_bottom = 68.0
-text = "CUTS 0/3"
+[node name="CutArea" type="Area2D" parent="."]
+script = ExtResource("3_3xf00")
+
+[node name="CutAreaShape" type="CollisionShape2D" parent="CutArea"]
+position = Vector2(340, 249)
+shape = SubResource("CircleShape2D_rwbtn")

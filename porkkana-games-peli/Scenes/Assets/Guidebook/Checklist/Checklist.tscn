@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://coo7gp4dls8xk"]
 
 [ext_resource type="Script" uid="uid://bsr60vcguetfh" path="res://Code/Scenes/CheckList/Checklist.cs" id="1_d64gk"]
-[ext_resource type="Texture2D" uid="uid://giby38o56hvh" path="res://Art/Backrounds/gatheredBackground.png" id="1_om44d"]
-[ext_resource type="Texture2D" uid="uid://bvn6w1fjx7lna" path="res://Art/Assets/RecipeBook/checkButton.png" id="2_yvpva"]
+[ext_resource type="Texture2D" uid="uid://cn0l8lv4ht5fo" path="res://Art/Assets/Checklist_Ingridients/checklist_ingridients.png" id="2_d64gk"]
+[ext_resource type="Texture2D" uid="uid://cldv5om54sunk" path="res://Art/Assets/Checklist_Ingridients/checkmark_button.png" id="3_d64gk"]
 
 [node name="Checklist" type="Node2D"]
 z_index = -13
@@ -10,25 +10,25 @@ script = ExtResource("1_d64gk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -8
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_om44d")
-
-[node name="TomatoCheck" type="Sprite2D" parent="."]
-z_index = -7
-position = Vector2(-94, -139)
-texture = ExtResource("2_yvpva")
+scale = Vector2(0.44793108, 0.44793102)
+texture = ExtResource("2_d64gk")
 
 [node name="CarrotCheck" type="Sprite2D" parent="."]
 z_index = -7
-position = Vector2(-93, -34)
-texture = ExtResource("2_yvpva")
+position = Vector2(70, -115)
+texture = ExtResource("3_d64gk")
 
 [node name="OnionCheck" type="Sprite2D" parent="."]
 z_index = -7
-position = Vector2(-100, 48)
-texture = ExtResource("2_yvpva")
+position = Vector2(70, -47)
+texture = ExtResource("3_d64gk")
+
+[node name="TomatoCheck" type="Sprite2D" parent="."]
+z_index = -7
+position = Vector2(70, 23)
+texture = ExtResource("3_d64gk")
 
 [node name="PastaCheck" type="Sprite2D" parent="."]
 z_index = -7
-position = Vector2(-98, 138)
-texture = ExtResource("2_yvpva")
+position = Vector2(70, 96)
+texture = ExtResource("3_d64gk")

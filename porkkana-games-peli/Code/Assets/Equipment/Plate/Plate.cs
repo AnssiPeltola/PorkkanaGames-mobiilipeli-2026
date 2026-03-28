@@ -12,6 +12,7 @@ public partial class Plate : Area2D
 	private Texture2D _platePasta;
 	private Texture2D _platePastaSauce;
 	private Texture2D _platePastaSauceSalt;
+	private Texture2D _platePastaSaucePepper;
 	private Texture2D _platePastaSauceSaltPepper;
 	private Texture2D _platePastaSauceSaltPepperBasil;
 	private bool pastaPlaced = false;
@@ -32,6 +33,7 @@ public partial class Plate : Area2D
 		_platePasta = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/spaghetti-plate-v1.png");
 		_platePastaSauce = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/spaghetti-sauce-v1.png");
 		_platePastaSauceSalt = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/spaghetti-sauce-s-v1.png");
+		_platePastaSaucePepper = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/spaghetti-sauce-p-v1.png");
 		_platePastaSauceSaltPepper = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/spaghetti-sauce-sp-v1.png");
 		_platePastaSauceSaltPepperBasil = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Pasta/complete-dish-v1.png");
 
@@ -82,7 +84,16 @@ public partial class Plate : Area2D
 	{
 		if (body is SeasoningIngredientScene ingredient)
 		{
-			if (ingredient.SeasonKind == SeasoningIngredientScene.SeasoningKind.Salt && saucePlaced && !saltPlaced)
+			if (ingredient.SeasonKind == SeasoningIngredientScene.SeasoningKind.Salt && pepperPlaced && !saltPlaced)
+			{
+				GD.Print("Salt here");
+				ChangePlateSprite(_platePastaSauceSaltPepper);
+				saltPlaced = true;
+				// Add +1 Score
+				GameManager.Instance.AddScore();
+			}
+
+			else if (ingredient.SeasonKind == SeasoningIngredientScene.SeasoningKind.Salt && saucePlaced && !pepperPlaced && !saltPlaced)
 			{
 				GD.Print("Salt here");
 				ChangePlateSprite(_platePastaSauceSalt);
@@ -106,6 +117,15 @@ public partial class Plate : Area2D
 				// Add +1 Score
 				GameManager.Instance.AddScore();
 			}
+
+			else if (ingredient.SeasonKind == SeasoningIngredientScene.SeasoningKind.Pepper && saucePlaced && !saltPlaced && !pepperPlaced)
+			{
+				GD.Print("Pepper here");
+				ChangePlateSprite(_platePastaSaucePepper);
+				pepperPlaced = true;
+				// Add +1 Score
+				GameManager.Instance.AddScore();
+			}
 		}
 	}
 
@@ -114,7 +134,7 @@ public partial class Plate : Area2D
 	{
 		if (body is SeasoningIngredientScene ingredient)
 		{
-			if (ingredient.SeasonKind == SeasoningIngredientScene.SeasoningKind.Basil && pepperPlaced)
+			if (ingredient.SeasonKind == SeasoningIngredientScene.SeasoningKind.Basil && pepperPlaced && saltPlaced)
 			{
 				ingredient.QueueFree();
 				GD.Print("Basil here! All done!");

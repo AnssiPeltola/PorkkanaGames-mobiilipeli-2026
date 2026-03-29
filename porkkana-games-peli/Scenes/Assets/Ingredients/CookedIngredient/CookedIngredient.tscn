@@ -1,56 +1,38 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4gdag3guih2c"]
+[gd_scene load_steps=3 format=3 uid="uid://b4gdag3guih2c"]
 
 [ext_resource type="Script" uid="uid://4rqluk1fa327" path="res://Code/Assets/Ingridients/CookedIngredient/CookedIngredient.cs" id="1_o3xcu"]
-[ext_resource type="Texture2D" uid="uid://blxuolp85kksg" path="res://Art/Assets/Ingridients/Tomato/tomato-chopped-v1.png" id="2_p8t4a"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljula"]
-radius = 162.69836
-height = 590.3512
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o3xcu"]
-radius = 216.14214
-height = 566.063
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p8t4a"]
-radius = 195.99744
-height = 642.03015
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3a6i"]
-radius = 241.01042
-height = 622.6984
+[ext_resource type="Texture2D" uid="uid://dw2adqts771t8" path="res://Art/Assets/Equipment/Spoons/sauce-spoon-v1.png" id="2_p8t4a"]
 
 [node name="CookedIngredient" type="CharacterBody2D"]
 rotation = 0.0008367311
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_o3xcu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_p8t4a")
 
-[node name="PastaCollision" type="CollisionShape2D" parent="."]
+[node name="PastaCollision" type="CollisionPolygon2D" parent="."]
 visible = false
-position = Vector2(5.030121, 35.995796)
-rotation = 1.608867
-shape = SubResource("CapsuleShape2D_ljula")
+position = Vector2(254.70287, -355.2133)
+polygon = PackedVector2Array(-0.0008239746, -0.9999695, -116.90874, 109.097916, -175.83926, 192.14725, -219.79323, 247.18404, -348.6568, 410.29193, -360.64423, 425.30194, -392.6526, 415.32874, -410.68353, 378.3438, -434.70026, 358.3639, -501.70694, 350.41995, -564.6852, 376.47266, -608.64746, 421.50946, -622.6065, 470.52118, -620.5605, 525.5195, -585.5195, 574.4902, -506.48773, 612.4241, -450.48102, 620.3772, -385.49445, 604.3228, -335.53632, 554.281, -321.5614, 524.2693, -326.62753, 445.2735, -244.73131, 321.20493, -149.80748, 230.12547, -87.829254, 204.07361, -8.890366, 131.00752, 85.04602, 54.928925, 132.00583, 6.8895874, 119.979065, -25.100372, 79.96567, -41.066864, 35.976593, -28.03009)
 disabled = true
 
-[node name="SauceCollision" type="CollisionShape2D" parent="."]
-position = Vector2(15.001668, 1.9874485)
-rotation = 1.5255076
-shape = SubResource("CapsuleShape2D_o3xcu")
+[node name="SauceCollision" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(167.77737, -266.14047)
+polygon = PackedVector2Array(-1.0008392, -0.999176, -86.905426, 113.072754, -174.78574, 256.14633, -241.71878, 336.20236, -364.6861, 375.30527, -479.66177, 404.4015, -541.635, 436.45337, -561.6057, 471.47006, -554.5555, 531.46423, -509.50363, 593.4265, -452.4702, 633.3788, -363.45264, 654.3043, -284.46774, 636.2383, -219.50542, 591.18384, -190.55396, 533.15967, -173.63011, 442.14545, -152.68785, 373.12787, -73.805016, 233.06183, 44.066925, 79.96315, 228.94717, -63.19159, 220.91791, -98.184906, 165.89282, -128.13885, 93.91879, -97.07864)
 disabled = true
 
 [node name="TouchArea" type="Area2D" parent="."]
 
-[node name="PastaTouch" type="CollisionShape2D" parent="TouchArea"]
+[node name="PastaTouch" type="CollisionPolygon2D" parent="TouchArea"]
 visible = false
-position = Vector2(-1.9757342, 29.001663)
-rotation = 1.5902513
-shape = SubResource("CapsuleShape2D_p8t4a")
+position = Vector2(258.651, -417.21655)
+polygon = PackedVector2Array(-5.000839, -0.9958496, -265.86603, 160.22247, -413.7229, 331.34625, -446.67017, 394.37384, -569.67346, 390.47675, -657.60565, 471.55035, -648.47266, 630.5428, -603.42163, 691.5051, -433.38486, 735.3628, -291.41254, 702.244, -253.47194, 631.2123, -184.52719, 565.15454, -129.58829, 492.10855, -97.65358, 414.08182, 9.25769, 307.9923, 171.13382, 159.85681, 112.020874, 24.90625)
 disabled = true
 
-[node name="SauceTouch" type="CollisionShape2D" parent="TouchArea"]
-position = Vector2(10.005855, 6.991631)
-rotation = 1.6092517
-shape = SubResource("CapsuleShape2D_j3a6i")
+[node name="SauceTouch" type="CollisionPolygon2D" parent="TouchArea"]
+position = Vector2(197.70456, -353.16556)
+polygon = PackedVector2Array(-1.000824, -0.9991455, -130.9104, 107.10959, -264.78986, 251.22165, -332.66266, 403.2785, -517.6232, 450.4333, -594.53705, 553.4977, -584.48096, 620.48926, -529.4208, 692.44324, -436.37982, 741.36536, -334.38318, 737.28, -242.4376, 672.2031, -48.574066, 509.04083, 92.26607, 317.9229, 176.14473, 172.85268, 301.05847, 69.74811, 280.95306, -56.235077, 165.92131, -94.138855)
 disabled = true

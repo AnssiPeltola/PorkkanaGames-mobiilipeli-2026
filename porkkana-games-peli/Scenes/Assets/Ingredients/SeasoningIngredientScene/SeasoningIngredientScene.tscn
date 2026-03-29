@@ -12,8 +12,8 @@ radius = 28.27752
 height = 139.71106
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a1j4v"]
-radius = 38.20975
-height = 164.77702
+radius = 46.091564
+height = 170.18785
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gf6m5"]
 size = Vector2(199, 387)
@@ -41,7 +41,6 @@ disabled = true
 [node name="TouchArea" type="Area2D" parent="."]
 
 [node name="BasilTouch" type="CollisionShape2D" parent="TouchArea"]
-visible = false
 position = Vector2(-4, 4.7683716e-07)
 rotation = -1.5220206
 shape = SubResource("CapsuleShape2D_a1j4v")

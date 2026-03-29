@@ -13,11 +13,11 @@ size = Vector2(78, 158)
 radius = 73.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kboeu"]
-radius = 51.739704
+radius = 60.860962
 height = 181.21982
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2n077"]
-radius = 34.818134
+radius = 43.270775
 height = 160.11229
 
 [node name="LevelOneIngredient" type="CharacterBody2D"]
@@ -65,7 +65,6 @@ shape = SubResource("CapsuleShape2D_kboeu")
 disabled = true
 
 [node name="CarrotTouch" type="CollisionShape2D" parent="TouchArea"]
-visible = false
 position = Vector2(-16, 20.000002)
 rotation = 0.7221017
 shape = SubResource("CapsuleShape2D_2n077")

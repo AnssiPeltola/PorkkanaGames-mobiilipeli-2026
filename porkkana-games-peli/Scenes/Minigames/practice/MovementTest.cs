@@ -1,9 +1,8 @@
 // TODO:
 // 1. Add vector start and end
 // 2. Start and End tracking vectors at input and drag
-// 3. New vector to track hoow many pixel each drag is
-
-
+// 3. Calculate the distance = ( (A,B) - (A,B) )
+        // float distance = _vectorStart.DistanceTo(_vectorEnd);
 
 using Godot;
 using System;
@@ -59,9 +58,10 @@ public partial class MovementTest : Node2D
 				// Print _vectorStart location constantly
 				GD.Print($"New Vector End: {_vectorEnd}");
 
-				// 3. Calculate drag distance
-				float distance = _vectorStart.DistanceTo(touch.Position);
-				GD.Print($"Distance was {distance}");
+				// 3.
+				// float distance = _vectorStart.DistanceTo(_vectorEnd);
+				float _vectorDistance = _vectorStart.DistanceTo(_vectorEnd);
+				GD.Print($"Distance for vectors was {_vectorDistance}");
 			}
 		}
 		// Drag input tracking

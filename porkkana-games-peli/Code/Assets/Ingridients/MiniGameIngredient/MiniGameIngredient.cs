@@ -35,7 +35,7 @@ public partial class MiniGameIngredient : BaseIngridient
 		// touchtap.Pressed prevents releasing touch to register as click.
 		if (e is InputEventScreenTouch touchtap && touchtap.Pressed)
 		{
-			if ((touchtap.Position - GlobalPosition).Length() < base._clickRadius && IsInDropZone)
+			if (IsInDropZone)
 			{
 				OpenMiniGame = true;
 				GD.Print("Open minigame!");

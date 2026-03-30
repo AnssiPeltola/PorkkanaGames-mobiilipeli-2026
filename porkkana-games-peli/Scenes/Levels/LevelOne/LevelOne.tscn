@@ -49,7 +49,21 @@ rotation = 1.5707964
 [node name="Enviroment" type="CanvasLayer" parent="."]
 layer = -15149
 
+[node name="Conveyor" parent="Enviroment" instance=ExtResource("3_85dct")]
+position = Vector2(860, 50)
+collision_layer = 4
+collision_mask = 7
+
+[node name="Conveyor2" parent="Enviroment" instance=ExtResource("3_85dct")]
+position = Vector2(1114, 1030)
+rotation = 3.1415925
+collision_layer = 4
+collision_mask = 7
+leftToRight = false
+
 [node name="Walls" type="StaticBody2D" parent="Enviroment"]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Walls"]
 position = Vector2(-87.5, 542)
@@ -70,14 +84,6 @@ shape = SubResource("RectangleShape2D_85dct")
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Enviroment/Walls"]
 position = Vector2(965.5, 539.5)
 shape = SubResource("RectangleShape2D_r58k2")
-
-[node name="Conveyor" parent="Enviroment/Walls" instance=ExtResource("3_85dct")]
-position = Vector2(860, 50)
-
-[node name="Conveyor2" parent="Enviroment/Walls" instance=ExtResource("3_85dct")]
-position = Vector2(1114, 1030)
-rotation = 3.1415925
-leftToRight = false
 
 [node name="TaustaV1Valmis" type="Sprite2D" parent="Enviroment/Walls"]
 show_behind_parent = true
@@ -105,32 +111,39 @@ icon = ExtResource("8_i6cia")
 
 [node name="LevelOneIngredient" parent="." groups=["Circle", "Good", "Tomato"] instance=ExtResource("11_w3gx0")]
 position = Vector2(1276, 346)
+collision_mask = 6
 IngredientTexture = ExtResource("12_oa880")
 
 [node name="LevelOneIngredient2" parent="." groups=["Bad", "Circle"] instance=ExtResource("11_w3gx0")]
 position = Vector2(1608, 672)
+collision_mask = 6
 IngredientTexture = ExtResource("13_gjxmx")
 
 [node name="LevelOneIngredient3" parent="." groups=["Circle", "Good", "Onion"] instance=ExtResource("11_w3gx0")]
 position = Vector2(1536, 329)
+collision_mask = 6
 IngredientTexture = ExtResource("11_gjxmx")
 
 [node name="LevelOneIngredient4" parent="." groups=["Carrot", "Good"] instance=ExtResource("11_w3gx0")]
 position = Vector2(1170, 562)
+collision_mask = 6
 IngredientTexture = ExtResource("12_wt3qk")
 
 [node name="LevelOneIngredient5" parent="." groups=["Bad", "Banana"] instance=ExtResource("11_w3gx0")]
 position = Vector2(1223, 775)
+collision_mask = 6
 IngredientTexture = ExtResource("13_i6cia")
 
 [node name="LevelOneIngredient6" parent="." groups=["Bad", "Circle"] instance=ExtResource("11_w3gx0")]
 position = Vector2(1412, 543)
+collision_mask = 6
 IngredientTexture = ExtResource("14_oh1h0")
 
 [node name="LevelOneIngredient7" parent="." groups=["Good", "Pasta"] instance=ExtResource("11_w3gx0")]
 position = Vector2(1731, 475)
 rotation = 0.6981317
 scale = Vector2(1.2, 1.2)
+collision_mask = 6
 IngredientTexture = ExtResource("15_wt3qk")
 
 [node name="Checklist" parent="." instance=ExtResource("18_15huj")]

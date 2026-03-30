@@ -42,6 +42,12 @@ folder_colors={
 
 pointing/emulate_touch_from_mouse=true
 
+[layer_names]
+
+2d_physics/layer_1="Ingredients"
+2d_physics/layer_2="Walls"
+2d_physics/layer_3="Conveyors"
+
 [rendering]
 
 renderer/rendering_method="mobile"

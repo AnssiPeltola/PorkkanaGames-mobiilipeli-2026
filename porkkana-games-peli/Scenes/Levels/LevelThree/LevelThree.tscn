@@ -27,6 +27,8 @@ size = Vector2(330, 1601)
 [node name="LevelThree" type="Node2D"]
 
 [node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-128.5, 524.5)
@@ -84,14 +86,17 @@ icon = ExtResource("10_k6173")
 [node name="SeasoningIngredientScene" parent="." instance=ExtResource("11_djxk4")]
 position = Vector2(179, 912)
 scale = Vector2(0.55, 0.55)
+collision_mask = 6
 SeasonKind = 1
 
 [node name="SeasoningIngredientScene2" parent="." instance=ExtResource("11_djxk4")]
 position = Vector2(1520, 886)
 scale = Vector2(0.55, 0.55)
+collision_mask = 6
 SeasonKind = 2
 
 [node name="SeasoningIngredientScene3" parent="." instance=ExtResource("11_djxk4")]
 position = Vector2(1738, 815)
 scale = Vector2(1.2, 1.2)
+collision_mask = 6
 SeasonKind = 3

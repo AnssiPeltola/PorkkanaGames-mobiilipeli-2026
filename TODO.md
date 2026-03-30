@@ -8,15 +8,15 @@
 
 #### Scene One:
 
-- Punainen raaka-aine yliviivaus pois
-- Spagettipaketti scaalaus isommaksi
+- Done // Punainen raaka-aine yliviivaus pois
+- Done // Spagettipaketti scaalaus isommaksi
 - Pause nappula
 
 #### Scene Two:
 
-- Guidebook toiselle puolelle
+- Done // Guidebook toiselle puolelle
 - Leikkuulauden keskittäminen
-- Spagettipaketti scaalaus isommaksi
+- Done // Spagettipaketti scaalaus isommaksi
 - Pause nappula
 
 ###### Minipeli:

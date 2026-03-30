@@ -72,10 +72,10 @@ position = Vector2(965.5, 539.5)
 shape = SubResource("RectangleShape2D_r58k2")
 
 [node name="Conveyor" parent="Enviroment/Walls" instance=ExtResource("3_85dct")]
-position = Vector2(860, 51)
+position = Vector2(860, 50)
 
 [node name="Conveyor2" parent="Enviroment/Walls" instance=ExtResource("3_85dct")]
-position = Vector2(1114, 1029)
+position = Vector2(1114, 1030)
 rotation = 3.1415925
 leftToRight = false
 
@@ -86,22 +86,21 @@ position = Vector2(960, 540)
 texture = ExtResource("6_jhgcd")
 
 [node name="Guidebook" parent="." instance=ExtResource("9_6x6kw")]
-visible = false
 z_index = 4096
-offset_left = 613.0
-offset_top = -46.999996
-offset_right = 613.0
-offset_bottom = -46.999996
+offset_left = 617.0
+offset_top = -54.000004
+offset_right = 617.0
+offset_bottom = -54.000004
 rotation = 1.5680616
 GuideBookPageTexture = ExtResource("7_oh1h0")
 
 [node name="ShowGuidebookButton" parent="." instance=ExtResource("10_w3gx0")]
-visible = false
 offset_left = 133.00002
 offset_top = 901.0
 offset_right = 201.00002
 offset_bottom = 969.0
-rotation = 1.5792124
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
 icon = ExtResource("8_i6cia")
 
 [node name="LevelOneIngredient" parent="." groups=["Circle", "Good", "Tomato"] instance=ExtResource("11_w3gx0")]
@@ -130,6 +129,8 @@ IngredientTexture = ExtResource("14_oh1h0")
 
 [node name="LevelOneIngredient7" parent="." groups=["Good", "Pasta"] instance=ExtResource("11_w3gx0")]
 position = Vector2(1731, 475)
+rotation = 0.6981317
+scale = Vector2(1.2, 1.2)
 IngredientTexture = ExtResource("15_wt3qk")
 
 [node name="Checklist" parent="." instance=ExtResource("18_15huj")]

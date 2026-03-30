@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dngf4qhgcybk2"]
+
+[ext_resource type="Script" uid="uid://cktnbskm1xpto" path="res://Scenes/Minigames/practice/MovementTest.cs" id="1_51is4"]
+[ext_resource type="Texture2D" uid="uid://b5glf76slhqyh" path="res://Art/icon.svg" id="2_ybofd"]
+
+[node name="MovementTest" type="Node2D"]
+script = ExtResource("1_51is4")
+
+[node name="Jep" type="Sprite2D" parent="."]
+texture = ExtResource("2_ybofd")

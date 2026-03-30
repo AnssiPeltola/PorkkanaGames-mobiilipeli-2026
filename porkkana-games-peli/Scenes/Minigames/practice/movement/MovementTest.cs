@@ -1,3 +1,4 @@
+// https://docs.godotengine.org/en/stable/classes/class_inputevent.html#class-inputevent
 // NOTE:
 // 1. Add vector start and end
 // 2. Start and End tracking vectors at input and drag
@@ -10,7 +11,7 @@ using System;
 public partial class MovementTest : Node2D
 {
 	// Declaration field
-	private Sprite2D _sprite;
+	private Sprite2D _spriteMovementTest;
 
 	// 1. 
 	private Vector2 _vectorStart = Vector2.Zero;
@@ -19,7 +20,7 @@ public partial class MovementTest : Node2D
 	public override void _Ready()
 	{
 		// Initialize the value
-		_sprite = GetNode<Sprite2D>("Jep");
+		_spriteMovementTest = GetNode<Sprite2D>("Jep");
 	}
 
 	// trach any type of input
@@ -33,13 +34,13 @@ public partial class MovementTest : Node2D
 			if (touch.Pressed)
 			{
 				GD.Print("Touch @: " + touch.Position);
-				_sprite.Position = touch.Position;
+				_spriteMovementTest.Position = touch.Position;
 
 				// 2.
 				_vectorStart = touch.Position;
 
 				// Change color
-				_sprite.Modulate = new Color(1, 0, 0); // Red when touching
+				_spriteMovementTest.Modulate = new Color(1, 0, 0); // Red when touching
 			}
 			// Touch input ended (or not happened)
 			else
@@ -50,7 +51,7 @@ public partial class MovementTest : Node2D
 				GD.Print("Touch END @: " + touch.Position);
 
 				// Change color
-				_sprite.Modulate = new Color(1, 1, 1); // White when released
+				_spriteMovementTest.Modulate = new Color(1, 1, 1); // White when released
 				 
 				// Print _vectorStart location constantly
 				GD.Print($"New Vector End: {_vectorEnd}");
@@ -66,7 +67,7 @@ public partial class MovementTest : Node2D
 		if (e is InputEventScreenDrag drag)
 		{
 			GD.Print("Dragging to: " + drag.Position);
-			_sprite.Position = drag.Position;
+			_spriteMovementTest.Position = drag.Position;
 		}
 	}	
 }

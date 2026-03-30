@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://bupa4k1j0cfns"]
+[gd_scene load_steps=2 format=3 uid="uid://bupa4k1j0cfns"]
+
+[ext_resource type="Script" uid="uid://xxpm3si4834d" path="res://Scenes/Minigames/practice/Drawing/Drawing.cs" id="1_kun8y"]
 
 [node name="Drawing" type="Node2D"]
+script = ExtResource("1_kun8y")
+
+[node name="DrawingContainer" type="Node2D" parent="."]

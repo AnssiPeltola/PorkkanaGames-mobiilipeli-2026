@@ -6,3 +6,11 @@
 script = ExtResource("1_kun8y")
 
 [node name="DrawingContainer" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 309.0
+offset_top = 126.0
+offset_right = 611.0
+offset_bottom = 321.0
+theme_override_font_sizes/font_size = 66
+text = "Hit \"space\" to remove drawings"

@@ -46,6 +46,7 @@ public partial class Drawing : Node2D
 	// Is the player CURRENTLY drawing
 	private bool _isDrawing = false;
 
+	/*
 	private Color[] _colors = new Color[]
 	{
 		Colors.Red, Colors.Black, Colors.Blue,
@@ -53,6 +54,7 @@ public partial class Drawing : Node2D
 		Colors.White
 	};
 	private int _colorIndex = 0;
+	*/
 
 
 	public override void _Ready()
@@ -78,10 +80,23 @@ public partial class Drawing : Node2D
  
 				// Properties
 				_currentLine.Width = 5f;
-				// _currentLine.DefaultColor = new Color(0, 0, 0);
-				_currentLine.DefaultColor = _colors[_colorIndex];
-				_colorIndex = (_colorIndex + 1) % _colors.Length; // *9.
 
+				/* _currentLine.DefaultColor = _colors[_colorIndex];
+				_colorIndex = (_colorIndex + 1) % _colors.Length; // *9.
+				*/
+
+				// Randomise colors using GD.Rand
+				// GD.Rand = random int
+				// GD.Randf = random float
+				// GD.RandRange(5, 10) = random in between 5 and 10
+				// GD.RandRange(2.5f, 5,5f) = random float between 2.5 and 5.5
+				// Replacing the first float for color with random between 0 and 1
+					// FromHsv ( different coolor picker)
+					// (color, Saturation, Brightness)
+					// we go (random, max, max)
+					// So we only get random bright colors.
+					//  https://docs.godotengine.org/en/stable/classes/class_color.html#class-color-method-from-hsv
+				_currentLine.DefaultColor = Color.FromHsv(GD.Randf(), 1.0f, 1.0f);
 				_currentLine.AddPoint(touch.Position);
 
 				_isDrawing = true;

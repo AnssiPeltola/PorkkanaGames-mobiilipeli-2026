@@ -18,6 +18,8 @@
 - Leikkuulauden keskittäminen
 - Done // Spagettipaketti scaalaus isommaksi
 - Pause nappula
+- Paistaessa jos chopatut raaka-aineet on jo pannulla kun toinen paisumassa ei tapahdu onEntered funktiota
+  pitäisi tehdä jokin check jos on jo niin osaisi aloittaa paistamisen myös silloin
 
 ###### Minipeli:
 

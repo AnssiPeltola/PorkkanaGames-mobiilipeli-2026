@@ -4,8 +4,8 @@ using System;
 public partial class IngredientDropZone : Area2D
 {
 	// private static readonly Color CorrectColor = new Color(0.4f, 1.0f, 0.4f, 1.0f);
-	private static readonly Color WrongColor = new Color(1.0f, 0.4f, 0.4f, 1.0f);
-	private static readonly Color NormalColor = Colors.White;
+	// private static readonly Color WrongColor = new Color(1.0f, 0.4f, 0.4f, 1.0f);
+	// private static readonly Color NormalColor = Colors.White;
 	private Checklist _checklist;
 
 	public override void _Ready()
@@ -37,7 +37,7 @@ public partial class IngredientDropZone : Area2D
 			if (box.IsInGroup("Bad"))
 			{
 				GD.Print("Bad Ingredient entered!");
-				box.Modulate = WrongColor;
+				// box.Modulate = WrongColor;
 			}
 		}
 	}
@@ -61,7 +61,7 @@ public partial class IngredientDropZone : Area2D
 			if (box.IsInGroup("Bad"))
 			{
 				GD.Print("Bad Ingredient Exited!");
-				box.Modulate = NormalColor;
+				// box.Modulate = NormalColor;
 			}
 		}
 	}

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://5gldpnqbvait" path="res://Scenes/Assets/Equipment/DropZones/CuttingBoardDropZone/CuttingBoardDropZone.tscn" id="1_q66cy"]
 [ext_resource type="PackedScene" uid="uid://du1dcsdgx4hu0" path="res://Scenes/Assets/Ingredients/LevelTwoIngredient/LevelTwoIngredient.tscn" id="5_yyvae"]
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="6_2jm63"]
-[ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/MiniGames/CuttingGame/CuttingMiniGame.tscn" id="6_srf4j"]
+[ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/Minigames/CuttingGame/CuttingMiniGame.tscn" id="6_srf4j"]
 [ext_resource type="Texture2D" uid="uid://f6j1dsc13ldo" path="res://Art/Assets/Equipment/Stove/hella_v1.png" id="7_2jm63"]
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="8_yyvae"]
 [ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="10_2og4m"]
@@ -47,6 +47,8 @@ _cuttingMiniGameScene = ExtResource("6_srf4j")
 
 [node name="LevelTwoIngredient4" parent="." groups=["Pasta", "Raw"] instance=ExtResource("5_yyvae")]
 position = Vector2(193, 902)
+rotation = -0.7853982
+scale = Vector2(1.3, 1.3)
 
 [node name="Enviroment" type="CanvasLayer" parent="."]
 layer = -7844
@@ -62,7 +64,7 @@ position = Vector2(-107, 542)
 shape = SubResource("RectangleShape2D_srf4j")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enviroment/Walls"]
-position = Vector2(855.5, -129)
+position = Vector2(855.5, -134)
 shape = SubResource("RectangleShape2D_xi4fc")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Enviroment/Walls"]
@@ -78,10 +80,10 @@ position = Vector2(954, 551)
 shape = SubResource("RectangleShape2D_xwols")
 
 [node name="Conveyor" parent="Enviroment/Walls" instance=ExtResource("6_2jm63")]
-position = Vector2(860, 40)
+position = Vector2(860, 45)
 
 [node name="Conveyor2" parent="Enviroment/Walls" instance=ExtResource("6_2jm63")]
-position = Vector2(1114, 1032)
+position = Vector2(1114, 1024)
 rotation = 3.1415925
 leftToRight = false
 
@@ -117,17 +119,18 @@ scale = Vector2(0.99999994, 0.99999994)
 [node name="Guidebook" parent="." instance=ExtResource("10_2og4m")]
 visible = false
 z_index = 4096
-offset_left = 631.5699
-offset_top = -52.00006
-offset_right = 631.5699
-offset_bottom = -52.00006
-rotation = 1.5680616
+offset_left = 1295.0
+offset_top = 1137.0
+offset_right = 1295.0
+offset_bottom = 1137.0
+rotation = -1.5707964
 GuideBookPageTexture = ExtResource("11_xi4fc")
 
 [node name="ShowGuidebookButton" parent="." instance=ExtResource("12_xwols")]
-offset_left = 151.56989
-offset_top = 896.0
-offset_right = 219.56989
-offset_bottom = 964.0
-rotation = 1.5792124
+offset_left = 1783.0001
+offset_top = 132.0
+offset_right = 1851.0001
+offset_bottom = 200.0
+rotation = -1.5707964
+scale = Vector2(1.5, 1.5)
 icon = ExtResource("13_rfuqb")

@@ -47,6 +47,7 @@ public partial class BaseIngridient : CharacterBody2D
 					_activeTouchPosition = touch.Position;
 					// GD.Print(_activeTouchPosition); // Test
 					_dragging = true;
+					Scale = new Vector2(1.15f, 1.15f);
 				}
 			}
 			// When touch is up
@@ -60,6 +61,7 @@ public partial class BaseIngridient : CharacterBody2D
 					_activeTouchId = -1;
 					_dragging = false;
 					Velocity = Vector2.Zero;
+					Scale = new Vector2(1, 1);
 				}
 			}
 			return;

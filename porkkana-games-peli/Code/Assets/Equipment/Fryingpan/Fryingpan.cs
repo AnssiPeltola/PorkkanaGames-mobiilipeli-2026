@@ -55,32 +55,7 @@ public partial class Fryingpan : Area2D
     // By this we will make an order what to cook first, second and third.
     private void OnBodyEntered(Node2D body)
     {
-        // Check if ingredient is Onion and state is 0
-        if (body is LevelTwoIngredient ingredient &&
-            ingredient.State == LevelTwoIngredient.IngredientState.Chopped && ingredient.IsInGroup("Onion") && state == 0)
-        {
-            GD.Print("Chopped Onion entered pan");
-            _currentIngredient = ingredient;
-            StartCooking();
-        }
-
-        // Check if ingredient is Carrot and state is 1
-        if (body is LevelTwoIngredient ingredient2 &&
-            ingredient2.State == LevelTwoIngredient.IngredientState.Chopped && ingredient2.IsInGroup("Carrot") && state == 1)
-        {
-            GD.Print("Chopped Carrot entered pan");
-            _currentIngredient = ingredient2;
-            StartCooking();
-        }
-
-        // Checks if ingredient is Tomato and state is 2
-        if (body is LevelTwoIngredient ingredient3 &&
-            ingredient3.State == LevelTwoIngredient.IngredientState.Chopped && ingredient3.IsInGroup("Tomato") && state == 2)
-        {
-            GD.Print("Chopped Tomato entered pan");
-            _currentIngredient = ingredient3;
-            StartCooking();
-        }
+        OverlappingIngredients();
     }
 
     // When body leaves fryingpan StopCooking
@@ -93,9 +68,55 @@ public partial class Fryingpan : Area2D
         }
     }
 
-    // Makes progressBar visible and set timer on
-    private void StartCooking()
+    // Finds overlapping chopped ingredients and starts cooking only the expected next one (Onion -> Carrot -> Tomato).
+    private void OverlappingIngredients()
     {
+        // Array of bodies that are overlapping Fryingpan. Used in OnBodyEntered
+        // Returns a list of intersecting PhysicsBody2Ds. The overlapping body's CollisionObject2D.CollisionLayer must be part of this area's CollisionObject2D.CollisionMask in order to be detected.
+        var bodies = GetOverlappingBodies();
+
+        // Checks whole bodies array in foreach loop
+        foreach (Node2D body in bodies)
+        {
+            if (body is not LevelTwoIngredient ingredient)
+            {
+                continue;
+            }
+
+            if (ingredient.State != LevelTwoIngredient.IngredientState.Chopped)
+            {
+                continue;
+            }
+
+            if (ingredient.IsInGroup("Onion") && state == 0)
+            {
+                StartCookingIngredient(ingredient);
+                return;
+            }
+
+            if (ingredient.IsInGroup("Carrot") && state == 1)
+            {
+                StartCookingIngredient(ingredient);
+                return;
+            }
+
+            if (ingredient.IsInGroup("Tomato") && state == 2)
+            {
+                StartCookingIngredient(ingredient);
+                return;
+            }
+        }
+    }
+
+    private void StartCookingIngredient(LevelTwoIngredient ingredient)
+    {
+        // Prevent resetting the active cook timer with a new overlap event.
+        if (!_cookTimer.IsStopped())
+        {
+            return;
+        }
+
+        _currentIngredient = ingredient;
         GD.Print("Start cooking");
         _progressBar.Visible = true;
         _progressBar.Value = 0;
@@ -146,6 +167,7 @@ public partial class Fryingpan : Area2D
         }
 
         state++;
+        OverlappingIngredients();
         // Add +1 Score point. Ingredient is completely cooked!
         GameManager.Instance.AddScore();
     }

@@ -9,7 +9,7 @@ using Godot;
 public partial class Conveyor : StaticBody2D
 {
 	// Conveyor moving speed
-	[Export] private float speed = 700f;
+	[Export] private float speed = 500f;
 
 	// Boolean value for either direction is Right or Left. True is from Left to Right
 	[Export] private bool leftToRight = true;

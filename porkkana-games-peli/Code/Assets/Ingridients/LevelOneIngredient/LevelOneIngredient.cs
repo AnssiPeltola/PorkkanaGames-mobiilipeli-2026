@@ -70,4 +70,36 @@ public partial class LevelOneIngredient : BaseIngridient
 			_sprite.Texture = IngredientTexture;
 		}
 	}
+
+	// Uses tween animation before destroying this ingredient from Scene with QueueFree()
+	// https://www.patreon.com/posts/tween-cheatsheet-148942435
+	public void DestroyTrash()
+	{
+		const float duration = 0.40f;
+		var tween = CreateTween();
+
+		// Tells that TweenPropertyes has to run at the same time
+		tween.SetParallel(true);
+
+		// Defines the shape of the animation curve (Cubic = smooth curve)
+		tween.SetTrans(Tween.TransitionType.Cubic);
+
+		// How the tween flow goes, In starts slow and speeds up
+		tween.SetEase(Tween.EaseType.In);
+
+		// Drops the ingredient slightly like it would "drop down" (Switches its position.Y for 30px in 0,4sec)
+		tween.TweenProperty(this, "position:y", Position.Y + 30f, duration);
+
+		// Scales down to 0,0 to create a quick "shrink away" effect.
+		tween.TweenProperty(this, "scale", Vector2.Zero, duration);
+
+		// Adds a small spin while disappearing. (Makes it rotate)
+		tween.TweenProperty(this, "rotation", Rotation + 1.35f, duration);
+
+		// Fades the sprite out completely. (Alpha -> 0)
+		tween.TweenProperty(_sprite, "modulate:a", 0f, duration);
+
+		// Run QueueFree after the parallel tween step has finished. (Chain() does this)
+		tween.Chain().TweenCallback(Callable.From(() => QueueFree()));
+	}
 }

@@ -28,6 +28,6 @@ public partial class RecipeSelections : Control
 	private void StartPastaLevel()
 	{
 		GD.Print("Starting pasta level!");
-		GetTree().ChangeSceneToFile("res://Scenes/Levels/LevelOne/LevelOne.tscn");
+		FadeTransition.ChangeSceneWithFade("res://Scenes/Levels/LevelOne/LevelOne.tscn");
 	}
 }

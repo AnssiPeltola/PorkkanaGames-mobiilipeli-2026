@@ -93,8 +93,7 @@ public partial class GameManager : Node
 		if (Score >= levelOneRequired && !levelOneWon)
 		{
 			GD.Print("All items in right positions! Level 1 completed! Switching Scene!");
-			// Switch scene - https://docs.godotengine.org/en/latest/tutorials/scripting/change_scenes_manually.html
-			GetTree().ChangeSceneToFile("res://Scenes/Levels/LevelTwo/LevelTwoReal.tscn");
+			FadeTransition.ChangeSceneWithFade("res://Scenes/Levels/LevelTwo/LevelTwoReal.tscn");
 			levelOneWon = true;
 			ResetScore();
 		}
@@ -102,7 +101,7 @@ public partial class GameManager : Node
 		// Level two completed, switch scene into level three and reset score
 		if (Score >=  levelTwoRequired && levelOneWon && !levelTwoWon) {
 			GD.Print("All Ingredients are chopped and cooked! Level 2 completed! Switching Scene!");
-			GetTree().ChangeSceneToFile("res://Scenes/Levels/LevelThree/LevelThree.tscn");
+			FadeTransition.ChangeSceneWithFade("res://Scenes/Levels/LevelThree/LevelThree.tscn");
 			levelTwoWon = true;
 			ResetScore();
 		}
@@ -111,8 +110,7 @@ public partial class GameManager : Node
 		if (Score >= levelThreeRequired && levelOneWon && levelTwoWon)
 		{
 			GD.Print("All cooked ingredients in right spot! Level 3 completed! Switching Scene!");
-			GetTree().ChangeSceneToFile("res://Scenes/Menus/MainMenu.tscn");
-
+			FadeTransition.ChangeSceneWithFade("res://Scenes/Menus/MainMenu.tscn");
 			// Reset score and progress
 			ResetScore();
 			ResetLevelProgress();

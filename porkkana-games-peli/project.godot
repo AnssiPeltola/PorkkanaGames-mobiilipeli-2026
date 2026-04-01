@@ -19,6 +19,7 @@ config/icon="res://Art/icon.svg"
 
 GameManager="*res://Code/Systems/GameManager.cs"
 SceneControl="*res://Code/Systems/SceneControl.cs"
+FadeTransition="*res://Scenes/FadeTransition/FadeTransition.tscn"
 
 [display]
 

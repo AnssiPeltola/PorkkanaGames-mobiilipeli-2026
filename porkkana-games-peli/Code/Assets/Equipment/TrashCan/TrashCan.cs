@@ -30,7 +30,8 @@ public partial class TrashCan : Area2D
 			if (box.IsInGroup("Bad"))
 			{
 				GD.Print("Bad Ingredient entered & Deleted");
-				DelayMethod(box);
+				// Uses tween and destroys trash
+				box.DestroyTrash();
 				// Add +1 Score
 				GameManager.Instance.AddScore();
 			}
@@ -52,13 +53,4 @@ public partial class TrashCan : Area2D
 	// 		}
 	// 	}
 	// }
-
-	// https://forum.godotengine.org/t/create-a-delay-between-code-execution-using-c/12714/5
-	// Delays function by 0.5sec and delete LevelOneIngredient
-	private async void DelayMethod(LevelOneIngredient body)
-	{
-		await Task.Delay(TimeSpan.FromMilliseconds(500));
-		// QueueFree() function will delete the Node and all its child nodes
-		body.QueueFree();
-	}
 }

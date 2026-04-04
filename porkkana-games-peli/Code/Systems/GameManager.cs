@@ -47,9 +47,10 @@ public partial class GameManager : Node
 	}
 
 	private int _score = 0;
-	public readonly int levelOneRequired = 7;
-	public readonly int levelTwoRequired = 4;
-	public readonly int levelThreeRequired = 5;
+	public int levelOneRequired { get; set; }
+	public int levelTwoRequired { get; set; }
+	public int levelThreeRequired { get; set; }
+	public int currentLevel { get; set; }
 	private bool levelOneWon = false;
 	private bool levelTwoWon = false;
 
@@ -84,6 +85,7 @@ public partial class GameManager : Node
 	{
 		levelOneWon = false;
 		levelTwoWon = false;
+		currentLevel = 0;
 	}
 
 	private void CheckLevelComplete()
@@ -93,7 +95,11 @@ public partial class GameManager : Node
 		if (Score >= levelOneRequired && !levelOneWon)
 		{
 			GD.Print("All items in right positions! Level 1 completed! Switching Scene!");
-			FadeTransition.ChangeSceneWithFade("res://Scenes/Levels/LevelTwo/LevelTwoReal.tscn");
+			// currentLevel +1
+			// Pasta level starts from 1 (level1) and then currentlevel 2/3 are for pastalevel levels 2 and 3.
+			// Fruit level starts from 4 (level1) and 5/6 are for level 2/3 in fruit recipe)
+			currentLevel++;
+			FadeTransition.ChangeSceneWithFade(LevelOrder.GetLevelPath(currentLevel));
 			levelOneWon = true;
 			ResetScore();
 		}
@@ -101,7 +107,8 @@ public partial class GameManager : Node
 		// Level two completed, switch scene into level three and reset score
 		if (Score >=  levelTwoRequired && levelOneWon && !levelTwoWon) {
 			GD.Print("All Ingredients are chopped and cooked! Level 2 completed! Switching Scene!");
-			FadeTransition.ChangeSceneWithFade("res://Scenes/Levels/LevelThree/LevelThree.tscn");
+			currentLevel++;
+			FadeTransition.ChangeSceneWithFade(LevelOrder.GetLevelPath(currentLevel));
 			levelTwoWon = true;
 			ResetScore();
 		}

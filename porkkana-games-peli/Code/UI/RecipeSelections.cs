@@ -7,6 +7,7 @@ public partial class RecipeSelections : Control
 	{
 		Button backButton = GetNode<Button>("CanvasLayer/BackButton");
 		Button startPastaButton = GetNode<Button>("CanvasLayer/StartPastaButton");
+		Button startFruitButton = GetNode<Button>("CanvasLayer/StartFruitButton");
 
 		if (backButton == null)
 		{
@@ -16,6 +17,7 @@ public partial class RecipeSelections : Control
 
 		backButton.Pressed += OnBackPressed;
 		startPastaButton.Pressed += StartPastaLevel;
+		startFruitButton.Pressed += StartFruitLevel;
 	}
 
 	private void OnBackPressed()
@@ -28,6 +30,23 @@ public partial class RecipeSelections : Control
 	private void StartPastaLevel()
 	{
 		GD.Print("Starting pasta level!");
-		FadeTransition.ChangeSceneWithFade("res://Scenes/Levels/LevelOne/LevelOne.tscn");
+		GameManager.Instance.ResetScore();
+		GameManager.Instance.currentLevel = 1;
+		GameManager.Instance.levelOneRequired = 7;
+		GameManager.Instance.levelTwoRequired = 4;
+    	GameManager.Instance.levelThreeRequired = 5;
+		FadeTransition.ChangeSceneWithFade(LevelOrder.GetLevelPath(GameManager.Instance.currentLevel));
+	}
+
+	// Set Fruit level score requirements here and start level 1 in fruit recipe
+	private void StartFruitLevel()
+	{
+		GD.Print("Starting pasta level!");
+		GameManager.Instance.ResetScore();
+		GameManager.Instance.currentLevel = 4;
+		GameManager.Instance.levelOneRequired = 7;
+		GameManager.Instance.levelTwoRequired = 4;
+    	GameManager.Instance.levelThreeRequired = 5;
+		FadeTransition.ChangeSceneWithFade(LevelOrder.GetLevelPath(GameManager.Instance.currentLevel));
 	}
 }

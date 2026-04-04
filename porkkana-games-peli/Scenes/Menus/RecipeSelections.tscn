@@ -59,3 +59,10 @@ text = "Back"
 offset_right = 173.0
 offset_bottom = 131.0
 text = "Start pasta"
+
+[node name="StartFruitButton" type="Button" parent="CanvasLayer"]
+offset_left = 1113.0
+offset_top = 484.0
+offset_right = 1286.0
+offset_bottom = 615.0
+text = "Start Fruit"

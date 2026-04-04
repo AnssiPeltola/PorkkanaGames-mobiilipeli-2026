@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://do8440pnslic7"]
+
+[ext_resource type="Texture2D" uid="uid://krm0k6cbf1pr" path="res://Art/Backrounds/tausta_fullscreen.png" id="1_6kkd7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6c2l"]
+size = Vector2(257, 1599)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bebmi"]
+size = Vector2(2478, 275)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq7df"]
+size = Vector2(2499, 246)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6y1ec"]
+size = Vector2(330, 1601)
+
+[node name="FruitLevelThree" type="Node2D"]
+
+[node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-128.5, 524.5)
+shape = SubResource("RectangleShape2D_g6c2l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(990, -137.5)
+shape = SubResource("RectangleShape2D_bebmi")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(995.5, 1203)
+shape = SubResource("RectangleShape2D_mq7df")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(2085, 525.5)
+shape = SubResource("RectangleShape2D_6y1ec")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls"]
+z_index = -7
+position = Vector2(960, 540)
+texture = ExtResource("1_6kkd7")

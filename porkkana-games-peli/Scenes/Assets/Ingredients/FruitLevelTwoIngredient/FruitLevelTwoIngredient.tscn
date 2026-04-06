@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxq0cugnqli0"]
+
+[ext_resource type="Script" uid="uid://bpergk2x6aswq" path="res://Code/Assets/Ingridients/FruitLevelTwoIngredient/FruitLevelTwoIngredient.cs" id="1_hdju2"]
+[ext_resource type="Texture2D" uid="uid://bb62hokjr1vuq" path="res://Art/Assets/Ingridients/Lime/lime-v1.png" id="2_hdju2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hdju2"]
+radius = 61.008198
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hee1k"]
+radius = 64.310356
+height = 178.25302
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e27jk"]
+radius = 31.326368
+height = 171.21046
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyrse"]
+radius = 62.936398
+height = 152.75879
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oopam"]
+radius = 335.85773
+height = 879.21405
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oopam"]
+radius = 81.00617
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hy6pe"]
+radius = 41.10929
+height = 179.65889
+
+[node name="FruitLevelTwoIngredient" type="CharacterBody2D"]
+script = ExtResource("1_hdju2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.20625, 0.20625)
+texture = ExtResource("2_hdju2")
+
+[node name="AppleCollision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, 13)
+shape = SubResource("CircleShape2D_hdju2")
+disabled = true
+
+[node name="KiwiCollision" type="CollisionShape2D" parent="."]
+visible = false
+rotation = 2.3420765
+shape = SubResource("CapsuleShape2D_hee1k")
+disabled = true
+
+[node name="BananaCollision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(13.999999, 23)
+rotation = 0.91435707
+shape = SubResource("CapsuleShape2D_e27jk")
+disabled = true
+
+[node name="GrapesCollision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(14, 16)
+rotation = -0.7784548
+shape = SubResource("CapsuleShape2D_kyrse")
+disabled = true
+
+[node name="LimeCollision" type="CollisionShape2D" parent="."]
+visible = false
+rotation = 0.8126946
+scale = Vector2(0.20625, 0.20625)
+shape = SubResource("CapsuleShape2D_oopam")
+disabled = true
+
+[node name="TouchArea" type="Area2D" parent="."]
+
+[node name="CircleTouch" type="CollisionShape2D" parent="TouchArea"]
+visible = false
+position = Vector2(0, 13)
+shape = SubResource("CircleShape2D_oopam")
+disabled = true
+
+[node name="BananaTouch" type="CollisionShape2D" parent="TouchArea"]
+visible = false
+position = Vector2(16.000002, 23.000002)
+rotation = 0.8693101
+shape = SubResource("CapsuleShape2D_hy6pe")
+disabled = true

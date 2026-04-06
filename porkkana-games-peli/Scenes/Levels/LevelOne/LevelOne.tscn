@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://i2gmb583eda2"]
+[gd_scene load_steps=25 format=3 uid="uid://i2gmb583eda2"]
 
 [ext_resource type="Script" uid="uid://dqyjk8rtce7av" path="res://Code/Levels/LevelOne.cs" id="1_tpciy"]
 [ext_resource type="PackedScene" uid="uid://j4hb472lofbn" path="res://Scenes/Assets/Equipment/DropZones/IngredientDropZone/IngredientDropZone.tscn" id="2_orjfg"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bcs1yagumshxr" path="res://Art/Assets/Ingridients/Pasta/spaghetti-v1.png" id="15_wt3qk"]
 [ext_resource type="Texture2D" uid="uid://duv7x54cm62n3" path="res://Art/Assets/Ingridients/Broccoli/rotten-broccoli-v1.png" id="16_1hsgv"]
 [ext_resource type="PackedScene" uid="uid://coo7gp4dls8xk" path="res://Scenes/Assets/Guidebook/Checklist/Checklist.tscn" id="18_15huj"]
+[ext_resource type="Texture2D" uid="uid://cn0l8lv4ht5fo" path="res://Art/Assets/Checklist_Ingridients/checklist_ingridients.png" id="19_v2lkx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow6v1"]
 size = Vector2(175, 1093)
@@ -149,3 +150,4 @@ IngredientTexture = ExtResource("15_wt3qk")
 [node name="Checklist" parent="." instance=ExtResource("18_15huj")]
 position = Vector2(632, 521)
 rotation = 1.5707964
+_checklistTexture = ExtResource("19_v2lkx")

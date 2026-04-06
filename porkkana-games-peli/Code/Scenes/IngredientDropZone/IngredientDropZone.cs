@@ -77,6 +77,7 @@ public partial class IngredientDropZone : Area2D
 	// This is used for SetChecklistFromIngredient
 	private static string GetIngredientGroupName(LevelOneIngredient ingredient)
 	{
+		// Pasta level
 		if (ingredient.IsInGroup("Tomato"))
 		{
 			return "Tomato";
@@ -95,6 +96,23 @@ public partial class IngredientDropZone : Area2D
 		if (ingredient.IsInGroup("Pasta"))
 		{
 			return "Pasta";
+		}
+		// Fruitsalad level
+		if (ingredient.IsInGroup("Apple"))
+		{
+			return "Apple";
+		}
+		if (ingredient.IsInGroup("Kiwi"))
+		{
+			return "Kiwi";
+		}
+		if (ingredient.IsInGroup("Banana"))
+		{
+			return "Banana";
+		}
+		if (ingredient.IsInGroup("Grapes"))
+		{
+			return "Grapes";
 		}
 
 		return null;

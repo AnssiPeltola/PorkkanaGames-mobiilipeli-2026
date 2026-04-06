@@ -1,7 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8birxuvpwki1"]
+[gd_scene load_steps=23 format=3 uid="uid://c8birxuvpwki1"]
 
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="1_5prv0"]
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="2_uctdc"]
+[ext_resource type="PackedScene" uid="uid://j4hb472lofbn" path="res://Scenes/Assets/Equipment/DropZones/IngredientDropZone/IngredientDropZone.tscn" id="3_mjwi7"]
+[ext_resource type="PackedScene" uid="uid://8yyr5bus4jmp" path="res://Scenes/Assets/Equipment/TrashCan/TrashCan.tscn" id="4_myk0y"]
+[ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="5_fxkfu"]
+[ext_resource type="Texture2D" uid="uid://c2ufjy4cmo0ci" path="res://Art/Assets/LevelHelpGuide/ohjeet_1level.png" id="6_drmrv"]
+[ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="7_shlqr"]
+[ext_resource type="Texture2D" uid="uid://b24tsu6dgafy0" path="res://Art/Assets/RecipeBook/open_helpguide_button.png" id="8_axjp1"]
+[ext_resource type="PackedScene" uid="uid://coo7gp4dls8xk" path="res://Scenes/Assets/Guidebook/Checklist/Checklist.tscn" id="9_bjss0"]
+[ext_resource type="PackedScene" uid="uid://dodunm0iqwkit" path="res://Scenes/Assets/Ingredients/LevelOneIngredient/LevelOneIngredient.tscn" id="10_drmrv"]
+[ext_resource type="Texture2D" uid="uid://bx8va4qw7jraw" path="res://Art/Assets/Ingridients/Apple/apple-v1.png" id="11_shlqr"]
+[ext_resource type="Texture2D" uid="uid://ci20dywxtdlop" path="res://Art/Assets/Ingridients/Banana/banana-v1.png" id="12_86xt3"]
+[ext_resource type="Texture2D" uid="uid://duv7x54cm62n3" path="res://Art/Assets/Ingridients/Broccoli/rotten-broccoli-v1.png" id="13_kpc6j"]
+[ext_resource type="Texture2D" uid="uid://di43lw42f6kbe" path="res://Art/Assets/Ingridients/Grape/grapes-v1.png" id="14_c04ih"]
+[ext_resource type="Texture2D" uid="uid://b2fd56tvbrgeh" path="res://Art/Assets/Ingridients/Kiwi/kiwi-v1.png" id="15_kpc6j"]
+[ext_resource type="Texture2D" uid="uid://cfegmkigrk831" path="res://Art/Assets/Ingridients/Apple/rotten-apple-v1.png" id="16_bh03k"]
+[ext_resource type="Texture2D" uid="uid://drhd74as2yxdt" path="res://Art/Assets/Ingridients/Onion/onion-v1.png" id="17_cd0w1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjwi7"]
 size = Vector2(175, 1093)
@@ -19,6 +34,13 @@ size = Vector2(2278, 161)
 size = Vector2(93, 1175)
 
 [node name="FruitLevelOne" type="Node2D"]
+
+[node name="IngredientDropZone" parent="." instance=ExtResource("3_mjwi7")]
+position = Vector2(226, 523)
+
+[node name="TrashCan" parent="." instance=ExtResource("4_myk0y")]
+position = Vector2(1820, 132)
+rotation = 1.5707964
 
 [node name="Enviroment" type="CanvasLayer" parent="."]
 layer = -15149
@@ -64,3 +86,60 @@ show_behind_parent = true
 z_index = -4096
 position = Vector2(960, 540)
 texture = ExtResource("2_uctdc")
+
+[node name="Guidebook" parent="." instance=ExtResource("5_fxkfu")]
+z_index = 4096
+offset_left = 617.0
+offset_top = -54.000004
+offset_right = 617.0
+offset_bottom = -54.000004
+rotation = 1.5680616
+GuideBookPageTexture = ExtResource("6_drmrv")
+
+[node name="ShowGuidebookButton" parent="." instance=ExtResource("7_shlqr")]
+offset_left = 133.00002
+offset_top = 901.0
+offset_right = 201.00002
+offset_bottom = 969.0
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+icon = ExtResource("8_axjp1")
+
+[node name="LevelOneIngredient" parent="." groups=["Apple", "Circle", "Good"] instance=ExtResource("10_drmrv")]
+position = Vector2(1246, 364)
+collision_mask = 6
+IngredientTexture = ExtResource("11_shlqr")
+
+[node name="LevelOneIngredient2" parent="." groups=["Banana", "Good"] instance=ExtResource("10_drmrv")]
+position = Vector2(1571, 403)
+collision_mask = 6
+IngredientTexture = ExtResource("12_86xt3")
+
+[node name="LevelOneIngredient3" parent="." groups=["Bad", "Circle"] instance=ExtResource("10_drmrv")]
+position = Vector2(1218, 672)
+collision_mask = 6
+IngredientTexture = ExtResource("13_kpc6j")
+
+[node name="LevelOneIngredient4" parent="." groups=["Circle", "Good", "Grapes"] instance=ExtResource("10_drmrv")]
+position = Vector2(1505, 678)
+collision_mask = 6
+IngredientTexture = ExtResource("14_c04ih")
+
+[node name="LevelOneIngredient5" parent="." groups=["Circle", "Good", "Kiwi"] instance=ExtResource("10_drmrv")]
+position = Vector2(1790, 484)
+collision_mask = 6
+IngredientTexture = ExtResource("15_kpc6j")
+
+[node name="LevelOneIngredient6" parent="." groups=["Apple", "Bad", "Circle"] instance=ExtResource("10_drmrv")]
+position = Vector2(1482, 216)
+collision_mask = 6
+IngredientTexture = ExtResource("16_bh03k")
+
+[node name="LevelOneIngredient7" parent="." groups=["Bad", "Circle"] instance=ExtResource("10_drmrv")]
+position = Vector2(1770, 738)
+collision_mask = 6
+IngredientTexture = ExtResource("17_cd0w1")
+
+[node name="Checklist" parent="." instance=ExtResource("9_bjss0")]
+position = Vector2(632, 521)
+rotation = 1.5707964

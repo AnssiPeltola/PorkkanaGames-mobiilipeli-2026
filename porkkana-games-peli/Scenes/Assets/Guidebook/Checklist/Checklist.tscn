@@ -7,6 +7,7 @@
 [node name="Checklist" type="Node2D"]
 z_index = -13
 script = ExtResource("1_d64gk")
+_checklistTexture = ExtResource("2_d64gk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -8
@@ -32,6 +33,30 @@ scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_78orc")
 
 [node name="PastaCheck" type="Sprite2D" parent="."]
+z_index = -7
+position = Vector2(71, 115)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_78orc")
+
+[node name="AppleCheck" type="Sprite2D" parent="."]
+z_index = -7
+position = Vector2(70, -39.000004)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_78orc")
+
+[node name="KiwiCheck" type="Sprite2D" parent="."]
+z_index = -7
+position = Vector2(69, 39)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_78orc")
+
+[node name="BananaCheck" type="Sprite2D" parent="."]
+z_index = -7
+position = Vector2(70, -115.00001)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_78orc")
+
+[node name="GrapesCheck" type="Sprite2D" parent="."]
 z_index = -7
 position = Vector2(71, 115)
 scale = Vector2(0.9, 0.9)

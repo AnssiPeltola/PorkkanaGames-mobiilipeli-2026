@@ -39,25 +39,36 @@ scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_78orc")
 
 [node name="AppleCheck" type="Sprite2D" parent="."]
+visible = false
 z_index = -7
-position = Vector2(70, -39.000004)
+position = Vector2(70, -152)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_78orc")
 
 [node name="KiwiCheck" type="Sprite2D" parent="."]
+visible = false
 z_index = -7
-position = Vector2(69, 39)
+position = Vector2(69, 0)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_78orc")
 
 [node name="BananaCheck" type="Sprite2D" parent="."]
+visible = false
 z_index = -7
-position = Vector2(70, -115.00001)
+position = Vector2(70, -77)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_78orc")
 
 [node name="GrapesCheck" type="Sprite2D" parent="."]
+visible = false
 z_index = -7
-position = Vector2(71, 115)
+position = Vector2(71, 83.00001)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_78orc")
+
+[node name="LimeCheck" type="Sprite2D" parent="."]
+visible = false
+z_index = -7
+position = Vector2(71, 151)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_78orc")

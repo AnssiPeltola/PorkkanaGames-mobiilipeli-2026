@@ -14,6 +14,7 @@ public partial class Checklist : Node2D
 	private Sprite2D _checkKiwi;
 	private Sprite2D _checkBanana;
 	private Sprite2D _checkGrapes;
+	private Sprite2D _checkLime;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -30,6 +31,7 @@ public partial class Checklist : Node2D
 		_checkKiwi = GetNode<Sprite2D>("KiwiCheck");
 		_checkBanana = GetNode<Sprite2D>("BananaCheck");
 		_checkGrapes = GetNode<Sprite2D>("GrapesCheck");
+		_checkLime = GetNode<Sprite2D>("LimeCheck");
 
 		// Pasta level
 		_checkTomato.Visible = false;
@@ -42,6 +44,7 @@ public partial class Checklist : Node2D
 		_checkKiwi.Visible = false;
 		_checkBanana.Visible = false;
 		_checkGrapes.Visible = false;
+		_checkLime.Visible = false;
 
 		// Set texture given from editor as texture for Sprite2D (Checklist)
 		// This so we can use the same scene in other levels too
@@ -78,6 +81,9 @@ public partial class Checklist : Node2D
 				break;
 			case "Grapes":
 				_checkGrapes.Visible = isVisible;
+				break;
+			case "Lime":
+				_checkLime.Visible = isVisible;
 				break;
 		}
 	}

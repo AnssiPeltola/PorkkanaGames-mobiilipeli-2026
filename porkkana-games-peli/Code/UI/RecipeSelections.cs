@@ -45,7 +45,7 @@ public partial class RecipeSelections : Control
 		GameManager.Instance.ResetScore();
 		GameManager.Instance.currentLevel = 4;
 		GameManager.Instance.levelOneRequired = 8;
-		GameManager.Instance.levelTwoRequired = 4;
+		GameManager.Instance.levelTwoRequired = 5;
     	GameManager.Instance.levelThreeRequired = 5;
 		FadeTransition.ChangeSceneWithFade(LevelOrder.GetLevelPath(GameManager.Instance.currentLevel));
 	}

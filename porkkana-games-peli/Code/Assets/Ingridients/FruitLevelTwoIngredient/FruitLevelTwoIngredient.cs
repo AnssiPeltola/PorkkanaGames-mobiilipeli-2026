@@ -69,8 +69,8 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 			_appleCollision = GetNode<CollisionShape2D>("AppleCollision");
 			_circleTouch = GetNode<CollisionShape2D>("TouchArea/CircleTouch");
 			// TODO: SWITCH PEELED / CHOPPED APPLE PATHS
-			_peeledAppleTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Apple/apple-v1.png");
-			_choppedAppleTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Apple/apple-v1.png");
+			_peeledAppleTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Apple/rotten-apple-v1.png");
+			_choppedAppleTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomatosauce.png");
 			ChangeSprite(_appleTexture);
 			_appleCollision.Disabled = false;
 			_circleTouch.Disabled = false;
@@ -119,10 +119,11 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 			_limeCollision = GetNode<CollisionShape2D>("LimeCollision");
 			_circleTouch = GetNode<CollisionShape2D>("TouchArea/CircleTouch");
 			// TODO: SWITCH CHOPPED LIME PATH
-			_choppedLimeTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Lime/lime-v1.png");
+			_choppedLimeTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Lime/lime-chopped-v1.png");
 			ChangeSprite(_limeTexture);
 			_limeCollision.Disabled = false;
 			_circleTouch.Disabled = false;
+			State = IngredientState.Peeled;
 		}
 
 		// Do also ready from BaseIngredient (Load TouchArea)
@@ -189,7 +190,7 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 		// Make new instance of the cutting minigame (instance of CuttingMiniGame class)
 		// call that instance _cuttingMiniGameScene
 		// NOTE: _activeMiniGame = godots datatype "PackedScene" = takes (.tscn)
-		_activeMiniGame = _cuttingMiniGameScene.Instantiate<CuttingMiniGame>();
+		_activeMiniGame = _peelingMiniGameScene.Instantiate<CuttingMiniGame>();
 
 		// Read the current texture and hand it to the new instance ("_activeMinGame")
 		_activeMiniGame.IngridientTexture = _sprite.Texture;
@@ -243,8 +244,8 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 		_activeMiniGame = null;
 		OpenPeelMiniGame = false;
 
-		// TODO SWITCH HERE PEEL();
-		// Chop();
+		// Peel fruit
+		Peel();
 
 		/* TODO:
 			Currently: Only changing the sprite
@@ -290,6 +291,9 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 		{
 			ChangeSprite(_choppedLimeTexture);
 		}
+
+		// Add +1 Score point.
+        GameManager.Instance.AddScore();
 	}
 
 	public void Peel()

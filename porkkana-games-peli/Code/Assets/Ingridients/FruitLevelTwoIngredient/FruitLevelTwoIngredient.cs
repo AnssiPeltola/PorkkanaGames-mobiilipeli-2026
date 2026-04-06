@@ -291,9 +291,6 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 		{
 			ChangeSprite(_choppedLimeTexture);
 		}
-
-		// Add +1 Score point.
-        GameManager.Instance.AddScore();
 	}
 
 	public void Peel()

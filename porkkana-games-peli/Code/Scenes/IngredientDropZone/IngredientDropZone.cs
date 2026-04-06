@@ -114,6 +114,10 @@ public partial class IngredientDropZone : Area2D
 		{
 			return "Grapes";
 		}
+		if (ingredient.IsInGroup("Lime"))
+		{
+			return "Lime";
+		}
 
 		return null;
 	}

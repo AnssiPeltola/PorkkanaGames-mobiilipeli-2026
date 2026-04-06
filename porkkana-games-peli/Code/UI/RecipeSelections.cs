@@ -44,7 +44,7 @@ public partial class RecipeSelections : Control
 		GD.Print("Starting pasta level!");
 		GameManager.Instance.ResetScore();
 		GameManager.Instance.currentLevel = 4;
-		GameManager.Instance.levelOneRequired = 7;
+		GameManager.Instance.levelOneRequired = 8;
 		GameManager.Instance.levelTwoRequired = 4;
     	GameManager.Instance.levelThreeRequired = 5;
 		FadeTransition.ChangeSceneWithFade(LevelOrder.GetLevelPath(GameManager.Instance.currentLevel));

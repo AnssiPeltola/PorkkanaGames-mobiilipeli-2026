@@ -8,7 +8,7 @@ public partial class CuttingMiniGame : Node2D
 	// Sprite is the node displaying it
 	public Texture2D IngridientTexture { get; set; }
 	
-    
+	
 
 	// Receives texture @_Ready()
 	private Sprite2D _ingridientSprite;
@@ -16,8 +16,8 @@ public partial class CuttingMiniGame : Node2D
 	// Label reference point
 	private Label _cutsLabel;
 
-    // Reference point
-    private CutArea _cutArea;
+	// Reference point
+	private CutArea _cutArea;
 
 	// Signals:
 	// https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html 

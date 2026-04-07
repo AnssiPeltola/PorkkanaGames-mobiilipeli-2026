@@ -8,21 +8,23 @@
 radius = 129.31357
 
 [node name="CuttingMiniGame" type="Node2D"]
-position = Vector2(0, -2)
+position = Vector2(-57, 397)
 script = ExtResource("1_7vvnq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 630.0
-offset_top = 175.0
-offset_right = 1155.0
-offset_bottom = 327.0
+offset_left = 719.0
+offset_top = 283.0
+offset_right = 1244.0
+offset_bottom = 435.0
+rotation = 1.5707964
 theme_override_font_sizes/font_size = 111
 text = "Cuts: 0 / 3"
+metadata/_edit_use_anchors_ = true
 
 [node name="IngridientSprite" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(340.00003, 244)
+position = Vector2(274.09735, 576.8971)
 scale = Vector2(0.579646, 0.57651716)
 texture = ExtResource("2_rwbtn")
 
@@ -30,5 +32,5 @@ texture = ExtResource("2_rwbtn")
 script = ExtResource("3_3xf00")
 
 [node name="CutAreaShape" type="CollisionShape2D" parent="CutArea"]
-position = Vector2(340, 249)
+position = Vector2(331.09732, 182.8971)
 shape = SubResource("CircleShape2D_rwbtn")

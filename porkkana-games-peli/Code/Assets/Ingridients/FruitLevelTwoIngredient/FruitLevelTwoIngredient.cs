@@ -190,6 +190,7 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 		// Make new instance of the cutting minigame (instance of CuttingMiniGame class)
 		// call that instance _cuttingMiniGameScene
 		// NOTE: _activeMiniGame = godots datatype "PackedScene" = takes (.tscn)
+		// 		TODO: PeelingMiniGame
 		_activeMiniGame = _peelingMiniGameScene.Instantiate<CuttingMiniGame>();
 
 		// Read the current texture and hand it to the new instance ("_activeMinGame")

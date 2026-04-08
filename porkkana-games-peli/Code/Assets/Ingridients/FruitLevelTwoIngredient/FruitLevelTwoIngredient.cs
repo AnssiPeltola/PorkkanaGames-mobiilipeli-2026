@@ -69,8 +69,8 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 			_appleCollision = GetNode<CollisionShape2D>("AppleCollision");
 			_circleTouch = GetNode<CollisionShape2D>("TouchArea/CircleTouch");
 			// TODO: SWITCH PEELED / CHOPPED APPLE PATHS
-			_peeledAppleTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Apple/rotten-apple-v1.png");
-			_choppedAppleTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Tomato/tomatosauce.png");
+			_peeledAppleTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Apple/apple-peeled-v1.png");
+			_choppedAppleTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Apple/apple-chopped-v1.png");
 			ChangeSprite(_appleTexture);
 			_appleCollision.Disabled = false;
 			_circleTouch.Disabled = false;
@@ -93,9 +93,8 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 			_bananaTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Banana/banana-v2.png");
 			_bananaCollision = GetNode<CollisionShape2D>("BananaCollision");
 			_bananaTouch = GetNode<CollisionShape2D>("TouchArea/BananaTouch");
-			// TODO: SWITCH PEELED AND CHOPPED BANANA PATHS
-			_peeledBananaTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Banana/banana-v1.png");
-			_choppedBananaTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Banana/rotten-banana-v1.png");
+			_peeledBananaTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Banana/banana-peeled-v1.png");
+			_choppedBananaTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Banana/banana-chopped-v1.png");
 			ChangeSprite(_bananaTexture);
 			_bananaCollision.Disabled = false;
 			_bananaTouch.Disabled = false;
@@ -118,7 +117,6 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 			_limeTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Lime/lime-v1.png");
 			_limeCollision = GetNode<CollisionShape2D>("LimeCollision");
 			_circleTouch = GetNode<CollisionShape2D>("TouchArea/CircleTouch");
-			// TODO: SWITCH CHOPPED LIME PATH
 			_choppedLimeTexture = GD.Load<Texture2D>("res://Art/Assets/Ingridients/Lime/lime-chopped-v1.png");
 			ChangeSprite(_limeTexture);
 			_limeCollision.Disabled = false;

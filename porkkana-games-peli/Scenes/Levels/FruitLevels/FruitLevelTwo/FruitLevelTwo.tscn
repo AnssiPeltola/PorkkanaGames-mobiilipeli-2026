@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjwp5elp70g8j"]
+[gd_scene load_steps=18 format=3 uid="uid://bjwp5elp70g8j"]
 
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="1_ms7tw"]
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="2_y2jg2"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/MiniGames/CuttingGame/CuttingMiniGame.tscn" id="5_axaq3"]
 [ext_resource type="PackedScene" uid="uid://v1rneou8j3al" path="res://Scenes/Assets/Equipment/DropZones/PeelingBoardDropZone/PeelingBoardDropZone.tscn" id="6_i2kpg"]
 [ext_resource type="PackedScene" uid="uid://n4tooaayndg5" path="res://Scenes/Assets/Equipment/DropZones/FruitDropZone/FruitDropZone.tscn" id="7_tn8ew"]
+[ext_resource type="Texture2D" uid="uid://crq73fm2yd12x" path="res://Art/Assets/Equipment/FruitPlates/apple-plate-empty-v1.png" id="8_v3o5u"]
+[ext_resource type="Texture2D" uid="uid://dw6318nh3qu3f" path="res://Art/Assets/Equipment/FruitPlates/banana-plate-empty-v1.png" id="9_uq1k0"]
+[ext_resource type="Texture2D" uid="uid://b47cgcqm1wu1j" path="res://Art/Assets/Equipment/FruitPlates/kiwi-plate-empty-v1.png" id="10_vwpwl"]
+[ext_resource type="Texture2D" uid="uid://sjl8whtwllus" path="res://Art/Assets/Equipment/FruitPlates/grape-plate-empty-v1.png" id="11_tlc45"]
+[ext_resource type="Texture2D" uid="uid://bf5o01411c642" path="res://Art/Assets/Equipment/JuiceCup/juice-cup-empty-v1.png" id="12_uq1k0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uybmr"]
 size = Vector2(175, 1093)
@@ -109,19 +114,29 @@ position = Vector2(1539, 599)
 
 [node name="FruitDropZone" parent="." instance=ExtResource("7_tn8ew")]
 z_index = -586
-position = Vector2(1191, 220)
+position = Vector2(1200, 237)
+PlateTexture = ExtResource("8_v3o5u")
 
 [node name="FruitDropZone2" parent="." instance=ExtResource("7_tn8ew")]
 z_index = -586
-position = Vector2(1199, 404.99997)
+position = Vector2(1193, 429)
 _fruit = 1
+PlateTexture = ExtResource("9_uq1k0")
 
 [node name="FruitDropZone3" parent="." instance=ExtResource("7_tn8ew")]
 z_index = -456
-position = Vector2(1195, 591)
+position = Vector2(1186, 623)
 _fruit = 2
+PlateTexture = ExtResource("10_vwpwl")
 
 [node name="FruitDropZone4" parent="." instance=ExtResource("7_tn8ew")]
 z_index = -456
-position = Vector2(1197, 780)
+position = Vector2(1182, 827.00006)
 _fruit = 3
+PlateTexture = ExtResource("11_tlc45")
+
+[node name="FruitDropZone5" parent="." instance=ExtResource("7_tn8ew")]
+z_index = -470
+position = Vector2(1456, 334)
+_fruit = 4
+PlateTexture = ExtResource("12_uq1k0")

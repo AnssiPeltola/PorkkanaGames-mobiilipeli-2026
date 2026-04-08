@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://di43lw42f6kbe" path="res://Art/Assets/Ingridients/Grape/grapes-v1.png" id="14_c04ih"]
 [ext_resource type="Texture2D" uid="uid://b2fd56tvbrgeh" path="res://Art/Assets/Ingridients/Kiwi/kiwi-v1.png" id="15_kpc6j"]
 [ext_resource type="Texture2D" uid="uid://cfegmkigrk831" path="res://Art/Assets/Ingridients/Apple/rotten-apple-v1.png" id="16_bh03k"]
-[ext_resource type="Texture2D" uid="uid://drhd74as2yxdt" path="res://Art/Assets/Ingridients/Onion/onion-v1.png" id="17_cd0w1"]
+[ext_resource type="Texture2D" uid="uid://c8wtj8u16v5tk" path="res://Art/Assets/Ingridients/Carrot/carrot-v1.png" id="16_gt8x6"]
 [ext_resource type="Texture2D" uid="uid://bb62hokjr1vuq" path="res://Art/Assets/Ingridients/Lime/lime-v1.png" id="17_gt8x6"]
 [ext_resource type="Texture2D" uid="uid://dagrh0e2kobxo" path="res://Art/Assets/Checklist_Ingridients/checklist2-v1.png" id="18_cd0w1"]
 
@@ -137,10 +137,10 @@ position = Vector2(1482, 216)
 collision_mask = 6
 IngredientTexture = ExtResource("16_bh03k")
 
-[node name="LevelOneIngredient7" parent="." groups=["Bad", "Circle"] instance=ExtResource("10_drmrv")]
+[node name="LevelOneIngredient7" parent="." groups=["Bad", "Carrot"] instance=ExtResource("10_drmrv")]
 position = Vector2(1770, 738)
 collision_mask = 6
-IngredientTexture = ExtResource("17_cd0w1")
+IngredientTexture = ExtResource("16_gt8x6")
 
 [node name="LevelOneIngredient8" parent="." groups=["Circle", "Good", "Lime"] instance=ExtResource("10_drmrv")]
 position = Vector2(1617, 952)

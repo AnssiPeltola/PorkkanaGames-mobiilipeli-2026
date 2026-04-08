@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://4rk1wxbbsqjc"]
+
+[ext_resource type="Script" uid="uid://7hwmrd3ujkgh" path="res://Code/Assets/Equipment/FruitBowl/FruitBowl.cs" id="1_qvrk3"]
+[ext_resource type="Texture2D" uid="uid://drfhs7oh23tiw" path="res://Art/Assets/Equipment/FruitBowl/fruit-bowl-empty-v1.png" id="1_tcfmq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tcfmq"]
+radius = 249.0
+height = 648.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qvrk3"]
+radius = 248.0
+height = 644.0
+
+[node name="FruitBowl" type="Area2D"]
+script = ExtResource("1_qvrk3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_tcfmq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, 12)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_tcfmq")
+
+[node name="DropZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropZone"]
+position = Vector2(0, 12)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qvrk3")

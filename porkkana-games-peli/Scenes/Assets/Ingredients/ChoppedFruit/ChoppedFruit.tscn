@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccjwf3ea1r4k4"]
+
+[ext_resource type="Script" uid="uid://cig7arok6sqji" path="res://Code/Assets/Ingridients/ChoppedFruit.cs" id="1_mf7vi"]
+[ext_resource type="Texture2D" uid="uid://bqsgb8s3vv527" path="res://Art/Assets/Ingridients/Apple/apple-chopped-v1.png" id="1_w8cqr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mf7vi"]
+radius = 137.03284
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_565x1"]
+radius = 136.01471
+
+[node name="ChoppedFruit" type="CharacterBody2D"]
+collision_mask = 6
+script = ExtResource("1_mf7vi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_w8cqr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mf7vi")
+
+[node name="TouchArea" type="Area2D" parent="."]
+
+[node name="CircleTouch" type="CollisionShape2D" parent="TouchArea"]
+shape = SubResource("CircleShape2D_565x1")

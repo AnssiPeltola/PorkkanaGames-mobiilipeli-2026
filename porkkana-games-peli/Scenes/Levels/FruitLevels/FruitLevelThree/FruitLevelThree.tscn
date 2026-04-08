@@ -1,6 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://do8440pnslic7"]
+[gd_scene load_steps=13 format=3 uid="uid://do8440pnslic7"]
 
 [ext_resource type="Texture2D" uid="uid://krm0k6cbf1pr" path="res://Art/Backrounds/tausta_fullscreen.png" id="1_6kkd7"]
+[ext_resource type="PackedScene" uid="uid://ccjwf3ea1r4k4" path="res://Scenes/Assets/Ingredients/ChoppedFruit/ChoppedFruit.tscn" id="2_ico12"]
+[ext_resource type="Texture2D" uid="uid://ngfxlwmg1ft6" path="res://Art/Assets/Equipment/FruitPlates/kiwi-plate-v1.png" id="3_3e1mu"]
+[ext_resource type="Texture2D" uid="uid://bb6dfchg5juhc" path="res://Art/Assets/Equipment/FruitPlates/apple-plate-v1.png" id="4_3fmm7"]
+[ext_resource type="Texture2D" uid="uid://dy7aijvh6krjk" path="res://Art/Assets/Equipment/FruitPlates/grape-plate-v1.png" id="5_fprn4"]
+[ext_resource type="Texture2D" uid="uid://hnnp0c3budsq" path="res://Art/Assets/Equipment/FruitPlates/banana-plate-v1.png" id="6_8b6nv"]
+[ext_resource type="Texture2D" uid="uid://b5hb6g50gk8aj" path="res://Art/Assets/Equipment/JuiceCup/juice-cup-v1.png" id="7_3e1mu"]
+[ext_resource type="PackedScene" uid="uid://4rk1wxbbsqjc" path="res://Scenes/Assets/Equipment/FruitBowl/FruitBowl.tscn" id="8_3fmm7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6c2l"]
 size = Vector2(257, 1599)
@@ -40,3 +47,31 @@ shape = SubResource("RectangleShape2D_6y1ec")
 z_index = -7
 position = Vector2(960, 540)
 texture = ExtResource("1_6kkd7")
+
+[node name="ChoppedFruit" parent="." instance=ExtResource("2_ico12")]
+visibility_layer = 6
+position = Vector2(209, 323)
+IngredientTexture = ExtResource("3_3e1mu")
+
+[node name="ChoppedFruit2" parent="." instance=ExtResource("2_ico12")]
+visibility_layer = 6
+position = Vector2(296, 627)
+IngredientTexture = ExtResource("4_3fmm7")
+
+[node name="ChoppedFruit3" parent="." instance=ExtResource("2_ico12")]
+visibility_layer = 6
+position = Vector2(1759, 923)
+IngredientTexture = ExtResource("5_fprn4")
+
+[node name="ChoppedFruit4" parent="." instance=ExtResource("2_ico12")]
+visibility_layer = 6
+position = Vector2(1595, 660)
+IngredientTexture = ExtResource("6_8b6nv")
+
+[node name="ChoppedFruit5" parent="." groups=["Lime"] instance=ExtResource("2_ico12")]
+z_index = 1
+position = Vector2(192, 919)
+IngredientTexture = ExtResource("7_3e1mu")
+
+[node name="FruitBowl" parent="." instance=ExtResource("8_3fmm7")]
+position = Vector2(960, 744)

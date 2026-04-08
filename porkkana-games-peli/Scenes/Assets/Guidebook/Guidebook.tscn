@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bciqqwjfrju31"]
+[gd_scene load_steps=5 format=3 uid="uid://bciqqwjfrju31"]
 
 [ext_resource type="Script" uid="uid://da1qarw0l2orp" path="res://Code/Assets/Equipment/Guidebook/Guidebook/Guidebook.cs" id="1_wdjud"]
 [ext_resource type="Texture2D" uid="uid://hat84ovx4px3" path="res://Art/Assets/RecipeBook/reseptikirja_tyhja.png" id="2_ah70a"]
 [ext_resource type="Script" uid="uid://rotv6n8fda5a" path="res://Code/Assets/Equipment/Guidebook/ExitButton/ExitButton.cs" id="3_6mld7"]
 [ext_resource type="Texture2D" uid="uid://cpfmqxa6x736t" path="res://Art/Assets/RecipeBook/close_button.png" id="3_ah70a"]
-[ext_resource type="Texture2D" uid="uid://c2ufjy4cmo0ci" path="res://Art/Assets/LevelHelpGuide/ohjeet_1level.png" id="5_enos7"]
 
 [node name="Guidebook" type="Control"]
 layout_mode = 3
@@ -28,7 +27,10 @@ icon = ExtResource("3_ah70a")
 flat = true
 script = ExtResource("3_6mld7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PageOne" type="Sprite2D" parent="."]
 position = Vector2(404, 313)
-scale = Vector2(0.5024213, 0.5024214)
-texture = ExtResource("5_enos7")
+scale = Vector2(0.5, 0.5)
+
+[node name="PageTwo" type="Sprite2D" parent="."]
+position = Vector2(800, 312)
+scale = Vector2(0.5, 0.5)

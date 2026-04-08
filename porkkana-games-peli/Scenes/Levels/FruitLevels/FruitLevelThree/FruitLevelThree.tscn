@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://do8440pnslic7"]
+[gd_scene load_steps=17 format=3 uid="uid://do8440pnslic7"]
 
 [ext_resource type="Texture2D" uid="uid://krm0k6cbf1pr" path="res://Art/Backrounds/tausta_fullscreen.png" id="1_6kkd7"]
 [ext_resource type="PackedScene" uid="uid://ccjwf3ea1r4k4" path="res://Scenes/Assets/Ingredients/ChoppedFruit/ChoppedFruit.tscn" id="2_ico12"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://hnnp0c3budsq" path="res://Art/Assets/Equipment/FruitPlates/banana-plate-v1.png" id="6_8b6nv"]
 [ext_resource type="Texture2D" uid="uid://b5hb6g50gk8aj" path="res://Art/Assets/Equipment/JuiceCup/juice-cup-v1.png" id="7_3e1mu"]
 [ext_resource type="PackedScene" uid="uid://4rk1wxbbsqjc" path="res://Scenes/Assets/Equipment/FruitBowl/FruitBowl.tscn" id="8_3fmm7"]
+[ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="9_oluq7"]
+[ext_resource type="Texture2D" uid="uid://dpci153k47uph" path="res://Art/Assets/LevelHelpGuide/Guidebook_ready/FRUITSALAD/ohjeet_fruitsalad_level3.png" id="10_he8cf"]
+[ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="10_nolq0"]
+[ext_resource type="Texture2D" uid="uid://b24tsu6dgafy0" path="res://Art/Assets/RecipeBook/open_helpguide_button.png" id="11_he8cf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6c2l"]
 size = Vector2(257, 1599)
@@ -60,18 +64,33 @@ IngredientTexture = ExtResource("4_3fmm7")
 
 [node name="ChoppedFruit3" parent="." instance=ExtResource("2_ico12")]
 visibility_layer = 6
-position = Vector2(1759, 923)
+position = Vector2(1751, 465)
 IngredientTexture = ExtResource("5_fprn4")
 
 [node name="ChoppedFruit4" parent="." instance=ExtResource("2_ico12")]
 visibility_layer = 6
-position = Vector2(1595, 660)
+position = Vector2(1743, 779)
 IngredientTexture = ExtResource("6_8b6nv")
 
 [node name="ChoppedFruit5" parent="." groups=["Lime"] instance=ExtResource("2_ico12")]
 z_index = 1
-position = Vector2(192, 919)
+position = Vector2(621, 227)
 IngredientTexture = ExtResource("7_3e1mu")
 
 [node name="FruitBowl" parent="." instance=ExtResource("8_3fmm7")]
 position = Vector2(960, 744)
+
+[node name="Guidebook" parent="." instance=ExtResource("9_oluq7")]
+z_index = 4096
+offset_left = 818.0
+offset_top = 474.0
+offset_right = 818.0
+offset_bottom = 474.0
+PageOneTexture = ExtResource("10_he8cf")
+
+[node name="ShowGuidebookButton" parent="." instance=ExtResource("10_nolq0")]
+offset_left = 1769.0
+offset_top = 923.0
+offset_right = 1837.0
+offset_bottom = 991.0
+icon = ExtResource("11_he8cf")

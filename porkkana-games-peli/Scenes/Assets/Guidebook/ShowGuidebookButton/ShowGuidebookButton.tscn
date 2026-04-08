@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://qvk6bwx4xrny" path="res://Code/Assets/Equipment/Guidebook/OpenGuideBookButton/ShowGuidebookButton.cs" id="2_abtm2"]
 
 [node name="ShowGuidebookButton" type="Button"]
+scale = Vector2(2, 2)
 icon = ExtResource("1_50vwi")
 flat = true
 script = ExtResource("2_abtm2")

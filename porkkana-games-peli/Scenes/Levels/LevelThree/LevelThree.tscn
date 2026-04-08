@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://3y6qqa5titgp" path="res://Art/Assets/Equipment/Pot/pot-cooked-v1.png" id="5_tv8hi"]
 [ext_resource type="Texture2D" uid="uid://di00ix3sva0lh" path="res://Art/Assets/Equipment/Spoons/pasta-spoon-v1.png" id="6_y3p4b"]
 [ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="7_326m4"]
-[ext_resource type="Texture2D" uid="uid://1wcqhbc1wflh" path="res://Art/icon-red.svg" id="8_326m4"]
+[ext_resource type="Texture2D" uid="uid://byphj4t1lpi31" path="res://Art/Assets/LevelHelpGuide/Guidebook_ready/PASTA (final guidebook pages)/ohjeet_level3_pasta.png" id="8_djxk4"]
 [ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="9_y3p4b"]
 [ext_resource type="PackedScene" uid="uid://by6lsaf5ftnak" path="res://Scenes/Assets/Equipment/Plate/Plate.tscn" id="10_326m4"]
 [ext_resource type="Texture2D" uid="uid://b24tsu6dgafy0" path="res://Art/Assets/RecipeBook/open_helpguide_button.png" id="10_k6173"]
@@ -66,21 +66,21 @@ SpawnedIngredientTexture = ExtResource("6_y3p4b")
 SpawnedIngredientKind = 1
 
 [node name="Guidebook" parent="." instance=ExtResource("7_326m4")]
+visible = false
 z_index = 4096
 offset_left = 812.0
 offset_top = 455.0
 offset_right = 812.0
 offset_bottom = 455.0
 rotation = -0.00906527
-GuideBookPageTexture = ExtResource("8_326m4")
+PageOneTexture = ExtResource("8_djxk4")
 
 [node name="ShowGuidebookButton" parent="." instance=ExtResource("9_y3p4b")]
-offset_left = 1766.0
-offset_top = 955.0
-offset_right = 1834.0
-offset_bottom = 1023.0
+offset_left = 1769.0001
+offset_top = 924.00006
+offset_right = 1837.0001
+offset_bottom = 992.00006
 rotation = 0.0020855665
-scale = Vector2(1.5, 1.5)
 icon = ExtResource("10_k6173")
 
 [node name="SeasoningIngredientScene" parent="." instance=ExtResource("11_djxk4")]
@@ -90,13 +90,13 @@ collision_mask = 6
 SeasonKind = 1
 
 [node name="SeasoningIngredientScene2" parent="." instance=ExtResource("11_djxk4")]
-position = Vector2(1520, 886)
+position = Vector2(1650, 873.99994)
 scale = Vector2(0.55, 0.55)
 collision_mask = 6
 SeasonKind = 2
 
 [node name="SeasoningIngredientScene3" parent="." instance=ExtResource("11_djxk4")]
-position = Vector2(1738, 815)
+position = Vector2(958, 346)
 scale = Vector2(1.2, 1.2)
 collision_mask = 6
 SeasonKind = 3

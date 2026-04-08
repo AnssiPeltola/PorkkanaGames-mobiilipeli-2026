@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="3_85dct"]
 [ext_resource type="PackedScene" uid="uid://8yyr5bus4jmp" path="res://Scenes/Assets/Equipment/TrashCan/TrashCan.tscn" id="4_r58k2"]
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="6_jhgcd"]
-[ext_resource type="Texture2D" uid="uid://c2ufjy4cmo0ci" path="res://Art/Assets/LevelHelpGuide/ohjeet_1level.png" id="7_oh1h0"]
+[ext_resource type="Texture2D" uid="uid://cq42n6cmrk7wh" path="res://Art/Assets/LevelHelpGuide/Guidebook_ready/PASTA (final guidebook pages)/ohjeet_level1_pasta.png" id="7_15huj"]
 [ext_resource type="Texture2D" uid="uid://b24tsu6dgafy0" path="res://Art/Assets/RecipeBook/open_helpguide_button.png" id="8_i6cia"]
 [ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="9_6x6kw"]
 [ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="10_w3gx0"]
@@ -98,15 +98,14 @@ offset_top = -54.000004
 offset_right = 617.0
 offset_bottom = -54.000004
 rotation = 1.5680616
-GuideBookPageTexture = ExtResource("7_oh1h0")
+PageOneTexture = ExtResource("7_15huj")
 
 [node name="ShowGuidebookButton" parent="." instance=ExtResource("10_w3gx0")]
-offset_left = 133.00002
-offset_top = 901.0
-offset_right = 201.00002
-offset_bottom = 969.0
+offset_left = 172.00002
+offset_top = 868.0
+offset_right = 240.00002
+offset_bottom = 936.0
 rotation = 1.5707964
-scale = Vector2(1.5, 1.5)
 icon = ExtResource("8_i6cia")
 
 [node name="LevelOneIngredient" parent="." groups=["Circle", "Good", "Tomato"] instance=ExtResource("11_w3gx0")]

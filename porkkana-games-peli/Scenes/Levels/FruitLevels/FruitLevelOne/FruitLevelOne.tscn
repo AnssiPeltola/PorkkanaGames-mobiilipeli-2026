@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://j4hb472lofbn" path="res://Scenes/Assets/Equipment/DropZones/IngredientDropZone/IngredientDropZone.tscn" id="3_mjwi7"]
 [ext_resource type="PackedScene" uid="uid://8yyr5bus4jmp" path="res://Scenes/Assets/Equipment/TrashCan/TrashCan.tscn" id="4_myk0y"]
 [ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="5_fxkfu"]
-[ext_resource type="Texture2D" uid="uid://c2ufjy4cmo0ci" path="res://Art/Assets/LevelHelpGuide/ohjeet_1level.png" id="6_drmrv"]
+[ext_resource type="Texture2D" uid="uid://ccrfguv81m4sn" path="res://Art/Assets/LevelHelpGuide/Guidebook_ready/FRUITSALAD/ohjeet_fruitsalad_level1.png" id="6_gt8x6"]
 [ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="7_shlqr"]
 [ext_resource type="Texture2D" uid="uid://b24tsu6dgafy0" path="res://Art/Assets/RecipeBook/open_helpguide_button.png" id="8_axjp1"]
 [ext_resource type="PackedScene" uid="uid://coo7gp4dls8xk" path="res://Scenes/Assets/Guidebook/Checklist/Checklist.tscn" id="9_bjss0"]
@@ -90,21 +90,21 @@ position = Vector2(960, 540)
 texture = ExtResource("2_uctdc")
 
 [node name="Guidebook" parent="." instance=ExtResource("5_fxkfu")]
+visible = false
 z_index = 4096
 offset_left = 617.0
 offset_top = -54.000004
 offset_right = 617.0
 offset_bottom = -54.000004
 rotation = 1.5680616
-GuideBookPageTexture = ExtResource("6_drmrv")
+PageOneTexture = ExtResource("6_gt8x6")
 
 [node name="ShowGuidebookButton" parent="." instance=ExtResource("7_shlqr")]
-offset_left = 133.00002
-offset_top = 901.0
-offset_right = 201.00002
-offset_bottom = 969.0
+offset_left = 149.00002
+offset_top = 931.0
+offset_right = 217.00002
+offset_bottom = 999.0
 rotation = 1.5707964
-scale = Vector2(1.5, 1.5)
 icon = ExtResource("8_axjp1")
 
 [node name="LevelOneIngredient" parent="." groups=["Apple", "Circle", "Good"] instance=ExtResource("10_drmrv")]

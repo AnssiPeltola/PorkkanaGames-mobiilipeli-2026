@@ -27,7 +27,8 @@ public partial class FruitDropZone : Area2D
         {
             _plateSprite.Texture = PlateTexture;
         }
-		// TODO: SWITCH CORRECT TEXTURE PATHS
+
+		// Plate textures for chopped fruits on plate
 		_plateApple = GD.Load<Texture2D>("res://Art/Assets/Equipment/FruitPlates/apple-plate-v1.png");
 		_plateBanana = GD.Load<Texture2D>("res://Art/Assets/Equipment/FruitPlates/banana-plate-v1.png");
 		_plateKiwi = GD.Load<Texture2D>("res://Art/Assets/Equipment/FruitPlates/kiwi-plate-v1.png");

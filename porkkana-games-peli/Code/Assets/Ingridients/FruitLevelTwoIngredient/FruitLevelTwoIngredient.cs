@@ -17,15 +17,13 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 	[Export] private PackedScene _cuttingMiniGameScene;
 	[Export] private PackedScene _peelingMiniGameScene;
 	private CuttingMiniGame _activeMiniGame = null;
+	private PeelingMiniGame _activePeelingMiniGame = null;
 
 	// When public we can set this as true or false in other code where this object is used
 	public bool IsInDropZone { get; set; } = false;
 	public bool IsInPeelDropZone { get; set; } = false;
 	public bool OpenMiniGame { get; set; } = false;
 	public bool OpenPeelMiniGame { get; set; } = false;
-
-	// TODO: Apple, kiwi, banana, grapes, lime. Need As it is, peeled, and chopped
-	// TODO: for all of those own collision / touch areas
 
 	// Whole fruit texture
 	private Texture2D _appleTexture;
@@ -189,19 +187,19 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 		// call that instance _cuttingMiniGameScene
 		// NOTE: _activeMiniGame = godots datatype "PackedScene" = takes (.tscn)
 		// 		TODO: PeelingMiniGame
-		_activeMiniGame = _peelingMiniGameScene.Instantiate<CuttingMiniGame>();
+		_activePeelingMiniGame = _peelingMiniGameScene.Instantiate<PeelingMiniGame>();
 
 		// Read the current texture and hand it to the new instance ("_activeMinGame")
-		_activeMiniGame.IngridientTexture = _sprite.Texture;
+		_activePeelingMiniGame.IngridientTexture = _sprite.Texture;
 
 		// Initiate the actual opening of the minigame
 		// https://docs.godotengine.org/en/stable/tutorials/scripting/change_scenes_manually.html
-		GetTree().CurrentScene.AddChild(_activeMiniGame);
+		GetTree().CurrentScene.AddChild(_activePeelingMiniGame);
 
 		// Subscribe to signal CuttingCompleteEventHandler()
 		//      From CuttingMiniGame.cs (Class)
 		// When signal is received run OnCuttingComplete();
-		_activeMiniGame.CuttingComplete += OnPeelingComplete;
+		_activePeelingMiniGame.PeelingComplete += OnPeelingComplete;
 
 		GD.Print("Peeling MiniGame started.");
 	}
@@ -237,10 +235,10 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 		GD.Print("Ingredient Peeled!");
 		// Close the running minigame
 		// Also unsubscribes the signals!
-		_activeMiniGame.QueueFree();
+		_activePeelingMiniGame.QueueFree();
 
 		// Reset _activeMiniGame back to null
-		_activeMiniGame = null;
+		_activePeelingMiniGame = null;
 		OpenPeelMiniGame = false;
 
 		// Peel fruit

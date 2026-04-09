@@ -38,6 +38,13 @@ public partial class CuttingBoardDropZone : Area2D
 			box.IsInDropZone = false;
 			GD.Print(box.IsInDropZone);
 		}
+
+        if (body is FruitLevelTwoIngredient ingredient)
+		{
+            GD.Print(ingredient);
+			ingredient.IsInDropZone = false;
+			GD.Print(ingredient.IsInDropZone);
+		}
     }
 }
 

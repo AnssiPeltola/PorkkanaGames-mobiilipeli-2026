@@ -1,11 +1,12 @@
-[gd_scene load_steps=23 format=3 uid="uid://bjwp5elp70g8j"]
+[gd_scene load_steps=24 format=3 uid="uid://bjwp5elp70g8j"]
 
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="1_ms7tw"]
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="2_y2jg2"]
 [ext_resource type="PackedScene" uid="uid://cxq0cugnqli0" path="res://Scenes/Assets/Ingredients/FruitLevelTwoIngredient/FruitLevelTwoIngredient.tscn" id="3_y2jg2"]
 [ext_resource type="PackedScene" uid="uid://5gldpnqbvait" path="res://Scenes/Assets/Equipment/DropZones/CuttingBoardDropZone/CuttingBoardDropZone.tscn" id="4_uybmr"]
-[ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/MiniGames/CuttingGame/CuttingMiniGame.tscn" id="5_axaq3"]
+[ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/Minigames/CuttingGame/CuttingMiniGame.tscn" id="5_axaq3"]
 [ext_resource type="PackedScene" uid="uid://v1rneou8j3al" path="res://Scenes/Assets/Equipment/DropZones/PeelingBoardDropZone/PeelingBoardDropZone.tscn" id="6_i2kpg"]
+[ext_resource type="PackedScene" uid="uid://cooqscirc1lp8" path="res://Scenes/Minigames/PeelingMiniGame/PeelingMiniGame.tscn" id="6_v3o5u"]
 [ext_resource type="PackedScene" uid="uid://n4tooaayndg5" path="res://Scenes/Assets/Equipment/DropZones/FruitDropZone/FruitDropZone.tscn" id="7_tn8ew"]
 [ext_resource type="Texture2D" uid="uid://crq73fm2yd12x" path="res://Art/Assets/Equipment/FruitPlates/apple-plate-empty-v1.png" id="8_v3o5u"]
 [ext_resource type="Texture2D" uid="uid://dw6318nh3qu3f" path="res://Art/Assets/Equipment/FruitPlates/banana-plate-empty-v1.png" id="9_uq1k0"]
@@ -82,40 +83,40 @@ texture = ExtResource("2_y2jg2")
 
 [node name="CuttingBoardDropZone" parent="." instance=ExtResource("4_uybmr")]
 z_index = -4096
-position = Vector2(126, 104)
+position = Vector2(150, 400)
 
 [node name="FruitLevelTwoIngredient" parent="." groups=["Apple", "Raw"] instance=ExtResource("3_y2jg2")]
-position = Vector2(434, 600)
+position = Vector2(746, 275)
 collision_mask = 6
 _cuttingMiniGameScene = ExtResource("5_axaq3")
-_peelingMiniGameScene = ExtResource("5_axaq3")
+_peelingMiniGameScene = ExtResource("6_v3o5u")
 
 [node name="FruitLevelTwoIngredient2" parent="." groups=["Kiwi", "Raw"] instance=ExtResource("3_y2jg2")]
-position = Vector2(224, 596)
+position = Vector2(738, 469)
 collision_mask = 6
 _cuttingMiniGameScene = ExtResource("5_axaq3")
-_peelingMiniGameScene = ExtResource("5_axaq3")
+_peelingMiniGameScene = ExtResource("6_v3o5u")
 
 [node name="FruitLevelTwoIngredient3" parent="." groups=["Banana", "Raw"] instance=ExtResource("3_y2jg2")]
-position = Vector2(430, 776)
+position = Vector2(752, 673)
 collision_mask = 6
 _cuttingMiniGameScene = ExtResource("5_axaq3")
-_peelingMiniGameScene = ExtResource("5_axaq3")
+_peelingMiniGameScene = ExtResource("6_v3o5u")
 
 [node name="FruitLevelTwoIngredient4" parent="." groups=["Grapes", "Raw"] instance=ExtResource("3_y2jg2")]
-position = Vector2(286, 932)
+position = Vector2(740, 846)
 collision_mask = 6
 _cuttingMiniGameScene = ExtResource("5_axaq3")
-_peelingMiniGameScene = ExtResource("5_axaq3")
+_peelingMiniGameScene = ExtResource("6_v3o5u")
 
 [node name="FruitLevelTwoIngredient5" parent="." groups=["Lime", "Peeled"] instance=ExtResource("3_y2jg2")]
-position = Vector2(226, 769)
+position = Vector2(345, 983)
 collision_mask = 6
 _cuttingMiniGameScene = ExtResource("5_axaq3")
 
 [node name="PeelingBoardDropZone" parent="." instance=ExtResource("6_i2kpg")]
 z_index = -4096
-position = Vector2(1539, 599)
+position = Vector2(1500, 400)
 
 [node name="FruitDropZone" parent="." instance=ExtResource("7_tn8ew")]
 z_index = -586
@@ -142,7 +143,7 @@ PlateTexture = ExtResource("11_tlc45")
 
 [node name="FruitDropZone5" parent="." instance=ExtResource("7_tn8ew")]
 z_index = -470
-position = Vector2(1456, 334)
+position = Vector2(1682, 919.00006)
 _fruit = 4
 PlateTexture = ExtResource("12_uq1k0")
 

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cooqscirc1lp8"]
+
+[ext_resource type="Script" uid="uid://cj4yhubuq0yen" path="res://Code/Assets/Minigame/PeelingMiniGame/PeelingMiniGame.cs" id="1_21rfl"]
+[ext_resource type="Texture2D" uid="uid://1wcqhbc1wflh" path="res://Art/icon-red.svg" id="2_lje01"]
+[ext_resource type="Script" uid="uid://bxp0nkiw2c758" path="res://Scenes/Minigames/CuttingGame/CutArea.cs" id="3_b0q82"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rwbtn"]
+radius = 129.31357
+
+[node name="PeelingMiniGame" type="Node2D"]
+position = Vector2(1192, 569)
+rotation = -3.1415927
+script = ExtResource("1_21rfl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1445.0
+offset_top = 655.0
+offset_right = 2013.0
+offset_bottom = 807.0
+rotation = -1.5707964
+theme_override_font_sizes/font_size = 50
+text = "Peels: 0 / 3"
+metadata/_edit_use_anchors_ = true
+
+[node name="IngridientSprite" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1665.736, 524.8)
+rotation = -1.5707964
+scale = Vector2(0.2, 0.199)
+texture = ExtResource("2_lje01")
+
+[node name="CutArea" type="Area2D" parent="."]
+position = Vector2(-10.000002, 25.999998)
+script = ExtResource("3_b0q82")
+
+[node name="CutAreaShape" type="CollisionShape2D" parent="CutArea"]
+position = Vector2(-459.73575, 18.200043)
+shape = SubResource("CircleShape2D_rwbtn")

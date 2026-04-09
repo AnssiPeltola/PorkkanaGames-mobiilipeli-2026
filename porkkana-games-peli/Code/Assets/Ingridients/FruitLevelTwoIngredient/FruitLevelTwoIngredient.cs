@@ -22,8 +22,6 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 	// When public we can set this as true or false in other code where this object is used
 	public bool IsInDropZone { get; set; } = false;
 	public bool IsInPeelDropZone { get; set; } = false;
-	public bool OpenMiniGame { get; set; } = false;
-	public bool OpenPeelMiniGame { get; set; } = false;
 
 	// Whole fruit texture
 	private Texture2D _appleTexture;
@@ -135,9 +133,9 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 		// Cutting minigame
 		if (e is InputEventScreenTouch touchtap && touchtap.Pressed)
 		{
-			if (IsInDropZone && State == IngredientState.Peeled && !OpenMiniGame)
+			if (IsInDropZone && State == IngredientState.Peeled && !IsAnyCuttingMiniGameOpen)
 			{
-				OpenMiniGame = true;
+				IsAnyCuttingMiniGameOpen = true;
 				GD.Print("Open minigame!");
 				_sprite.Hide();
 				StartCuttingMiniGame();
@@ -147,9 +145,9 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 		// Peeling minigame
 		if (e is InputEventScreenTouch touch && touch.Pressed)
 		{
-			if (IsInPeelDropZone && State == IngredientState.Raw && !OpenPeelMiniGame && !this.IsInGroup("Lime"))
+			if (IsInPeelDropZone && State == IngredientState.Raw && !this.IsInGroup("Lime") && !IsAnyPeelingMiniGameOpen)
 			{
-				OpenPeelMiniGame = true;
+				IsAnyPeelingMiniGameOpen = true;
 				GD.Print("Open peeling minigame!");
 				_sprite.Hide();
 				StartPeelingMiniGame();
@@ -213,7 +211,7 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 
 		// Reset _activeMiniGame back to null
 		_activeMiniGame = null;
-		OpenMiniGame = false;
+		IsAnyCuttingMiniGameOpen = false;
 
 		Chop();
 
@@ -239,7 +237,7 @@ public partial class FruitLevelTwoIngredient : BaseIngridient
 
 		// Reset _activeMiniGame back to null
 		_activePeelingMiniGame = null;
-		OpenPeelMiniGame = false;
+		IsAnyPeelingMiniGameOpen = false;
 
 		// Peel fruit
 		Peel();

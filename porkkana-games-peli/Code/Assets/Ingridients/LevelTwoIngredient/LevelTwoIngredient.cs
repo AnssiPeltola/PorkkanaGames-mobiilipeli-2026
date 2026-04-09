@@ -20,7 +20,6 @@ public partial class LevelTwoIngredient : BaseIngridient
 	// When public we can set this as true or false in other code where this object is used
 	public bool IsInDropZone { get; set; } = false;
 	public bool IsInFryingPan { get; set; } = false;
-	public bool OpenMiniGame { get; set; } = false;
 
 	private Texture2D _tomatoTexture;
 	private Texture2D _onionTexture;
@@ -104,9 +103,9 @@ public partial class LevelTwoIngredient : BaseIngridient
 		// touchtap.Pressed prevents releasing touch to register as click.
 		if (e is InputEventScreenTouch touchtap && touchtap.Pressed)
 		{
-			if (IsInDropZone && State == IngredientState.Raw && !OpenMiniGame)
+			if (IsInDropZone && State == IngredientState.Raw && !IsAnyCuttingMiniGameOpen)
 			{
-				OpenMiniGame = true;
+				IsAnyCuttingMiniGameOpen = true;
 				GD.Print("Open minigame!");
 				_sprite.Hide();
 				StartCuttingMiniGame();
@@ -146,7 +145,7 @@ public partial class LevelTwoIngredient : BaseIngridient
 
 		// Reset _activeMiniGame back to null
 		_activeMiniGame = null;
-		OpenMiniGame = false;
+		IsAnyCuttingMiniGameOpen = false;
 
 		Chop();
 

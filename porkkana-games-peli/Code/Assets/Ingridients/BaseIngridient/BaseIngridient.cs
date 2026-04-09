@@ -10,6 +10,9 @@ using System.Collections.Generic;
 public partial class BaseIngridient : CharacterBody2D
 {
 	private bool _dragging = false;
+	// Boolean values for prevent that only 1 minigame of this type can be opened at same time
+	protected static bool IsAnyCuttingMiniGameOpen = false;
+	protected static bool IsAnyPeelingMiniGameOpen = false;
 	// Index of the finger currently controlling this ingredient (-1 means none).
 	private int _activeTouchId = -1;
 	// Latest world position of the controlling finger.

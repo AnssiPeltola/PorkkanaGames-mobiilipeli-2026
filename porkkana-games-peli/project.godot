@@ -13,6 +13,8 @@ config_version=5
 config/name="PorkkanaGamesPeli"
 run/main_scene="uid://3cs2renrm0gx"
 config/features=PackedStringArray("4.5", "C#", "Mobile")
+boot_splash/bg_color=Color(0.217655, 0.41486526, 0.65128917, 1)
+boot_splash/image="uid://bobv0807cvjrt"
 config/icon="res://Art/icon.svg"
 
 [autoload]

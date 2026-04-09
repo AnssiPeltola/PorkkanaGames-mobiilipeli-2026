@@ -1,11 +1,14 @@
 using Godot;
 using System;
 
-public partial class CuttingMiniGame : Node2D
+
+public partial class PeelingMiniGame : Node2D
 {
 	// Texture is what we display
 	// Sprite is the node displaying it
 	public Texture2D IngridientTexture { get; set; }
+
+
 
 	// Receives texture @_Ready()
 	private Sprite2D _ingridientSprite;
@@ -20,7 +23,7 @@ public partial class CuttingMiniGame : Node2D
 	// https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html
 	// -> Custom signals
 	// <CustomSignalName>EventHandler();
-	[Signal] public delegate void CuttingCompleteEventHandler();
+	[Signal] public delegate void PeelingCompleteEventHandler();
 
 	[Export] public int RequiredCuts = 3;
 	private int _cutsDone = 0;
@@ -75,7 +78,7 @@ public partial class CuttingMiniGame : Node2D
 
 	private void _updateLabel(int _cutsDone)
 	{
-		_cutsLabel.Text = ($"Cuts: {_cutsDone} / 3");
+		_cutsLabel.Text = ($"Peels: {_cutsDone} / 3");
 	}
 
 	private void _registerCut()
@@ -85,13 +88,13 @@ public partial class CuttingMiniGame : Node2D
 		_updateLabel(_cutsDone);
 
 		if (_cutsDone >= RequiredCuts)
-			// Run the () to signal MiniGameIngridient
+			// Run the _finishMinigame() to signal MiniGameIngridient
 			// the CuttingMiniGame should be closed.
 			_finishMinigame();
 	}
 
 	private void _finishMinigame()
 	{
-		EmitSignal(SignalName.CuttingComplete);
+		EmitSignal(SignalName.PeelingComplete);
 	}
 }

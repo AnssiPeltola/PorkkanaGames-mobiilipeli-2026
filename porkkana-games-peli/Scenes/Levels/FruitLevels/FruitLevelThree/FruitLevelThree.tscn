@@ -54,33 +54,34 @@ texture = ExtResource("1_6kkd7")
 
 [node name="ChoppedFruit" parent="." instance=ExtResource("2_ico12")]
 visibility_layer = 6
-position = Vector2(209, 323)
+position = Vector2(426, 338)
 IngredientTexture = ExtResource("3_3e1mu")
 
 [node name="ChoppedFruit2" parent="." instance=ExtResource("2_ico12")]
 visibility_layer = 6
-position = Vector2(296, 627)
+position = Vector2(260, 698)
 IngredientTexture = ExtResource("4_3fmm7")
 
 [node name="ChoppedFruit3" parent="." instance=ExtResource("2_ico12")]
 visibility_layer = 6
-position = Vector2(1751, 465)
+position = Vector2(1507, 332)
 IngredientTexture = ExtResource("5_fprn4")
 
 [node name="ChoppedFruit4" parent="." instance=ExtResource("2_ico12")]
 visibility_layer = 6
-position = Vector2(1743, 779)
+position = Vector2(1649, 708)
 IngredientTexture = ExtResource("6_8b6nv")
 
 [node name="ChoppedFruit5" parent="." groups=["Lime"] instance=ExtResource("2_ico12")]
 z_index = 1
-position = Vector2(621, 227)
+position = Vector2(972, 205)
 IngredientTexture = ExtResource("7_3e1mu")
 
 [node name="FruitBowl" parent="." instance=ExtResource("8_3fmm7")]
 position = Vector2(960, 744)
 
 [node name="Guidebook" parent="." instance=ExtResource("9_oluq7")]
+visible = false
 z_index = 4096
 offset_left = 818.0
 offset_top = 474.0

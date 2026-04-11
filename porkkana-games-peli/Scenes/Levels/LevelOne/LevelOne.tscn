@@ -36,7 +36,6 @@ size = Vector2(93, 1175)
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_tpciy")
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="IngredientDropZone" parent="." instance=ExtResource("2_orjfg")]
@@ -92,6 +91,7 @@ position = Vector2(960, 540)
 texture = ExtResource("6_jhgcd")
 
 [node name="Guidebook" parent="." instance=ExtResource("9_6x6kw")]
+visible = false
 z_index = 4096
 offset_left = 617.0
 offset_top = -54.000004
@@ -109,37 +109,37 @@ rotation = 1.5707964
 icon = ExtResource("8_i6cia")
 
 [node name="LevelOneIngredient" parent="." groups=["Circle", "Good", "Tomato"] instance=ExtResource("11_w3gx0")]
-position = Vector2(1276, 346)
+position = Vector2(1645, 796)
 collision_mask = 6
 IngredientTexture = ExtResource("12_oa880")
 
 [node name="LevelOneIngredient2" parent="." groups=["Bad", "Circle"] instance=ExtResource("11_w3gx0")]
-position = Vector2(1608, 672)
+position = Vector2(1269, 317)
 collision_mask = 6
 IngredientTexture = ExtResource("12_15huj")
 
 [node name="LevelOneIngredient3" parent="." groups=["Circle", "Good", "Onion"] instance=ExtResource("11_w3gx0")]
-position = Vector2(1536, 329)
+position = Vector2(1567, 290)
 collision_mask = 6
 IngredientTexture = ExtResource("11_gjxmx")
 
 [node name="LevelOneIngredient4" parent="." groups=["Carrot", "Good"] instance=ExtResource("11_w3gx0")]
-position = Vector2(1170, 562)
+position = Vector2(1198, 574)
 collision_mask = 6
 IngredientTexture = ExtResource("12_wt3qk")
 
 [node name="LevelOneIngredient5" parent="." groups=["Bad", "Banana"] instance=ExtResource("11_w3gx0")]
-position = Vector2(1223, 775)
+position = Vector2(1313, 794)
 collision_mask = 6
 IngredientTexture = ExtResource("15_v2lkx")
 
 [node name="LevelOneIngredient6" parent="." groups=["Bad", "Circle"] instance=ExtResource("11_w3gx0")]
-position = Vector2(1412, 543)
+position = Vector2(1723, 530)
 collision_mask = 6
 IngredientTexture = ExtResource("16_1hsgv")
 
 [node name="LevelOneIngredient7" parent="." groups=["Good", "Pasta"] instance=ExtResource("11_w3gx0")]
-position = Vector2(1731, 475)
+position = Vector2(1463, 555.99994)
 rotation = 0.6981317
 scale = Vector2(1.2, 1.2)
 collision_mask = 6

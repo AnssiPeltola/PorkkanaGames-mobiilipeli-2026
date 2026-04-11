@@ -84,14 +84,14 @@ rotation = 0.0020855665
 icon = ExtResource("10_k6173")
 
 [node name="SeasoningIngredientScene" parent="." instance=ExtResource("11_djxk4")]
-position = Vector2(179, 912)
-scale = Vector2(0.55, 0.55)
+position = Vector2(242, 865.00006)
+scale = Vector2(0.6, 0.6)
 collision_mask = 6
 SeasonKind = 1
 
 [node name="SeasoningIngredientScene2" parent="." instance=ExtResource("11_djxk4")]
-position = Vector2(1650, 873.99994)
-scale = Vector2(0.55, 0.55)
+position = Vector2(1652.0001, 867)
+scale = Vector2(0.6, 0.6)
 collision_mask = 6
 SeasonKind = 2
 

@@ -86,31 +86,31 @@ z_index = -4096
 position = Vector2(150, 400)
 
 [node name="FruitLevelTwoIngredient" parent="." groups=["Apple", "Raw"] instance=ExtResource("3_y2jg2")]
-position = Vector2(746, 275)
+position = Vector2(621, 273)
 collision_mask = 6
 _cuttingMiniGameScene = ExtResource("5_axaq3")
 _peelingMiniGameScene = ExtResource("6_v3o5u")
 
 [node name="FruitLevelTwoIngredient2" parent="." groups=["Kiwi", "Raw"] instance=ExtResource("3_y2jg2")]
-position = Vector2(738, 469)
+position = Vector2(791, 416)
 collision_mask = 6
 _cuttingMiniGameScene = ExtResource("5_axaq3")
 _peelingMiniGameScene = ExtResource("6_v3o5u")
 
 [node name="FruitLevelTwoIngredient3" parent="." groups=["Banana", "Raw"] instance=ExtResource("3_y2jg2")]
-position = Vector2(752, 673)
+position = Vector2(609, 549)
 collision_mask = 6
 _cuttingMiniGameScene = ExtResource("5_axaq3")
 _peelingMiniGameScene = ExtResource("6_v3o5u")
 
 [node name="FruitLevelTwoIngredient4" parent="." groups=["Grapes", "Raw"] instance=ExtResource("3_y2jg2")]
-position = Vector2(740, 846)
+position = Vector2(785, 638)
 collision_mask = 6
 _cuttingMiniGameScene = ExtResource("5_axaq3")
 _peelingMiniGameScene = ExtResource("6_v3o5u")
 
 [node name="FruitLevelTwoIngredient5" parent="." groups=["Lime", "Peeled"] instance=ExtResource("3_y2jg2")]
-position = Vector2(345, 983)
+position = Vector2(624, 827)
 collision_mask = 6
 _cuttingMiniGameScene = ExtResource("5_axaq3")
 
@@ -120,30 +120,35 @@ position = Vector2(1500, 400)
 
 [node name="FruitDropZone" parent="." instance=ExtResource("7_tn8ew")]
 z_index = -586
-position = Vector2(1200, 237)
+position = Vector2(1325, 272)
+rotation = -1.5707964
 PlateTexture = ExtResource("8_v3o5u")
 
 [node name="FruitDropZone2" parent="." instance=ExtResource("7_tn8ew")]
 z_index = -586
-position = Vector2(1193, 429)
+position = Vector2(1144, 406)
+rotation = -1.5707964
 _fruit = 1
 PlateTexture = ExtResource("9_uq1k0")
 
 [node name="FruitDropZone3" parent="." instance=ExtResource("7_tn8ew")]
 z_index = -456
-position = Vector2(1186, 623)
+position = Vector2(1149, 666.00006)
+rotation = -1.5707964
 _fruit = 2
 PlateTexture = ExtResource("10_vwpwl")
 
 [node name="FruitDropZone4" parent="." instance=ExtResource("7_tn8ew")]
 z_index = -456
-position = Vector2(1182, 827.00006)
+position = Vector2(1332, 796)
+rotation = -1.5707964
 _fruit = 3
 PlateTexture = ExtResource("11_tlc45")
 
 [node name="FruitDropZone5" parent="." instance=ExtResource("7_tn8ew")]
 z_index = -470
-position = Vector2(1682, 919.00006)
+position = Vector2(1752, 845.00006)
+rotation = -1.5707964
 _fruit = 4
 PlateTexture = ExtResource("12_uq1k0")
 

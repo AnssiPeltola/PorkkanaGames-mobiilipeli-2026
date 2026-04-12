@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  /* https://www.youtube.com/shorts/vCKC2dl8uBk */
+  /* https://www.w3schools.com/cssref/pr_background-position.php */
+  background-image: url("images/menu-background-v1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+}
+
+.page-shell {
+  /* Dynamic Viewport Height (1 = 1%) */
+  min-height: 100dvh;
+  /* Padding for the whole pageShell so page-containers borders wont hit edges*/
+  padding: 10px;
+}
+
+.page-container {
+  width: 100%;
+  /* Calculates 100 dynamic viewport height - 20px fr min heihght.*/
+  min-height: calc(100dvh - 20px);
+  height: calc(100dvh - 20px);
+  padding: 0 15px 15px;
+  background: white;
+  border: 2px solid;
+  /* Round border edges */
+  border-radius: 12px;
+  overflow-y: auto;
+}
+
+/* -- NAVBAR -- */
+/* Navbar sticky to always be on top of the page-container*/
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20; /* Top of other content */
+  /* Small fade on bottom of the navbar so it wont look so sharp when ontop of other content */
+  background: linear-gradient(to bottom, white 95%, rgba(255, 255, 255, 0));
+  padding: 10px 15px;
+}
+
+.navbar ul {
+  list-style-type: none; /* Hides the list dot */
+  /* Positions navbars content better */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow links to move to a new row if needed */
+  gap: 10px; /* Add small gap between list items */
+}
+
+.navbar ul li {
+  border: 2px solid;
+  border-radius: 999px; /* Round border */
+}
+
+/* Sets translate button into right side */
+.navbar ul li.language-button {
+  margin-left: auto;
+}
+
+.navbar ul li a {
+  /* Makes the whole link area clickable, not just the text */
+  display: block;
+  color: black;
+  padding: 10px 14px; /* Add some padding for links, gives capsule look */
+  text-decoration: none;
+}
+
+.navbar ul li button {
+  display: block;
+  color: black;
+  padding: 10px 14px;
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* -- IMAGE BOX --*/
+/* Container for image*/
+.image-box {
+  width: 100%;
+  border: 2px solid;
+  border-radius: 10px;
+  aspect-ratio: 16 / 10;
+}
+
+/* Makes image get big as the image-box container is*/
+.image-box img {
+  width: 100%;
+  height: auto;
+}
+
+/* -- TRAILER -- */
+.trailer {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.trailer iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+/* -- DEVELOPERS CARDS -- */
+.developers {
+  padding-top: 20px;
+  /* Grid for 3 items in 1 row*/
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.developer-card {
+  border: 2px solid;
+  border-radius: 6px;
+}
+
+.developer-container {
+  text-align: center;
+}
+
+.developer-container h1 {
+  font-size: 19px;
+}
+
+/* -- PARTNERS -- */
+.partners {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr; /* 1 item per row */
+  gap: 10px;
+}
+
+.partners-card img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 760px) {
+  .page-shell {
+    display: grid;
+    place-items: center;
+    padding: 24px;
+  }
+
+  /* Give the content container a responsive but capped desktop size */
+  .page-container {
+    width: min(920px, 100%);
+    min-height: min(90dvh, 860px);
+    height: min(90dvh, 860px);
+  }
+
+  .navbar ul {
+    flex-wrap: nowrap; /* keep navbar items in one row */
+  }
+
+  .partners {
+    /* 2 items per row */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

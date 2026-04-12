@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This webpage was created as part of the TAMK Business Information Systems program for our mobile game 'Kokataan Yhdessä'."
+    />
+    <title>PorkkanaGames - Kokataan yhdessä</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="page-container">
+        <span id="home"></span>
+        <div class="navbar">
+          <ul>
+            <li><a href="#home" data-i18n="nav.home">Home</a></li>
+            <li><a href="#trailer" data-i18n="nav.trailer">Trailer</a></li>
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li>
+              <a href="#developers" data-i18n="nav.developers">Developers</a>
+            </li>
+            <li><a href="#partners" data-i18n="nav.partners">Partners</a></li>
+            <li><a href="#" data-i18n="nav.portal">Portal</a></li>
+            <li class="language-button">
+              <button id="language-toggle">FI</button>
+            </li>
+          </ul>
+        </div>
+        <div class="image-box">
+          <img src="images/logo-v1-resize.png" alt="Logo" />
+        </div>
+        <div class="trailer" id="trailer">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/mKLlYlyZvlA"
+            title="YouTube video player"
+            loading="lazy"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="about" id="about">
+          <h1 data-i18n="about.title">About</h1>
+          <p data-i18n="about.text">This is the about text.</p>
+        </div>
+        <div class="developers" id="developers">
+          <div class="developer-card">
+            <img
+              src="images/developer.webp"
+              alt="Developer picture"
+              style="width: 100%"
+            />
+            <div class="developer-container">
+              <h1>Anssi Peltola</h1>
+              <p data-i18n="roles.developer">Developer</p>
+            </div>
+          </div>
+          <div class="developer-card">
+            <img
+              src="images/developer.webp"
+              alt="Developer picture"
+              style="width: 100%"
+            />
+            <div class="developer-container">
+              <h1>Matias Kaijomaa</h1>
+              <p data-i18n="roles.developer">Developer</p>
+            </div>
+          </div>
+          <div class="developer-card">
+            <img
+              src="images/developer.webp"
+              alt="Developer picture"
+              style="width: 100%"
+            />
+            <div class="developer-container">
+              <h1>Akseli Mikkonen</h1>
+              <p data-i18n="roles.developer">Developer</p>
+            </div>
+          </div>
+          <div class="developer-card">
+            <img
+              src="images/developer.webp"
+              alt="Developer picture"
+              style="width: 100%"
+            />
+            <div class="developer-container">
+              <h1>Esteri Hurmerinta</h1>
+              <p data-i18n="roles.artist">Artist</p>
+            </div>
+          </div>
+          <div class="developer-card">
+            <img src="images/team.webp" alt="Team" style="width: 100%" />
+          </div>
+          <div class="developer-card">
+            <img
+              src="images/developer.webp"
+              alt="Developer picture"
+              style="width: 100%"
+            />
+            <div class="developer-container">
+              <h1>Roosa-Maria Lundgren</h1>
+              <p data-i18n="roles.artist">Artist</p>
+            </div>
+          </div>
+        </div>
+        <div class="partners" id="partners">
+          <div class="partners-card">
+            <img src="images/TRE_LA23_UAS____en_B3___RGB.png" alt="TAMK Logo" />
+          </div>
+          <div class="partners-card">
+            <img src="images/tiko-logo-en.png" alt="Tiko Logo" />
+          </div>
+          <div class="partners-card">
+            <img src="images/WellTech_Lab_logo.jpg" alt="WellTech Lab Logo" />
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

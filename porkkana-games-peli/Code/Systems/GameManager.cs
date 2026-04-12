@@ -117,7 +117,8 @@ public partial class GameManager : Node
 		if (Score >= levelThreeRequired && levelOneWon && levelTwoWon)
 		{
 			GD.Print("All cooked ingredients in right spot! Level 3 completed! Switching Scene!");
-			FadeTransition.ChangeSceneWithFade("res://Scenes/Menus/MainMenu.tscn");
+			LevelWonTransition.ChangeSceneWithFade("res://Scenes/Menus/MainMenu.tscn");
+			// FadeTransition.ChangeSceneWithFade("res://Scenes/Menus/MainMenu.tscn");
 			// Reset score and progress
 			ResetScore();
 			ResetLevelProgress();

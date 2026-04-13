@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctnh7pra2i3h2"]
 
-[ext_resource type="Texture2D" uid="uid://c1rpkormdiagb" path="res://Art/Assets/RecipeBook/closebutton.png" id="1_64x14"]
+[ext_resource type="Texture2D" uid="uid://c3mp5pgxrndfh" path="res://Art/Assets/MenuButtons/pause_button.png" id="1_64x14"]
 [ext_resource type="Script" uid="uid://33nvejsjjt0t" path="res://Code/UI/PauseMenu/ShowPauseMenuButton.cs" id="2_1lqxu"]
 
 [node name="ShowPauseMenuButton" type="Button"]

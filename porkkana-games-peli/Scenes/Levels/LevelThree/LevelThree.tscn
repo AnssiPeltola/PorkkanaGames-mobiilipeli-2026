@@ -103,7 +103,7 @@ collision_mask = 6
 SeasonKind = 3
 
 [node name="ShowPauseMenuButton" parent="." instance=ExtResource("12_y3p4b")]
-offset_left = 35.0
-offset_top = 998.0
-offset_right = 87.0
-offset_bottom = 1045.0
+offset_left = 26.0
+offset_top = 1004.0
+offset_right = 94.0
+offset_bottom = 1057.0

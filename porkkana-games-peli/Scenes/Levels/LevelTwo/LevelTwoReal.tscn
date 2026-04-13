@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://5gldpnqbvait" path="res://Scenes/Assets/Equipment/DropZones/CuttingBoardDropZone/CuttingBoardDropZone.tscn" id="1_q66cy"]
 [ext_resource type="PackedScene" uid="uid://du1dcsdgx4hu0" path="res://Scenes/Assets/Ingredients/LevelTwoIngredient/LevelTwoIngredient.tscn" id="5_yyvae"]
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="6_2jm63"]
-[ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/Minigames/CuttingGame/CuttingMiniGame.tscn" id="6_srf4j"]
+[ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/MiniGames/CuttingGame/CuttingMiniGame.tscn" id="6_srf4j"]
 [ext_resource type="Texture2D" uid="uid://f6j1dsc13ldo" path="res://Art/Assets/Equipment/Stove/hella_v1.png" id="7_2jm63"]
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="8_yyvae"]
 [ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="10_2og4m"]
@@ -146,7 +146,8 @@ rotation = -1.5707964
 icon = ExtResource("13_rfuqb")
 
 [node name="ShowPauseMenuButton" parent="." instance=ExtResource("14_2og4m")]
-offset_left = 42.0
-offset_top = 32.0
-offset_right = 94.0
-offset_bottom = 79.0
+offset_left = 78.0
+offset_top = 14.0
+offset_right = 146.0
+offset_bottom = 67.0
+rotation = 1.5707964

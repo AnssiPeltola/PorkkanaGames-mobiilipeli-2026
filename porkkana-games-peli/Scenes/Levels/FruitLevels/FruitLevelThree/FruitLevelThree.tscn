@@ -26,6 +26,7 @@ size = Vector2(2499, 246)
 size = Vector2(330, 1601)
 
 [node name="FruitLevelThree" type="Node2D"]
+scale = Vector2(2, 2)
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 2

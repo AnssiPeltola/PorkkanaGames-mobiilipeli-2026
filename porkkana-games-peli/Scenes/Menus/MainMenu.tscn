@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://3cs2renrm0gx"]
+[gd_scene load_steps=3 format=3 uid="uid://3cs2renrm0gx"]
 
 [ext_resource type="Script" uid="uid://cw2k5r0hcwnur" path="res://Code/UI/MainMenu.cs" id="1_w4bbr"]
+[ext_resource type="PackedScene" uid="uid://cj2upr0reemrb" path="res://Scenes/Menus/LangMenu/LangMenu.tscn" id="2_b42ut"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -64,16 +65,9 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "EXIT"
 
-[node name="LangEng" type="Button" parent="CanvasLayer"]
-offset_left = 1549.0
-offset_top = 124.0
-offset_right = 1623.0
-offset_bottom = 155.0
-text = "LangEng"
-
-[node name="LangFi" type="Button" parent="CanvasLayer"]
-offset_left = 1504.0
-offset_top = 202.0
-offset_right = 1733.0
-offset_bottom = 233.0
-text = "LangFi"
+[node name="LangMenu" parent="." instance=ExtResource("2_b42ut")]
+layout_mode = 0
+offset_left = 1378.0
+offset_top = 626.0
+offset_right = 1378.0
+offset_bottom = 626.0

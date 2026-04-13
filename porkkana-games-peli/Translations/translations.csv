@@ -4,3 +4,5 @@ SETTINGS;Settings; Asetukset; Settinger
 EXIT; Quit; Lopeta; Slop
 CUTS;Cuts {0} {1} {2};Leikkaukset {0} {1} {2}; Cutta {0} {1} {2}
 PEELS;Peels {0} {1} {2}; Kuorimiset {0} {1} {2}; Kurimssa {0} {1} {2}
+RESUME; Resume; Takaisin; Tillbakan
+QUIT; Quit; Lopeta; Looppettarna

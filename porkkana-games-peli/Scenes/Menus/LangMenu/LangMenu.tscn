@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj2upr0reemrb"]
+
+[ext_resource type="Script" uid="uid://bccmrftw8rv3m" path="res://Code/UI/LangMenu/LangMenu.cs" id="1_s8i70"]
+
+[node name="LangMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_s8i70")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LangButtons" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 38.0
+offset_top = 29.0
+offset_right = 115.0
+offset_bottom = 130.0
+
+[node name="LangEng" type="Button" parent="CanvasLayer/LangButtons"]
+layout_mode = 2
+text = "LangEng"
+
+[node name="LangFi" type="Button" parent="CanvasLayer/LangButtons"]
+layout_mode = 2
+text = "LangFi"
+
+[node name="LangSwe" type="Button" parent="CanvasLayer/LangButtons"]
+layout_mode = 2
+text = "LangSwe
+"

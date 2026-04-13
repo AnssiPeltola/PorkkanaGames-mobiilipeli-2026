@@ -1,6 +1,8 @@
-keys;en;fi
-START; Staart; Aloita
-SETTINGS; Seettings; Asetukset
-QUIT; Quiit; Lopeta
-CUTS;Cuts {0} {1};Leikkaukset {0} {1}
-PEELS; Peels {0} {1}; Kuorimiset {0} {1}
+keys;en;fi;swe
+START;Start; Aloita; Start nu
+SETTINGS;Settings; Asetukset; Settinger
+EXIT; Quit; Lopeta; Slop
+CUTS;Cuts {0} {1} {2};Leikkaukset {0} {1} {2}; Cutta {0} {1} {2}
+PEELS;Peels {0} {1} {2}; Kuorimiset {0} {1} {2}; Kurimssa {0} {1} {2}
+RESUME; Resume; Takaisin; Tillbakan
+QUIT; Quit; Lopeta; Looppettarna

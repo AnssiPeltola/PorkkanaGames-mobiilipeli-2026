@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bxp0nkiw2c758" path="res://Scenes/Minigames/CuttingGame/CutArea.cs" id="3_3xf00"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rwbtn"]
-radius = 129.31357
+radius = 194.91191
 
 [node name="CuttingMiniGame" type="Node2D"]
 position = Vector2(-36, 361)
@@ -14,19 +14,19 @@ script = ExtResource("1_7vvnq")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 492.0
-offset_top = 401.0
-offset_right = 1017.0
-offset_bottom = 553.0
+offset_left = 952.0
+offset_top = 865.0
+offset_right = 1477.0
+offset_bottom = 1017.0
 rotation = 1.5707964
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 75
 text = "CUTS"
 metadata/_edit_use_anchors_ = true
 
 [node name="IngridientSprite" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(295.09735, 540.8971)
+position = Vector2(568.00006, 1035.0001)
 rotation = 1.5707964
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rwbtn")
 
 [node name="CutArea" type="Area2D" parent="."]

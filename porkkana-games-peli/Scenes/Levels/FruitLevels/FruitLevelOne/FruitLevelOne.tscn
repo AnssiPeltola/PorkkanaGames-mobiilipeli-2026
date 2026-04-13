@@ -37,6 +37,7 @@ size = Vector2(2278, 161)
 size = Vector2(93, 1175)
 
 [node name="FruitLevelOne" type="Node2D"]
+scale = Vector2(2, 2)
 
 [node name="IngredientDropZone" parent="." instance=ExtResource("3_mjwi7")]
 position = Vector2(226, 523)
@@ -45,46 +46,43 @@ position = Vector2(226, 523)
 position = Vector2(1820, 132)
 rotation = 1.5707964
 
-[node name="Enviroment" type="CanvasLayer" parent="."]
-layer = -15149
-
-[node name="Conveyor" parent="Enviroment" instance=ExtResource("1_5prv0")]
+[node name="Conveyor" parent="." instance=ExtResource("1_5prv0")]
 position = Vector2(860, 50)
 collision_layer = 4
 collision_mask = 7
 
-[node name="Conveyor2" parent="Enviroment" instance=ExtResource("1_5prv0")]
+[node name="Conveyor2" parent="." instance=ExtResource("1_5prv0")]
 position = Vector2(1114, 1030)
 rotation = 3.1415925
 collision_layer = 4
 collision_mask = 7
 leftToRight = false
 
-[node name="Walls" type="StaticBody2D" parent="Enviroment"]
+[node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Walls"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-87.5, 542)
 shape = SubResource("RectangleShape2D_mjwi7")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enviroment/Walls"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
 position = Vector2(875.5, -95)
 shape = SubResource("RectangleShape2D_myk0y")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Enviroment/Walls"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
 position = Vector2(2011, 498)
 shape = SubResource("RectangleShape2D_na8qj")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Enviroment/Walls"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
 position = Vector2(965, 1160.5)
 shape = SubResource("RectangleShape2D_iilcc")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Enviroment/Walls"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
 position = Vector2(965.5, 539.5)
 shape = SubResource("RectangleShape2D_ween4")
 
-[node name="TaustaV1Valmis" type="Sprite2D" parent="Enviroment/Walls"]
+[node name="TaustaV1Valmis" type="Sprite2D" parent="Walls"]
 show_behind_parent = true
 z_index = -4096
 position = Vector2(960, 540)

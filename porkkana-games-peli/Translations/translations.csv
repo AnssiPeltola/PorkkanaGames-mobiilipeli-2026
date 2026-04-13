@@ -1,2 +1,6 @@
 keys;en;fi
+START; Staart; Aloita
+SETTINGS; Seettings; Asetukset
+QUIT; Quiit; Lopeta
 CUTS;Cuts {0} {1};Leikkaukset {0} {1}
+PEELS; Peels {0} {1}; Kuorimiset {0} {1}

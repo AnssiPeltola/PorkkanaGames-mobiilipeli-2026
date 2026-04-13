@@ -75,7 +75,7 @@ public partial class CuttingMiniGame : Node2D
 
 	private void _updateLabel(int _cutsDone)
 	{
-		 // TRANSLATIONS from .csv
+		// TRANSLATIONS from .csv
 		// create new string based on localisation
 		// then update the label appropriately
 		string _localisedCuts = Tr("CUTS");

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c8birxuvpwki1"]
+[gd_scene load_steps=26 format=3 uid="uid://c8birxuvpwki1"]
 
 [ext_resource type="PackedScene" uid="uid://drkpp7gv2i1bq" path="res://Scenes/Assets/Equipment/Conveyor/Conveyor.tscn" id="1_5prv0"]
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="2_uctdc"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c8wtj8u16v5tk" path="res://Art/Assets/Ingridients/Carrot/carrot-v1.png" id="16_gt8x6"]
 [ext_resource type="Texture2D" uid="uid://bb62hokjr1vuq" path="res://Art/Assets/Ingridients/Lime/lime-v1.png" id="17_gt8x6"]
 [ext_resource type="Texture2D" uid="uid://dagrh0e2kobxo" path="res://Art/Assets/Checklist_Ingridients/checklist2-v1.png" id="18_cd0w1"]
+[ext_resource type="PackedScene" uid="uid://ctnh7pra2i3h2" path="res://Scenes/Menus/PauseMenu/ShowPauseMenuButton/ShowPauseMenuButton.tscn" id="20_h84sl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjwi7"]
 size = Vector2(175, 1093)
@@ -151,3 +152,9 @@ IngredientTexture = ExtResource("17_gt8x6")
 position = Vector2(632, 521)
 rotation = 1.5707964
 _checklistTexture = ExtResource("18_cd0w1")
+
+[node name="ShowPauseMenuButton" parent="." instance=ExtResource("20_h84sl")]
+offset_left = 24.0
+offset_top = 22.0
+offset_right = 76.0
+offset_bottom = 69.0

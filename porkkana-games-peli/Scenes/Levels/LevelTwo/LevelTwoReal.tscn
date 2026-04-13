@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dq85u5qotvgr2"]
+[gd_scene load_steps=20 format=3 uid="uid://dq85u5qotvgr2"]
 
 [ext_resource type="Script" uid="uid://dlt0ydesqq3pm" path="res://Code/Levels/LevelTwo.cs" id="1_fv2xp"]
 [ext_resource type="PackedScene" uid="uid://5gldpnqbvait" path="res://Scenes/Assets/Equipment/DropZones/CuttingBoardDropZone/CuttingBoardDropZone.tscn" id="1_q66cy"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://6ou6wpsw3xbs" path="res://Art/Assets/LevelHelpGuide/Guidebook_ready/PASTA (final guidebook pages)/ohjeet_level2_pasta.png" id="11_xi4fc"]
 [ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="12_xwols"]
 [ext_resource type="Texture2D" uid="uid://b24tsu6dgafy0" path="res://Art/Assets/RecipeBook/open_helpguide_button.png" id="13_rfuqb"]
+[ext_resource type="PackedScene" uid="uid://ctnh7pra2i3h2" path="res://Scenes/Menus/PauseMenu/ShowPauseMenuButton/ShowPauseMenuButton.tscn" id="14_2og4m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srf4j"]
 size = Vector2(214, 1093)
@@ -143,3 +144,9 @@ offset_right = 1846.0001
 offset_bottom = 219.0
 rotation = -1.5707964
 icon = ExtResource("13_rfuqb")
+
+[node name="ShowPauseMenuButton" parent="." instance=ExtResource("14_2og4m")]
+offset_left = 42.0
+offset_top = 32.0
+offset_right = 94.0
+offset_bottom = 79.0

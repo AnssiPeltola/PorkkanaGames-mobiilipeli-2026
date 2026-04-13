@@ -8,7 +8,20 @@ public partial class MainMenu : Control
 		GetNode<Button>("CanvasLayer/ButtonContainer/StartButton").Pressed += OnStartPressed;
 		GetNode<Button>("CanvasLayer/ButtonContainer/SettingsButton").Pressed += OnSettingsPressed;
 		GetNode<Button>("CanvasLayer/ButtonContainer/ExitButton").Pressed += OnExitPressed;
+		GetNode<Button>("CanvasLayer/LangFi").Pressed += OnLangFiPressed;
+		GetNode<Button>("CanvasLayer/LangEng").Pressed += OnLangEngPressed;
+}
+
+	private void OnLangEngPressed()
+	{
+		TranslationServer.SetLocale("en");
 	}
+
+	private void OnLangFiPressed()
+	{
+		TranslationServer.SetLocale("fi");
+	}
+
 
 	private void OnStartPressed()
 	{

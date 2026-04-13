@@ -78,7 +78,11 @@ public partial class PeelingMiniGame : Node2D
 
 	private void _updateLabel(int _cutsDone)
 	{
-		_cutsLabel.Text = ($"Peels: {_cutsDone} / 3");
+			// TRANSLATIONS from .csv
+		// create new string based on localisation
+		// then update the label appropriately
+		string _localisedPeels = Tr("PEELS");
+		_cutsLabel.Text = string.Format(_localisedPeels, _cutsDone, " / 3");
 	}
 
 	private void _registerCut()

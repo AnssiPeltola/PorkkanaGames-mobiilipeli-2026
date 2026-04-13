@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://v1rneou8j3al"]
 
 [ext_resource type="Script" uid="uid://hp7qxtiqcxm4" path="res://Code/Scenes/PeelingBoardDropZone/PeelingBoardDropZone.cs" id="1_ic0xb"]
-[ext_resource type="Texture2D" uid="uid://bhx40ekuh6ktu" path="res://Art/Assets/Equipment/Cuttingboards/puinen_leikkuulauta_iso_pyoristetty_v2.png" id="2_2ys28"]
+[ext_resource type="Texture2D" uid="uid://cqkek5xtwoaf3" path="res://Art/Assets/Equipment/Cuttingboards/leikkuulauta_kuorimaveitsella_v1.png" id="2_ic0xb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfqyd"]
 size = Vector2(406, 376)
@@ -10,9 +10,10 @@ size = Vector2(406, 376)
 script = ExtResource("1_ic0xb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(140.49998, 120.499985)
+position = Vector2(140.5, 133.49998)
+rotation = 3.1415927
 scale = Vector2(0.62206894, 0.46979168)
-texture = ExtResource("2_2ys28")
+texture = ExtResource("2_ic0xb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(142, 127)

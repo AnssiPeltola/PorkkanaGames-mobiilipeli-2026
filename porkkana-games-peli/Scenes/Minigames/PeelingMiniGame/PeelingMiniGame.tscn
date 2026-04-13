@@ -15,19 +15,19 @@ script = ExtResource("1_21rfl")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 2945.0
-offset_top = 1256.0
-offset_right = 3513.0
-offset_bottom = 1408.0
+offset_left = 1445.0
+offset_top = 655.0
+offset_right = 2013.0
+offset_bottom = 807.0
 rotation = -1.5707964
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 50
 text = "Peels: 0 / 3"
 metadata/_edit_use_anchors_ = true
 
 [node name="IngridientSprite" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(3292.9995, 1047.0002)
+position = Vector2(1665.736, 524.8)
 rotation = -1.5707964
-scale = Vector2(0.4, 0.398)
+scale = Vector2(0.2, 0.199)
 texture = ExtResource("2_lje01")
 
 [node name="CutArea" type="Area2D" parent="."]

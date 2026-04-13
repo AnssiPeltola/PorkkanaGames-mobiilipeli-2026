@@ -52,7 +52,7 @@ public partial class IngredientSpawner : Area2D
         // Spawn at this spawner instance position in the level scene.
         GetTree().CurrentScene.AddChild(_cookedIngredient);
         _cookedIngredient.GlobalPosition = spawnPosition;
-        _cookedIngredient.Scale = _cookedIngredient.Scale * 0.5f;
+        _cookedIngredient.Scale = _cookedIngredient.Scale * 0.8f;
 
         if (SpawnedIngredientTexture != null)
         {

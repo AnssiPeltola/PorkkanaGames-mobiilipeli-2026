@@ -98,7 +98,7 @@ offset_bottom = 991.0
 icon = ExtResource("11_he8cf")
 
 [node name="ShowPauseMenuButton" parent="." instance=ExtResource("13_he8cf")]
-offset_left = 16.0
-offset_top = 1011.0
-offset_right = 68.0
-offset_bottom = 1058.0
+offset_left = 15.0
+offset_top = 1013.0
+offset_right = 83.0
+offset_bottom = 1066.0

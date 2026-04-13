@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cd2edpdgcb68q" path="res://Art/Backrounds/tausta_v1_valmis.png" id="2_y2jg2"]
 [ext_resource type="PackedScene" uid="uid://cxq0cugnqli0" path="res://Scenes/Assets/Ingredients/FruitLevelTwoIngredient/FruitLevelTwoIngredient.tscn" id="3_y2jg2"]
 [ext_resource type="PackedScene" uid="uid://5gldpnqbvait" path="res://Scenes/Assets/Equipment/DropZones/CuttingBoardDropZone/CuttingBoardDropZone.tscn" id="4_uybmr"]
-[ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/Minigames/CuttingGame/CuttingMiniGame.tscn" id="5_axaq3"]
+[ext_resource type="PackedScene" uid="uid://b1dqboptdej34" path="res://Scenes/MiniGames/CuttingGame/CuttingMiniGame.tscn" id="5_axaq3"]
 [ext_resource type="PackedScene" uid="uid://v1rneou8j3al" path="res://Scenes/Assets/Equipment/DropZones/PeelingBoardDropZone/PeelingBoardDropZone.tscn" id="6_i2kpg"]
-[ext_resource type="PackedScene" uid="uid://cooqscirc1lp8" path="res://Scenes/Minigames/PeelingMiniGame/PeelingMiniGame.tscn" id="6_v3o5u"]
+[ext_resource type="PackedScene" uid="uid://cooqscirc1lp8" path="res://Scenes/MiniGames/PeelingMiniGame/PeelingMiniGame.tscn" id="6_v3o5u"]
 [ext_resource type="PackedScene" uid="uid://n4tooaayndg5" path="res://Scenes/Assets/Equipment/DropZones/FruitDropZone/FruitDropZone.tscn" id="7_tn8ew"]
 [ext_resource type="Texture2D" uid="uid://crq73fm2yd12x" path="res://Art/Assets/Equipment/FruitPlates/apple-plate-empty-v1.png" id="8_v3o5u"]
 [ext_resource type="Texture2D" uid="uid://dw6318nh3qu3f" path="res://Art/Assets/Equipment/FruitPlates/banana-plate-empty-v1.png" id="9_uq1k0"]
@@ -173,7 +173,8 @@ rotation = 1.5707964
 icon = ExtResource("15_j7iyu")
 
 [node name="ShowPauseMenuButton" parent="." instance=ExtResource("19_ftj3n")]
-offset_left = 17.0
-offset_top = 20.0
-offset_right = 69.0
-offset_bottom = 67.0
+offset_left = 64.0
+offset_top = 11.0
+offset_right = 132.0
+offset_bottom = 64.0
+rotation = 1.5707964

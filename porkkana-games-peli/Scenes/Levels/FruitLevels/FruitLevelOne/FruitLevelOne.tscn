@@ -154,7 +154,8 @@ rotation = 1.5707964
 _checklistTexture = ExtResource("18_cd0w1")
 
 [node name="ShowPauseMenuButton" parent="." instance=ExtResource("20_h84sl")]
-offset_left = 24.0
-offset_top = 22.0
-offset_right = 76.0
-offset_bottom = 69.0
+offset_left = 65.0
+offset_top = 12.0
+offset_right = 133.0
+offset_bottom = 65.0
+rotation = 1.5707964

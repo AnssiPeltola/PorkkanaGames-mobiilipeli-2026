@@ -64,23 +64,27 @@ public partial class CuttingMiniGame : Node2D
 
 		// give the label node path for _cutsLabel
 		_cutsLabel = GetNode<Label>("CanvasLayer/Label");
-        _updateLabel(0);
+		_updateLabel(0);
 
-        // set the reference to CutArea
-        _cutArea = GetNode<CutArea>("CutArea");
-        // And Subscribe to the signal
-        // and run _registerCut() when signal is received
-        _cutArea.CutRegistered += _registerCut;
+		// set the reference to CutArea
+		_cutArea = GetNode<CutArea>("CutArea");
+		// And Subscribe to the signal
+		// and run _registerCut() when signal is received
+		_cutArea.CutRegistered += _registerCut;
 	}
 
 	private void _updateLabel(int _cutsDone)
 	{
-		_cutsLabel.Text = ($"Cuts: {_cutsDone} / 3");
+		 // TRANSLATIONS from .csv
+		// create new string based on localisation
+		// then update the label appropriately
+		string _localisedCuts = Tr("CUTS");
+		_cutsLabel.Text = string.Format(_localisedCuts, _cutsDone, " / 3");
 	}
 
 	private void _registerCut()
 	{
-        GD.Print("_registerCut() fired");
+		GD.Print("_registerCut() fired");
 		_cutsDone++;
 		_updateLabel(_cutsDone);
 

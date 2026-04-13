@@ -79,7 +79,7 @@ public partial class CuttingMiniGame : Node2D
 		// create new string based on localisation
 		// then update the label appropriately
 		string _localisedCuts = Tr("CUTS");
-		_cutsLabel.Text = string.Format(_localisedCuts, _cutsDone, " / 3");
+		_cutsLabel.Text = string.Format(_localisedCuts, _cutsDone, " / ", RequiredCuts);
 	}
 
 	private void _registerCut()

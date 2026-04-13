@@ -10,24 +10,23 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_s8i70")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="LangButtons" type="VBoxContainer" parent="CanvasLayer"]
+[node name="LangButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 38.0
 offset_top = 29.0
-offset_right = 115.0
-offset_bottom = 130.0
+offset_right = 198.0
+offset_bottom = 397.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="LangEng" type="TextureButton" parent="CanvasLayer/LangButtons"]
+[node name="LangEng" type="TextureButton" parent="LangButtons"]
 layout_mode = 2
 texture_normal = ExtResource("2_y6ese")
 
-[node name="LangFi" type="TextureButton" parent="CanvasLayer/LangButtons"]
+[node name="LangFi" type="TextureButton" parent="LangButtons"]
 layout_mode = 2
 texture_normal = ExtResource("3_l06oa")
 
-[node name="LangSwe" type="TextureButton" parent="CanvasLayer/LangButtons"]
+[node name="LangSwe" type="TextureButton" parent="LangButtons"]
 layout_mode = 2
 texture_normal = ExtResource("4_d13m2")

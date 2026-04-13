@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cj2upr0reemrb"]
+[gd_scene load_steps=5 format=3 uid="uid://cj2upr0reemrb"]
 
 [ext_resource type="Script" uid="uid://bccmrftw8rv3m" path="res://Code/UI/LangMenu/LangMenu.cs" id="1_s8i70"]
+[ext_resource type="Texture2D" uid="uid://bpwctmw0a8mfv" path="res://Art/Assets/LangMenu/english-v1.png" id="2_y6ese"]
+[ext_resource type="Texture2D" uid="uid://d1hfju1lcjahb" path="res://Art/Assets/LangMenu/finnish-v1.png" id="3_l06oa"]
+[ext_resource type="Texture2D" uid="uid://cpck5eply6s81" path="res://Art/Assets/LangMenu/swedish-v1.png" id="4_d13m2"]
 
 [node name="LangMenu" type="Control"]
 layout_mode = 3
@@ -14,16 +17,17 @@ offset_left = 38.0
 offset_top = 29.0
 offset_right = 115.0
 offset_bottom = 130.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="LangEng" type="Button" parent="CanvasLayer/LangButtons"]
+[node name="LangEng" type="TextureButton" parent="CanvasLayer/LangButtons"]
 layout_mode = 2
-text = "LangEng"
+texture_normal = ExtResource("2_y6ese")
 
-[node name="LangFi" type="Button" parent="CanvasLayer/LangButtons"]
+[node name="LangFi" type="TextureButton" parent="CanvasLayer/LangButtons"]
 layout_mode = 2
-text = "LangFi"
+texture_normal = ExtResource("3_l06oa")
 
-[node name="LangSwe" type="Button" parent="CanvasLayer/LangButtons"]
+[node name="LangSwe" type="TextureButton" parent="CanvasLayer/LangButtons"]
 layout_mode = 2
-text = "LangSwe
-"
+texture_normal = ExtResource("4_d13m2")

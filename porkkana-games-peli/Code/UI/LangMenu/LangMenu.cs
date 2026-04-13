@@ -5,9 +5,9 @@ public partial class LangMenu : Control
 {
 	public override void _Ready()
 	{
-		GetNode<Button>("CanvasLayer/LangButtons/LangFi").Pressed += OnLangFiPressed;
-		GetNode<Button>("CanvasLayer/LangButtons/LangEng").Pressed += OnLangEngPressed;
-		GetNode<Button>("CanvasLayer/LangButtons/LangSwe").Pressed += OnLangSwePressed;
+		GetNode<TextureButton>("CanvasLayer/LangButtons/LangFi").Pressed += OnLangFiPressed;
+		GetNode<TextureButton>("CanvasLayer/LangButtons/LangEng").Pressed += OnLangEngPressed;
+		GetNode<TextureButton>("CanvasLayer/LangButtons/LangSwe").Pressed += OnLangSwePressed;
 	}
 
 	private void OnLangEngPressed()

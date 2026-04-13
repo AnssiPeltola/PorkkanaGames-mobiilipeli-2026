@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://5gldpnqbvait"]
 
 [ext_resource type="Script" uid="uid://05qb1w4a5ad4" path="res://Code/Scenes/CuttingBoardDropZone/CuttingBoardDropZone.cs" id="1_clu5m"]
-[ext_resource type="Texture2D" uid="uid://bhx40ekuh6ktu" path="res://Art/Assets/Equipment/Cuttingboards/puinen_leikkuulauta_iso_pyoristetty_v2.png" id="2_gabfb"]
+[ext_resource type="Texture2D" uid="uid://betfk2daxialm" path="res://Art/Assets/Equipment/Cuttingboards/leikkuulauta_veitsella_v1.png" id="2_gabfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clu5m"]
 size = Vector2(406, 376)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://lcxdo8gtekt5"]
+[gd_scene load_steps=17 format=3 uid="uid://lcxdo8gtekt5"]
 
 [ext_resource type="Texture2D" uid="uid://krm0k6cbf1pr" path="res://Art/Backrounds/tausta_fullscreen.png" id="1_djxk4"]
 [ext_resource type="Texture2D" uid="uid://dw2adqts771t8" path="res://Art/Assets/Equipment/Spoons/sauce-spoon-v1.png" id="4_djxk4"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://by6lsaf5ftnak" path="res://Scenes/Assets/Equipment/Plate/Plate.tscn" id="10_326m4"]
 [ext_resource type="Texture2D" uid="uid://b24tsu6dgafy0" path="res://Art/Assets/RecipeBook/open_helpguide_button.png" id="10_k6173"]
 [ext_resource type="PackedScene" uid="uid://skgrasccf34i" path="res://Scenes/Assets/Ingredients/SeasoningIngredientScene/SeasoningIngredientScene.tscn" id="11_djxk4"]
+[ext_resource type="PackedScene" uid="uid://ctnh7pra2i3h2" path="res://Scenes/Menus/PauseMenu/ShowPauseMenuButton/ShowPauseMenuButton.tscn" id="12_y3p4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy0cf"]
 size = Vector2(257, 1599)
@@ -100,3 +101,9 @@ position = Vector2(958, 346)
 scale = Vector2(1.2, 1.2)
 collision_mask = 6
 SeasonKind = 3
+
+[node name="ShowPauseMenuButton" parent="." instance=ExtResource("12_y3p4b")]
+offset_left = 35.0
+offset_top = 998.0
+offset_right = 87.0
+offset_bottom = 1045.0

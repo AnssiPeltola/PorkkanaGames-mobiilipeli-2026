@@ -23,6 +23,7 @@ GameManager="*res://Code/Systems/GameManager.cs"
 SceneControl="*res://Code/Systems/SceneControl.cs"
 FadeTransition="*res://Scenes/FadeTransition/FadeTransition.tscn"
 LevelWonTransition="*res://Scenes/LevelWonTransition/LevelWonTransition.tscn"
+PauseMenu="*res://Scenes/Menus/PauseMenu/PauseMenu.tscn"
 
 [display]
 

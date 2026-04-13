@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://do8440pnslic7"]
+[gd_scene load_steps=18 format=3 uid="uid://do8440pnslic7"]
 
 [ext_resource type="Texture2D" uid="uid://krm0k6cbf1pr" path="res://Art/Backrounds/tausta_fullscreen.png" id="1_6kkd7"]
 [ext_resource type="PackedScene" uid="uid://ccjwf3ea1r4k4" path="res://Scenes/Assets/Ingredients/ChoppedFruit/ChoppedFruit.tscn" id="2_ico12"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dpci153k47uph" path="res://Art/Assets/LevelHelpGuide/Guidebook_ready/FRUITSALAD/ohjeet_fruitsalad_level3.png" id="10_he8cf"]
 [ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="10_nolq0"]
 [ext_resource type="Texture2D" uid="uid://b24tsu6dgafy0" path="res://Art/Assets/RecipeBook/open_helpguide_button.png" id="11_he8cf"]
+[ext_resource type="PackedScene" uid="uid://ctnh7pra2i3h2" path="res://Scenes/Menus/PauseMenu/ShowPauseMenuButton/ShowPauseMenuButton.tscn" id="13_he8cf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6c2l"]
 size = Vector2(257, 1599)
@@ -95,3 +96,9 @@ offset_top = 923.0
 offset_right = 1837.0
 offset_bottom = 991.0
 icon = ExtResource("11_he8cf")
+
+[node name="ShowPauseMenuButton" parent="." instance=ExtResource("13_he8cf")]
+offset_left = 16.0
+offset_top = 1011.0
+offset_right = 68.0
+offset_bottom = 1058.0

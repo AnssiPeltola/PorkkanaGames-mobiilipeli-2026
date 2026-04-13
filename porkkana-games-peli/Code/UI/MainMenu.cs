@@ -15,11 +15,13 @@ public partial class MainMenu : Control
 	private void OnLangEngPressed()
 	{
 		TranslationServer.SetLocale("en");
+		GD.Print("Current Locale: " + TranslationServer.GetLocale());
 	}
 
 	private void OnLangFiPressed()
 	{
 		TranslationServer.SetLocale("fi");
+		GD.Print("Current Locale: " + TranslationServer.GetLocale());
 	}
 
 

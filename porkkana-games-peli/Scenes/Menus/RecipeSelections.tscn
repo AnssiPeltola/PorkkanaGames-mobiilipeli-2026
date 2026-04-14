@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bofmt7bdob13v"]
+[gd_scene load_steps=6 format=3 uid="uid://bofmt7bdob13v"]
 
 [ext_resource type="Script" uid="uid://bss32penbax2m" path="res://Code/UI/RecipeSelections.cs" id="1_r36sb"]
+[ext_resource type="Texture2D" uid="uid://t0esglq1xten" path="res://Art/Backrounds/menu-background-v1.png" id="2_h3hdp"]
+[ext_resource type="Texture2D" uid="uid://dwjaxsj6w1kfy" path="res://Art/Assets/MenuButtons/button.png" id="3_spj4p"]
+[ext_resource type="Texture2D" uid="uid://dgl0f5fa2v82d" path="res://Art/Assets/MenuButtons/pressed_button.png" id="4_niytk"]
+[ext_resource type="Texture2D" uid="uid://c1fo8p2lde7ni" path="res://Art/Assets/RecipeBook/receiptbook_both.png" id="5_xncrv"]
 
 [node name="RecipeSelections" type="Control"]
 layout_mode = 3
@@ -11,19 +15,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r36sb")
 
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h3hdp")
+stretch_mode = 6
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TitleLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -248.0
+offset_top = 144.0
+offset_right = 161.0
+offset_bottom = 309.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 48
-text = "Select a recipe
-"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "SELECT"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
 anchors_preset = 15
@@ -44,25 +59,85 @@ theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 4
 columns = 2
 
-[node name="BackButton" type="Button" parent="CanvasLayer"]
+[node name="BackButton" type="TextureButton" parent="CanvasLayer"]
 custom_minimum_size = Vector2(0, 200)
-anchors_preset = 2
+anchors_preset = -1
 anchor_top = 1.0
+anchor_right = 0.004
 anchor_bottom = 1.0
-offset_top = -8.0
-offset_right = 8.0
+offset_left = 39.999996
+offset_top = -288.0
+offset_right = 509.64
+offset_bottom = -88.0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 42
-text = "Back"
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("3_spj4p")
+texture_pressed = ExtResource("4_niytk")
 
-[node name="StartPastaButton" type="Button" parent="CanvasLayer"]
-offset_right = 173.0
+[node name="Label" type="Label" parent="CanvasLayer/BackButton"]
+layout_mode = 0
+offset_left = 172.79999
+offset_top = 64.0
+offset_right = 297.8
 offset_bottom = 131.0
-text = "Start pasta"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "BACK"
+horizontal_alignment = 1
 
-[node name="StartFruitButton" type="Button" parent="CanvasLayer"]
-offset_left = 1113.0
-offset_top = 484.0
-offset_right = 1286.0
-offset_bottom = 615.0
-text = "Start Fruit"
+[node name="StartPastaButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1072.0
+offset_top = 1320.0
+offset_right = 1557.0
+offset_bottom = 1519.0
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("3_spj4p")
+texture_pressed = ExtResource("4_niytk")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/StartPastaButton"]
+layout_mode = 0
+offset_left = 126.66666
+offset_top = 46.666664
+offset_right = 273.66666
+offset_bottom = 113.666664
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "PASTA"
+horizontal_alignment = 1
+
+[node name="StartFruitButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 2088.0
+offset_top = 1312.0
+offset_right = 2573.0
+offset_bottom = 1511.0
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("3_spj4p")
+texture_pressed = ExtResource("4_niytk")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/StartFruitButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39400002
+anchor_top = 0.42200002
+anchor_right = 0.476
+anchor_bottom = 0.53800005
+offset_left = -137.75662
+offset_top = -37.31137
+offset_right = -43.526596
+offset_bottom = 6.604622
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "FRUIT"
+horizontal_alignment = 1
+
+[node name="ReceiptbookBoth" type="Sprite2D" parent="CanvasLayer"]
+z_index = -4096
+position = Vector2(1864, 1048)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_xncrv")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true

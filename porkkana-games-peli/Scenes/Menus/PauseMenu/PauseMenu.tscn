@@ -1,12 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq5ylvsm3qkqp"]
+[gd_scene load_steps=12 format=3 uid="uid://cq5ylvsm3qkqp"]
 
 [ext_resource type="Shader" uid="uid://f7eqlpcyheah" path="res://Scenes/Menus/PauseMenu/PauseMenu.gdshader" id="1_nu0n2"]
 [ext_resource type="Script" uid="uid://cl07bjohv6f0f" path="res://Code/UI/PauseMenu/PauseMenu.cs" id="1_yyxtj"]
+[ext_resource type="Texture2D" uid="uid://cu0sd11f77h0a" path="res://Art/Assets/PauseMenuBackgrounds/pausemenu_tausta_v1.png" id="3_quxyn"]
 [ext_resource type="PackedScene" uid="uid://cj2upr0reemrb" path="res://Scenes/Menus/LangMenu/LangMenu.tscn" id="3_r3dva"]
+[ext_resource type="Texture2D" uid="uid://dwjaxsj6w1kfy" path="res://Art/Assets/MenuButtons/button.png" id="4_ty8rc"]
+[ext_resource type="Texture2D" uid="uid://dgl0f5fa2v82d" path="res://Art/Assets/MenuButtons/pressed_button.png" id="5_coqj5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yyxtj"]
 shader = ExtResource("1_nu0n2")
 shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nstp5"]
+texture = ExtResource("3_quxyn")
 
 [sub_resource type="Animation" id="Animation_quxyn"]
 length = 0.001
@@ -122,31 +128,56 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -789.0
-offset_top = -631.0
-offset_right = 792.9885
-offset_bottom = 632.0
+offset_left = -544.0
+offset_top = -484.0
+offset_right = 544.8806
+offset_bottom = 583.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nstp5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-custom_minimum_size = Vector2(800, 400)
+custom_minimum_size = Vector2(200, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 175
+theme_override_constants/separation = -215
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Button" type="TextureButton" parent="PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
+texture_normal = ExtResource("4_ty8rc")
+texture_pressed = ExtResource("5_coqj5")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Button"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 62.0
+offset_right = 434.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "RESUME"
+horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Button2" type="TextureButton" parent="PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
+texture_normal = ExtResource("4_ty8rc")
+texture_pressed = ExtResource("5_coqj5")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Button2"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 63.0
+offset_right = 434.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "QUIT"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -156,7 +187,7 @@ libraries = {
 [node name="LangMenu" parent="." instance=ExtResource("3_r3dva")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1130.0
-offset_top = 1281.0
-offset_right = 1130.0
-offset_bottom = 1281.0
+offset_left = 1802.0
+offset_top = 1199.0
+offset_right = 1802.0
+offset_bottom = 1199.0

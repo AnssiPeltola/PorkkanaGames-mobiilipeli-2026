@@ -10,8 +10,8 @@ public partial class PauseMenu : Control
 
 	public override void _Ready()
 	{
-		_resumeButton = GetNode<Button>("PanelContainer/VBoxContainer/Button");
-		_quitButton = GetNode<Button>("PanelContainer/VBoxContainer/Button2");
+		_resumeButton = GetNode<TextureButton>("PanelContainer/VBoxContainer/Button");
+		_quitButton = GetNode<TextureButton>("PanelContainer/VBoxContainer/Button2");
 		_animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 
 		_resumeButton.Pressed += Resume;

@@ -5,9 +5,9 @@ public partial class RecipeSelections : Control
 {
 	public override void _Ready()
 	{
-		Button backButton = GetNode<Button>("CanvasLayer/BackButton");
-		Button startPastaButton = GetNode<Button>("CanvasLayer/StartPastaButton");
-		Button startFruitButton = GetNode<Button>("CanvasLayer/StartFruitButton");
+		TextureButton backButton = GetNode<TextureButton>("CanvasLayer/BackButton");
+		TextureButton startPastaButton = GetNode<TextureButton>("CanvasLayer/StartPastaButton");
+		TextureButton startFruitButton = GetNode<TextureButton>("CanvasLayer/StartFruitButton");
 
 		if (backButton == null)
 		{

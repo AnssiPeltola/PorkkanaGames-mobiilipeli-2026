@@ -5,13 +5,10 @@
 body {
   margin: 0;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-  /* https://www.youtube.com/shorts/vCKC2dl8uBk */
-  /* https://www.w3schools.com/cssref/pr_background-position.php */
   background-image: url("images/menu-background-v1.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  backdrop-filter: blur(10px);
 }
 
 .page-shell {

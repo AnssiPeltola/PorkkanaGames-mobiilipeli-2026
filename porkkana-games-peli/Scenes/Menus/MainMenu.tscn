@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dgl0f5fa2v82d" path="res://Art/Assets/MenuButtons/pressed_button.png" id="5_mc63j"]
 [ext_resource type="Texture2D" uid="uid://cxxkdfsi0drjh" path="res://Art/Backrounds/Logo/logo-v1.png" id="6_mc63j"]
 [ext_resource type="Texture2D" uid="uid://dwcstbownw71y" path="res://Art/Icon/tiko-logo-en.png" id="7_pbd8g"]
-[ext_resource type="Texture2D" uid="uid://dcqpigsu15cfi" path="res://Art/Icon/WellTech_Lab_logo.jpg" id="8_7as8u"]
+[ext_resource type="Texture2D" uid="uid://bo2hf1qi6im0g" path="res://Art/Icon/WellTech_Lab_logo_fiksattu.png" id="8_pbd8g"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -69,10 +69,10 @@ texture_pressed = ExtResource("5_mc63j")
 
 [node name="Label" type="Label" parent="CanvasLayer/ButtonContainer/StartButton"]
 layout_mode = 0
-offset_left = 152.5
-offset_top = 60.5
-offset_right = 295.5
-offset_bottom = 127.5
+offset_left = 42.352966
+offset_top = 65.882324
+offset_right = 432.94116
+offset_bottom = 132.88232
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "START"
@@ -85,9 +85,9 @@ texture_pressed = ExtResource("5_mc63j")
 
 [node name="Label" type="Label" parent="CanvasLayer/ButtonContainer/SettingsButton"]
 layout_mode = 0
-offset_left = 111.5
+offset_left = 42.352905
 offset_top = 64.5
-offset_right = 332.5
+offset_right = 432.9411
 offset_bottom = 131.5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
@@ -101,9 +101,9 @@ texture_pressed = ExtResource("5_mc63j")
 
 [node name="Label" type="Label" parent="CanvasLayer/ButtonContainer/ExitButton"]
 layout_mode = 0
-offset_left = 167.5
+offset_left = 42.352966
 offset_top = 64.5
-offset_right = 310.5
+offset_right = 432.94116
 offset_bottom = 131.5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
@@ -124,4 +124,4 @@ texture = ExtResource("7_pbd8g")
 [node name="WellTechLabLogo" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(364, 1568)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("8_7as8u")
+texture = ExtResource("8_pbd8g")

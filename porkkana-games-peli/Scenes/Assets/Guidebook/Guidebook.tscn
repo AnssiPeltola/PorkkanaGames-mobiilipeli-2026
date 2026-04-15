@@ -17,7 +17,16 @@ offset_bottom = 665.0
 texture = ExtResource("2_ah70a")
 expand_mode = 1
 
+[node name="PageOne" type="Sprite2D" parent="."]
+position = Vector2(404, 313)
+scale = Vector2(0.5, 0.5)
+
+[node name="PageTwo" type="Sprite2D" parent="."]
+position = Vector2(800, 312)
+scale = Vector2(0.5, 0.5)
+
 [node name="ExitButton" type="Button" parent="."]
+z_index = 165
 layout_mode = 0
 offset_left = 944.0
 offset_top = 489.0
@@ -26,11 +35,3 @@ offset_bottom = 542.0
 icon = ExtResource("3_ah70a")
 flat = true
 script = ExtResource("3_6mld7")
-
-[node name="PageOne" type="Sprite2D" parent="."]
-position = Vector2(404, 313)
-scale = Vector2(0.5, 0.5)
-
-[node name="PageTwo" type="Sprite2D" parent="."]
-position = Vector2(800, 312)
-scale = Vector2(0.5, 0.5)

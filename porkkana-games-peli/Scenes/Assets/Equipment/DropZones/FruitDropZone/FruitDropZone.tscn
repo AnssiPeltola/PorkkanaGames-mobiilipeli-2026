@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crq73fm2yd12x" path="res://Art/Assets/Equipment/FruitPlates/apple-plate-empty-v1.png" id="2_ij5wm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fhi7g"]
-radius = 154.45096
+radius = 130.01068
 
 [node name="FruitDropZone" type="Area2D"]
 scale = Vector2(0.6, 0.6)

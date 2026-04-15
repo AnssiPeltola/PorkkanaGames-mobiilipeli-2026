@@ -50,12 +50,14 @@ rotation = 1.5707964
 position = Vector2(860, 50)
 collision_layer = 4
 collision_mask = 7
+speed = 700.0
 
 [node name="Conveyor2" parent="." instance=ExtResource("1_5prv0")]
 position = Vector2(1114, 1030)
 rotation = 3.1415925
 collision_layer = 4
 collision_mask = 7
+speed = 700.0
 leftToRight = false
 
 [node name="Walls" type="StaticBody2D" parent="."]

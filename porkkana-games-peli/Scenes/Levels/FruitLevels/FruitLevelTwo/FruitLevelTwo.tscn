@@ -14,10 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://sjl8whtwllus" path="res://Art/Assets/Equipment/FruitPlates/grape-plate-empty-v1.png" id="11_tlc45"]
 [ext_resource type="Texture2D" uid="uid://bf5o01411c642" path="res://Art/Assets/Equipment/JuiceCup/juice-cup-empty-v1.png" id="12_uq1k0"]
 [ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="13_3tmx6"]
-[ext_resource type="Texture2D" uid="uid://x7jfdjnyj61n" path="res://Art/Assets/LevelHelpGuide/Guidebook_ready/FRUITSALAD/ohjeet_fruitsalad_level2.png" id="14_j7iyu"]
 [ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="14_uxiy7"]
+[ext_resource type="Texture2D" uid="uid://b1kvgcyk88xyo" path="res://Art/Assets/LevelHelpGuide/Guidebook_ready/FRUITSALAD/NEW_2level_fruitsalad_page1.png" id="15_ftj3n"]
 [ext_resource type="Texture2D" uid="uid://b24tsu6dgafy0" path="res://Art/Assets/RecipeBook/open_helpguide_button.png" id="15_j7iyu"]
-[ext_resource type="Texture2D" uid="uid://cuo3mlri7wvks" path="res://Art/Assets/LevelHelpGuide/Guidebook_ready/FRUITSALAD/ohjeet_fruitsalad_level2_2.png" id="15_rc8gv"]
+[ext_resource type="Texture2D" uid="uid://v2ctmhsqt1f3" path="res://Art/Assets/LevelHelpGuide/Guidebook_ready/FRUITSALAD/NEW_2level_fruitsalad_page2.png" id="16_tul71"]
 [ext_resource type="PackedScene" uid="uid://ctnh7pra2i3h2" path="res://Scenes/Menus/PauseMenu/ShowPauseMenuButton/ShowPauseMenuButton.tscn" id="19_ftj3n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uybmr"]
@@ -42,12 +42,14 @@ scale = Vector2(2, 2)
 position = Vector2(860, 50)
 collision_layer = 4
 collision_mask = 7
+speed = 700.0
 
 [node name="Conveyor2" parent="." instance=ExtResource("1_ms7tw")]
 position = Vector2(1114, 1030)
 rotation = 3.1415925
 collision_layer = 4
 collision_mask = 7
+speed = 700.0
 leftToRight = false
 
 [node name="Walls" type="StaticBody2D" parent="."]
@@ -159,8 +161,8 @@ offset_top = -54.000004
 offset_right = 617.0
 offset_bottom = -54.000004
 rotation = 1.5680616
-PageOneTexture = ExtResource("14_j7iyu")
-PageTwoTexture = ExtResource("15_rc8gv")
+PageOneTexture = ExtResource("15_ftj3n")
+PageTwoTexture = ExtResource("16_tul71")
 
 [node name="ShowGuidebookButton" parent="." instance=ExtResource("14_uxiy7")]
 offset_left = 145.00002

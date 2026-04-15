@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://lcxdo8gtekt5"]
+[gd_scene load_steps=18 format=3 uid="uid://lcxdo8gtekt5"]
 
 [ext_resource type="Texture2D" uid="uid://krm0k6cbf1pr" path="res://Art/Backrounds/tausta_fullscreen.png" id="1_djxk4"]
 [ext_resource type="Texture2D" uid="uid://dw2adqts771t8" path="res://Art/Assets/Equipment/Spoons/sauce-spoon-v1.png" id="4_djxk4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://di00ix3sva0lh" path="res://Art/Assets/Equipment/Spoons/pasta-spoon-v1.png" id="6_y3p4b"]
 [ext_resource type="PackedScene" uid="uid://bciqqwjfrju31" path="res://Scenes/Assets/Guidebook/Guidebook.tscn" id="7_326m4"]
 [ext_resource type="Texture2D" uid="uid://byphj4t1lpi31" path="res://Art/Assets/LevelHelpGuide/Guidebook_ready/PASTA (final guidebook pages)/ohjeet_level3_pasta.png" id="8_djxk4"]
+[ext_resource type="Texture2D" uid="uid://cvc21oack25vo" path="res://Art/Assets/LevelHelpGuide/Guidebook_ready/PASTA (final guidebook pages)/pasta_page2_level3.png" id="9_k6173"]
 [ext_resource type="PackedScene" uid="uid://bl0on7ceiu6rk" path="res://Scenes/Assets/Guidebook/ShowGuidebookButton/ShowGuidebookButton.tscn" id="9_y3p4b"]
 [ext_resource type="PackedScene" uid="uid://by6lsaf5ftnak" path="res://Scenes/Assets/Equipment/Plate/Plate.tscn" id="10_326m4"]
 [ext_resource type="Texture2D" uid="uid://b24tsu6dgafy0" path="res://Art/Assets/RecipeBook/open_helpguide_button.png" id="10_k6173"]
@@ -80,6 +81,7 @@ offset_right = 812.0
 offset_bottom = 455.0
 rotation = -0.00906527
 PageOneTexture = ExtResource("8_djxk4")
+PageTwoTexture = ExtResource("9_k6173")
 
 [node name="ShowGuidebookButton" parent="." instance=ExtResource("9_y3p4b")]
 offset_left = 1769.0001

@@ -82,7 +82,7 @@ public partial class PeelingMiniGame : Node2D
 		// create new string based on localisation
 		// then update the label appropriately
 		string _localisedPeels = Tr("PEELS");
-		_cutsLabel.Text = string.Format(_localisedPeels, _cutsDone, " / ", RequiredCuts);
+		_cutsLabel.Text = string.Format(_localisedPeels, _cutsDone, "/", RequiredCuts);
 	}
 
 	private void _registerCut()

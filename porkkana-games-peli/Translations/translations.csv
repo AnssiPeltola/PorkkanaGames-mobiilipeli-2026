@@ -2,8 +2,8 @@ keys;en;fi;swe
 START;Start; Aloita; Starta
 SETTINGS;Settings; Asetukset; Inställningar
 EXIT; Quit; Lopeta; Avsluta
-CUTS;Cuts {0} {1} {2};Leikkaukset {0} {1} {2}; Snitt {0} {1} {2}
-PEELS;Peels {0} {1} {2}; Kuorimiset {0} {1} {2}; Skalningar {0} {1} {2}
+CUTS;Cuts {0}{1}{2};Leikkaukset {0}{1}{2}; Snitt {0}{1}{2}
+PEELS;Peels {0}{1}{2}; Kuorimiset {0}{1}{2}; Skalningar {0}{1}{2}
 RESUME; Resume; Takaisin; Fortsätt
 QUIT; Quit; Lopeta; Avsluta
 SELECT; Select recipe; Valitse resepti; Välj recept

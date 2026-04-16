@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cj4yhubuq0yen" path="res://Code/Assets/Minigame/PeelingMiniGame/PeelingMiniGame.cs" id="1_21rfl"]
 [ext_resource type="Texture2D" uid="uid://1wcqhbc1wflh" path="res://Art/icon-red.svg" id="2_lje01"]
-[ext_resource type="Script" uid="uid://bxp0nkiw2c758" path="res://Scenes/Minigames/CuttingGame/CutArea.cs" id="3_b0q82"]
+[ext_resource type="Script" uid="uid://bxp0nkiw2c758" path="res://Scenes/MiniGames/CuttingGame/CutArea.cs" id="3_b0q82"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rwbtn"]
 radius = 129.31357
@@ -15,13 +15,16 @@ script = ExtResource("1_21rfl")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 2945.0
-offset_top = 1256.0
-offset_right = 3513.0
-offset_bottom = 1408.0
+anchors_preset = -1
+anchor_right = 0.049732845
+offset_left = 2866.0
+offset_top = 1440.0
+offset_right = 3434.0
+offset_bottom = 1592.0
 rotation = -1.5707964
 theme_override_font_sizes/font_size = 75
-text = "Peels: 0 / 3"
+text = "PEELS"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="IngridientSprite" type="Sprite2D" parent="CanvasLayer"]

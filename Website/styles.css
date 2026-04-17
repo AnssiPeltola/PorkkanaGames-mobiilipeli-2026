@@ -28,6 +28,8 @@ body {
   border: 2px solid;
   /* Round border edges */
   border-radius: 12px;
+  scroll-padding-top: 180px; /* Prevents navbar from covering anchor targets on mobile */
+  scroll-behavior: smooth;
   overflow-y: auto;
 }
 
@@ -111,6 +113,26 @@ body {
   border: 0;
 }
 
+/* -- DOWNLOAD BUTTON -- */
+.download a {
+  display: block;
+  color: black;
+  padding: 20px 44px;
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 999px;
+}
+
+.download {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
 /* -- DEVELOPERS CARDS -- */
 .developers {
   padding-top: 20px;
@@ -167,5 +189,17 @@ body {
   .partners {
     /* 2 items per row */
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 760px) {
+  .page-container {
+    scroll-padding-top: 90px;
+  }
+}
+
+@media (min-width: 940px) {
+  .page-container {
+    scroll-padding-top: 60px;
   }
 }

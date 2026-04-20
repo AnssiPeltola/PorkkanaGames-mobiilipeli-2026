@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.developers": "Developers",
       "nav.partners": "Partners",
       "nav.portal": "Portal",
-      "download.button": "Download APK",
+      "download.button": "Download",
       "about.title": "About",
       "about.text":
-        "Our project is a two-player cooperative cooking game for children. In the game, two players work together through different levels around the different stages of food preparation. The goal of the two players is to get the selected recipe ready as a dish through cooperation using different game mechanics. The game is implemented at the request of the client Welltech lab for their YETI tablet. The purpose of the game is to teach players a general understanding of the different stages of cooking and what cooking involves.",
+        '"Kokataan yhdessä" is a co-operative multiplayer cooking game, where you can learn the basics of cooking and communication in a stress-free environment. Choose the recipe, work together and enjoy the game at your own pace. There are no penalties or time limits. The goal is simple: learn and have fun. This is a cooking game for everyone!',
       "roles.developer": "Developer",
       "roles.artist": "Artist",
     },
@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.developers": "Kehittäjät",
       "nav.partners": "Yhteistyökumppanit",
       "nav.portal": "Portaali",
-      "download.button": "Lataa APK",
+      "download.button": "Lataa",
       "about.title": "Tietoa",
       "about.text":
-        "Projektimme on lapsille suunnattu kahdelle pelaajalle tarkoitettu yhteistyöpeli kokkaamisesta. Pelissä kaksi pelaajaa työskentelee yhdessä eri tasojen läpi ruoan eri valmistusvaiheiden ympärillä. Tavoitteena kahdella pelaajalla on saada valittu resepti valmiiksi ruoaksi yhteistyön avulla eri pelimekaniikkoja käyttäen. Peli toteutetaan toimeksiantajan Welltech labin pyynnöstä heidän YETI-tabletille. Pelin tarkoitus on opettaa pelaajille ruoanlaiton eri vaiheiden yleistä ymmärtämistä ja mitä ruoanlaittoon kuuluu.",
+        '"Kokataan yhdessä" on yhteistyöhön kannustava kahden pelaajan kokkauspeli, jossa voit oppia kokkauksen ja kommunikaation perusteita rauhallisessa ympäristössä. Valitkaa resepti, työskennelkää yhdessä ja nauttikaa pelistä omassa tahdissanne. Ei rangaistuksia tai aikarajoitteita. Pelin tavoite on yksinkertainen: opi ja pidä hauskaa. Tämä on kokkauspeli kaikille!',
       "roles.developer": "Koodari",
       "roles.artist": "Artisti",
     },
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       element.textContent = translations[currentLanguage][element.dataset.i18n];
     });
 
-    languageButton.textContent = currentLanguage === "en" ? "FI" : "EN";
+    languageButton.textContent = currentLanguage === "en" ? "EN" : "FI";
     document.documentElement.lang = currentLanguage;
   };
 

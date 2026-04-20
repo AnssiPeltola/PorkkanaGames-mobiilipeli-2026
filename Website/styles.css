@@ -11,6 +11,10 @@ body {
   background-repeat: no-repeat;
 }
 
+h1 {
+  color:#16388A;
+}
+
 .page-shell {
   /* Dynamic Viewport Height (1 = 1%) */
   min-height: 100dvh;
@@ -25,7 +29,7 @@ body {
   height: calc(100dvh - 20px);
   padding: 0 15px 15px;
   background: white;
-  border: 2px solid;
+  border: 2px solid #4E90E8;
   /* Round border edges */
   border-radius: 12px;
   scroll-padding-top: 180px; /* Prevents navbar from covering anchor targets on mobile */
@@ -55,7 +59,7 @@ body {
 }
 
 .navbar ul li {
-  border: 2px solid;
+  border: 2px solid #4E90E8;
   border-radius: 999px; /* Round border */
 }
 
@@ -67,14 +71,18 @@ body {
 .navbar ul li a {
   /* Makes the whole link area clickable, not just the text */
   display: block;
-  color: black;
+  color: #16388A;
   padding: 10px 14px; /* Add some padding for links, gives capsule look */
   text-decoration: none;
 }
 
+.navbar a:hover {
+  color: #4E90E8;
+}
+
 .navbar ul li button {
   display: block;
-  color: black;
+  color: #16388A;
   padding: 10px 14px;
   text-decoration: none;
   background: transparent;
@@ -83,19 +91,52 @@ body {
   cursor: pointer;
 }
 
+.navbar button:hover {
+  color: #4E90E8;
+}
+
 /* -- IMAGE BOX --*/
 /* Container for image*/
 .image-box {
   width: 100%;
-  border: 2px solid;
+  border: 2px solid #4E90E8;
   border-radius: 10px;
   aspect-ratio: 16 / 10;
+  background-color: #75B2F2;
 }
 
 /* Makes image get big as the image-box container is*/
 .image-box img {
   width: 100%;
   height: auto;
+}
+
+.about {
+  text-align: center;
+}
+
+/* -- DOWNLOAD BUTTON -- */
+.download a {
+  display: block;
+  color: #16388A;
+  padding: 20px 44px;
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  border: 2px solid #4E90E8;
+  border-radius: 999px;
+}
+
+.download a:hover {
+  color: #4E90E8;
+}
+
+.download {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 /* -- TRAILER -- */
@@ -113,26 +154,6 @@ body {
   border: 0;
 }
 
-/* -- DOWNLOAD BUTTON -- */
-.download a {
-  display: block;
-  color: black;
-  padding: 20px 44px;
-  text-decoration: none;
-  background: transparent;
-  border: 0;
-  font: inherit;
-  cursor: pointer;
-  border: 2px solid;
-  border-radius: 999px;
-}
-
-.download {
-  padding-top: 20px;
-  display: flex;
-  justify-content: center;
-}
-
 /* -- DEVELOPERS CARDS -- */
 .developers {
   padding-top: 20px;
@@ -143,7 +164,7 @@ body {
 }
 
 .developer-card {
-  border: 2px solid;
+  border: 2px solid #4E90E8;
   border-radius: 6px;
 }
 
